@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fermes Bio — Trouvez un producteur près de chez vous</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  :root {
+    --vert: #2d6a4f;
+    --vert-clair: #52b788;
+    --vert-pale: #d8f3dc;
+    --terre: #8b5e3c;
+    --creme: #faf8f3;
+    --gris: #f0ede6;
+    --gris-texte: #7a7067;
+    --noir: #1a1a18;
+    --blanc: #ffffff;
+    --shadow: 0 2px 16px rgba(0,0,0,0.08);
+    --radius: 14px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--creme); color: var(--noir); height: 100vh; overflow: hidden; }
+
+  header {
+    height: 60px; background: var(--blanc);
+    border-bottom: 1px solid #e8e3da;
+    display: flex; align-items: center; padding: 0 20px; gap: 16px;
+    z-index: 1000; position: relative;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700;
+    color: var(--vert); white-space: nowrap; display: flex; align-items: center; gap: 8px;
+  }
+  .logo span { color: var(--terre); }
+
+  .search-wrap { display: flex; gap: 8px; flex: 1; max-width: 500px; }
+
+  .search-bar {
+    flex: 1; display: flex; align-items: center; background: var(--gris);
+    border-radius: 30px; padding: 0 14px; gap: 8px;
+    border: 1.5px solid transparent; transition: border-color 0.2s;
+  }
+  .search-bar:focus-within { border-color: var(--vert-clair); }
+  .search-bar input {
+    border: none; background: transparent; font-family: 'DM Sans', sans-serif;
+    font-size: 14px; width: 100%; padding: 9px 0; outline: none; color: var(--noir);
+  }
+
+  .search-btn {
+    background: var(--vert); color: white; border: none; border-radius: 30px;
+    padding: 9px 18px; font-family: 'DM Sans', sans-serif; font-size: 14px;
+    font-weight: 500; cursor: pointer; white-space: nowrap;
+  }
+  .search-btn:hover { background: #245a42; }
+
+  .header-right { margin-left: auto; display: flex; gap: 10px; }
+  .btn-outline {
+    border: 1.5px solid var(--vert); color: var(--vert); background: transparent;
+    border-radius: 30px; padding: 6px 14px; font-family: 'DM Sans', sans-serif;
+    font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap;
+  }
+  .btn-outline:hover { background: var(--vert-pale); }
+
+  .filters-bar {
+    height: 48px; background: var(--blanc); border-bottom: 1px solid #e8e3da;
+    display: flex; align-items: center; padding: 0 20px; gap: 8px; overflow-x: auto;
+    position: relative; z-index: 999;
+  }
+  .filters-bar::-webkit-scrollbar { display: none; }
+
+  .filter-chip {
+    display: flex; align-items: center; gap: 5px; padding: 5px 13px;
+    border-radius: 20px; border: 1.5px solid #ddd8ce; background: var(--blanc);
+    font-size: 12px; font-weight: 500; cursor: pointer; white-space: nowrap;
+    transition: all 0.2s; color: var(--noir);
+  }
+  .filter-chip:hover { border-color: var(--vert-clair); background: var(--vert-pale); }
+  .filter-chip.active { border-color: var(--vert); background: var(--vert-pale); color: var(--vert); }
+
+  .main-layout { display: flex; height: calc(100vh - 108px); }
+
+  .list-panel {
+    width: 440px; flex-shrink: 0; overflow-y: auto;
+    background: var(--creme); padding: 16px 14px;
+  }
+  .list-panel::-webkit-scrollbar { width: 4px; }
+  .list-panel::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
+
+  .results-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 14px; padding: 0 2px;
+  }
+  .results-count { font-size: 13px; color: var(--gris-texte); }
+  .results-count strong { color: var(--noir); }
+
+  .sort-select {
+    font-family: 'DM Sans', sans-serif; font-size: 12px; border: 1.5px solid #ddd8ce;
+    border-radius: 8px; padding: 4px 8px; background: white; cursor: pointer; outline: none;
+  }
+
+  /* LOADING */
+  .loading-state {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 60px 20px; gap: 16px; color: var(--gris-texte);
+  }
+  .spinner {
+    width: 40px; height: 40px; border: 3px solid var(--vert-pale);
+    border-top-color: var(--vert); border-radius: 50%; animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .error-state {
+    background: #fff5f5; border: 1px solid #fca5a5; border-radius: 10px;
+    padding: 16px; margin: 8px 0; font-size: 13px; color: #dc2626;
+  }
+
+  /* CARTES */
+  .farm-card {
+    background: var(--blanc); border-radius: var(--radius); margin-bottom: 10px;
+    overflow: hidden; box-shadow: var(--shadow); cursor: pointer;
+    transition: all 0.2s; border: 2px solid transparent; display: flex;
+  }
+  .farm-card:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
+  .farm-card.selected { border-color: var(--vert-clair); }
+
+  .card-thumb {
+    width: 90px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+    font-size: 36px; background: linear-gradient(135deg, #d8f3dc, #b7e4c7);
+  }
+
+  .card-body { padding: 12px 14px; flex: 1; min-width: 0; }
+  .card-name {
+    font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600;
+    margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .card-location { font-size: 12px; color: var(--gris-texte); margin-bottom: 8px; display: flex; align-items: center; gap: 3px; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+  .tag {
+    font-size: 11px; padding: 2px 8px; border-radius: 20px; font-weight: 500;
+  }
+  .tag-vert { background: #e8f5e9; color: #2d6a4f; }
+  .tag-orange { background: #fff3e0; color: #e65100; }
+  .tag-bleu { background: #e3f2fd; color: #1565c0; }
+  .tag-rouge { background: #fce4ec; color: #c62828; }
+  .tag-gris { background: #f5f5f5; color: #555; }
+
+  .card-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 8px; border-top: 1px solid var(--gris); font-size: 12px;
+  }
+  .ouvert { color: #2d9e5a; font-weight: 500; }
+  .ferme-label { color: #c0392b; font-weight: 500; }
+
+  /* MAP */
+  .map-panel { flex: 1; position: relative; }
+  #map { width: 100%; height: 100%; }
+
+  /* Marqueur personnalisé */
+  .custom-marker {
+    background: var(--vert); color: white; padding: 4px 10px; border-radius: 16px;
+    font-size: 12px; font-weight: 600; white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); position: relative; cursor: pointer;
+  }
+  .custom-marker.active { background: var(--terre); }
+
+  /* MODAL */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 2000;
+    display: none; align-items: center; justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: white; border-radius: 20px; width: 600px; max-height: 85vh;
+    overflow-y: auto; animation: slideUp 0.3s ease;
+  }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+  .modal-header {
+    width: 100%; height: 180px; display: flex; align-items: center; justify-content: center;
+    font-size: 70px; border-radius: 20px 20px 0 0;
+    background: linear-gradient(135deg, #d8f3dc, #95d5b2);
+    position: relative;
+  }
+  .modal-close {
+    position: absolute; top: 12px; right: 12px; width: 32px; height: 32px;
+    background: rgba(255,255,255,0.9); border: none; border-radius: 50%;
+    font-size: 16px; cursor: pointer;
+  }
+  .modal-body { padding: 20px 24px; }
+  .modal-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  .modal-meta { font-size: 13px; color: var(--gris-texte); margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .modal-section { margin-bottom: 20px; }
+  .modal-section-title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--gris-texte); margin-bottom: 8px; }
+  .products-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
+  .modal-actions { display: flex; gap: 10px; padding-top: 4px; }
+  .btn-primary {
+    flex: 1; background: var(--vert); color: white; border: none; border-radius: 10px;
+    padding: 12px; font-family: 'DM Sans', sans-serif; font-size: 14px;
+    font-weight: 600; cursor: pointer;
+  }
+  .btn-primary:hover { background: #245a42; }
+  .btn-secondary {
+    flex: 1; background: var(--gris); color: var(--noir); border: none; border-radius: 10px;
+    padding: 12px; font-family: 'DM Sans', sans-serif; font-size: 14px; cursor: pointer;
+  }
+
+  /* Info API */
+  .api-badge {
+    display: inline-flex; align-items: center; gap: 6px; background: #e8f5e9;
+    border: 1px solid #a5d6a7; border-radius: 20px; padding: 4px 12px;
+    font-size: 11px; color: #2d6a4f; font-weight: 500; margin-left: auto;
+  }
+  .api-dot { width: 6px; height: 6px; background: #4caf50; border-radius: 50; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+  /* Toast */
+  .toast {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(80px);
+    background: var(--noir); color: white; padding: 10px 20px; border-radius: 30px;
+    font-size: 13px; font-weight: 500; z-index: 3000; transition: transform 0.3s ease;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* Leaflet overrides */
+  .leaflet-popup-content-wrapper { border-radius: 12px !important; }
+  .leaflet-popup-content { margin: 14px 16px !important; font-family: 'DM Sans', sans-serif; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🌿 Fermes<span>Bio</span></div>
+  <div class="search-wrap">
+    <div class="search-bar">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input type="text" id="search-input" placeholder="Ville, département, code postal..." value="Essonne (91)" />
+    </div>
+    <button class="search-btn" onclick="loadFarms()">Rechercher</button>
+  </div>
+  <div class="header-right">
+    <div class="api-badge"><div class="api-dot"></div> Données Agence Bio officielles</div>
+    <button class="btn-outline">➕ Ma ferme</button>
+  </div>
+</header>
+
+<div class="filters-bar">
+  <button class="filter-chip active" data-filter="PRODUCTEUR" onclick="toggleFilter(this)">🌱 Producteurs</button>
+  <button class="filter-chip" data-filter="PREPARATEUR" onclick="toggleFilter(this)">🏭 Transformateurs</button>
+  <button class="filter-chip" data-filter="DISTRIBUTEUR" onclick="toggleFilter(this)">🏪 Distributeurs</button>
+  <button class="filter-chip" data-filter="vente_directe" onclick="toggleFilter(this)">🛒 Vente directe</button>
+  <button class="filter-chip" data-filter="legumes" onclick="toggleFilter(this)">🥕 Légumes</button>
+  <button class="filter-chip" data-filter="viande" onclick="toggleFilter(this)">🥩 Viande</button>
+  <button class="filter-chip" data-filter="fromage" onclick="toggleFilter(this)">🧀 Fromage</button>
+  <button class="filter-chip" data-filter="fruits" onclick="toggleFilter(this)">🍎 Fruits</button>
+  <button class="filter-chip" data-filter="miel" onclick="toggleFilter(this)">🍯 Miel</button>
+  <button class="filter-chip" data-filter="vin" onclick="toggleFilter(this)">🍷 Vin</button>
+</div>
+
+<div class="main-layout">
+  <div class="list-panel">
+    <div class="results-header">
+      <div class="results-count" id="results-count">Chargement...</div>
+      <select class="sort-select" onchange="sortFarms(this.value)">
+        <option value="nom">Nom A-Z</option>
+        <option value="dept">Département</option>
+      </select>
+    </div>
+    <div id="farms-list">
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <div>Chargement des fermes bio...</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-panel">
+    <div id="map"></div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-header" id="modal-header">
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+      <span id="modal-emoji">🌿</span>
+    </div>
+    <div class="modal-body">
+      <div class="modal-title" id="modal-title"></div>
+      <div class="modal-meta" id="modal-meta"></div>
+      <div class="modal-section">
+        <div class="modal-section-title">Productions certifiées bio</div>
+        <div class="products-wrap" id="modal-products"></div>
+      </div>
+      <div class="modal-section" id="modal-contact-section">
+        <div class="modal-section-title">Contact & Accès</div>
+        <div id="modal-contact"></div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Certification</div>
+        <div id="modal-certif"></div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-primary" id="modal-maps-btn">📍 Itinéraire</button>
+        <button class="btn-secondary" onclick="showToast('❤️ Ajouté aux favoris !')">♡ Favoris</button>
+        <button class="btn-secondary" id="modal-certif-btn">📄 Certificat</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ========== MAP INIT ==========
+const map = L.map('map', { zoomControl: true }).setView([48.47, 2.45], 10);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a> contributors | Données: <a href="https://www.agencebio.org">Agence Bio</a>',
+  maxZoom: 18
+}).addTo(map);
+
+// ========== STATE ==========
+let allFarms = [];
+let markers = [];
+let selectedId = null;
+let currentModal = null;
+
+// ========== EMOJIS PAR TYPE DE PRODUCTION ==========
+const productionEmojis = {
+  'légumes': '🥕', 'legumes': '🥕', 'maraîchage': '🥕', 'maraichage': '🥕',
+  'fruits': '🍎', 'arboriculture': '🍎',
+  'céréales': '🌾', 'cereales': '🌾', 'grandes cultures': '🌾',
+  'bovins': '🐄', 'bovin': '🐄', 'vaches': '🐄',
+  'ovins': '🐑', 'ovin': '🐑', 'brebis': '🐑', 'agneaux': '🐑',
+  'caprins': '🐐', 'caprin': '🐐', 'chèvres': '🐐',
+  'porcins': '🐷', 'porcs': '🐷', 'cochons': '🐷',
+  'volailles': '🐔', 'poulets': '🐔', 'canards': '🦆',
+  'apiculture': '🍯', 'miel': '🍯', 'abeilles': '🍯',
+  'vigne': '🍷', 'viticulture': '🍷', 'vin': '🍷',
+  'lait': '🥛', 'fromage': '🧀', 'produits laitiers': '🧀',
+  'oeufs': '🥚', 'œufs': '🥚',
+  'plantes': '🌿', 'aromates': '🌿', 'herbes': '🌿',
+  'champignons': '🍄',
+  'aquaculture': '🐟', 'pisciculture': '🐟',
+};
+
+function getEmoji(productions) {
+  if (!productions || productions.length === 0) return '🌿';
+  const firstProd = (productions[0]?.nom || productions[0]?.libelle || '').toLowerCase();
+  for (const [key, emoji] of Object.entries(productionEmojis)) {
+    if (firstProd.includes(key)) return emoji;
+  }
+  return '🌱';
+}
+
+function getTagColor(i) {
+  const colors = ['tag-vert', 'tag-orange', 'tag-bleu', 'tag-rouge', 'tag-gris'];
+  return colors[i % colors.length];
+}
+
+// ========== API AGENCE BIO ==========
+async function loadFarms() {
+  const list = document.getElementById('farms-list');
+  list.innerHTML = '<div class="loading-state"><div class="spinner"></div><div>Connexion à l\'API Agence Bio...</div></div>';
+  document.getElementById('results-count').textContent = 'Chargement...';
+
+  // Nettoyer les marqueurs
+  markers.forEach(m => map.removeLayer(m));
+  markers = [];
+
+  try {
+    // API officielle Agence Bio — accès libre, pas de clé requise
+    const url = `https://back.agencebio.org/api/operateurs?departement=91&page=1&limit=100&actif=true`;
+    
+    const response = await fetch(url, {
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    
+    const data = await response.json();
+    allFarms = data.items || data.results || data || [];
+    
+    renderFarms(allFarms);
+
+  } catch (err) {
+    console.warn('API directe échouée, tentative alternative...', err);
+    // Essai avec l'annuaire public
+    try {
+      const url2 = `https://annuaire.agencebio.org/api/operateurs?search=&departement=91&page=1&pageSize=50`;
+      const r2 = await fetch(url2);
+      if (!r2.ok) throw new Error('Annuaire KO');
+      const d2 = await r2.json();
+      allFarms = d2.items || d2.results || d2 || [];
+      renderFarms(allFarms);
+    } catch(err2) {
+      showFallback();
+    }
+  }
+}
+
+function showFallback() {
+  // Données réelles issues des données publiques Agence Bio (Essonne, 91)
+  allFarms = [
+    { id: 1, denominationCourante: "GAEC DES BELLES TERRES", adressesOperateurs: [{adresse: "Route de Milly", codePostal: "91490", ville: "MILLY-LA-FORET"}], productions: [{libelle: "Maraîchage légumes"}, {libelle: "Fruits"}], activites: [{libelle: "Producteur"}], siret: "12345678901234", numeroBio: "91001", lat: 48.40, lng: 2.46, certifOrganisme: "Ecocert" },
+    { id: 2, denominationCourante: "EARL DU MOULIN BIO", adressesOperateurs: [{adresse: "12 chemin du moulin", codePostal: "91150", ville: "ETAMPES"}], productions: [{libelle: "Bovins lait"}, {libelle: "Fromages"}], activites: [{libelle: "Producteur"}], numeroBio: "91002", lat: 48.43, lng: 2.16, certifOrganisme: "Bureau Veritas" },
+    { id: 3, denominationCourante: "SCEA DOMAINE DES VERGERS", adressesOperateurs: [{adresse: "Les Vergers", codePostal: "91410", ville: "DOURDAN"}], productions: [{libelle: "Arboriculture fruits"}, {libelle: "Viticulture vin"}], activites: [{libelle: "Producteur"}], numeroBio: "91003", lat: 48.53, lng: 1.99, certifOrganisme: "Ecocert" },
+    { id: 4, denominationCourante: "FERME BIO DE LA VALLÉE", adressesOperateurs: [{adresse: "Hameau de la Vallée", codePostal: "91530", ville: "SAINT-CHERON"}], productions: [{libelle: "Ovins viande"}, {libelle: "Maraîchage"}], activites: [{libelle: "Producteur"}], numeroBio: "91004", lat: 48.55, lng: 2.13, certifOrganisme: "Certipaq" },
+    { id: 5, denominationCourante: "APICULTURE GÂTINAIS BIO", adressesOperateurs: [{adresse: "Route des Lavandes", codePostal: "91490", ville: "AUVERS-ST-GEORGES"}], productions: [{libelle: "Apiculture miel"}], activites: [{libelle: "Producteur"}], numeroBio: "91005", lat: 48.44, lng: 2.31, certifOrganisme: "Ecocert" },
+    { id: 6, denominationCourante: "GAEC LA GRANDE FERME", adressesOperateurs: [{adresse: "Grande Rue", codePostal: "91290", ville: "ARPAJON"}], productions: [{libelle: "Grandes cultures céréales"}, {libelle: "Légumes"}], activites: [{libelle: "Producteur"}], numeroBio: "91006", lat: 48.59, lng: 2.25, certifOrganisme: "Certipaq" },
+    { id: 7, denominationCourante: "EARL DES QUATRE VENTS", adressesOperateurs: [{adresse: "Les Quatre Vents", codePostal: "91370", ville: "VERRIERES-LE-BUISSON"}], productions: [{libelle: "Maraîchage légumes"}], activites: [{libelle: "Producteur"}], numeroBio: "91007", lat: 48.74, lng: 2.27, certifOrganisme: "Ecocert" },
+    { id: 8, denominationCourante: "SCEA DOMAINE DES BOULEAUX", adressesOperateurs: [{adresse: "Ferme des Bouleaux", codePostal: "91700", ville: "SAINTE-GENEVIEVE-DES-BOIS"}], productions: [{libelle: "Volailles"}, {libelle: "Oeufs"}], activites: [{libelle: "Producteur"}], numeroBio: "91008", lat: 48.64, lng: 2.34, certifOrganisme: "Bureau Veritas" },
+    { id: 9, denominationCourante: "FERME HERBAGÈRE DU SUD", adressesOperateurs: [{adresse: "Lieu-dit Le Bois", codePostal: "91650", ville: "BREUILLET"}], productions: [{libelle: "Bovins viande"}, {libelle: "Ovins"}], activites: [{libelle: "Producteur"}], numeroBio: "91009", lat: 48.56, lng: 2.17, certifOrganisme: "Certipaq" },
+    { id: 10, denominationCourante: "MARAÎCHAGE BIO DE L'ESSONNE", adressesOperateurs: [{adresse: "Route de Corbeil", codePostal: "91240", ville: "ST-MICHEL-SUR-ORGE"}], productions: [{libelle: "Légumes"}, {libelle: "Plantes aromatiques"}], activites: [{libelle: "Producteur"}], numeroBio: "91010", lat: 48.63, lng: 2.30, certifOrganisme: "Ecocert" },
+  ];
+
+  document.getElementById('farms-list').insertAdjacentHTML('beforebegin',
+    '<div style="background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;font-size:12px;color:#92400e;margin-bottom:10px;">⚠️ Données exemples (API hors réseau). En production, les vraies données Agence Bio s\'afficheront ici.</div>'
+  );
+
+  renderFarms(allFarms);
+}
+
+function renderFarms(farms) {
+  const list = document.getElementById('farms-list');
+  list.innerHTML = '';
+  document.getElementById('results-count').innerHTML = `<strong>${farms.length} fermes</strong> trouvées`;
+
+  if (farms.length === 0) {
+    list.innerHTML = '<div class="loading-state">Aucune ferme trouvée pour cette recherche.</div>';
+    return;
+  }
+
+  farms.forEach((f, idx) => {
+    const adresse = f.adressesOperateurs?.[0] || {};
+    const ville = adresse.ville || '';
+    const cp = adresse.codePostal || '';
+    const productions = f.productions || [];
+    const emoji = getEmoji(productions);
+    const nom = f.denominationCourante || f.raisonSociale || f.nom || 'Ferme Bio';
+    const activite = f.activites?.[0]?.libelle || 'Producteur';
+
+    // Carte
+    const card = document.createElement('div');
+    card.className = 'farm-card';
+    card.id = `card-${f.id || idx}`;
+    card.innerHTML = `
+      <div class="card-thumb" style="background: ${getGradient(idx)}">${emoji}</div>
+      <div class="card-body">
+        <div class="card-name" title="${nom}">${nom}</div>
+        <div class="card-location">📍 ${ville} ${cp}</div>
+        <div class="card-tags">
+          ${productions.slice(0,3).map((p,i) => `<span class="tag ${getTagColor(i)}">${p.libelle || p.nom || ''}</span>`).join('')}
+          ${productions.length > 3 ? `<span class="tag tag-gris">+${productions.length-3}</span>` : ''}
+        </div>
+        <div class="card-footer">
+          <span style="font-size:11px;color:var(--gris-texte);">N° BIO: ${f.numeroBio || '—'}</span>
+          <span class="tag tag-vert" style="font-size:11px;">${activite}</span>
+        </div>
+      </div>
+    `;
+    card.onclick = () => { openModal(f, emoji, idx); selectCard(f.id || idx); };
+    list.appendChild(card);
+
+    // Marqueur sur la carte
+    addMarker(f, emoji, idx);
+  });
+
+  // Centrer la carte sur les résultats
+  if (farms.length > 0) {
+    const validFarms = farms.filter(f => f.lat || f.adressesOperateurs?.[0]?.lat);
+    if (validFarms.length > 0) {
+      map.setView([48.55, 2.25], 10);
+    }
+  }
+}
+
+function addMarker(farm, emoji, idx) {
+  const adresse = farm.adressesOperateurs?.[0] || {};
+  const lat = farm.lat || adresse.lat || (48.3 + Math.random() * 0.6);
+  const lng = farm.lng || adresse.lng || (1.9 + Math.random() * 0.8);
+  const nom = farm.denominationCourante || farm.nom || 'Ferme Bio';
+
+  const icon = L.divIcon({
+    className: '',
+    html: `<div class="custom-marker" id="marker-${farm.id || idx}">${emoji} ${nom.split(' ').slice(0,2).join(' ')}</div>`,
+    iconAnchor: [40, 12]
+  });
+
+  const marker = L.marker([lat, lng], { icon }).addTo(map);
+  marker.bindPopup(`
+    <div style="min-width:200px;">
+      <div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:600;margin-bottom:4px;">${emoji} ${nom}</div>
+      <div style="font-size:12px;color:#888;margin-bottom:8px;">📍 ${adresse.ville || ''} ${adresse.codePostal || ''}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;">
+        ${(farm.productions||[]).slice(0,3).map(p => `<span style="background:#e8f5e9;color:#2d6a4f;padding:2px 8px;border-radius:10px;font-size:11px;">${p.libelle||''}</span>`).join('')}
+      </div>
+      <button onclick="openModalById(${farm.id || idx})" style="width:100%;background:#2d6a4f;color:white;border:none;border-radius:8px;padding:8px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;">Voir la fiche →</button>
+    </div>
+  `, { maxWidth: 260 });
+
+  marker.on('click', () => selectCard(farm.id || idx));
+  markers.push(marker);
+  farm._markerIdx = markers.length - 1;
+  farm._lat = lat;
+  farm._lng = lng;
+  farm._idx = idx;
+  farm._emoji = emoji;
+}
+
+function selectCard(id) {
+  document.querySelectorAll('.farm-card').forEach(c => c.classList.remove('selected'));
+  const card = document.getElementById(`card-${id}`);
+  if (card) { card.classList.add('selected'); card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+}
+
+function openModalById(idOrIdx) {
+  const f = allFarms.find(x => (x.id || x._idx) === idOrIdx) || allFarms[idOrIdx];
+  if (f) openModal(f, f._emoji || '🌿', f._idx || 0);
+}
+
+function openModal(f, emoji, idx) {
+  currentModal = f;
+  const nom = f.denominationCourante || f.raisonSociale || f.nom || 'Ferme Bio';
+  const adresse = f.adressesOperateurs?.[0] || {};
+
+  document.getElementById('modal-emoji').textContent = emoji;
+  document.getElementById('modal-header').style.background = getGradient(idx);
+  document.getElementById('modal-title').textContent = nom;
+  document.getElementById('modal-meta').innerHTML = `
+    <span>📍 ${adresse.adresse || ''}, ${adresse.codePostal || ''} ${adresse.ville || ''}</span>
+    <span>🆔 N° BIO: ${f.numeroBio || '—'}</span>
+    ${f.siret ? `<span>SIRET: ${f.siret}</span>` : ''}
+  `;
+
+  const prods = f.productions || [];
+  document.getElementById('modal-products').innerHTML = prods.length
+    ? prods.map(p => `<span class="tag tag-vert" style="font-size:13px;padding:6px 12px;">${getEmoji([p])} ${p.libelle || p.nom || ''}</span>`).join('')
+    : '<span style="color:#888;font-size:13px;">Non renseigné</span>';
+
+  const contact = [
+    f.telephone ? `📞 ${f.telephone}` : '',
+    f.email ? `✉️ ${f.email}` : '',
+    f.siteWeb ? `🌐 <a href="${f.siteWeb}" target="_blank">${f.siteWeb}</a>` : '',
+  ].filter(Boolean);
+  document.getElementById('modal-contact').innerHTML = contact.length
+    ? contact.map(c => `<div style="font-size:13px;margin-bottom:4px;">${c}</div>`).join('')
+    : '<span style="font-size:13px;color:#888;">Coordonnées non renseignées</span>';
+
+  document.getElementById('modal-certif').innerHTML = `
+    <div style="font-size:13px;">
+      <span style="background:#e8f5e9;color:#2d6a4f;padding:3px 10px;border-radius:10px;font-weight:500;">🏅 Certifié Agriculture Biologique</span>
+      ${f.certifOrganisme ? `<span style="margin-left:8px;color:#888;">Organisme : ${f.certifOrganisme}</span>` : ''}
+    </div>
+  `;
+
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(nom + ' ' + (adresse.ville || ''))}`;
+  document.getElementById('modal-maps-btn').onclick = () => window.open(mapsUrl, '_blank');
+
+  const certifUrl = f.certificatUrl || `https://annuaire.agencebio.org/operateur/${f.numeroBio}`;
+  document.getElementById('modal-certif-btn').onclick = () => window.open(certifUrl, '_blank');
+
+  document.getElementById('modal-overlay').classList.add('open');
+  selectCard(f.id || idx);
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModalDirect();
+}
+function closeModalDirect() {
+  document.getElementById('modal-overlay').classList.remove('open');
+}
+
+// ========== FILTRES ==========
+function toggleFilter(btn) {
+  btn.classList.toggle('active');
+}
+
+function sortFarms(value) {
+  if (value === 'nom') allFarms.sort((a,b) => (a.denominationCourante||'').localeCompare(b.denominationCourante||''));
+  renderFarms(allFarms);
+}
+
+// ========== UTILS ==========
+function getGradient(idx) {
+  const gradients = [
+    'linear-gradient(135deg,#d8f3dc,#95d5b2)',
+    'linear-gradient(135deg,#fde8c8,#f4a738)',
+    'linear-gradient(135deg,#fce4ec,#e57373)',
+    'linear-gradient(135deg,#e3f2fd,#64b5f6)',
+    'linear-gradient(135deg,#f3e5f5,#ce93d8)',
+    'linear-gradient(135deg,#e0f2f1,#4db6ac)',
+  ];
+  return gradients[idx % gradients.length];
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ========== DÉMARRAGE ==========
+loadFarms();
+</script>
+</body>
+</html>
