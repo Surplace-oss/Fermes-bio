@@ -379,32 +379,22 @@ async function loadFarms() {
 
   try {
     // API officielle Agence Bio — accès libre, pas de clé requise
-    const url = `https://back.agencebio.org/api/operateurs?departement=91&page=1&limit=100&actif=true`;
+    // Appel via le serveur Vercel intermédiaire (api/bio.js)
+    const dept = getDepartement(document.getElementById('search-input').value);
+    const url = `/api/bio?departement=${dept}&page=1`;
     
-    const response = await fetch(url, {
-      headers: { 'Accept': 'application/json' }
-    });
-
+    const response = await fetch(url);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     
     const data = await response.json();
     allFarms = data.items || data.results || data || [];
     
+    if (allFarms.length === 0) throw new Error('Aucun résultat');
     renderFarms(allFarms);
 
   } catch (err) {
-    console.warn('API directe échouée, tentative alternative...', err);
-    // Essai avec l'annuaire public
-    try {
-      const url2 = `https://annuaire.agencebio.org/api/operateurs?search=&departement=91&page=1&pageSize=50`;
-      const r2 = await fetch(url2);
-      if (!r2.ok) throw new Error('Annuaire KO');
-      const d2 = await r2.json();
-      allFarms = d2.items || d2.results || d2 || [];
-      renderFarms(allFarms);
-    } catch(err2) {
-      showFallback();
-    }
+    console.warn('API échouée, données exemples...', err);
+    showFallback();
   }
 }
 
@@ -609,6 +599,28 @@ function showToast(msg) {
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 2500);
 }
+
+
+// ========== RECHERCHE PAR VILLE ==========
+const depts = {
+  'paris':'75','essonne':'91','yvelines':'78','seine-et-marne':'77',
+  'hauts-de-seine':'92','seine-saint-denis':'93','val-de-marne':'94',
+  'val-d'oise':'95','lyon':'69','rhone':'69','marseille':'13',
+  'bordeaux':'33','toulouse':'31','nantes':'44','lille':'59',
+  'strasbourg':'67','montpellier':'34','nice':'06','rennes':'35',
+  'milly':'91','corbeil':'91','etampes':'91','evry':'91','dourdan':'91',
+  'arpajon':'91','breuillet':'91','gif':'91','palaiseau':'91','orsay':'91'
+};
+function getDepartement(v) {
+  const val = v.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').trim();
+  const m = val.match(/(\d{2,3})/);
+  if (m) return m[1];
+  for (const [k,c] of Object.entries(depts)) { if (val.includes(k)) return c; }
+  return '91';
+}
+document.getElementById('search-input').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') loadFarms();
+});
 
 // ========== DÉMARRAGE ==========
 loadFarms();
