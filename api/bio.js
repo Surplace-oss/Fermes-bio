@@ -5,8 +5,7 @@ export default async function handler(req, res) {
   const { departement = '91', page = 1 } = req.query;
 
   try {
-    // On récupère beaucoup de résultats et on filtre par code postal
-    const url = `https://opendata.agencebio.org/api/gouv/operateurs/?page=${page}&limit=500`;
+    const url = `https://opendata.agencebio.org/api/gouv/operateurs/?departements=${departement}&page=${page}&limit=50`;
 
     const response = await fetch(url, {
       headers: { 'Accept': 'application/json' }
@@ -15,15 +14,7 @@ export default async function handler(req, res) {
     if (!response.ok) throw new Error(`API error: ${response.status}`);
 
     const data = await response.json();
-    
-    // Filtrer par département (les 2 premiers chiffres du code postal)
-    const items = (data.items || []).filter(op => {
-      return op.adressesOperateurs?.some(adr => 
-        adr.codePostal?.startsWith(departement)
-      );
-    });
-
-    res.status(200).json({ items, nbTotal: items.length });
+    res.status(200).json(data);
 
   } catch (err) {
     res.status(500).json({ error: err.message });
