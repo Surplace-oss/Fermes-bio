@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" width="200" height="100">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,400&amp;display=swap');
+    </style>
+  </defs>
+  <!-- BIO -->
+  <text
+    x="100"
+    y="54"
+    font-family="Cormorant Garamond, Georgia, serif"
+    font-size="58"
+    font-weight="700"
+    fill="#1a3d2b"
+    text-anchor="middle"
+    letter-spacing="-1"
+  >BIO</text>
+  <!-- Sur Place -->
+  <text
+    x="100"
+    y="78"
+    font-family="Cormorant Garamond, Georgia, serif"
+    font-size="22"
+    font-style="italic"
+    font-weight="400"
+    fill="#8b5e3c"
+    text-anchor="middle"
+    letter-spacing="2"
+  >Sur Place</text>
+</svg>
