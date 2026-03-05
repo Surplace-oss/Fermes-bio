@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bio Sur Place — Le lien entre la terre et votre table</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --vert: #1a3d2b;
+  --vert-mid: #2d6a4f;
+  --vert-clair: #52b788;
+  --vert-pale: #d8f3dc;
+  --terre: #8b5e3c;
+  --terre-clair: #c49a6c;
+  --creme: #f7f3ec;
+  --creme-dark: #ede8df;
+  --noir: #1a1a14;
+  --blanc: #fefefe;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Instrument Sans', sans-serif;
+  background: var(--creme);
+  color: var(--noir);
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 60px;
+  background: rgba(247,243,236,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 600; color: var(--vert);
+  letter-spacing: -0.5px;
+}
+.nav-logo em { color: var(--terre); font-style: italic; }
+.nav-links { display: flex; gap: 36px; align-items: center; }
+.nav-links a {
+  text-decoration: none; color: var(--vert); font-size: 14px;
+  font-weight: 500; letter-spacing: 0.3px; opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.nav-links a:hover { opacity: 1; }
+.nav-cta {
+  background: var(--vert); color: var(--blanc) !important;
+  padding: 10px 24px; border-radius: 100px; opacity: 1 !important;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--vert-mid) !important; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  padding-top: 80px;
+  position: relative; overflow: hidden;
+}
+
+.hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 60px 80px 60px;
+  position: relative; z-index: 2;
+}
+
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--vert-pale); color: var(--vert-mid);
+  border-radius: 100px; padding: 6px 16px;
+  font-size: 12px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; margin-bottom: 32px;
+  width: fit-content;
+}
+.hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--vert-clair); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.2)} }
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 6vw, 86px);
+  font-weight: 300; line-height: 1.05;
+  color: var(--vert); margin-bottom: 28px;
+  letter-spacing: -1px;
+}
+.hero h1 em { font-style: italic; color: var(--terre); }
+
+.hero-sub {
+  font-size: 17px; line-height: 1.7; color: #4a4a3a;
+  max-width: 480px; margin-bottom: 48px;
+}
+
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.btn-primary {
+  background: var(--vert); color: var(--blanc);
+  border: none; border-radius: 100px;
+  padding: 16px 36px; font-family: 'Instrument Sans', sans-serif;
+  font-size: 15px; font-weight: 600; cursor: pointer;
+  text-decoration: none; display: inline-block;
+  transition: all 0.25s; letter-spacing: 0.2px;
+}
+.btn-primary:hover { background: var(--vert-mid); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(26,61,43,0.25); }
+
+.btn-outline {
+  background: transparent; color: var(--vert);
+  border: 1.5px solid var(--vert); border-radius: 100px;
+  padding: 16px 36px; font-family: 'Instrument Sans', sans-serif;
+  font-size: 15px; font-weight: 600; cursor: pointer;
+  text-decoration: none; display: inline-block;
+  transition: all 0.25s;
+}
+.btn-outline:hover { background: var(--vert); color: var(--blanc); transform: translateY(-2px); }
+
+.hero-stats {
+  display: flex; gap: 40px; margin-top: 56px;
+  padding-top: 40px; border-top: 1px solid var(--creme-dark);
+}
+.stat-item {}
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px; font-weight: 600; color: var(--vert);
+  line-height: 1;
+}
+.stat-label { font-size: 13px; color: #888; margin-top: 4px; }
+
+/* Hero right — illustration organique */
+.hero-right {
+  position: relative; overflow: hidden;
+  background: var(--vert);
+}
+.hero-visual {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, #1a3d2b 0%, #2d6a4f 50%, #52b788 100%);
+}
+.hero-visual::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='600' height='800' viewBox='0 0 600 800' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='500' cy='100' r='300' fill='rgba(255,255,255,0.04)'/%3E%3Ccircle cx='100' cy='600' r='250' fill='rgba(255,255,255,0.03)'/%3E%3Ccircle cx='400' cy='500' r='180' fill='rgba(82,183,136,0.15)'/%3E%3C/svg%3E");
+}
+.hero-cards {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center; gap: 16px;
+  padding: 40px;
+}
+.farm-preview-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px; padding: 20px 24px;
+  width: 100%; max-width: 360px;
+  color: white;
+  animation: float 6s ease-in-out infinite;
+}
+.farm-preview-card:nth-child(2) { animation-delay: -2s; margin-left: 40px; }
+.farm-preview-card:nth-child(3) { animation-delay: -4s; }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+.fpc-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.fpc-avatar { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 22px; }
+.fpc-name { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 600; }
+.fpc-loc { font-size: 12px; opacity: 0.7; }
+.fpc-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.fpc-tag { background: rgba(255,255,255,0.15); border-radius: 100px; padding: 3px 10px; font-size: 11px; }
+.fpc-quote { font-style: italic; font-size: 13px; opacity: 0.85; line-height: 1.5; font-family: 'Cormorant Garamond', serif; }
+
+/* MANIFESTE */
+.manifeste {
+  padding: 120px 60px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  align-items: center;
+  background: var(--blanc);
+}
+.manifeste-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 300; line-height: 1.15;
+  color: var(--vert); margin-bottom: 28px;
+}
+.manifeste-text h2 em { font-style: italic; color: var(--terre); }
+.manifeste-text p {
+  font-size: 16px; line-height: 1.8; color: #555;
+  margin-bottom: 20px;
+}
+.manifeste-right { display: flex; flex-direction: column; gap: 24px; }
+.manifeste-card {
+  background: var(--creme); border-radius: 16px; padding: 28px;
+  border-left: 3px solid var(--vert-clair);
+}
+.manifeste-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 8px; color: var(--vert); }
+.manifeste-card p { font-size: 14px; line-height: 1.7; color: #666; }
+
+/* COMMENT ÇA MARCHE */
+.how {
+  padding: 120px 60px;
+  background: var(--creme);
+}
+.section-label {
+  font-size: 12px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--vert-clair);
+  margin-bottom: 16px;
+}
+.how h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 300; color: var(--vert);
+  margin-bottom: 64px; max-width: 500px;
+}
+.how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.how-step {
+  background: var(--blanc); border-radius: 20px; padding: 36px 32px;
+  position: relative; overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.how-step:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(0,0,0,0.1); }
+.how-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px; font-weight: 300; color: var(--vert-pale);
+  position: absolute; top: 16px; right: 24px; line-height: 1;
+}
+.how-icon { font-size: 36px; margin-bottom: 20px; }
+.how-step h3 { font-size: 18px; font-weight: 600; color: var(--vert); margin-bottom: 12px; }
+.how-step p { font-size: 14px; line-height: 1.7; color: #666; }
+
+/* MODÈLE ÉCONOMIQUE */
+.modele {
+  padding: 120px 60px;
+  background: var(--vert);
+  color: var(--blanc);
+}
+.modele .section-label { color: var(--vert-clair); }
+.modele h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 300; margin-bottom: 64px;
+}
+.modele h2 em { font-style: italic; color: var(--terre-clair); }
+.modele-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.modele-item {
+  background: rgba(255,255,255,0.07); padding: 48px 36px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.3s;
+}
+.modele-item:first-child { border-radius: 20px 0 0 20px; }
+.modele-item:last-child { border-radius: 0 20px 20px 0; }
+.modele-item:hover { background: rgba(255,255,255,0.12); }
+.modele-picto { font-size: 40px; margin-bottom: 24px; }
+.modele-item h3 { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
+.modele-item p { font-size: 14px; line-height: 1.8; opacity: 0.75; margin-bottom: 20px; }
+.modele-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 600; color: var(--terre-clair);
+}
+.modele-price span { font-size: 14px; font-family: 'Instrument Sans', sans-serif; opacity: 0.6; }
+
+/* VISION COOPÉRATIVE */
+.vision {
+  padding: 120px 60px;
+  background: var(--creme-dark);
+  text-align: center;
+}
+.vision h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 5vw, 70px);
+  font-weight: 300; color: var(--vert);
+  max-width: 800px; margin: 0 auto 28px; line-height: 1.1;
+}
+.vision h2 em { font-style: italic; color: var(--terre); }
+.vision p { font-size: 17px; line-height: 1.8; color: #555; max-width: 600px; margin: 0 auto 56px; }
+.vision-steps {
+  display: flex; justify-content: center; align-items: center;
+  gap: 0; max-width: 900px; margin: 0 auto;
+}
+.vision-step {
+  flex: 1; text-align: center; padding: 32px 20px;
+  background: var(--blanc); border-radius: 16px;
+  position: relative;
+}
+.vision-arrow {
+  font-size: 24px; color: var(--vert-clair); flex-shrink: 0;
+  padding: 0 8px;
+}
+.vision-step-icon { font-size: 32px; margin-bottom: 12px; }
+.vision-step h4 { font-size: 14px; font-weight: 600; color: var(--vert); margin-bottom: 6px; }
+.vision-step p { font-size: 12px; color: #888; line-height: 1.5; }
+
+/* REJOINDRE */
+.rejoindre {
+  padding: 120px 60px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  background: var(--blanc);
+}
+.rejoindre-card {
+  border-radius: 24px; padding: 56px 48px;
+  position: relative; overflow: hidden;
+}
+.rejoindre-card.ferme {
+  background: linear-gradient(135deg, #1a3d2b, #2d6a4f);
+  color: white;
+}
+.rejoindre-card.sponsor {
+  background: var(--creme); color: var(--noir);
+  border: 2px solid var(--creme-dark);
+}
+.rejoindre-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px; font-weight: 400; margin-bottom: 16px;
+}
+.rejoindre-card p { font-size: 15px; line-height: 1.8; opacity: 0.85; margin-bottom: 32px; }
+.rejoindre-card ul { list-style: none; margin-bottom: 40px; }
+.rejoindre-card ul li {
+  font-size: 14px; padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; gap: 10px;
+}
+.rejoindre-card.sponsor ul li { border-bottom-color: var(--creme-dark); }
+.rejoindre-card ul li::before { content: '✓'; font-weight: 700; color: var(--vert-clair); }
+.rejoindre-card.sponsor ul li::before { color: var(--vert); }
+
+.btn-white {
+  background: white; color: var(--vert);
+  border: none; border-radius: 100px;
+  padding: 14px 32px; font-family: 'Instrument Sans', sans-serif;
+  font-size: 14px; font-weight: 600; cursor: pointer;
+  text-decoration: none; display: inline-block;
+  transition: all 0.25s;
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+
+/* DON CTA */
+.don-cta {
+  padding: 100px 60px;
+  background: linear-gradient(135deg, var(--terre) 0%, #a0724a 100%);
+  color: white; text-align: center;
+}
+.don-cta h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 58px); font-weight: 300;
+  margin-bottom: 20px; line-height: 1.1;
+}
+.don-cta p { font-size: 17px; opacity: 0.85; max-width: 500px; margin: 0 auto 40px; line-height: 1.7; }
+.btn-don {
+  background: white; color: var(--terre);
+  border: none; border-radius: 100px;
+  padding: 18px 48px; font-family: 'Instrument Sans', sans-serif;
+  font-size: 16px; font-weight: 600; cursor: pointer;
+  text-decoration: none; display: inline-block;
+  transition: all 0.25s; margin: 0 8px;
+}
+.btn-don:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.2); }
+.btn-don-outline {
+  background: transparent; color: white;
+  border: 1.5px solid rgba(255,255,255,0.6); border-radius: 100px;
+  padding: 18px 48px; font-family: 'Instrument Sans', sans-serif;
+  font-size: 16px; font-weight: 600; cursor: pointer;
+  text-decoration: none; display: inline-block;
+  transition: all 0.25s; margin: 0 8px;
+}
+.btn-don-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+/* FOOTER */
+footer {
+  background: var(--noir); color: rgba(255,255,255,0.5);
+  padding: 60px; display: flex; justify-content: space-between; align-items: center;
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; color: white; font-weight: 600;
+}
+.footer-logo em { color: var(--terre-clair); font-style: italic; }
+.footer-links { display: flex; gap: 32px; }
+.footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+.footer-links a:hover { color: white; }
+
+
+.hero-manifeste {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-manifeste-inner {
+  display: flex; flex-direction: column; gap: 20px;
+  padding: 40px;
+}
+.hero-manifeste-line {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 100px; padding: 16px 32px;
+  color: white; font-size: 16px; font-weight: 500;
+  letter-spacing: 0.3px;
+  animation: float 6s ease-in-out infinite;
+}
+.hero-manifeste-line:nth-child(2) { animation-delay: -1.2s; margin-left: 24px; }
+.hero-manifeste-line:nth-child(3) { animation-delay: -2.4s; margin-left: 48px; }
+.hero-manifeste-line:nth-child(4) { animation-delay: -3.6s; margin-left: 24px; }
+.hero-manifeste-line:nth-child(5) { animation-delay: -4.8s; }
+
+/* ANIMATIONS D'ENTRÉE */
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><span style="display:flex;flex-direction:column;align-items:center;line-height:1;">
+  <span style="font-size:1.4em;font-weight:700;color:var(--vert);letter-spacing:-1px;">BIO</span>
+  <span style="font-size:0.65em;font-style:italic;color:var(--terre);letter-spacing:1px;margin-top:-2px;">Sur Place</span>
+</span></div>
+  <div class="nav-links">
+    <a href="#comment">Comment ça marche</a>
+    <a href="#modele">Modèle</a>
+    <a href="#rejoindre">Rejoindre</a>
+    <a href="dons.html" class="nav-cta">💚 Faire un don</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">🌱 Plateforme en construction — rejoignez l'aventure</div>
+    <h1>La <em>terre</em> a un visage.<br>Découvrez-le.</h1>
+    <p class="hero-sub">
+      Bio Sur Place connecte les citoyens avec les producteurs bio qui vendent directement à la ferme. Derrière chaque exploitation, il y a une histoire. On vous la raconte.
+    </p>
+    <div class="hero-actions">
+      <a href="#rejoindre" class="btn-primary">Je suis agriculteur·rice</a>
+      <a href="index.html" class="btn-outline">Explorer les fermes →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">4 800+</div>
+        <div class="stat-label">fermes bio en France<br>avec vente directe</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">données officielles<br>Agence Bio</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">0€</div>
+        <div class="stat-label">pour commencer,<br>gratuit en 2025</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-visual"></div>
+    <div class="hero-manifeste">
+      <div class="hero-manifeste-inner">
+        <div class="hero-manifeste-line">🌱 Producteurs certifiés Agence Bio</div>
+        <div class="hero-manifeste-line">📍 Vente directe à la ferme</div>
+        <div class="hero-manifeste-line">🇫🇷 Partout en France</div>
+        <div class="hero-manifeste-line">🤝 Portraits authentiques</div>
+        <div class="hero-manifeste-line">💚 Fonds de solidarité agricole</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTE -->
+<section class="manifeste" id="pourquoi">
+  <div class="manifeste-text reveal">
+    <div class="section-label">Notre conviction</div>
+    <h2>L'agriculture bio mérite <em>d'être vue</em></h2>
+    <p>
+      En France, des milliers de fermes biologiques certifiées vendent directement à la ferme. La plupart sont invisibles aux yeux du grand public.
+    </p>
+    <p>
+      Bio Sur Place donne un visage humain à ces exploitations. Pas une liste froide de données — de vraies histoires, de vrais portraits, une vraie envie d'aller acheter.
+    </p>
+    <p>
+      Et si chaque Français pouvait trouver, pendant ses vacances ou sa vie quotidienne, la ferme bio la plus proche qui vend directement ce qu'elle produit ?
+    </p>
+  </div>
+  <div class="manifeste-right reveal">
+    <div class="manifeste-card">
+      <h3>🌍 Un enjeu de société</h3>
+      <p>Le bio en vente directe est le circuit le plus vertueux : zéro intermédiaire, juste prix pour le producteur, fraîcheur maximale pour l'acheteur.</p>
+    </div>
+    <div class="manifeste-card">
+      <h3>📸 Le portrait qui fait la différence</h3>
+      <p>Une photo du producteur, quelques mots sur son histoire — et soudain le légume devient une rencontre. C'est ce qui donne envie d'aller à la ferme.</p>
+    </div>
+    <div class="manifeste-card">
+      <h3>🤝 Une communauté solidaire</h3>
+      <p>À terme, les fonds collectés alimentent une caisse de solidarité pour les fermes en difficulté, et encouragent les conversions au bio.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT ÇA MARCHE -->
+<section class="how" id="comment">
+  <div class="section-label reveal">Pour les visiteurs</div>
+  <h2 class="reveal">Simple comme<br>un marché du dimanche</h2>
+  <div class="how-grid">
+    <div class="how-step reveal">
+      <div class="how-num">1</div>
+      <div class="how-icon">📍</div>
+      <h3>Je tape ma ville</h3>
+      <p>En vacances ou chez moi, je cherche les fermes bio dans un rayon de 20, 50 ou 100 km autour de moi.</p>
+    </div>
+    <div class="how-step reveal">
+      <div class="how-num">2</div>
+      <div class="how-icon">👤</div>
+      <h3>Je découvre le producteur</h3>
+      <p>Photo, portrait, produits, histoire. Je sais exactement à qui j'achète et ce que je vais trouver à la ferme.</p>
+    </div>
+    <div class="how-step reveal">
+      <div class="how-num">3</div>
+      <div class="how-icon">🚗</div>
+      <h3>Je prends la route</h3>
+      <p>Un clic sur l'itinéraire et je file directement à la ferme acheter des produits frais, locaux et biologiques certifiés.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MODÈLE ÉCONOMIQUE -->
+<section class="modele" id="modele">
+  <div class="section-label">Modèle économique</div>
+  <h2>Viable, éthique, <em>ancré dans la réalité</em></h2>
+  <div class="modele-grid">
+    <div class="modele-item">
+      <div class="modele-picto">🌿</div>
+      <h3>Abonnement fermes</h3>
+      <p>Les fermes inscrites bénéficient d'une fiche enrichie avec photo, portrait, et mise en avant. Gratuit en 2025 pour les pionnières.</p>
+      <div class="modele-price">50€ <span>/ an dès 2026</span></div>
+    </div>
+    <div class="modele-item">
+      <div class="modele-picto">🤝</div>
+      <h3>Partenaires & Sponsors</h3>
+      <p>Marques alignées avec nos valeurs : assurances agricoles, matériel bio, épiceries engagées. Visibilité ciblée, audience qualifiée.</p>
+      <div class="modele-price">Sur mesure</div>
+    </div>
+    <div class="modele-item">
+      <div class="modele-picto">💚</div>
+      <h3>Dons citoyens</h3>
+      <p>Les utilisateurs qui croient au projet peuvent contribuer librement. Une partie alimente directement le fonds de solidarité pour les agriculteurs.</p>
+      <div class="modele-price">Libre <span>/ récurrent possible</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION COOPÉRATIVE -->
+<section class="vision">
+  <div class="section-label reveal">La vision long terme</div>
+  <h2 class="reveal">De la carte à la <em>coopérative</em></h2>
+  <p class="reveal">Si le projet prend de l'ampleur, les fonds collectés permettent de créer un vrai filet de sécurité pour les agriculteurs bio, et d'accélérer les conversions.</p>
+  <div class="vision-steps reveal">
+    <div class="vision-step">
+      <div class="vision-step-icon">🗺️</div>
+      <h4>La carte</h4>
+      <p>Trouver une ferme bio près de soi</p>
+    </div>
+    <div class="vision-arrow">→</div>
+    <div class="vision-step">
+      <div class="vision-step-icon">🤝</div>
+      <h4>La communauté</h4>
+      <p>Fermes abonnées, acheteurs fidèles</p>
+    </div>
+    <div class="vision-arrow">→</div>
+    <div class="vision-step">
+      <div class="vision-step-icon">💰</div>
+      <h4>Le fonds</h4>
+      <p>Caisse solidaire pour les années difficiles</p>
+    </div>
+    <div class="vision-arrow">→</div>
+    <div class="vision-step">
+      <div class="vision-step-icon">🌱</div>
+      <h4>La coopérative</h4>
+      <p>Conversions au bio facilitées</p>
+    </div>
+  </div>
+</section>
+
+<!-- REJOINDRE -->
+<section class="rejoindre" id="rejoindre">
+  <div class="rejoindre-card ferme reveal">
+    <h3>Vous êtes agriculteur·rice bio ?</h3>
+    <p>Inscrivez votre ferme gratuitement dès maintenant et soyez parmi les premiers à bénéficier d'une visibilité nationale.</p>
+    <ul>
+      <li>Fiche ferme avec portrait & photo</li>
+      <li>Visibilité dans les recherches par GPS</li>
+      <li>Accès aux données de consultation</li>
+      <li>Gratuit toute l'année 2025</li>
+    </ul>
+    <a href="mailto:contact@biosurplace.fr?subject=Inscription ferme" class="btn-white">Inscrire ma ferme →</a>
+  </div>
+  <div class="rejoindre-card sponsor reveal">
+    <h3>Vous voulez sponsoriser le projet ?</h3>
+    <p>Rejoignez une plateforme à impact positif. Votre marque associée à l'agriculture bio locale et à une audience engagée.</p>
+    <ul>
+      <li>Visibilité sur la carte et les fiches</li>
+      <li>Audience qualifiée et engagée</li>
+      <li>Rapport d'impact semestriel</li>
+      <li>Mention dans le fonds solidaire</li>
+    </ul>
+    <a href="mailto:contact@biosurplace.fr?subject=Partenariat sponsor" class="btn-primary">Devenir partenaire →</a>
+  </div>
+</section>
+
+<!-- DON CTA -->
+<section class="don-cta">
+  <h2>Vous croyez au projet ?<br>Soutenez-le.</h2>
+  <p>Chaque don contribue à la fois à faire grandir la plateforme et à alimenter le futur fonds de solidarité agricole.</p>
+  <a href="dons.html" class="btn-don">💚 Faire un don</a>
+  <a href="index.html" class="btn-don-outline">Explorer les fermes</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><span style="display:flex;flex-direction:column;align-items:center;line-height:1;">
+  <span style="font-size:1.4em;font-weight:700;color:var(--vert);letter-spacing:-1px;">BIO</span>
+  <span style="font-size:0.65em;font-style:italic;color:var(--terre);letter-spacing:1px;margin-top:-2px;">Sur Place</span>
+</span></div>
+  <div class="footer-links">
+    <a href="index.html">La carte</a>
+    <a href="#comment">Comment ça marche</a>
+    <a href="dons.html">Dons</a>
+    <a href="mailto:contact@biosurplace.fr">Contact</a>
+  </div>
+  <div style="font-size:13px;">Données officielles © Agence Bio</div>
+</footer>
+
+<script>
+// Animations au scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 100);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
