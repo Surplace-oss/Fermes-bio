@@ -18,7 +18,6 @@ export default async function handler(req, res) {
     return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
   }
 
-  // Coordonnées centrales de chaque département
   const DEPTS = [
     ['01',46.20,5.23],['02',49.55,3.62],['03',46.34,3.30],['04',44.08,6.24],['05',44.66,6.35],
     ['06',43.93,7.11],['07',44.72,4.53],['08',49.69,4.70],['09',42.96,1.60],['10',48.32,4.07],
@@ -42,37 +41,43 @@ export default async function handler(req, res) {
   ];
 
   try {
-    // Départements dans le rayon (+ marge de 30km)
     const deptsProches = DEPTS
       .filter(([, dLat, dLng]) => distanceKm(centerLat, centerLng, dLat, dLng) <= rayonKm + 30)
       .map(([code]) => code);
 
     const depts = deptsProches.join(',');
 
-    // Récupérer page par page séquentiellement (évite timeout)
     const allItems = [];
     let page = 1;
 
-    while (page <= 8) {
+    while (page <= 10) {
       const url = `https://opendata.agencebio.org/api/gouv/operateurs/?departements=${depts}&page=${page}&limit=200`;
       const response = await fetch(url, { headers: { 'Accept': 'application/json' } });
       if (!response.ok) break;
       const data = await response.json();
       const items = data.items || [];
       allItems.push(...items);
-      if (items.length < 200) break; // dernière page
+      if (items.length < 200) break;
       page++;
     }
 
-    // Filtrer : producteur + vente directe + coordonnées + dans le rayon
+    // Filtre élargi : producteur agricole (code NAF 01.xx) 
+    // OU activité Production + au moins une production renseignée
+    // On retire le filtre "Vente aux consommateurs" qui est trop restrictif
     const items = allItems
       .filter(op => {
+        const naf = op.codeNAF || '';
+        const isAgricole = naf.startsWith('01');
         const isProducteur = op.activites?.some(a => a.id === 1 || a.nom === 'Production');
-        const venteDirecte = op.categories?.some(c =>
-          c.nom === 'Vente aux consommateurs' || c.nom === 'Artisans/commerçants'
-        );
+        const hasProductions = op.productions?.some(p => {
+          const code = p.code || '';
+          // Garder uniquement les vraies productions agricoles (pas distribution/commerce)
+          return code.startsWith('01') || code.startsWith('GP');
+        });
         const adr = op.adressesOperateurs?.[0];
-        return isProducteur && venteDirecte && adr?.lat && adr?.long;
+        const hasCoords = adr?.lat && adr?.long;
+
+        return (isAgricole || (isProducteur && hasProductions)) && hasCoords;
       })
       .map(op => {
         const adr = op.adressesOperateurs[0];
