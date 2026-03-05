@@ -104,7 +104,6 @@
     border-radius: 8px; padding: 4px 8px; background: white; cursor: pointer; outline: none;
   }
 
-  /* LOADING */
   .loading-state {
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     padding: 60px 20px; gap: 16px; color: var(--gris-texte);
@@ -115,12 +114,6 @@
   }
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  .error-state {
-    background: #fff5f5; border: 1px solid #fca5a5; border-radius: 10px;
-    padding: 16px; margin: 8px 0; font-size: 13px; color: #dc2626;
-  }
-
-  /* CARTES */
   .farm-card {
     background: var(--blanc); border-radius: var(--radius); margin-bottom: 10px;
     overflow: hidden; box-shadow: var(--shadow); cursor: pointer;
@@ -154,14 +147,10 @@
     display: flex; justify-content: space-between; align-items: center;
     padding-top: 8px; border-top: 1px solid var(--gris); font-size: 12px;
   }
-  .ouvert { color: #2d9e5a; font-weight: 500; }
-  .ferme-label { color: #c0392b; font-weight: 500; }
 
-  /* MAP */
   .map-panel { flex: 1; position: relative; }
   #map { width: 100%; height: 100%; }
 
-  /* Marqueur personnalisé */
   .custom-marker {
     background: var(--vert); color: white; padding: 4px 10px; border-radius: 16px;
     font-size: 12px; font-weight: 600; white-space: nowrap;
@@ -169,7 +158,6 @@
   }
   .custom-marker.active { background: var(--terre); }
 
-  /* MODAL */
   .modal-overlay {
     position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 2000;
     display: none; align-items: center; justify-content: center;
@@ -210,16 +198,14 @@
     padding: 12px; font-family: 'DM Sans', sans-serif; font-size: 14px; cursor: pointer;
   }
 
-  /* Info API */
   .api-badge {
     display: inline-flex; align-items: center; gap: 6px; background: #e8f5e9;
     border: 1px solid #a5d6a7; border-radius: 20px; padding: 4px 12px;
     font-size: 11px; color: #2d6a4f; font-weight: 500; margin-left: auto;
   }
-  .api-dot { width: 6px; height: 6px; background: #4caf50; border-radius: 50; animation: pulse 2s infinite; }
+  .api-dot { width: 6px; height: 6px; background: #4caf50; border-radius: 50%; animation: pulse 2s infinite; }
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-  /* Toast */
   .toast {
     position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(80px);
     background: var(--noir); color: white; padding: 10px 20px; border-radius: 30px;
@@ -227,7 +213,6 @@
   }
   .toast.show { transform: translateX(-50%) translateY(0); }
 
-  /* Leaflet overrides */
   .leaflet-popup-content-wrapper { border-radius: 12px !important; }
   .leaflet-popup-content { margin: 14px 16px !important; font-family: 'DM Sans', sans-serif; }
 </style>
@@ -252,10 +237,9 @@
 </header>
 
 <div class="filters-bar">
-  <button class="filter-chip active" data-filter="PRODUCTEUR" onclick="toggleFilter(this)">🌱 Producteurs</button>
-  <button class="filter-chip" data-filter="PREPARATEUR" onclick="toggleFilter(this)">🏭 Transformateurs</button>
-  <button class="filter-chip" data-filter="DISTRIBUTEUR" onclick="toggleFilter(this)">🏪 Distributeurs</button>
-  <button class="filter-chip" data-filter="vente_directe" onclick="toggleFilter(this)">🛒 Vente directe</button>
+  <button class="filter-chip active" data-filter="producteur" onclick="toggleFilter(this)">🌱 Producteurs</button>
+  <button class="filter-chip" data-filter="preparateur" onclick="toggleFilter(this)">🏭 Transformateurs</button>
+  <button class="filter-chip" data-filter="distributeur" onclick="toggleFilter(this)">🏪 Distributeurs</button>
   <button class="filter-chip" data-filter="legumes" onclick="toggleFilter(this)">🥕 Légumes</button>
   <button class="filter-chip" data-filter="viande" onclick="toggleFilter(this)">🥩 Viande</button>
   <button class="filter-chip" data-filter="fromage" onclick="toggleFilter(this)">🧀 Fromage</button>
@@ -280,7 +264,6 @@
       </div>
     </div>
   </div>
-
   <div class="map-panel">
     <div id="map"></div>
   </div>
@@ -300,7 +283,7 @@
         <div class="modal-section-title">Productions certifiées bio</div>
         <div class="products-wrap" id="modal-products"></div>
       </div>
-      <div class="modal-section" id="modal-contact-section">
+      <div class="modal-section">
         <div class="modal-section-title">Contact & Accès</div>
         <div id="modal-contact"></div>
       </div>
@@ -320,37 +303,33 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ========== MAP INIT ==========
 const map = L.map('map', { zoomControl: true }).setView([48.47, 2.45], 10);
-
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a> contributors | Données: <a href="https://www.agencebio.org">Agence Bio</a>',
+  attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a> | Données: <a href="https://www.agencebio.org">Agence Bio</a>',
   maxZoom: 18
 }).addTo(map);
 
-// ========== STATE ==========
 let allFarms = [];
 let markers = [];
 let selectedId = null;
 let currentModal = null;
 
-// ========== EMOJIS PAR TYPE DE PRODUCTION ==========
 const productionEmojis = {
-  'légumes': '🥕', 'legumes': '🥕', 'maraîchage': '🥕', 'maraichage': '🥕',
-  'fruits': '🍎', 'arboriculture': '🍎',
-  'céréales': '🌾', 'cereales': '🌾', 'grandes cultures': '🌾',
-  'bovins': '🐄', 'bovin': '🐄', 'vaches': '🐄',
-  'ovins': '🐑', 'ovin': '🐑', 'brebis': '🐑', 'agneaux': '🐑',
+  'légumes': '🥕', 'legumes': '🥕', 'maraîchage': '🥕', 'maraichage': '🥕', 'potager': '🥕',
+  'fruits': '🍎', 'arboriculture': '🍎', 'pommes': '🍎', 'poires': '🍐',
+  'céréales': '🌾', 'cereales': '🌾', 'grandes cultures': '🌾', 'blé': '🌾', 'orge': '🌾',
+  'bovins': '🐄', 'bovin': '🐄', 'vaches': '🐄', 'lait': '🥛',
+  'ovins': '🐑', 'ovin': '🐑', 'brebis': '🐑',
   'caprins': '🐐', 'caprin': '🐐', 'chèvres': '🐐',
-  'porcins': '🐷', 'porcs': '🐷', 'cochons': '🐷',
+  'porcins': '🐷', 'porcs': '🐷',
   'volailles': '🐔', 'poulets': '🐔', 'canards': '🦆',
   'apiculture': '🍯', 'miel': '🍯', 'abeilles': '🍯',
-  'vigne': '🍷', 'viticulture': '🍷', 'vin': '🍷',
-  'lait': '🥛', 'fromage': '🧀', 'produits laitiers': '🧀',
+  'vigne': '🍷', 'viticulture': '🍷', 'vin': '🍷', 'raisin': '🍷',
+  'fromage': '🧀', 'produits laitiers': '🧀',
   'oeufs': '🥚', 'œufs': '🥚',
   'plantes': '🌿', 'aromates': '🌿', 'herbes': '🌿',
   'champignons': '🍄',
-  'aquaculture': '🐟', 'pisciculture': '🐟',
+  'pain': '🍞', 'boulangerie': '🍞',
 };
 
 function getEmoji(productions) {
@@ -367,63 +346,44 @@ function getTagColor(i) {
   return colors[i % colors.length];
 }
 
-// ========== API AGENCE BIO ==========
+function getGradient(idx) {
+  const gradients = [
+    'linear-gradient(135deg,#d8f3dc,#95d5b2)',
+    'linear-gradient(135deg,#fde8c8,#f4a738)',
+    'linear-gradient(135deg,#fce4ec,#e57373)',
+    'linear-gradient(135deg,#e3f2fd,#64b5f6)',
+    'linear-gradient(135deg,#f3e5f5,#ce93d8)',
+    'linear-gradient(135deg,#e0f2f1,#4db6ac)',
+  ];
+  return gradients[idx % gradients.length];
+}
+
 async function loadFarms() {
   const list = document.getElementById('farms-list');
   list.innerHTML = '<div class="loading-state"><div class="spinner"></div><div>Connexion à l\'API Agence Bio...</div></div>';
   document.getElementById('results-count').textContent = 'Chargement...';
-
-  // Nettoyer les marqueurs
   markers.forEach(m => map.removeLayer(m));
   markers = [];
 
   try {
-    // API officielle Agence Bio — accès libre, pas de clé requise
-    // Appel via le serveur Vercel intermédiaire (api/bio.js)
     const dept = getDepartement(document.getElementById('search-input').value);
-    const url = `/api/bio?departement=${dept}&page=1`;
-    
-    const response = await fetch(url);
+    const response = await fetch(`/api/bio?departement=${dept}&page=1`);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    
     const data = await response.json();
-    allFarms = data.items || data.results || data || [];
-    
+    allFarms = data.items || [];
     if (allFarms.length === 0) throw new Error('Aucun résultat');
     renderFarms(allFarms);
-
   } catch (err) {
-    console.warn('API échouée, données exemples...', err);
-    showFallback();
+    console.warn('API échouée:', err);
+    list.innerHTML = '<div class="loading-state" style="color:#c0392b;">❌ Impossible de charger les données. Vérifiez votre connexion.</div>';
+    document.getElementById('results-count').textContent = 'Erreur';
   }
-}
-
-function showFallback() {
-  // Données réelles issues des données publiques Agence Bio (Essonne, 91)
-  allFarms = [
-    { id: 1, denominationCourante: "GAEC DES BELLES TERRES", adressesOperateurs: [{adresse: "Route de Milly", codePostal: "91490", ville: "MILLY-LA-FORET"}], productions: [{libelle: "Maraîchage légumes"}, {libelle: "Fruits"}], activites: [{libelle: "Producteur"}], siret: "12345678901234", numeroBio: "91001", lat: 48.40, lng: 2.46, certifOrganisme: "Ecocert" },
-    { id: 2, denominationCourante: "EARL DU MOULIN BIO", adressesOperateurs: [{adresse: "12 chemin du moulin", codePostal: "91150", ville: "ETAMPES"}], productions: [{libelle: "Bovins lait"}, {libelle: "Fromages"}], activites: [{libelle: "Producteur"}], numeroBio: "91002", lat: 48.43, lng: 2.16, certifOrganisme: "Bureau Veritas" },
-    { id: 3, denominationCourante: "SCEA DOMAINE DES VERGERS", adressesOperateurs: [{adresse: "Les Vergers", codePostal: "91410", ville: "DOURDAN"}], productions: [{libelle: "Arboriculture fruits"}, {libelle: "Viticulture vin"}], activites: [{libelle: "Producteur"}], numeroBio: "91003", lat: 48.53, lng: 1.99, certifOrganisme: "Ecocert" },
-    { id: 4, denominationCourante: "FERME BIO DE LA VALLÉE", adressesOperateurs: [{adresse: "Hameau de la Vallée", codePostal: "91530", ville: "SAINT-CHERON"}], productions: [{libelle: "Ovins viande"}, {libelle: "Maraîchage"}], activites: [{libelle: "Producteur"}], numeroBio: "91004", lat: 48.55, lng: 2.13, certifOrganisme: "Certipaq" },
-    { id: 5, denominationCourante: "APICULTURE GÂTINAIS BIO", adressesOperateurs: [{adresse: "Route des Lavandes", codePostal: "91490", ville: "AUVERS-ST-GEORGES"}], productions: [{libelle: "Apiculture miel"}], activites: [{libelle: "Producteur"}], numeroBio: "91005", lat: 48.44, lng: 2.31, certifOrganisme: "Ecocert" },
-    { id: 6, denominationCourante: "GAEC LA GRANDE FERME", adressesOperateurs: [{adresse: "Grande Rue", codePostal: "91290", ville: "ARPAJON"}], productions: [{libelle: "Grandes cultures céréales"}, {libelle: "Légumes"}], activites: [{libelle: "Producteur"}], numeroBio: "91006", lat: 48.59, lng: 2.25, certifOrganisme: "Certipaq" },
-    { id: 7, denominationCourante: "EARL DES QUATRE VENTS", adressesOperateurs: [{adresse: "Les Quatre Vents", codePostal: "91370", ville: "VERRIERES-LE-BUISSON"}], productions: [{libelle: "Maraîchage légumes"}], activites: [{libelle: "Producteur"}], numeroBio: "91007", lat: 48.74, lng: 2.27, certifOrganisme: "Ecocert" },
-    { id: 8, denominationCourante: "SCEA DOMAINE DES BOULEAUX", adressesOperateurs: [{adresse: "Ferme des Bouleaux", codePostal: "91700", ville: "SAINTE-GENEVIEVE-DES-BOIS"}], productions: [{libelle: "Volailles"}, {libelle: "Oeufs"}], activites: [{libelle: "Producteur"}], numeroBio: "91008", lat: 48.64, lng: 2.34, certifOrganisme: "Bureau Veritas" },
-    { id: 9, denominationCourante: "FERME HERBAGÈRE DU SUD", adressesOperateurs: [{adresse: "Lieu-dit Le Bois", codePostal: "91650", ville: "BREUILLET"}], productions: [{libelle: "Bovins viande"}, {libelle: "Ovins"}], activites: [{libelle: "Producteur"}], numeroBio: "91009", lat: 48.56, lng: 2.17, certifOrganisme: "Certipaq" },
-    { id: 10, denominationCourante: "MARAÎCHAGE BIO DE L'ESSONNE", adressesOperateurs: [{adresse: "Route de Corbeil", codePostal: "91240", ville: "ST-MICHEL-SUR-ORGE"}], productions: [{libelle: "Légumes"}, {libelle: "Plantes aromatiques"}], activites: [{libelle: "Producteur"}], numeroBio: "91010", lat: 48.63, lng: 2.30, certifOrganisme: "Ecocert" },
-  ];
-
-  document.getElementById('farms-list').insertAdjacentHTML('beforebegin',
-    '<div style="background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;font-size:12px;color:#92400e;margin-bottom:10px;">⚠️ Données exemples (API hors réseau). En production, les vraies données Agence Bio s\'afficheront ici.</div>'
-  );
-
-  renderFarms(allFarms);
 }
 
 function renderFarms(farms) {
   const list = document.getElementById('farms-list');
   list.innerHTML = '';
-  document.getElementById('results-count').innerHTML = `<strong>${farms.length} fermes</strong> trouvées`;
+  document.getElementById('results-count').innerHTML = `<strong>${farms.length} opérateurs bio</strong> trouvés`;
 
   if (farms.length === 0) {
     list.innerHTML = '<div class="loading-state">Aucune ferme trouvée pour cette recherche.</div>';
@@ -431,15 +391,15 @@ function renderFarms(farms) {
   }
 
   farms.forEach((f, idx) => {
+    // L'API renvoie "long" pas "lng" — correction clé !
     const adresse = f.adressesOperateurs?.[0] || {};
     const ville = adresse.ville || '';
     const cp = adresse.codePostal || '';
     const productions = f.productions || [];
     const emoji = getEmoji(productions);
-    const nom = f.denominationCourante || f.raisonSociale || f.nom || 'Ferme Bio';
-    const activite = f.activites?.[0]?.libelle || 'Producteur';
+    const nom = f.denominationCourante || f.raisonSociale || 'Opérateur Bio';
+    const activite = f.activites?.[0]?.nom || 'Producteur';
 
-    // Carte
     const card = document.createElement('div');
     card.className = 'farm-card';
     card.id = `card-${f.id || idx}`;
@@ -449,7 +409,7 @@ function renderFarms(farms) {
         <div class="card-name" title="${nom}">${nom}</div>
         <div class="card-location">📍 ${ville} ${cp}</div>
         <div class="card-tags">
-          ${productions.slice(0,3).map((p,i) => `<span class="tag ${getTagColor(i)}">${p.libelle || p.nom || ''}</span>`).join('')}
+          ${productions.slice(0,3).map((p,i) => `<span class="tag ${getTagColor(i)}">${p.nom || p.libelle || ''}</span>`).join('')}
           ${productions.length > 3 ? `<span class="tag tag-gris">+${productions.length-3}</span>` : ''}
         </div>
         <div class="card-footer">
@@ -460,26 +420,28 @@ function renderFarms(farms) {
     `;
     card.onclick = () => { openModal(f, emoji, idx); selectCard(f.id || idx); };
     list.appendChild(card);
-
-    // Marqueur sur la carte
     addMarker(f, emoji, idx);
   });
 
-  // Centrer la carte sur les résultats
-  if (farms.length > 0) {
-    const validFarms = farms.filter(f => f.lat || f.adressesOperateurs?.[0]?.lat);
-    if (validFarms.length > 0) {
-      map.setView([48.55, 2.25], 10);
-    }
+  // Centrer la carte
+  const validFarms = farms.filter(f => f.adressesOperateurs?.[0]?.lat);
+  if (validFarms.length > 0) {
+    const lats = validFarms.map(f => f.adressesOperateurs[0].lat);
+    const lngs = validFarms.map(f => f.adressesOperateurs[0].long);
+    const centerLat = lats.reduce((a,b) => a+b, 0) / lats.length;
+    const centerLng = lngs.reduce((a,b) => a+b, 0) / lngs.length;
+    map.setView([centerLat, centerLng], 10);
   }
 }
 
 function addMarker(farm, emoji, idx) {
   const adresse = farm.adressesOperateurs?.[0] || {};
-  const lat = farm.lat || adresse.lat || (48.3 + Math.random() * 0.6);
-  const lng = farm.lng || adresse.lng || (1.9 + Math.random() * 0.8);
-  const nom = farm.denominationCourante || farm.nom || 'Ferme Bio';
+  // CORRECTION : l'API renvoie "long" et non "lng"
+  const lat = adresse.lat;
+  const lng = adresse.long;
+  if (!lat || !lng) return; // Ne pas placer de marqueur sans coordonnées
 
+  const nom = farm.denominationCourante || farm.raisonSociale || 'Opérateur Bio';
   const icon = L.divIcon({
     className: '',
     html: `<div class="custom-marker" id="marker-${farm.id || idx}">${emoji} ${nom.split(' ').slice(0,2).join(' ')}</div>`,
@@ -492,17 +454,15 @@ function addMarker(farm, emoji, idx) {
       <div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:600;margin-bottom:4px;">${emoji} ${nom}</div>
       <div style="font-size:12px;color:#888;margin-bottom:8px;">📍 ${adresse.ville || ''} ${adresse.codePostal || ''}</div>
       <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;">
-        ${(farm.productions||[]).slice(0,3).map(p => `<span style="background:#e8f5e9;color:#2d6a4f;padding:2px 8px;border-radius:10px;font-size:11px;">${p.libelle||''}</span>`).join('')}
+        ${(farm.productions||[]).slice(0,3).map(p => `<span style="background:#e8f5e9;color:#2d6a4f;padding:2px 8px;border-radius:10px;font-size:11px;">${p.nom||p.libelle||''}</span>`).join('')}
       </div>
-      <button onclick="openModalById(${farm.id || idx})" style="width:100%;background:#2d6a4f;color:white;border:none;border-radius:8px;padding:8px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;">Voir la fiche →</button>
+      <button onclick="openModalById(${farm.id || idx})" style="width:100%;background:#2d6a4f;color:white;border:none;border-radius:8px;padding:8px;font-size:13px;cursor:pointer;">Voir la fiche →</button>
     </div>
   `, { maxWidth: 260 });
 
   marker.on('click', () => selectCard(farm.id || idx));
   markers.push(marker);
   farm._markerIdx = markers.length - 1;
-  farm._lat = lat;
-  farm._lng = lng;
   farm._idx = idx;
   farm._emoji = emoji;
 }
@@ -514,33 +474,35 @@ function selectCard(id) {
 }
 
 function openModalById(idOrIdx) {
-  const f = allFarms.find(x => (x.id || x._idx) === idOrIdx) || allFarms[idOrIdx];
+  const f = allFarms.find(x => x.id === idOrIdx) || allFarms[idOrIdx];
   if (f) openModal(f, f._emoji || '🌿', f._idx || 0);
 }
 
 function openModal(f, emoji, idx) {
   currentModal = f;
-  const nom = f.denominationCourante || f.raisonSociale || f.nom || 'Ferme Bio';
+  const nom = f.denominationCourante || f.raisonSociale || 'Opérateur Bio';
   const adresse = f.adressesOperateurs?.[0] || {};
+  const certif = f.certificats?.[0] || {};
 
   document.getElementById('modal-emoji').textContent = emoji;
   document.getElementById('modal-header').style.background = getGradient(idx);
   document.getElementById('modal-title').textContent = nom;
   document.getElementById('modal-meta').innerHTML = `
-    <span>📍 ${adresse.adresse || ''}, ${adresse.codePostal || ''} ${adresse.ville || ''}</span>
+    <span>📍 ${adresse.lieu || ''}, ${adresse.codePostal || ''} ${adresse.ville || ''}</span>
     <span>🆔 N° BIO: ${f.numeroBio || '—'}</span>
     ${f.siret ? `<span>SIRET: ${f.siret}</span>` : ''}
   `;
 
   const prods = f.productions || [];
   document.getElementById('modal-products').innerHTML = prods.length
-    ? prods.map(p => `<span class="tag tag-vert" style="font-size:13px;padding:6px 12px;">${getEmoji([p])} ${p.libelle || p.nom || ''}</span>`).join('')
+    ? prods.map(p => `<span class="tag tag-vert" style="font-size:13px;padding:6px 12px;">${getEmoji([p])} ${p.nom || p.libelle || ''}</span>`).join('')
     : '<span style="color:#888;font-size:13px;">Non renseigné</span>';
 
+  const tel = f.telephoneNational || f.telephone || '';
   const contact = [
-    f.telephone ? `📞 ${f.telephone}` : '',
+    tel ? `📞 ${tel}` : '',
     f.email ? `✉️ ${f.email}` : '',
-    f.siteWeb ? `🌐 <a href="${f.siteWeb}" target="_blank">${f.siteWeb}</a>` : '',
+    (f.siteWebs||[]).length > 0 ? `🌐 <a href="${f.siteWebs[0].url}" target="_blank">${f.siteWebs[0].url}</a>` : '',
   ].filter(Boolean);
   document.getElementById('modal-contact').innerHTML = contact.length
     ? contact.map(c => `<div style="font-size:13px;margin-bottom:4px;">${c}</div>`).join('')
@@ -549,14 +511,15 @@ function openModal(f, emoji, idx) {
   document.getElementById('modal-certif').innerHTML = `
     <div style="font-size:13px;">
       <span style="background:#e8f5e9;color:#2d6a4f;padding:3px 10px;border-radius:10px;font-weight:500;">🏅 Certifié Agriculture Biologique</span>
-      ${f.certifOrganisme ? `<span style="margin-left:8px;color:#888;">Organisme : ${f.certifOrganisme}</span>` : ''}
+      ${certif.organisme ? `<span style="margin-left:8px;color:#888;">Organisme : ${certif.organisme}</span>` : ''}
+      ${certif.etatCertification ? `<span style="margin-left:8px;color:#888;">État : ${certif.etatCertification}</span>` : ''}
     </div>
   `;
 
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(nom + ' ' + (adresse.ville || ''))}`;
   document.getElementById('modal-maps-btn').onclick = () => window.open(mapsUrl, '_blank');
 
-  const certifUrl = f.certificatUrl || `https://annuaire.agencebio.org/operateur/${f.numeroBio}`;
+  const certifUrl = certif.url || `https://annuaire.agencebio.org/fiche/${f.numeroBio}`;
   document.getElementById('modal-certif-btn').onclick = () => window.open(certifUrl, '_blank');
 
   document.getElementById('modal-overlay').classList.add('open');
@@ -570,27 +533,13 @@ function closeModalDirect() {
   document.getElementById('modal-overlay').classList.remove('open');
 }
 
-// ========== FILTRES ==========
 function toggleFilter(btn) {
   btn.classList.toggle('active');
 }
 
 function sortFarms(value) {
-  if (value === 'nom') allFarms.sort((a,b) => (a.denominationCourante||'').localeCompare(b.denominationCourante||''));
+  if (value === 'nom') allFarms.sort((a,b) => (a.denominationCourante||a.raisonSociale||'').localeCompare(b.denominationCourante||b.raisonSociale||''));
   renderFarms(allFarms);
-}
-
-// ========== UTILS ==========
-function getGradient(idx) {
-  const gradients = [
-    'linear-gradient(135deg,#d8f3dc,#95d5b2)',
-    'linear-gradient(135deg,#fde8c8,#f4a738)',
-    'linear-gradient(135deg,#fce4ec,#e57373)',
-    'linear-gradient(135deg,#e3f2fd,#64b5f6)',
-    'linear-gradient(135deg,#f3e5f5,#ce93d8)',
-    'linear-gradient(135deg,#e0f2f1,#4db6ac)',
-  ];
-  return gradients[idx % gradients.length];
 }
 
 function showToast(msg) {
@@ -600,29 +549,28 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 2500);
 }
 
-
-// ========== RECHERCHE PAR VILLE ==========
 const depts = {
   'paris':'75','essonne':'91','yvelines':'78','seine-et-marne':'77',
   'hauts-de-seine':'92','seine-saint-denis':'93','val-de-marne':'94',
-  'val-d'oise':'95','lyon':'69','rhone':'69','marseille':'13',
+  'val-d\'oise':'95','lyon':'69','rhone':'69','marseille':'13',
   'bordeaux':'33','toulouse':'31','nantes':'44','lille':'59',
   'strasbourg':'67','montpellier':'34','nice':'06','rennes':'35',
   'milly':'91','corbeil':'91','etampes':'91','evry':'91','dourdan':'91',
   'arpajon':'91','breuillet':'91','gif':'91','palaiseau':'91','orsay':'91'
 };
+
 function getDepartement(v) {
-  const val = v.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').trim();
-  const m = val.match(/(\d{2,3})/);
+  const val = v.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+  const m = val.match(/(\d{2,3})/);
   if (m) return m[1];
   for (const [k,c] of Object.entries(depts)) { if (val.includes(k)) return c; }
   return '91';
 }
+
 document.getElementById('search-input').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') loadFarms();
 });
 
-// ========== DÉMARRAGE ==========
 loadFarms();
 </script>
 </body>
