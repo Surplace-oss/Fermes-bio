@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fermes Bio — Trouvez un producteur près de chez vous</title>
+<title>Bio Sur Place — Trouvez un producteur près de chez vous</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -112,7 +112,7 @@
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
       </svg>
-      <input type="text" id="search-input" placeholder="Ville ou code postal..." value="Corbeil-Essonnes" />
+      <input type="text" id="search-input" placeholder="Ville ou code postal..." value="" />
     </div>
     <button class="search-btn" onclick="loadFarms()">Rechercher</button>
   </div>
@@ -199,6 +199,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 let allFarms = [];
 let markers = [];
 let currentModal = null;
+let searchCircle = null;
 
 const productionEmojis = {
   'légumes': '🥕', 'legumes': '🥕', 'maraîchage': '🥕', 'maraichage': '🥕',
@@ -261,8 +262,11 @@ async function loadFarms() {
     // Centrer la carte sur la ville
     map.setView([coords.lat, coords.lng], rayon <= 20 ? 12 : rayon <= 50 ? 10 : 8);
 
-    // Cercle de rayon
-    L.circle([coords.lat, coords.lng], {
+    // Supprimer l'ancien cercle s'il existe
+    if (searchCircle) { map.removeLayer(searchCircle); searchCircle = null; }
+
+    // Dessiner le nouveau cercle
+    searchCircle = L.circle([coords.lat, coords.lng], {
       radius: rayon * 1000,
       color: '#2d6a4f', fillColor: '#d8f3dc', fillOpacity: 0.1, weight: 2
     }).addTo(map);
