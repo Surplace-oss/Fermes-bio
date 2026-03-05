@@ -356,33 +356,7 @@ footer {
   </div>
 </section>
 
-<!-- TÉMOIGNAGES -->
-<section class="temoignages">
-  <h2>Ils ont déjà donné</h2>
-  <div class="temoignages-grid">
-    <div class="temoignage">
-      <div class="temoignage-quote">"J'ai découvert une ferme incroyable en vacances en Bretagne grâce à Bio Sur Place. Donner était une évidence."</div>
-      <div class="temoignage-auteur">
-        <div class="temoignage-avatar">😊</div>
-        <div><div class="temoignage-nom">Claire M.</div><div class="temoignage-lieu">Paris · Don de 20€</div></div>
-      </div>
-    </div>
-    <div class="temoignage">
-      <div class="temoignage-quote">"Un projet qui a du sens. On a besoin de plateformes comme celle-ci pour soutenir nos agriculteurs bio."</div>
-      <div class="temoignage-auteur">
-        <div class="temoignage-avatar">🙂</div>
-        <div><div class="temoignage-nom">Thomas R.</div><div class="temoignage-lieu">Lyon · Don mensuel 10€</div></div>
-      </div>
-    </div>
-    <div class="temoignage">
-      <div class="temoignage-quote">"En tant que productrice moi-même, je soutiens ce projet qui nous donne une vraie visibilité nationale."</div>
-      <div class="temoignage-auteur">
-        <div class="temoignage-avatar">👩‍🌾</div>
-        <div><div class="temoignage-nom">Sylvie B.</div><div class="temoignage-lieu">Dordogne · Agricultrice bio</div></div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <footer>
   <div class="footer-logo"><span style="display:flex;flex-direction:column;align-items:center;line-height:1;">
@@ -392,12 +366,12 @@ footer {
   <div class="footer-links">
     <a href="landing.html">Accueil</a>
     <a href="index.html">La carte</a>
-    <a href="mailto:contact@biosurplace.fr">Contact</a>
+    <a href="/cdn-cgi/l/email-protection#197a76776d787a6d597b70766a6c6b6975787a7c377f6b">Contact</a>
   </div>
   <div style="font-size:13px;">© 2025 Bio Sur Place</div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 let montantSelectionne = 5;
 let frequence = 'unique';
 
@@ -457,12 +431,4 @@ const barObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       entry.target.querySelectorAll('.bar-fill').forEach(bar => {
         bar.style.width = bar.dataset.target + '%';
-      });
-    }
-  });
-}, { threshold: 0.3 });
-
-document.querySelectorAll('.repartition-inner').forEach(el => barObserver.observe(el));
-</script>
-</body>
-</html>
+      })
