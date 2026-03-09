@@ -25,6 +25,10 @@ nav {
 }
 .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--vert); text-decoration: none; }
 .nav-logo em { color: var(--terre); font-style: italic; }
+.nav-link { text-decoration: none; color: var(--vert); font-size: 14px; font-weight: 500; padding: 8px 16px; border-radius: 100px; transition: all 0.2s; opacity: 0.75; }
+.nav-link:hover, .nav-link.active { opacity: 1; background: var(--vert-pale); }
+.nav-cta { background: var(--vert) !important; color: white !important; opacity: 1 !important; }
+.nav-cta:hover { background: var(--vert-mid) !important; }
 .nav-back { color: var(--vert); text-decoration: none; font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 6px; }
 .nav-back:hover { text-decoration: underline; }
 
@@ -219,11 +223,13 @@ footer {
 <body>
 
 <nav>
-  <a href="landing.html" class="nav-logo"><span style="display:flex;flex-direction:column;align-items:center;line-height:1;">
-  <span style="font-size:1.4em;font-weight:700;color:var(--vert);letter-spacing:-1px;">BIO</span>
-  <span style="font-size:0.65em;font-style:italic;color:var(--terre);letter-spacing:1px;margin-top:-2px;">Sur Place</span>
-</span></a>
-  <a href="landing.html" class="nav-back">← Retour</a>
+  <a href="index.html"><img src="logo-biosurplace.svg" alt="surplace.bio" style="height:38px;"></a>
+  <div style="display:flex;gap:4px;align-items:center;">
+    <a href="index.html" class="nav-link">Accueil</a>
+    <a href="carte.html" class="nav-link">🗺️ Carte</a>
+    <a href="dons.html" class="nav-link active">💚 Dons</a>
+    <a href="ma-ferme.html" class="nav-link nav-cta">+ Ma ferme</a>
+  </div>
 </nav>
 
 <!-- HERO -->
