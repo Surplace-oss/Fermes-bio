@@ -3,450 +3,166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>surplace.bio — Trouvez un producteur bio près de chez vous</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
-<title>Bio Sur Place — Trouvez un producteur près de chez vous</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --vert: #2d6a4f; --vert-clair: #52b788; --vert-pale: #d8f3dc;
-    --terre: #8b5e3c; --creme: #faf8f3; --gris: #f0ede6;
-    --gris-texte: #7a7067; --noir: #1a1a18; --blanc: #ffffff;
-    --shadow: 0 2px 16px rgba(0,0,0,0.08); --radius: 14px;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--creme); color: var(--noir); height: 100vh; overflow: hidden; }
-
-  header {
-    height: 60px; background: var(--blanc); border-bottom: 1px solid #e8e3da;
-    display: flex; align-items: center; padding: 0 20px; gap: 16px;
-    z-index: 1000; position: relative; box-shadow: 0 1px 8px rgba(0,0,0,0.05);
-  }
-  .logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--vert); white-space: nowrap; display: flex; align-items: center; gap: 8px; }
-  .logo span { color: var(--terre); }
-  .search-wrap { display: flex; gap: 8px; flex: 1; max-width: 500px; }
-  .search-bar { flex: 1; display: flex; align-items: center; background: var(--gris); border-radius: 30px; padding: 0 14px; gap: 8px; border: 1.5px solid transparent; transition: border-color 0.2s; }
-  .search-bar:focus-within { border-color: var(--vert-clair); }
-  .search-bar input { border: none; background: transparent; font-family: 'DM Sans', sans-serif; font-size: 14px; width: 100%; padding: 9px 0; outline: none; color: var(--noir); }
-  .search-btn { background: var(--vert); color: white; border: none; border-radius: 30px; padding: 9px 18px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; white-space: nowrap; }
-  .search-btn:hover { background: #245a42; }
-  .header-right { margin-left: auto; display: flex; gap: 10px; align-items: center; }
-  .btn-outline { border: 1.5px solid var(--vert); color: var(--vert); background: transparent; border-radius: 30px; padding: 6px 14px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap; }
-
-  .rayon-wrap { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--gris-texte); }
-  .rayon-wrap select { font-family: 'DM Sans', sans-serif; font-size: 13px; border: 1.5px solid #ddd8ce; border-radius: 20px; padding: 4px 10px; background: white; cursor: pointer; outline: none; color: var(--noir); }
-
-  .filters-bar { height: 48px; background: var(--blanc); border-bottom: 1px solid #e8e3da; display: flex; align-items: center; padding: 0 20px; gap: 8px; overflow-x: auto; position: relative; z-index: 999; }
-  .filters-bar::-webkit-scrollbar { display: none; }
-  .filter-chip { display: flex; align-items: center; gap: 5px; padding: 5px 13px; border-radius: 20px; border: 1.5px solid #ddd8ce; background: var(--blanc); font-size: 12px; font-weight: 500; cursor: pointer; white-space: nowrap; transition: all 0.2s; color: var(--noir); }
-  .filter-chip:hover { border-color: var(--vert-clair); background: var(--vert-pale); }
-  .filter-chip.active { border-color: var(--vert); background: var(--vert-pale); color: var(--vert); }
-
-  .main-layout { display: flex; height: calc(100vh - 108px); }
-  .list-panel { width: 440px; flex-shrink: 0; overflow-y: auto; background: var(--creme); padding: 16px 14px; }
-  .list-panel::-webkit-scrollbar { width: 4px; }
-  .list-panel::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
-  .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; padding: 0 2px; }
-  .results-count { font-size: 13px; color: var(--gris-texte); }
-  .results-count strong { color: var(--noir); }
-  .sort-select { font-family: 'DM Sans', sans-serif; font-size: 12px; border: 1.5px solid #ddd8ce; border-radius: 8px; padding: 4px 8px; background: white; cursor: pointer; outline: none; }
-
-  .loading-state { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 20px; gap: 16px; color: var(--gris-texte); text-align: center; }
-  .spinner { width: 40px; height: 40px; border: 3px solid var(--vert-pale); border-top-color: var(--vert); border-radius: 50%; animation: spin 0.8s linear infinite; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  .farm-card { background: var(--blanc); border-radius: var(--radius); margin-bottom: 10px; overflow: hidden; box-shadow: var(--shadow); cursor: pointer; transition: all 0.2s; border: 2px solid transparent; display: flex; }
-  .farm-card:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
-  .farm-card.selected { border-color: var(--vert-clair); }
-  .card-thumb { width: 90px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 36px; }
-  .card-body { padding: 12px 14px; flex: 1; min-width: 0; }
-  .card-name { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .card-location { font-size: 12px; color: var(--gris-texte); margin-bottom: 8px; }
-  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
-  .tag { font-size: 11px; padding: 2px 8px; border-radius: 20px; font-weight: 500; }
-  .tag-vert { background: #e8f5e9; color: #2d6a4f; }
-  .tag-orange { background: #fff3e0; color: #e65100; }
-  .tag-bleu { background: #e3f2fd; color: #1565c0; }
-  .tag-rouge { background: #fce4ec; color: #c62828; }
-  .tag-gris { background: #f5f5f5; color: #555; }
-  .card-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 8px; border-top: 1px solid var(--gris); font-size: 12px; }
-  .distance-badge { background: #e8f5e9; color: #2d6a4f; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
-
-  .map-panel { flex: 1; position: relative; }
-  #map { width: 100%; height: 100%; }
-  .custom-marker { background: var(--vert); color: white; padding: 4px 10px; border-radius: 16px; font-size: 12px; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,0.3); cursor: pointer; }
-
-  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 2000; display: none; align-items: center; justify-content: center; }
-  .modal-overlay.open { display: flex; }
-  .modal { background: white; border-radius: 20px; width: 600px; max-height: 85vh; overflow-y: auto; animation: slideUp 0.3s ease; }
-  @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-  .modal-header { width: 100%; height: 180px; display: flex; align-items: center; justify-content: center; font-size: 70px; border-radius: 20px 20px 0 0; position: relative; }
-  .modal-close { position: absolute; top: 12px; right: 12px; width: 32px; height: 32px; background: rgba(255,255,255,0.9); border: none; border-radius: 50%; font-size: 16px; cursor: pointer; }
-  .modal-body { padding: 20px 24px; }
-  .modal-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin-bottom: 4px; }
-  .modal-meta { font-size: 13px; color: var(--gris-texte); margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 12px; }
-  .modal-section { margin-bottom: 20px; }
-  .modal-section-title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--gris-texte); margin-bottom: 8px; }
-  .products-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
-  .modal-actions { display: flex; gap: 10px; padding-top: 4px; }
-  .btn-primary { flex: 1; background: var(--vert); color: white; border: none; border-radius: 10px; padding: 12px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; }
-  .btn-primary:hover { background: #245a42; }
-  .btn-secondary { flex: 1; background: var(--gris); color: var(--noir); border: none; border-radius: 10px; padding: 12px; font-family: 'DM Sans', sans-serif; font-size: 14px; cursor: pointer; }
-
-  .api-badge { display: inline-flex; align-items: center; gap: 6px; background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 20px; padding: 4px 12px; font-size: 11px; color: #2d6a4f; font-weight: 500; }
-  .api-dot { width: 6px; height: 6px; background: #4caf50; border-radius: 50%; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
-
-  .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--noir); color: white; padding: 10px 20px; border-radius: 30px; font-size: 13px; font-weight: 500; z-index: 3000; transition: transform 0.3s ease; }
-  .toast.show { transform: translateX(-50%) translateY(0); }
-  .leaflet-popup-content-wrapper { border-radius: 12px !important; }
-  .leaflet-popup-content { margin: 14px 16px !important; font-family: 'DM Sans', sans-serif; }
+:root { --vert:#1a3d2b;--vert-mid:#2d6a4f;--vert-clair:#52b788;--vert-pale:#d8f3dc;--terre:#8b5e3c;--terre-clair:#c49a6c;--creme:#f7f3ec;--creme-dark:#ede8df;--noir:#1a1a14;--blanc:#fefefe; }
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Instrument Sans',sans-serif;background:var(--creme);color:var(--noir);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;background:rgba(247,243,236,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.07);}
+.nav-link{text-decoration:none;color:var(--vert);font-size:14px;font-weight:500;padding:8px 16px;border-radius:100px;transition:all 0.2s;opacity:0.75;}
+.nav-link:hover,.nav-link.active{opacity:1;background:var(--vert-pale);}
+.nav-cta{background:var(--vert)!important;color:white!important;opacity:1!important;}
+.nav-cta:hover{background:var(--vert-mid)!important;}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:64px;}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 60px;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--vert-pale);color:var(--vert-mid);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:32px;width:fit-content;}
+.hero-tag::before{content:'';width:6px;height:6px;background:var(--vert-clair);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(1.2)}}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,5.5vw,82px);font-weight:300;line-height:1.05;color:var(--vert);margin-bottom:28px;letter-spacing:-1px;}
+.hero h1 em{font-style:italic;color:var(--terre);}
+.hero-sub{font-size:17px;line-height:1.7;color:#4a4a3a;max-width:460px;margin-bottom:48px;}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-primary{background:var(--vert);color:var(--blanc);border:none;border-radius:100px;padding:16px 36px;font-family:'Instrument Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.25s;}
+.btn-primary:hover{background:var(--vert-mid);transform:translateY(-2px);box-shadow:0 12px 32px rgba(26,61,43,0.25);}
+.btn-outline{background:transparent;color:var(--vert);border:1.5px solid var(--vert);border-radius:100px;padding:16px 36px;font-family:'Instrument Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.25s;}
+.btn-outline:hover{background:var(--vert);color:var(--blanc);transform:translateY(-2px);}
+.hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:40px;border-top:1px solid var(--creme-dark);}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;color:var(--vert);line-height:1;}
+.stat-label{font-size:13px;color:#888;margin-top:4px;}
+.hero-right{background:var(--vert);position:relative;overflow:hidden;}
+.hero-visual{position:absolute;inset:0;background:linear-gradient(160deg,#1a3d2b 0%,#2d6a4f 50%,#52b788 100%);}
+.hero-manifeste{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+.hero-manifeste-inner{display:flex;flex-direction:column;gap:20px;padding:40px;}
+.hml{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);border-radius:100px;padding:16px 32px;color:white;font-size:16px;font-weight:500;animation:float 6s ease-in-out infinite;}
+.hml:nth-child(2){animation-delay:-1.2s;margin-left:24px;}
+.hml:nth-child(3){animation-delay:-2.4s;margin-left:48px;}
+.hml:nth-child(4){animation-delay:-3.6s;margin-left:24px;}
+.hml:nth-child(5){animation-delay:-4.8s;}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.section-label{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--vert-clair);margin-bottom:16px;}
+.manifeste{padding:100px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;background:var(--blanc);}
+.manifeste-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,52px);font-weight:300;line-height:1.15;color:var(--vert);margin-bottom:28px;}
+.manifeste-text h2 em{font-style:italic;color:var(--terre);}
+.manifeste-text p{font-size:16px;line-height:1.8;color:#555;margin-bottom:20px;}
+.manifeste-right{display:flex;flex-direction:column;gap:24px;}
+.manifeste-card{background:var(--creme);border-radius:16px;padding:28px;border-left:3px solid var(--vert-clair);}
+.manifeste-card h3{font-size:15px;font-weight:600;margin-bottom:8px;color:var(--vert);}
+.manifeste-card p{font-size:14px;line-height:1.7;color:#666;}
+.how{padding:100px 60px;background:var(--creme);}
+.how h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,52px);font-weight:300;color:var(--vert);margin-bottom:64px;max-width:500px;}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.how-step{background:var(--blanc);border-radius:20px;padding:36px 32px;position:relative;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;}
+.how-step:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,0.1);}
+.how-num{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;color:var(--vert-pale);position:absolute;top:16px;right:24px;line-height:1;}
+.how-icon{font-size:36px;margin-bottom:20px;}
+.how-step h3{font-size:18px;font-weight:600;color:var(--vert);margin-bottom:12px;}
+.how-step p{font-size:14px;line-height:1.7;color:#666;}
+.don-cta{padding:100px 60px;background:linear-gradient(135deg,var(--terre) 0%,#a0724a 100%);color:white;text-align:center;}
+.don-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,58px);font-weight:300;margin-bottom:20px;line-height:1.1;}
+.don-cta p{font-size:17px;opacity:0.85;max-width:500px;margin:0 auto 40px;line-height:1.7;}
+.btn-don{background:white;color:var(--terre);border:none;border-radius:100px;padding:18px 48px;font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.25s;margin:0 8px;}
+.btn-don:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,0.2);}
+.btn-don-outline{background:transparent;color:white;border:1.5px solid rgba(255,255,255,0.6);border-radius:100px;padding:18px 48px;font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.25s;margin:0 8px;}
+.btn-don-outline:hover{border-color:white;background:rgba(255,255,255,0.1);}
+footer{background:var(--noir);color:rgba(255,255,255,0.5);padding:48px 60px;display:flex;justify-content:space-between;align-items:center;}
+.footer-links{display:flex;gap:32px;}
+.footer-links a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color 0.2s;}
+.footer-links a:hover{color:white;}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo"><img src="logo-biosurplace.svg" alt="surplace.bio" style="height: 40px;"></div>
-  <div class="search-wrap">
-    <div class="search-bar">
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-      </svg>
-      <input type="text" id="search-input" placeholder="Ville ou code postal..." value="" />
+<nav>
+  <a href="index.html"><img src="logo-biosurplace.svg" alt="surplace.bio" style="height:38px;"></a>
+  <div style="display:flex;gap:4px;align-items:center;">
+    <a href="index.html" class="nav-link active">Accueil</a>
+    <a href="carte.html" class="nav-link">🗺️ Carte</a>
+    <a href="dons.html" class="nav-link">💚 Dons</a>
+    <a href="ma-ferme.html" class="nav-link nav-cta">+ Ma ferme</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">🌱 Plateforme en construction — rejoignez l'aventure</div>
+    <h1>La <em>terre</em> a un visage.<br>Découvrez-le.</h1>
+    <p class="hero-sub">surplace.bio connecte les citoyens avec les producteurs bio qui vendent directement à la ferme. Derrière chaque exploitation, il y a une histoire. On vous la raconte.</p>
+    <div class="hero-actions">
+      <a href="carte.html" class="btn-primary">🗺️ Explorer les fermes</a>
+      <a href="ma-ferme.html" class="btn-outline">Je suis agriculteur·rice →</a>
     </div>
-    <button class="search-btn" onclick="loadFarms()">Rechercher</button>
-  </div>
-  <div class="rayon-wrap">
-    📍 Rayon
-    <select id="rayon-select">
-      <option value="20">20 km</option>
-      <option value="50" selected>50 km</option>
-      <option value="100">100 km</option>
-    </select>
-  </div>
-  <div class="header-right">
-    <div class="api-badge"><div class="api-dot"></div> Données Agence Bio officielles</div>
-    <button class="btn-outline">➕ Ma ferme</button>
-  </div>
-</header>
-
-<div class="filters-bar">
-  <button class="filter-chip active" data-filter="legumes" onclick="toggleFilter(this)">🥕 Légumes</button>
-  <button class="filter-chip" data-filter="viande" onclick="toggleFilter(this)">🥩 Viande</button>
-  <button class="filter-chip" data-filter="fromage" onclick="toggleFilter(this)">🧀 Fromage</button>
-  <button class="filter-chip" data-filter="fruits" onclick="toggleFilter(this)">🍎 Fruits</button>
-  <button class="filter-chip" data-filter="miel" onclick="toggleFilter(this)">🍯 Miel</button>
-  <button class="filter-chip" data-filter="vin" onclick="toggleFilter(this)">🍷 Vin</button>
-  <button class="filter-chip" data-filter="cereales" onclick="toggleFilter(this)">🌾 Céréales</button>
-  <button class="filter-chip" data-filter="oeufs" onclick="toggleFilter(this)">🥚 Œufs</button>
-</div>
-
-<div class="main-layout">
-  <div class="list-panel">
-    <div class="results-header">
-      <div class="results-count" id="results-count"></div>
-      <select class="sort-select" onchange="sortFarms(this.value)">
-        <option value="distance">Plus proche</option>
-        <option value="nom">Nom A-Z</option>
-      </select>
-    </div>
-    <div id="farms-list">
-
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-num">4 800+</div><div class="stat-label">fermes bio en France<br>avec vente directe</div></div>
+      <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">données officielles<br>Agence Bio</div></div>
+      <div class="stat-item"><div class="stat-num">0€</div><div class="stat-label">pour commencer,<br>gratuit en 2025</div></div>
     </div>
   </div>
-  <div class="map-panel"><div id="map"></div></div>
-</div>
-
-<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
-  <div class="modal">
-    <div class="modal-header" id="modal-header">
-      <button class="modal-close" onclick="closeModalDirect()">✕</button>
-      <span id="modal-emoji">🌿</span>
-    </div>
-    <div class="modal-body">
-      <div class="modal-title" id="modal-title"></div>
-      <div class="modal-meta" id="modal-meta"></div>
-      <div class="modal-section">
-        <div class="modal-section-title">Productions certifiées bio</div>
-        <div class="products-wrap" id="modal-products"></div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">Contact & Accès</div>
-        <div id="modal-contact"></div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">Certification</div>
-        <div id="modal-certif"></div>
-      </div>
-      <div class="modal-actions">
-        <button class="btn-primary" id="modal-maps-btn">📍 Itinéraire</button>
-        <button class="btn-secondary" onclick="showToast('❤️ Ajouté aux favoris !')">♡ Favoris</button>
-        <button class="btn-secondary" id="modal-certif-btn">📄 Certificat</button>
+  <div class="hero-right">
+    <div class="hero-visual"></div>
+    <div class="hero-manifeste">
+      <div class="hero-manifeste-inner">
+        <div class="hml">🌱 Producteurs certifiés Agence Bio</div>
+        <div class="hml">📍 Vente directe à la ferme</div>
+        <div class="hml">🇫🇷 Partout en France</div>
+        <div class="hml">🤝 Portraits authentiques</div>
+        <div class="hml">💚 Fonds de solidarité agricole</div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="toast" id="toast"></div>
+<section class="manifeste">
+  <div class="manifeste-text reveal">
+    <div class="section-label">Notre conviction</div>
+    <h2>L'agriculture bio mérite <em>d'être vue</em></h2>
+    <p>En France, des milliers de fermes biologiques certifiées vendent directement à la ferme. La plupart sont invisibles aux yeux du grand public.</p>
+    <p>surplace.bio donne un visage humain à ces exploitations. Pas une liste froide de données — de vraies histoires, de vrais portraits, une vraie envie d'aller acheter.</p>
+    <p>Et si chaque Français pouvait trouver, pendant ses vacances ou sa vie quotidienne, la ferme bio la plus proche qui vend directement ce qu'elle produit ?</p>
+  </div>
+  <div class="manifeste-right reveal">
+    <div class="manifeste-card"><h3>🌍 Un enjeu de société</h3><p>Le bio en vente directe est le circuit le plus vertueux : zéro intermédiaire, juste prix pour le producteur, fraîcheur maximale pour l'acheteur.</p></div>
+    <div class="manifeste-card"><h3>📸 Le portrait qui fait la différence</h3><p>Une photo du producteur, quelques mots sur son histoire — et soudain le légume devient une rencontre. C'est ce qui donne envie d'aller à la ferme.</p></div>
+    <div class="manifeste-card"><h3>🤝 Une communauté solidaire</h3><p>À terme, les fonds collectés alimentent une caisse de solidarité pour les fermes en difficulté, et encouragent les conversions au bio.</p></div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="section-label reveal">Pour les visiteurs</div>
+  <h2 class="reveal">Simple comme<br>un marché du dimanche</h2>
+  <div class="how-grid">
+    <div class="how-step reveal"><div class="how-num">1</div><div class="how-icon">📍</div><h3>Je tape ma ville</h3><p>En vacances ou chez moi, je cherche les fermes bio dans un rayon de 20, 50 ou 100 km autour de moi.</p></div>
+    <div class="how-step reveal"><div class="how-num">2</div><div class="how-icon">👤</div><h3>Je découvre le producteur</h3><p>Photo, portrait, produits, histoire. Je sais exactement à qui j'achète et ce que je vais trouver à la ferme.</p></div>
+    <div class="how-step reveal"><div class="how-num">3</div><div class="how-icon">🚗</div><h3>Je prends la route</h3><p>Un clic sur l'itinéraire et je file directement à la ferme acheter des produits frais, locaux et biologiques certifiés.</p></div>
+  </div>
+</section>
+
+<section class="don-cta">
+  <h2>Vous croyez au projet ?<br>Soutenez-le.</h2>
+  <p>Chaque don contribue à faire grandir la plateforme et à alimenter le futur fonds de solidarité agricole.</p>
+  <a href="dons.html" class="btn-don">💚 Faire un don</a>
+  <a href="carte.html" class="btn-don-outline">Explorer les fermes</a>
+</section>
+
+<footer>
+  <img src="logo-biosurplace.svg" alt="surplace.bio" style="height:32px;filter:brightness(10);">
+  <div class="footer-links">
+    <a href="carte.html">La carte</a>
+    <a href="dons.html">Dons</a>
+    <a href="ma-ferme.html">Ma ferme</a>
+    <a href="mailto:contact.biosurplace@outlook.com">Contact</a>
+  </div>
+  <div style="font-size:13px;">Données officielles © Agence Bio</div>
+</footer>
 
 <script>
-const map = L.map('map', { zoomControl: true }).setView([48.47, 2.45], 10);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a> | Données: <a href="https://www.agencebio.org">Agence Bio</a>',
-  maxZoom: 18
-}).addTo(map);
-
-let allFarms = [];
-let markers = [];
-let currentModal = null;
-let searchCircle = null;
-
-const productionEmojis = {
-  'légumes': '🥕', 'legumes': '🥕', 'maraîchage': '🥕', 'maraichage': '🥕',
-  'fruits': '🍎', 'arboriculture': '🍎', 'pommes': '🍎',
-  'céréales': '🌾', 'cereales': '🌾', 'grandes cultures': '🌾', 'blé': '🌾',
-  'bovins': '🐄', 'bovin': '🐄', 'lait': '🥛',
-  'ovins': '🐑', 'ovin': '🐑', 'brebis': '🐑',
-  'caprins': '🐐', 'caprin': '🐐',
-  'porcins': '🐷', 'porcs': '🐷',
-  'volailles': '🐔', 'poulets': '🐔',
-  'apiculture': '🍯', 'miel': '🍯',
-  'vigne': '🍷', 'viticulture': '🍷', 'vin': '🍷', 'raisin': '🍷',
-  'fromage': '🧀', 'produits laitiers': '🧀',
-  'oeufs': '🥚', 'œufs': '🥚',
-  'plantes': '🌿', 'aromates': '🌿',
-  'champignons': '🍄', 'pain': '🍞',
-};
-
-function getEmoji(productions) {
-  if (!productions || productions.length === 0) return '🌿';
-  const firstProd = (productions[0]?.nom || productions[0]?.libelle || '').toLowerCase();
-  for (const [key, emoji] of Object.entries(productionEmojis)) {
-    if (firstProd.includes(key)) return emoji;
-  }
-  return '🌱';
-}
-
-function getTagColor(i) {
-  return ['tag-vert','tag-orange','tag-bleu','tag-rouge','tag-gris'][i % 5];
-}
-
-function getGradient(idx) {
-  return ['linear-gradient(135deg,#d8f3dc,#95d5b2)','linear-gradient(135deg,#fde8c8,#f4a738)','linear-gradient(135deg,#fce4ec,#e57373)','linear-gradient(135deg,#e3f2fd,#64b5f6)','linear-gradient(135deg,#f3e5f5,#ce93d8)','linear-gradient(135deg,#e0f2f1,#4db6ac)'][idx % 6];
-}
-
-// Géocoder une ville via l'API Nominatim (OpenStreetMap, gratuite)
-async function geocodeVille(ville) {
-  const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(ville + ', France')}&format=json&limit=1`;
-  const response = await fetch(url, { headers: { 'Accept-Language': 'fr' } });
-  const data = await response.json();
-  if (data.length === 0) throw new Error('Ville non trouvée');
-  return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon), nom: data[0].display_name };
-}
-
-async function loadFarms() {
-  const list = document.getElementById('farms-list');
-  list.innerHTML = '<div class="loading-state"><div class="spinner"></div><div>Recherche des fermes bio à proximité...</div></div>';
-  document.getElementById('results-count').textContent = 'Chargement...';
-  markers.forEach(m => map.removeLayer(m));
-  markers = [];
-
-  try {
-    const ville = document.getElementById('search-input').value.trim();
-    const rayon = document.getElementById('rayon-select').value;
-
-    // 1. Géocoder la ville
-    const coords = await geocodeVille(ville);
-    showToast(`📍 ${coords.nom.split(',')[0]} trouvée`);
-
-    // Centrer la carte sur la ville
-    map.setView([coords.lat, coords.lng], rayon <= 20 ? 12 : rayon <= 50 ? 10 : 8);
-
-    // Supprimer l'ancien cercle s'il existe
-    if (searchCircle) { map.removeLayer(searchCircle); searchCircle = null; }
-
-    // Dessiner le nouveau cercle
-    searchCircle = L.circle([coords.lat, coords.lng], {
-      radius: rayon * 1000,
-      color: '#2d6a4f', fillColor: '#d8f3dc', fillOpacity: 0.1, weight: 2
-    }).addTo(map);
-
-    // 2. Appeler l'API avec les coordonnées
-    const response = await fetch(`/api/bio?lat=${coords.lat}&lng=${coords.lng}&rayon=${rayon}`);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const data = await response.json();
-    allFarms = data.items || [];
-
-    if (allFarms.length === 0) {
-      list.innerHTML = `<div class="loading-state">😕 Aucune ferme avec vente directe trouvée dans un rayon de ${rayon} km.<br><br>Essayez d'augmenter le rayon de recherche.</div>`;
-      document.getElementById('results-count').textContent = '0 résultat';
-      return;
-    }
-
-    renderFarms(allFarms);
-  } catch (err) {
-    console.warn('Erreur:', err);
-    list.innerHTML = `<div class="loading-state" style="color:#c0392b;">❌ ${err.message || 'Erreur de chargement'}</div>`;
-    document.getElementById('results-count').textContent = 'Erreur';
-  }
-}
-
-function renderFarms(farms) {
-  const list = document.getElementById('farms-list');
-  list.innerHTML = '';
-  document.getElementById('results-count').innerHTML = `<strong>${farms.length} fermes</strong> avec vente directe`;
-
-  farms.forEach((f, idx) => {
-    const adresse = f.adressesOperateurs?.[0] || {};
-    const productions = f.productions || [];
-    const emoji = getEmoji(productions);
-    const nom = f.denominationCourante || f.raisonSociale || 'Ferme Bio';
-    const activite = f.activites?.[0]?.nom || 'Producteur';
-    const dist = f._distance ? `${f._distance} km` : '';
-
-    const card = document.createElement('div');
-    card.className = 'farm-card';
-    card.id = `card-${f.id || idx}`;
-    card.innerHTML = `
-      <div class="card-thumb" style="background: ${getGradient(idx)}">${emoji}</div>
-      <div class="card-body">
-        <div class="card-name" title="${nom}">${nom}</div>
-        <div class="card-location">📍 ${adresse.ville || ''} ${adresse.codePostal || ''}</div>
-        <div class="card-tags">
-          ${productions.slice(0,3).map((p,i) => `<span class="tag ${getTagColor(i)}">${p.nom || p.libelle || ''}</span>`).join('')}
-          ${productions.length > 3 ? `<span class="tag tag-gris">+${productions.length-3}</span>` : ''}
-        </div>
-        <div class="card-footer">
-          ${dist ? `<span class="distance-badge">🚗 ${dist}</span>` : ''}
-          <span class="tag tag-vert" style="font-size:11px;">${activite}</span>
-        </div>
-      </div>
-    `;
-    card.onclick = () => { openModal(f, emoji, idx); selectCard(f.id || idx); };
-    list.appendChild(card);
-    addMarker(f, emoji, idx);
-  });
-}
-
-function addMarker(farm, emoji, idx) {
-  const adresse = farm.adressesOperateurs?.[0] || {};
-  const lat = adresse.lat;
-  const lng = adresse.long;
-  if (!lat || !lng) return;
-
-  const nom = farm.denominationCourante || farm.raisonSociale || 'Ferme Bio';
-  const icon = L.divIcon({
-    className: '',
-    html: `<div class="custom-marker">${emoji} ${nom.split(' ').slice(0,2).join(' ')}</div>`,
-    iconAnchor: [40, 12]
-  });
-
-  const marker = L.marker([lat, lng], { icon }).addTo(map);
-  marker.bindPopup(`
-    <div style="min-width:200px;">
-      <div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:600;margin-bottom:4px;">${emoji} ${nom}</div>
-      <div style="font-size:12px;color:#888;margin-bottom:6px;">📍 ${adresse.ville || ''} ${adresse.codePostal || ''}</div>
-      ${farm._distance ? `<div style="font-size:12px;color:#2d6a4f;font-weight:600;margin-bottom:8px;">🚗 à ${farm._distance} km</div>` : ''}
-      <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;">
-        ${(farm.productions||[]).slice(0,3).map(p => `<span style="background:#e8f5e9;color:#2d6a4f;padding:2px 8px;border-radius:10px;font-size:11px;">${p.nom||p.libelle||''}</span>`).join('')}
-      </div>
-      <button onclick="openModalById(${farm.id || idx})" style="width:100%;background:#2d6a4f;color:white;border:none;border-radius:8px;padding:8px;font-size:13px;cursor:pointer;">Voir la fiche →</button>
-    </div>
-  `, { maxWidth: 260 });
-
-  marker.on('click', () => selectCard(farm.id || idx));
-  markers.push(marker);
-  farm._markerIdx = markers.length - 1;
-  farm._idx = idx;
-  farm._emoji = emoji;
-}
-
-function selectCard(id) {
-  document.querySelectorAll('.farm-card').forEach(c => c.classList.remove('selected'));
-  const card = document.getElementById(`card-${id}`);
-  if (card) { card.classList.add('selected'); card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
-}
-
-function openModalById(idOrIdx) {
-  const f = allFarms.find(x => x.id === idOrIdx) || allFarms[idOrIdx];
-  if (f) openModal(f, f._emoji || '🌿', f._idx || 0);
-}
-
-function openModal(f, emoji, idx) {
-  const nom = f.denominationCourante || f.raisonSociale || 'Ferme Bio';
-  const adresse = f.adressesOperateurs?.[0] || {};
-  const certif = f.certificats?.[0] || {};
-
-  document.getElementById('modal-emoji').textContent = emoji;
-  document.getElementById('modal-header').style.background = getGradient(idx);
-  document.getElementById('modal-title').textContent = nom;
-  document.getElementById('modal-meta').innerHTML = `
-    <span>📍 ${adresse.lieu || ''}, ${adresse.codePostal || ''} ${adresse.ville || ''}</span>
-    ${f._distance ? `<span>🚗 à ${f._distance} km</span>` : ''}
-    <span>🆔 N° BIO: ${f.numeroBio || '—'}</span>
-  `;
-
-  const prods = f.productions || [];
-  document.getElementById('modal-products').innerHTML = prods.length
-    ? prods.map(p => `<span class="tag tag-vert" style="font-size:13px;padding:6px 12px;">${getEmoji([p])} ${p.nom || p.libelle || ''}</span>`).join('')
-    : '<span style="color:#888;font-size:13px;">Non renseigné</span>';
-
-  const tel = f.telephoneNational || f.telephone || '';
-  const contact = [
-    tel ? `📞 ${tel}` : '',
-    f.email ? `✉️ ${f.email}` : '',
-    (f.siteWebs||[]).filter(s => s.url).length > 0 ? `🌐 <a href="${f.siteWebs[0].url}" target="_blank">${f.siteWebs[0].url}</a>` : '',
-  ].filter(Boolean);
-  document.getElementById('modal-contact').innerHTML = contact.length
-    ? contact.map(c => `<div style="font-size:13px;margin-bottom:4px;">${c}</div>`).join('')
-    : '<span style="font-size:13px;color:#888;">Coordonnées non renseignées</span>';
-
-  document.getElementById('modal-certif').innerHTML = `
-    <div style="font-size:13px;">
-      <span style="background:#e8f5e9;color:#2d6a4f;padding:3px 10px;border-radius:10px;font-weight:500;">🏅 Certifié Agriculture Biologique</span>
-      ${certif.organisme ? `<span style="margin-left:8px;color:#888;">${certif.organisme}</span>` : ''}
-    </div>
-  `;
-
-  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(nom + ' ' + (adresse.ville || ''))}`;
-  document.getElementById('modal-maps-btn').onclick = () => window.open(mapsUrl, '_blank');
-  const certifUrl = certif.url || `https://annuaire.agencebio.org/fiche/${f.numeroBio}`;
-  document.getElementById('modal-certif-btn').onclick = () => window.open(certifUrl, '_blank');
-
-  document.getElementById('modal-overlay').classList.add('open');
-  selectCard(f.id || idx);
-}
-
-function closeModal(e) { if (e.target === document.getElementById('modal-overlay')) closeModalDirect(); }
-function closeModalDirect() { document.getElementById('modal-overlay').classList.remove('open'); }
-function toggleFilter(btn) { btn.classList.toggle('active'); }
-
-function sortFarms(value) {
-  if (value === 'distance') allFarms.sort((a,b) => (a._distance||999) - (b._distance||999));
-  if (value === 'nom') allFarms.sort((a,b) => (a.denominationCourante||a.raisonSociale||'').localeCompare(b.denominationCourante||b.raisonSociale||''));
-  markers.forEach(m => map.removeLayer(m));
-  markers = [];
-  renderFarms(allFarms);
-}
-
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2500);
-}
-
-document.getElementById('search-input').addEventListener('keydown', e => { if (e.key === 'Enter') loadFarms(); });
-
-// Message d'accueil
-document.getElementById('list').innerHTML = `
-  <div class="loading-state" style="padding: 60px 20px; text-align: center; color: var(--gris-texte);">
-    <div style="font-size: 48px; margin-bottom: 16px;">🌿</div>
-    <div style="font-size: 18px; font-weight: 600; color: var(--noir); margin-bottom: 10px; font-family: 'Playfair Display', serif;">Bienvenue sur surplace.bio</div>
-    <div style="font-size: 14px; line-height: 1.6; max-width: 280px; margin: 0 auto;">Entrez une ville ou un code postal pour découvrir les producteurs bio près de chez vous.</div>
-  </div>
-`;
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
