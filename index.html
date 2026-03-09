@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
 <title>Bio Sur Place — Trouvez un producteur près de chez vous</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
@@ -144,7 +145,7 @@
 <div class="main-layout">
   <div class="list-panel">
     <div class="results-header">
-      <div class="results-count" id="results-count">Chargement...</div>
+      <div class="results-count" id="results-count"></div>
       <select class="sort-select" onchange="sortFarms(this.value)">
         <option value="distance">Plus proche</option>
         <option value="nom">Nom A-Z</option>
