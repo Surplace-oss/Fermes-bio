@@ -106,7 +106,7 @@
 <body>
 
 <header>
-  <div class="logo">🌿 Fermes<span>Bio</span></div>
+  <div class="logo">🌿 sur<span>place.bio</span></div>
   <div class="search-wrap">
     <div class="search-bar">
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -437,7 +437,15 @@ function showToast(msg) {
 }
 
 document.getElementById('search-input').addEventListener('keydown', e => { if (e.key === 'Enter') loadFarms(); });
-loadFarms();
+
+// Message d'accueil
+document.getElementById('list').innerHTML = `
+  <div class="loading-state" style="padding: 60px 20px; text-align: center; color: var(--gris-texte);">
+    <div style="font-size: 48px; margin-bottom: 16px;">🌿</div>
+    <div style="font-size: 18px; font-weight: 600; color: var(--noir); margin-bottom: 10px; font-family: 'Playfair Display', serif;">Bienvenue sur surplace.bio</div>
+    <div style="font-size: 14px; line-height: 1.6; max-width: 280px; margin: 0 auto;">Entrez une ville ou un code postal pour découvrir les producteurs bio près de chez vous.</div>
+  </div>
+`;
 </script>
 </body>
 </html>
