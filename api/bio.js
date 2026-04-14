@@ -63,11 +63,9 @@ export default async function handler(req, res) {
     const allItems = [];
     let page = 1;
 
-    while (page <= 15) {
+    while (page <= 100) { // Pas de limite fixe — on s'arrête quand l'API n'a plus rien
       const url = new URL('https://opendata.agencebio.org/api/gouv/operateurs/');
       url.searchParams.set('departements', depts);
-      url.searchParams.set('typesProfessionnels', 'ferme');
-      url.searchParams.set('typesVente', 'venteParticuliers');
       url.searchParams.set('page', page);
       url.searchParams.set('limit', '200');
 
