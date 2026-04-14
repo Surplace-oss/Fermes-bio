@@ -3,26 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>surplace.bio — Trouvez un producteur bio près de chez vous</title>
+<title>Sur Place — Le bio, près de chez vous</title>
+<meta name="description" content="Sur Place connecte les citoyens avec les producteurs bio certifiés en vente directe. Trouvez une ferme bio près de chez vous en un clic.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root { --vert:#1a3d2b;--vert-mid:#2d6a4f;--vert-clair:#52b788;--vert-pale:#d8f3dc;--terre:#8b5e3c;--terre-clair:#c49a6c;--creme:#f7f3ec;--creme-dark:#ede8df;--noir:#1a1a14;--blanc:#fefefe; }
-*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+:root {
+  --vert:#1a3d2b;--vert-mid:#2d6a4f;--vert-clair:#52b788;--vert-pale:#d8f3dc;
+  --terre:#8b5e3c;--terre-clair:#c49a6c;
+  --creme:#f7f3ec;--creme-dark:#ede8df;
+  --noir:#1a1a14;--blanc:#fefefe;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 body{font-family:'Instrument Sans',sans-serif;background:var(--creme);color:var(--noir);overflow-x:hidden;}
+
+/* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;background:rgba(247,243,236,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.07);}
 .nav-link{text-decoration:none;color:var(--vert);font-size:14px;font-weight:500;padding:8px 16px;border-radius:100px;transition:all 0.2s;opacity:0.75;}
 .nav-link:hover,.nav-link.active{opacity:1;background:var(--vert-pale);}
 .nav-cta{background:var(--vert)!important;color:white!important;opacity:1!important;}
 .nav-cta:hover{background:var(--vert-mid)!important;}
+
+/* ── HERO ── */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:64px;}
 .hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 60px;}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--vert-pale);color:var(--vert-mid);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:32px;width:fit-content;}
 .hero-tag::before{content:'';width:6px;height:6px;background:var(--vert-clair);border-radius:50%;animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(1.2)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(1.3)}}
 .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,5.5vw,82px);font-weight:300;line-height:1.05;color:var(--vert);margin-bottom:28px;letter-spacing:-1px;}
 .hero h1 em{font-style:italic;color:var(--terre);}
-.hero-sub{font-size:17px;line-height:1.7;color:#4a4a3a;max-width:460px;margin-bottom:48px;}
+.hero-sub{font-size:17px;line-height:1.75;color:#4a4a3a;max-width:480px;margin-bottom:48px;}
 .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
 .btn-primary{background:var(--vert);color:var(--blanc);border:none;border-radius:100px;padding:16px 36px;font-family:'Instrument Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.25s;}
 .btn-primary:hover{background:var(--vert-mid);transform:translateY(-2px);box-shadow:0 12px 32px rgba(26,61,43,0.25);}
@@ -30,7 +41,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:ce
 .btn-outline:hover{background:var(--vert);color:var(--blanc);transform:translateY(-2px);}
 .hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:40px;border-top:1px solid var(--creme-dark);}
 .stat-num{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;color:var(--vert);line-height:1;}
-.stat-label{font-size:13px;color:#888;margin-top:4px;}
+.stat-label{font-size:13px;color:#888;margin-top:4px;line-height:1.5;}
 .hero-right{background:var(--vert);position:relative;overflow:hidden;}
 .hero-visual{position:absolute;inset:0;background:linear-gradient(160deg,#1a3d2b 0%,#2d6a4f 50%,#52b788 100%);}
 .hero-manifeste{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
@@ -41,43 +52,108 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:ce
 .hml:nth-child(4){animation-delay:-3.6s;margin-left:24px;}
 .hml:nth-child(5){animation-delay:-4.8s;}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* ── URGENCE — PITCH V6 ── */
+.urgence{padding:100px 60px;background:var(--blanc);}
+.urgence-inner{max-width:860px;margin:0 auto;}
 .section-label{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--vert-clair);margin-bottom:16px;}
-.manifeste{padding:100px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;background:var(--blanc);}
-.manifeste-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,52px);font-weight:300;line-height:1.15;color:var(--vert);margin-bottom:28px;}
-.manifeste-text h2 em{font-style:italic;color:var(--terre);}
-.manifeste-text p{font-size:16px;line-height:1.8;color:#555;margin-bottom:20px;}
-.manifeste-right{display:flex;flex-direction:column;gap:24px;}
-.manifeste-card{background:var(--creme);border-radius:16px;padding:28px;border-left:3px solid var(--vert-clair);}
-.manifeste-card h3{font-size:15px;font-weight:600;margin-bottom:8px;color:var(--vert);}
-.manifeste-card p{font-size:14px;line-height:1.7;color:#666;}
-.how{padding:100px 60px;background:var(--creme);}
+.urgence h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,54px);font-weight:300;line-height:1.15;color:var(--vert);margin-bottom:32px;}
+.urgence h2 em{font-style:italic;color:var(--terre);}
+.urgence-intro{font-size:18px;line-height:1.8;color:#333;margin-bottom:20px;font-weight:500;}
+.urgence-body{font-size:16px;line-height:1.85;color:#555;margin-bottom:20px;}
+.urgence-body strong{color:var(--vert);font-weight:600;}
+.urgence-callout{background:var(--vert);color:white;border-radius:20px;padding:40px 48px;margin:48px 0;text-align:center;}
+.urgence-callout p{font-size:17px;line-height:1.7;opacity:0.9;margin-bottom:24px;}
+.urgence-callout .callout-cta{display:inline-block;background:white;color:var(--vert);border-radius:100px;padding:14px 36px;font-weight:600;font-size:15px;text-decoration:none;transition:all 0.2s;}
+.urgence-callout .callout-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2);}
+
+/* ── POURQUOI LE BIO ── */
+.pourquoi{padding:100px 60px;background:var(--creme);}
+.pourquoi-inner{max-width:900px;margin:0 auto;}
+.pourquoi h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,50px);font-weight:300;color:var(--vert);margin-bottom:48px;line-height:1.15;}
+.pourquoi h2 em{font-style:italic;color:var(--terre);}
+.chiffres-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px;}
+.chiffre-card{background:var(--blanc);border-radius:20px;padding:36px 28px;text-align:center;border-top:3px solid var(--vert-clair);transition:transform 0.3s;}
+.chiffre-card:hover{transform:translateY(-4px);}
+.chiffre-num{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:600;color:var(--vert);line-height:1;margin-bottom:8px;}
+.chiffre-label{font-size:14px;line-height:1.6;color:#666;}
+.pourquoi-note{font-size:14px;line-height:1.8;color:#777;border-left:3px solid var(--vert-clair);padding-left:20px;font-style:italic;}
+.pourquoi-note strong{color:var(--vert);font-style:normal;}
+
+/* ── COMMENT ÇA MARCHE ── */
+.how{padding:100px 60px;background:var(--blanc);}
 .how h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,52px);font-weight:300;color:var(--vert);margin-bottom:64px;max-width:500px;}
 .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
-.how-step{background:var(--blanc);border-radius:20px;padding:36px 32px;position:relative;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;}
+.how-step{background:var(--creme);border-radius:20px;padding:36px 32px;position:relative;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;}
 .how-step:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,0.1);}
 .how-num{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;color:var(--vert-pale);position:absolute;top:16px;right:24px;line-height:1;}
 .how-icon{font-size:36px;margin-bottom:20px;}
 .how-step h3{font-size:18px;font-weight:600;color:var(--vert);margin-bottom:12px;}
 .how-step p{font-size:14px;line-height:1.7;color:#666;}
+
+/* ── LES FERMES — CHIFFRES ── */
+.fermes{padding:100px 60px;background:var(--vert);color:white;}
+.fermes h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,52px);font-weight:300;margin-bottom:20px;line-height:1.15;}
+.fermes h2 em{font-style:italic;color:var(--terre-clair);}
+.fermes-intro{font-size:17px;opacity:0.85;max-width:640px;line-height:1.75;margin-bottom:64px;}
+.fermes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.ferme-stat{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);padding:48px 36px;transition:background 0.3s;}
+.ferme-stat:first-child{border-radius:20px 0 0 20px;}
+.ferme-stat:last-child{border-radius:0 20px 20px 0;}
+.ferme-stat:hover{background:rgba(255,255,255,0.12);}
+.ferme-stat-num{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;color:var(--terre-clair);line-height:1;margin-bottom:12px;}
+.ferme-stat h3{font-size:16px;font-weight:600;margin-bottom:10px;}
+.ferme-stat p{font-size:14px;opacity:0.7;line-height:1.7;}
+.fermes-urgence{margin-top:48px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:32px 40px;font-size:16px;line-height:1.7;opacity:0.9;}
+.fermes-urgence strong{color:var(--terre-clair);}
+
+/* ── PORTRAIT — LA DIFFÉRENCE ── */
+.portrait{padding:100px 60px;background:var(--creme-dark);}
+.portrait-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1100px;margin:0 auto;}
+.portrait-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,50px);font-weight:300;line-height:1.15;color:var(--vert);margin-bottom:24px;}
+.portrait-text h2 em{font-style:italic;color:var(--terre);}
+.portrait-text p{font-size:16px;line-height:1.85;color:#555;margin-bottom:20px;}
+.portrait-cards{display:flex;flex-direction:column;gap:20px;}
+.portrait-card{background:var(--blanc);border-radius:16px;padding:28px;border-left:3px solid var(--vert-clair);}
+.portrait-card h3{font-size:15px;font-weight:600;color:var(--vert);margin-bottom:8px;}
+.portrait-card p{font-size:14px;line-height:1.7;color:#666;}
+
+/* ── SCIENCE — CHIFFRES SANTÉ COMPACTÉS ── */
+.science{padding:80px 60px;background:var(--blanc);}
+.science-inner{max-width:860px;margin:0 auto;}
+.science-intro{font-size:15px;color:#888;margin-bottom:32px;font-style:italic;}
+.science-chiffres{display:flex;gap:0;border:1.5px solid var(--creme-dark);border-radius:16px;overflow:hidden;}
+.science-chiffre{flex:1;padding:32px 28px;text-align:center;border-right:1.5px solid var(--creme-dark);}
+.science-chiffre:last-child{border-right:none;}
+.science-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:600;color:var(--vert);line-height:1;margin-bottom:8px;}
+.science-label{font-size:13px;line-height:1.6;color:#666;}
+.science-source{font-size:12px;color:#bbb;margin-top:20px;text-align:center;}
+
+/* ── DON CTA ── */
 .don-cta{padding:100px 60px;background:linear-gradient(135deg,var(--terre) 0%,#a0724a 100%);color:white;text-align:center;}
 .don-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,58px);font-weight:300;margin-bottom:20px;line-height:1.1;}
-.don-cta p{font-size:17px;opacity:0.85;max-width:500px;margin:0 auto 40px;line-height:1.7;}
+.don-cta p{font-size:17px;opacity:0.85;max-width:520px;margin:0 auto 40px;line-height:1.7;}
 .btn-don{background:white;color:var(--terre);border:none;border-radius:100px;padding:18px 48px;font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.25s;margin:0 8px;}
 .btn-don:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,0.2);}
 .btn-don-outline{background:transparent;color:white;border:1.5px solid rgba(255,255,255,0.6);border-radius:100px;padding:18px 48px;font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.25s;margin:0 8px;}
 .btn-don-outline:hover{border-color:white;background:rgba(255,255,255,0.1);}
+
+/* ── FOOTER ── */
 footer{background:var(--noir);color:rgba(255,255,255,0.5);padding:48px 60px;display:flex;justify-content:space-between;align-items:center;}
 .footer-links{display:flex;gap:32px;}
 .footer-links a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color 0.2s;}
 .footer-links a:hover{color:white;}
+
+/* ── ANIMATIONS ── */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <a href="index.html"><img src="logo-biosurplace.svg" alt="surplace.bio" style="height:38px;"></a>
+  <a href="index.html"><img src="logo-biosurplace.svg" alt="Sur Place" style="height:38px;"></a>
   <div style="display:flex;gap:4px;align-items:center;">
     <a href="index.html" class="nav-link active">Accueil</a>
     <a href="carte.html" class="nav-link">🗺️ Carte</a>
@@ -86,19 +162,29 @@ footer{background:var(--noir);color:rgba(255,255,255,0.5);padding:48px 60px;disp
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-tag">🌱 Plateforme en construction — rejoignez l'aventure</div>
+    <div class="hero-tag">🌱 Plateforme citoyenne — données officielles Agence Bio</div>
     <h1>La <em>terre</em> a un visage.<br>Découvrez-le.</h1>
-    <p class="hero-sub">surplace.bio connecte les citoyens avec les producteurs bio qui vendent directement à la ferme. Derrière chaque exploitation, il y a une histoire. On vous la raconte.</p>
+    <p class="hero-sub">Dans l'urgence d'une alimentation plus saine pour les Français, le bio reste l'alternative la plus solide. Sur Place vous connecte directement aux producteurs certifiés près de chez vous.</p>
     <div class="hero-actions">
-      <a href="carte.html" class="btn-primary">🗺️ Explorer les fermes</a>
+      <a href="carte.html" class="btn-primary">🗺️ Trouver une ferme</a>
       <a href="ma-ferme.html" class="btn-outline">Je suis agriculteur·rice →</a>
     </div>
     <div class="hero-stats">
-      <div class="stat-item"><div class="stat-num">4 800+</div><div class="stat-label">fermes bio en France<br>avec vente directe</div></div>
-      <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">données officielles<br>Agence Bio</div></div>
-      <div class="stat-item"><div class="stat-num">0€</div><div class="stat-label">pour commencer,<br>gratuit en 2025</div></div>
+      <div class="stat-item">
+        <div class="stat-num">62 000</div>
+        <div class="stat-label">fermes bio en France<br>certifiées Agence Bio</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">+40 000</div>
+        <div class="stat-label">conversions au bio<br>depuis 2010</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">0€</div>
+        <div class="stat-label">pour commencer,<br>gratuit en 2025</div>
+      </div>
     </div>
   </div>
   <div class="hero-right">
@@ -115,53 +201,159 @@ footer{background:var(--noir);color:rgba(255,255,255,0.5);padding:48px 60px;disp
   </div>
 </section>
 
-<section class="manifeste">
-  <div class="manifeste-text reveal">
-    <div class="section-label">Notre conviction</div>
-    <h2>L'agriculture bio mérite <em>d'être vue</em></h2>
-    <p>En France, des milliers de fermes biologiques certifiées vendent directement à la ferme. La plupart sont invisibles aux yeux du grand public.</p>
-    <p>surplace.bio donne un visage humain à ces exploitations. Pas une liste froide de données — de vraies histoires, de vrais portraits, une vraie envie d'aller acheter.</p>
-    <p>Et si chaque Français pouvait trouver, pendant ses vacances ou sa vie quotidienne, la ferme bio la plus proche qui vend directement ce qu'elle produit ?</p>
-  </div>
-  <div class="manifeste-right reveal">
-    <div class="manifeste-card"><h3>🌍 Un enjeu de société</h3><p>Le bio en vente directe est le circuit le plus vertueux : zéro intermédiaire, juste prix pour le producteur, fraîcheur maximale pour l'acheteur.</p></div>
-    <div class="manifeste-card"><h3>📸 Le portrait qui fait la différence</h3><p>Une photo du producteur, quelques mots sur son histoire — et soudain le légume devient une rencontre. C'est ce qui donne envie d'aller à la ferme.</p></div>
-    <div class="manifeste-card"><h3>🤝 Une communauté solidaire</h3><p>À terme, les fonds collectés alimentent une caisse de solidarité pour les fermes en difficulté, et encouragent les conversions au bio.</p></div>
+<!-- URGENCE — PITCH V6 -->
+<section class="urgence">
+  <div class="urgence-inner">
+    <div class="section-label reveal">Notre conviction</div>
+    <h2 class="reveal">L'alimentation saine,<br>c'est <em>urgent</em> — et accessible.</h2>
+    <p class="urgence-intro reveal">Cadmium, PFAS, pesticides, microplastiques — tous les voyants sont au rouge. Et pourtant, la réponse existe. Elle est locale, humaine, accessible.</p>
+    <p class="urgence-body reveal"><strong>Sur Place permet d'identifier tous les producteurs certifiés bio autour de chez vous en un seul clic.</strong> Découvrez les agricultrices et agriculteurs qui se battent au quotidien pour vous donner accès à une alimentation saine. Prenez le temps d'y aller, de les rencontrer, de comprendre leur métier.</p>
+
+    <div class="urgence-callout reveal">
+      <p>Alors pourquoi le bio reste-t-il perçu comme inaccessible ?<br>Trop cher, trop compliqué, trop loin ?</p>
+      <a href="carte.html" class="callout-cta">🗺️ Trouvez une ferme près de chez vous</a>
+    </div>
+
+    <p class="urgence-body reveal">Depuis 2010, plus de <strong>40 000 fermes françaises</strong> ont choisi de se convertir au bio. Elles représentent aujourd'hui <strong>14,9 % des exploitations du pays</strong> — près de 62 000 fermes sur tout le territoire. Elles sont là. Elles produisent. Elles vendent directement.</p>
+    <p class="urgence-body reveal">La plupart sont méconnues — voire inconnues. <strong>Sur Place veut remédier à ce manque.</strong></p>
   </div>
 </section>
 
+<!-- PORTRAIT — LA DIFFÉRENCE HUMAINE -->
+<section class="portrait">
+  <div class="portrait-inner">
+    <div class="portrait-text reveal">
+      <div class="section-label">Ce qui nous différencie</div>
+      <h2>Des données.<br>Et des <em>visages.</em></h2>
+      <p>Ce qui nous importe autant que la carte, c'est de mettre un visage sur ces femmes et ces hommes qui, chaque jour, choisissent de faire autrement.</p>
+      <p>Parce qu'un légume acheté à la personne qui l'a cultivé, c'est autre chose qu'un légume dans un rayon.</p>
+      <p>Vous serez étonnés de découvrir, à quelques kilomètres de chez vous, des parcours extraordinaires et des engagements déroutants — une façon de comprendre votre territoire que vous n'aviez pas imaginée.</p>
+    </div>
+    <div class="portrait-cards reveal">
+      <div class="portrait-card">
+        <h3>🌍 Un enjeu de société</h3>
+        <p>Le bio en vente directe est le circuit le plus vertueux : zéro intermédiaire, juste prix pour le producteur, fraîcheur maximale pour l'acheteur.</p>
+      </div>
+      <div class="portrait-card">
+        <h3>📸 Le portrait qui fait la différence</h3>
+        <p>Une photo, quelques mots sur leur histoire — et soudain le légume devient une rencontre. C'est ça qui donne envie d'y aller.</p>
+      </div>
+      <div class="portrait-card">
+        <h3>🤝 Une communauté solidaire</h3>
+        <p>Les fonds collectés alimentent une caisse de solidarité pour les fermes en difficulté et encouragent les nouvelles conversions au bio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT ÇA MARCHE -->
 <section class="how">
   <div class="section-label reveal">Pour les visiteurs</div>
   <h2 class="reveal">Simple comme<br>un marché du dimanche</h2>
   <div class="how-grid">
-    <div class="how-step reveal"><div class="how-num">1</div><div class="how-icon">📍</div><h3>Je tape ma ville</h3><p>En vacances ou chez moi, je cherche les fermes bio dans un rayon de 20, 50 ou 100 km autour de moi.</p></div>
-    <div class="how-step reveal"><div class="how-num">2</div><div class="how-icon">👤</div><h3>Je découvre le producteur</h3><p>Photo, portrait, produits, histoire. Je sais exactement à qui j'achète et ce que je vais trouver à la ferme.</p></div>
-    <div class="how-step reveal"><div class="how-num">3</div><div class="how-icon">🚗</div><h3>Je prends la route</h3><p>Un clic sur l'itinéraire et je file directement à la ferme acheter des produits frais, locaux et biologiques certifiés.</p></div>
+    <div class="how-step reveal">
+      <div class="how-num">1</div>
+      <div class="how-icon">📍</div>
+      <h3>Je tape ma ville</h3>
+      <p>En vacances ou chez moi, je cherche les fermes bio dans un rayon de 20, 50 ou 100 km autour de moi.</p>
+    </div>
+    <div class="how-step reveal">
+      <div class="how-num">2</div>
+      <div class="how-icon">👤</div>
+      <h3>Je découvre le producteur</h3>
+      <p>Photo, portrait, produits, histoire. Je sais exactement à qui j'achète et ce que je vais trouver à la ferme.</p>
+    </div>
+    <div class="how-step reveal">
+      <div class="how-num">3</div>
+      <div class="how-icon">🚗</div>
+      <h3>Je prends la route</h3>
+      <p>Un clic sur l'itinéraire et je file directement à la ferme acheter des produits frais, locaux et bio certifiés.</p>
+    </div>
   </div>
 </section>
 
-<section class="don-cta">
-  <h2>Vous croyez au projet ?<br>Soutenez-le.</h2>
-  <p>Chaque don contribue à faire grandir la plateforme et à alimenter le futur fonds de solidarité agricole.</p>
-  <a href="dons.html" class="btn-don">💚 Faire un don</a>
-  <a href="carte.html" class="btn-don-outline">Explorer les fermes</a>
+<!-- LES FERMES — CHIFFRES -->
+<section class="fermes">
+  <div class="section-label" style="color:var(--vert-clair);">Le secteur aujourd'hui</div>
+  <h2 class="reveal">62 000 fermes.<br><em>Méconnues.</em> Pas loin.</h2>
+  <p class="fermes-intro reveal">La demande en bio repart. Mais les fermes restent fragilisées, et la production recule. Aller Sur Place, acheter directement, c'est l'un des gestes les plus concrets qu'un citoyen puisse poser aujourd'hui.</p>
+  <div class="fermes-grid reveal">
+    <div class="ferme-stat">
+      <div class="ferme-stat-num">62 000</div>
+      <h3>Fermes bio en France</h3>
+      <p>14,9 % des exploitations françaises. Partout sur le territoire, souvent à moins d'une heure de chez vous.</p>
+    </div>
+    <div class="ferme-stat">
+      <div class="ferme-stat-num">+40 000</div>
+      <h3>Conversions depuis 2010</h3>
+      <p>Un effort collectif colossal, porté par des agriculteurs qui ont choisi de changer de modèle.</p>
+    </div>
+    <div class="ferme-stat">
+      <div class="ferme-stat-num">+30%</div>
+      <h3>Emplois en plus</h3>
+      <p>Les fermes bio génèrent 30 % d'emplois supplémentaires par rapport aux fermes conventionnelles.</p>
+    </div>
+  </div>
+  <div class="fermes-urgence reveal">
+    <strong>Le paradoxe de 2025 :</strong> la consommation bio repart à +3,5 % — mais pour la première fois, le nombre de fermes bio a baissé. La demande augmente, l'offre recule. Aller Sur Place, c'est contribuer directement à inverser cette tendance.
+  </div>
 </section>
 
+<!-- SCIENCE — COMPACTÉ -->
+<section class="science">
+  <div class="science-inner reveal">
+    <div class="section-label">Et si vous avez besoin de chiffres</div>
+    <p class="science-intro">Les cancers progressent à une vitesse inédite en France, et notre alimentation est de plus en plus clairement mise en cause. Les aliments bio contiennent en moyenne <strong>48 % moins de cadmium</strong> que les aliments conventionnels. Ce n'est pas une tendance — c'est une recommandation de santé publique.</p>
+    <div class="science-chiffres">
+      <div class="science-chiffre">
+        <div class="science-num">−25%</div>
+        <div class="science-label">de risque global<br>de cancer</div>
+      </div>
+      <div class="science-chiffre">
+        <div class="science-num">−35%</div>
+        <div class="science-label">de risque<br>de diabète type 2</div>
+      </div>
+      <div class="science-chiffre">
+        <div class="science-num">−48%</div>
+        <div class="science-label">de cadmium<br>dans les aliments bio</div>
+      </div>
+      <div class="science-chiffre">
+        <div class="science-num">2021</div>
+        <div class="science-label">Recommandation<br>officielle de l'État</div>
+      </div>
+    </div>
+    <p class="science-source">Sources : Étude Bionutrinet (INRAE/Inserm, 2021) — méta-analyse 343 études (cadmium) — Le Monde, avril 2026</p>
+  </div>
+</section>
+
+<!-- DON CTA -->
+<section class="don-cta">
+  <h2>Le bio est accessible<br>à tous et pour tous.</h2>
+  <p>Il suffit juste d'aller Sur Place. Et si vous croyez au projet, chaque don contribue à faire grandir la plateforme et à soutenir les fermes en difficulté.</p>
+  <a href="dons.html" class="btn-don">💚 Soutenir le projet</a>
+  <a href="carte.html" class="btn-don-outline">Trouver une ferme</a>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <img src="logo-biosurplace.svg" alt="surplace.bio" style="height:32px;filter:brightness(10);">
+  <img src="logo-biosurplace.svg" alt="Sur Place" style="height:32px;filter:brightness(10);">
   <div class="footer-links">
     <a href="carte.html">La carte</a>
     <a href="dons.html">Dons</a>
     <a href="ma-ferme.html">Ma ferme</a>
-    <a href="mailto:contact.biosurplace@outlook.com">Contact</a>
+    <a href="mailto:biosurplace@outlook.com">Contact</a>
   </div>
   <div style="font-size:13px;">Données officielles © Agence Bio</div>
 </footer>
 
 <script>
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.15 });
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
