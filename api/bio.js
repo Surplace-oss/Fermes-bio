@@ -66,8 +66,8 @@ export default async function handler(req, res) {
     while (page <= 15) {
       const url = new URL('https://opendata.agencebio.org/api/gouv/operateurs/');
       url.searchParams.set('departements', depts);
-      url.searchParams.set('categories', '1');           // 1 = Vente directe
-      url.searchParams.set('etatEngagement', 'ENGAGEE'); // Uniquement certifiés actifs
+      
+      
       url.searchParams.set('page', page);
       url.searchParams.set('limit', '200');
 
