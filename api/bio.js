@@ -87,16 +87,34 @@ export default async function handler(req, res) {
     }
 
     // ─── 3. FILTRES POST-FETCH ────────────────────────────────────────────────
-    // L'API filtre déjà par catégorie "vente directe" et engagement actif.
-    // On applique uniquement :
-    //   a) Présence de coordonnées GPS (indispensable pour la carte)
-    //   b) Distance réelle dans le rayon demandé
-    //   c) Tri par distance + limite à 100 résultats
+    // Deux critères solides identifiés dans les données réelles de l'API :
+    //
+    // A) venteAnnuaire.venteParticuliers === true
+    //    → Le seul flag qui distingue un maraîcher en vente directe
+    //      d'un Franprix, Lidl ou grossiste Rungis.
+    //      Vérifié sur les données brutes : tous les distributeurs/GMS
+    //      ont venteParticuliers: false. Les producteurs en vente directe : true.
+    //
+    // B) activites.some(a => a.id === 1) → "Production"
+    //    → Exclut les purs préparateurs/distributeurs sans activité agricole.
+    //      Un maraîcher = Production (id:1). Un Franprix = Distribution (id:3).
+    //      Double sécurité par rapport au critère A.
+    //
+    // C) Présence de coordonnées GPS + distance dans le rayon
 
     const items = allItems
       .filter(op => {
+        // A — vend aux particuliers (filtre anti-grossiste / anti-GMS)
+        const vendParticuliers = op.venteAnnuaire?.venteParticuliers === true;
+
+        // B — est un producteur (activité Production = id 1)
+        const estProducteur = op.activites?.some(a => a.id === 1);
+
+        // C — a des coordonnées GPS
         const adr = op.adressesOperateurs?.[0];
-        return adr?.lat && adr?.long;
+        const hasCoords = adr?.lat && adr?.long;
+
+        return vendParticuliers && estProducteur && hasCoords;
       })
       .map(op => {
         const adr = op.adressesOperateurs[0];
@@ -130,11 +148,10 @@ export default async function handler(req, res) {
       depts: deptsProches,
       // Méta pour debug — à retirer en prod
       _filtres: {
-        categories: '1 (Vente directe)',
-        etatEngagement: 'ENGAGEE',
+        criteres: 'venteParticuliers:true + activites.Production + GPS',
         departements: deptsProches.length,
         brut: allItems.length,
-        apresFiltrageGPS: items.length,
+        apresFiltre: items.length,
       }
     });
 
