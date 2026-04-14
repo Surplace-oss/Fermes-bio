@@ -66,8 +66,8 @@ export default async function handler(req, res) {
     while (page <= 15) {
       const url = new URL('https://opendata.agencebio.org/api/gouv/operateurs/');
       url.searchParams.set('departements', depts);
-      
-      
+      url.searchParams.set('typesProfessionnels', 'ferme');
+      url.searchParams.set('typesVente', 'venteParticuliers');
       url.searchParams.set('page', page);
       url.searchParams.set('limit', '200');
 
@@ -86,35 +86,23 @@ export default async function handler(req, res) {
       page++;
     }
 
-    // ─── 3. FILTRES POST-FETCH ────────────────────────────────────────────────
-    // Deux critères solides identifiés dans les données réelles de l'API :
+    // ─── 3. FILTRE POST-FETCH ────────────────────────────────────────────────
+    // Un seul critère suffit, vérifié sur données API réelles :
     //
-    // A) venteAnnuaire.venteParticuliers === true
-    //    → Le seul flag qui distingue un maraîcher en vente directe
-    //      d'un Franprix, Lidl ou grossiste Rungis.
-    //      Vérifié sur les données brutes : tous les distributeurs/GMS
-    //      ont venteParticuliers: false. Les producteurs en vente directe : true.
+    // venteAnnuaire.venteParticuliers === true
+    //   → Franprix, Carrefour, Lidl, grossistes : false ✗
+    //   → Maraîchers, boulangers bio, vignerons, fromagers : true ✓
     //
-    // B) activites.some(a => a.id === 1) → "Production"
-    //    → Exclut les purs préparateurs/distributeurs sans activité agricole.
-    //      Un maraîcher = Production (id:1). Un Franprix = Distribution (id:3).
-    //      Double sécurité par rapport au critère A.
-    //
-    // C) Présence de coordonnées GPS + distance dans le rayon
+    // On n'utilise PAS activites.id === 1 (Production) : les artisans bio
+    // (boulangers, fromagers, vignerons) ont activite "Préparation" (id 2)
+    // et sont exactement ce qu'on veut afficher.
 
     const items = allItems
       .filter(op => {
-        // A — vend aux particuliers (filtre anti-grossiste / anti-GMS)
         const vendParticuliers = op.venteAnnuaire?.venteParticuliers === true;
-
-        // B — est un producteur (activité Production = id 1)
-        const estProducteur = op.activites?.some(a => a.id === 1);
-
-        // C — a des coordonnées GPS
         const adr = op.adressesOperateurs?.[0];
         const hasCoords = adr?.lat && adr?.long;
-
-        return vendParticuliers && estProducteur && hasCoords;
+        return vendParticuliers && hasCoords;
       })
       .map(op => {
         const adr = op.adressesOperateurs[0];
