@@ -9,15 +9,20 @@ export default async function handler(req, res) {
   const centerLng = parseFloat(lng);
   const rayonKm = parseFloat(rayon);
 
+  // ─── DISTANCE HAVERSINE ───────────────────────────────────────────────────
   function distanceKm(lat1, lng1, lat2, lng2) {
     const R = 6371;
     const dLat = (lat2 - lat1) * Math.PI / 180;
     const dLng = (lng2 - lng1) * Math.PI / 180;
-    const a = Math.sin(dLat/2) ** 2 +
-              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLng/2) ** 2;
-    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(lat1 * Math.PI / 180) *
+      Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLng / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   }
 
+  // ─── DÉPARTEMENTS (centre géographique approximatif) ─────────────────────
   const DEPTS = [
     ['01',46.20,5.23],['02',49.55,3.62],['03',46.34,3.30],['04',44.08,6.24],['05',44.66,6.35],
     ['06',43.93,7.11],['07',44.72,4.53],['08',49.69,4.70],['09',42.96,1.60],['10',48.32,4.07],
@@ -41,43 +46,57 @@ export default async function handler(req, res) {
   ];
 
   try {
+    // ─── 1. SÉLECTION DES DÉPARTEMENTS PROCHES ───────────────────────────────
     const deptsProches = DEPTS
       .filter(([, dLat, dLng]) => distanceKm(centerLat, centerLng, dLat, dLng) <= rayonKm + 30)
       .map(([code]) => code);
 
     const depts = deptsProches.join(',');
 
+    // ─── 2. FETCH PAGINÉ AVEC FILTRE VENTE DIRECTE OFFICIEL ──────────────────
+    // Paramètres clés issus de la doc API Agence Bio (data.gouv.fr) :
+    //   - categories=1  → "Vente directe" (catégorie officielle)
+    //   - etatEngagement=ENGAGEE → exclut les déconvertis et les arrêts
+    // Ces deux filtres remplacent notre ancien bricolage NAF/activité/productions
+    // qui remontait des faux positifs (distributeurs, coopératives, etc.)
+
     const allItems = [];
     let page = 1;
 
-    while (page <= 10) {
-      const url = `https://opendata.agencebio.org/api/gouv/operateurs/?departements=${depts}&page=${page}&limit=200`;
-      const response = await fetch(url, { headers: { 'Accept': 'application/json' } });
+    while (page <= 15) {
+      const url = new URL('https://opendata.agencebio.org/api/gouv/operateurs/');
+      url.searchParams.set('departements', depts);
+      url.searchParams.set('categories', '1');           // 1 = Vente directe
+      url.searchParams.set('etatEngagement', 'ENGAGEE'); // Uniquement certifiés actifs
+      url.searchParams.set('page', page);
+      url.searchParams.set('limit', '200');
+
+      const response = await fetch(url.toString(), {
+        headers: { 'Accept': 'application/json' }
+      });
+
       if (!response.ok) break;
+
       const data = await response.json();
       const items = data.items || [];
       allItems.push(...items);
+
+      // Arrêt si dernière page
       if (items.length < 200) break;
       page++;
     }
 
-    // Filtre élargi : producteur agricole (code NAF 01.xx) 
-    // OU activité Production + au moins une production renseignée
-    // On retire le filtre "Vente aux consommateurs" qui est trop restrictif
+    // ─── 3. FILTRES POST-FETCH ────────────────────────────────────────────────
+    // L'API filtre déjà par catégorie "vente directe" et engagement actif.
+    // On applique uniquement :
+    //   a) Présence de coordonnées GPS (indispensable pour la carte)
+    //   b) Distance réelle dans le rayon demandé
+    //   c) Tri par distance + limite à 100 résultats
+
     const items = allItems
       .filter(op => {
-        const naf = op.codeNAF || '';
-        const isAgricole = naf.startsWith('01');
-        const isProducteur = op.activites?.some(a => a.id === 1 || a.nom === 'Production');
-        const hasProductions = op.productions?.some(p => {
-          const code = p.code || '';
-          // Garder uniquement les vraies productions agricoles (pas distribution/commerce)
-          return code.startsWith('01') || code.startsWith('GP');
-        });
         const adr = op.adressesOperateurs?.[0];
-        const hasCoords = adr?.lat && adr?.long;
-
-        return (isAgricole || (isProducteur && hasProductions)) && hasCoords;
+        return adr?.lat && adr?.long;
       })
       .map(op => {
         const adr = op.adressesOperateurs[0];
@@ -86,11 +105,72 @@ export default async function handler(req, res) {
       })
       .filter(op => op._distance <= rayonKm)
       .sort((a, b) => a._distance - b._distance)
-      .slice(0, 50);
+      .slice(0, 100);
 
-    res.status(200).json({ items, nbTotal: items.length, depts: deptsProches });
+    // ─── 4. ENRICHISSEMENT — MODES DE VENTE ──────────────────────────────────
+    // L'API Agence Bio retourne les modes de vente déclarés par le producteur.
+    // On les expose proprement pour l'affichage carte (badges "À la ferme", etc.)
+    const itemsEnrichis = items.map(op => {
+      const modesVente = extraireModesVente(op);
+      const venteALaFerme = modesVente.some(m =>
+        m.toLowerCase().includes('ferme') ||
+        m.toLowerCase().includes('cueillette') ||
+        m.toLowerCase().includes('distributeur automatique')
+      );
+      return {
+        ...op,
+        _modesVente: modesVente,
+        _venteALaFerme: venteALaFerme,
+      };
+    });
+
+    res.status(200).json({
+      items: itemsEnrichis,
+      nbTotal: itemsEnrichis.length,
+      depts: deptsProches,
+      // Méta pour debug — à retirer en prod
+      _filtres: {
+        categories: '1 (Vente directe)',
+        etatEngagement: 'ENGAGEE',
+        departements: deptsProches.length,
+        brut: allItems.length,
+        apresFiltrageGPS: items.length,
+      }
+    });
 
   } catch (err) {
+    console.error('[api/bio] Erreur:', err);
     res.status(500).json({ error: err.message });
   }
+}
+
+// ─── HELPER — EXTRACTION DES MODES DE VENTE ────────────────────────────────
+// L'API Agence Bio expose les modes de vente dans plusieurs champs possibles
+// selon la version de l'API (venteDirecteDetail, categoriesVenteDirecte, etc.)
+// On normalise ici pour être robuste aux variations de structure.
+function extraireModesVente(op) {
+  const modes = [];
+
+  // Champ principal attendu dans la nouvelle API (post-mardi)
+  if (Array.isArray(op.categoriesVenteDirecte)) {
+    op.categoriesVenteDirecte.forEach(c => {
+      if (c.nom) modes.push(c.nom);
+      else if (typeof c === 'string') modes.push(c);
+    });
+  }
+
+  // Champ alternatif présent dans certaines fiches
+  if (Array.isArray(op.venteDirecteDetail)) {
+    op.venteDirecteDetail.forEach(v => {
+      if (v.nom) modes.push(v.nom);
+    });
+  }
+
+  // Champ legacy (ancienne API)
+  if (op.venteDirecte && typeof op.venteDirecte === 'string') {
+    modes.push(...op.venteDirecte.split(',').map(s => s.trim()).filter(Boolean));
+  }
+
+  // Dédoublonnage
+  return [...new Set(modes)];
 }
