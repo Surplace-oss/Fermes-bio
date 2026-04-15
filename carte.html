@@ -289,21 +289,24 @@ async function loadFarms(lat, lng, ville) {
       .map(([code]) => code);
     const depts = deptsProches.join(',');
 
-    // L'API plafonne à 20 items par appel peu importe limit/offset.
-    // Solution : appeler département par département, page par page,
-    // jusqu'à avoir récupéré tous les items (nbTotal / 20 pages).
+    // Pagination confirmée par Agence Bio (Nicolas) :
+    // - paramètre nb = nombre d'items par page
+    // - paramètre debut = offset (index du premier item)
+    // Exemple : nb=50&debut=0, nb=50&debut=50, nb=50&debut=100...
+    const NB = 50;
     const allItems = [];
     const seen = new Set();
     for (const dept of deptsProches) {
-      const firstUrl = `https://opendata.agencebio.org/api/gouv/operateurs/?departements=${dept}&page=1`;
+      // 1ère page pour connaître le nbTotal
+      const firstUrl = `https://opendata.agencebio.org/api/gouv/operateurs/?departements=${dept}&nb=${NB}&debut=0`;
       const firstRes = await fetch(firstUrl, { headers: { 'Accept': 'application/json' } });
       if (!firstRes.ok) continue;
       const firstData = await firstRes.json();
       const nbTotal = parseInt(firstData.nbTotal) || 0;
-      const nbPages = Math.ceil(nbTotal / 20);
       (firstData.items || []).forEach(i => { if (!seen.has(i.id)) { seen.add(i.id); allItems.push(i); } });
-      for (let page = 2; page <= nbPages; page++) {
-        const url = `https://opendata.agencebio.org/api/gouv/operateurs/?departements=${dept}&page=${page}`;
+      // Pages suivantes
+      for (let debut = NB; debut < nbTotal; debut += NB) {
+        const url = `https://opendata.agencebio.org/api/gouv/operateurs/?departements=${dept}&nb=${NB}&debut=${debut}`;
         const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
         if (!res.ok) break;
         const data = await res.json();
