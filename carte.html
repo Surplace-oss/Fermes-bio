@@ -272,7 +272,7 @@ async function loadFarms(lat, lng, ville) {
       const villeInput = document.getElementById('search-input').value.trim();
       if (!villeInput) return;
       coords = await geocodeVille(villeInput);
-      showToast(`📍 ${coords.nom.split(',')[0]} trouvée`);
+      
     }
 
     const rayon = parseFloat(document.getElementById('rayon-select').value);
@@ -289,30 +289,39 @@ async function loadFarms(lat, lng, ville) {
       .map(([code]) => code);
     const depts = deptsProches.join(',');
 
-    // Pagination confirmée par Agence Bio (Nicolas) :
-    // - paramètre nb = nombre d'items par page
-    // - paramètre debut = offset (index du premier item)
-    // Exemple : nb=50&debut=0, nb=50&debut=50, nb=50&debut=100...
-    const NB = 50;
-    const allItems = [];
-    const seen = new Set();
-    for (const dept of deptsProches) {
-      // 1ère page pour connaître le nbTotal
-      const firstUrl = `https://opendata.agencebio.org/api/gouv/operateurs/?departements=${dept}&nb=${NB}&debut=0`;
-      const firstRes = await fetch(firstUrl, { headers: { 'Accept': 'application/json' } });
-      if (!firstRes.ok) continue;
+    // Pagination Agence Bio : nb = taille de page, debut = offset
+    // On lance tous les départements en parallèle pour la 1ère page,
+    // puis on récupère les pages suivantes si nécessaire.
+    const NB = 100;
+    const BASE = 'https://opendata.agencebio.org/api/gouv/operateurs/';
+
+    async function fetchDept(dept) {
+      const items = [];
+      const seen = new Set();
+      let firstRes;
+      try {
+        firstRes = await fetch(`${BASE}?departements=${dept}&nb=${NB}&debut=0`, { headers: { 'Accept': 'application/json' } });
+      } catch(e) { console.warn('fetchDept error', dept, e); return items; }
+      if (!firstRes.ok) return items;
       const firstData = await firstRes.json();
       const nbTotal = parseInt(firstData.nbTotal) || 0;
-      (firstData.items || []).forEach(i => { if (!seen.has(i.id)) { seen.add(i.id); allItems.push(i); } });
-      // Pages suivantes
+      (firstData.items || []).forEach(i => { if (!seen.has(i.id)) { seen.add(i.id); items.push(i); } });
+      // Pages suivantes en parallèle
+      const promises = [];
       for (let debut = NB; debut < nbTotal; debut += NB) {
-        const url = `https://opendata.agencebio.org/api/gouv/operateurs/?departements=${dept}&nb=${NB}&debut=${debut}`;
-        const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
-        if (!res.ok) break;
-        const data = await res.json();
-        (data.items || []).forEach(i => { if (!seen.has(i.id)) { seen.add(i.id); allItems.push(i); } });
+        promises.push(fetch(`${BASE}?departements=${dept}&nb=${NB}&debut=${debut}`, { headers: { 'Accept': 'application/json' } }).then(r => r.ok ? r.json() : { items: [] }));
       }
+      const pages = await Promise.all(promises);
+      pages.forEach(d => (d.items || []).forEach(i => { if (!seen.has(i.id)) { seen.add(i.id); items.push(i); } }));
+      return items;
     }
+
+    // Tous les départements en parallèle
+    const results = await Promise.all(deptsProches.map(fetchDept));
+    const globalSeen = new Set();
+    const allItems = [];
+    results.flat().forEach(i => { if (!globalSeen.has(i.id)) { globalSeen.add(i.id); allItems.push(i); } });
+    console.log('Total brut récupéré:', allItems.length, 'depuis', deptsProches.length, 'depts');
 
     // Filtre : venteAnnuaire.venteParticuliers === true + coordonnées GPS
     // Vérifié sur données réelles : exclut Franprix, Lidl, grossistes
