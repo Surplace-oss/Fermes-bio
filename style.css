@@ -1,0 +1,90 @@
+/* Sur Place — feuille de style commune */
+:root {
+  --papier: #E8EADB;
+  --papier-2: #DDE0CC;
+  --encre: #000000;
+  --encre-2: #3B3F36;
+  --foret: #1F4A2E;
+  --foret-2: #2E6A42;
+  --pousse: #C9E86A;
+  --blanc: #FFFFFF;
+  --rouge: #B3261E;
+  --trait: 2px solid var(--encre);
+  --font: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --gouttiere: clamp(16px, 4vw, 56px);
+  --max: 1240px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font);
+  font-variation-settings: 'wdth' 100;
+  background: var(--papier);
+  color: var(--encre);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--foret-2); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* Titres : la typo condensée est l'identité */
+.titre, h1, h2, h3 {
+  font-stretch: 68%;
+  font-variation-settings: 'wdth' 68;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+}
+h1 { font-size: clamp(56px, 11vw, 148px); }
+h2 { font-size: clamp(40px, 6.4vw, 84px); }
+h3 { font-size: clamp(24px, 2.6vw, 32px); line-height: 1; }
+
+.surligne {
+  background: linear-gradient(transparent 12%, var(--pousse) 12%, var(--pousse) 92%, transparent 92%);
+  padding: 0 .15em;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+
+.conteneur { max-width: var(--max); margin: 0 auto; padding: 0 var(--gouttiere); }
+
+/* ── En-tête ───────────────────────────────────────────── */
+.entete {
+  position: sticky; top: 0; z-index: 1000;
+  background: var(--papier);
+  border-bottom: var(--trait);
+}
+.entete .conteneur { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+.marque { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.marque svg { width: 30px; height: 36px; }
+.marque span { font-size: 26px; font-weight: 800; font-variation-settings: 'wdth' 64; letter-spacing: -0.01em; line-height: 1; }
+.menu { display: flex; gap: 4px; align-items: center; }
+.menu a { text-decoration: none; font-weight: 600; font-size: 15px; padding: 8px 14px; border-radius: 999px; }
+.menu a:hover { background: var(--papier-2); }
+.menu a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+.menu .bouton { margin-left: 6px; }
+@media (max-width: 640px) { .menu a:not(.bouton) { display: none; } }
+
+/* ── Boutons ───────────────────────────────────────────── */
+.bouton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font: inherit; font-weight: 700; font-size: 16px;
+  background: var(--encre); color: var(--blanc);
+  border: var(--trait); border-radius: 999px;
+  padding: 12px 22px; cursor: pointer; text-decoration: none;
+  transition: transform .15s ease, background .15s ease;
+}
+.bouton:hover { transform: translateY(-1px); background: var(--foret); }
+.bouton.clair { background: var(--blanc); color: var(--encre); }
+.bouton.clair:hover { background: var(--pousse); }
+.bouton.vert { background: var(--foret); }
+.bouton.vert:hover { background: var(--encre); }
+
+/* ── Pied de page ──────────────────────────────────────── */
+.pied { border-top: var(--trait); padding: 36px 0 44px; font-size: 14px; }
+.pied .conteneur { display: flex; flex-wrap: wrap; gap: 20px 40px; justify-content: space-between; align-items: flex-start; }
+.pied nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.pied a { font-weight: 600; }
+.pied p { color: var(--encre-2); max-width: 46ch; }

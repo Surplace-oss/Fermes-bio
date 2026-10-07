@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pistes de logo — Sur Place</title>
+<meta name="theme-color" content="#1F4A2E">
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<meta name="robots" content="noindex">
+<style>
+.planche { padding: clamp(36px, 5vw, 64px) 0 80px; }
+.planche h1 { font-size: clamp(48px, 8vw, 104px); margin-bottom: 14px; }
+.planche > p { max-width: 60ch; margin-bottom: 40px; font-size: 18px; }
+.pistes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.piste { border: var(--trait); border-radius: 22px; overflow: hidden; background: var(--blanc); display: flex; flex-direction: column; }
+.scene { aspect-ratio: 1 / .8; display: grid; place-items: center; padding: 28px; }
+.piste h2 { font-size: 34px; padding: 18px 20px 6px; border-top: var(--trait); }
+.piste p { padding: 0 20px 20px; color: var(--encre-2); font-size: 15.5px; }
+.declinaisons { display: flex; gap: 10px; padding: 0 20px 22px; align-items: center; }
+.declinaisons > * { width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center; border: 1.5px solid var(--encre); }
+@media (max-width: 960px) { .pistes { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header class="entete">
+  <div class="conteneur">
+    <a class="marque" href="/" aria-label="Sur Place, accueil">
+      <svg viewBox="0 0 40 48" aria-hidden="true"><path d="M20 46.5S3.5 30.6 3.5 18.2a16.5 16.5 0 0 1 33 0C36.5 30.6 20 46.5 20 46.5Z" fill="#1F4A2E"/><path d="M20 31V19" stroke="#C9E86A" stroke-width="3" stroke-linecap="round"/><path d="M20 23.5c-7.6 0-10.2-5.4-10.2-10 6.4 0 10.2 3.4 10.2 10Z" fill="#C9E86A"/><path d="M20 20c0-6.7 3.6-10.3 10.3-10.3 0 6.5-3.7 10.3-10.3 10.3Z" fill="#C9E86A"/></svg>
+      <span>Sur Place</span>
+    </a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="/carte.html">La carte</a>
+      <a href="/ma-ferme.html">Je suis agriculteur</a>
+      <a class="bouton" href="/carte.html">Trouver une ferme</a>
+    </nav>
+  </div>
+</header>
+<main class="conteneur planche">
+  <h1>Trois pistes de logo.</h1>
+  <p>Même langage que le site : typographie très condensée, aplats vert forêt et vert pousse, trait dessiné à la main. La piste 1 est celle utilisée en ligne pour l'instant.</p>
+  <div class="pistes">
+
+    <article class="piste">
+      <div class="scene" style="background:var(--papier)">
+        <svg viewBox="0 0 220 110" width="100%" style="max-width:300px">
+          <g transform="translate(8 14) scale(1.7)"><path d="M20 46.5S3.5 30.6 3.5 18.2a16.5 16.5 0 0 1 33 0C36.5 30.6 20 46.5 20 46.5Z" fill="#1F4A2E"/><path d="M20 31V19" stroke="#C9E86A" stroke-width="3" stroke-linecap="round"/><path d="M20 23.5c-7.6 0-10.2-5.4-10.2-10 6.4 0 10.2 3.4 10.2 10Z" fill="#C9E86A"/><path d="M20 20c0-6.7 3.6-10.3 10.3-10.3 0 6.5-3.7 10.3-10.3 10.3Z" fill="#C9E86A"/></g>
+          <text x="86" y="58" font-family="Archivo" font-stretch="64%" style="font-variation-settings:'wdth' 64" font-weight="800" font-size="42" letter-spacing="-.5">Sur</text>
+          <text x="86" y="96" font-family="Archivo" font-stretch="64%" style="font-variation-settings:'wdth' 64" font-weight="800" font-size="42" letter-spacing="-.5">Place</text>
+        </svg>
+      </div>
+      <h2>1. La pousse-repère</h2>
+      <p>Un repère de carte dont l'intérieur est une pousse. Lisible dès 16 pixels : c'est l'icône de l'application et le favicon.</p>
+      <div class="declinaisons">
+        <div style="background:var(--foret)"><svg viewBox="0 0 40 48" width="26"><path d="M20 46.5S3.5 30.6 3.5 18.2a16.5 16.5 0 0 1 33 0C36.5 30.6 20 46.5 20 46.5Z" fill="#C9E86A"/><path d="M20 31V19" stroke="#1F4A2E" stroke-width="3" stroke-linecap="round"/><path d="M20 23.5c-7.6 0-10.2-5.4-10.2-10 6.4 0 10.2 3.4 10.2 10Z" fill="#1F4A2E"/><path d="M20 20c0-6.7 3.6-10.3 10.3-10.3 0 6.5-3.7 10.3-10.3 10.3Z" fill="#1F4A2E"/></svg></div>
+        <div style="background:var(--papier)"><svg viewBox="0 0 40 48" width="26"><path d="M20 46.5S3.5 30.6 3.5 18.2a16.5 16.5 0 0 1 33 0C36.5 30.6 20 46.5 20 46.5Z" fill="#1F4A2E"/><path d="M20 31V19" stroke="#C9E86A" stroke-width="3" stroke-linecap="round"/><path d="M20 23.5c-7.6 0-10.2-5.4-10.2-10 6.4 0 10.2 3.4 10.2 10Z" fill="#C9E86A"/><path d="M20 20c0-6.7 3.6-10.3 10.3-10.3 0 6.5-3.7 10.3-10.3 10.3Z" fill="#C9E86A"/></svg></div>
+        <div style="background:#000"><svg viewBox="0 0 40 48" width="26"><path d="M20 46.5S3.5 30.6 3.5 18.2a16.5 16.5 0 0 1 33 0C36.5 30.6 20 46.5 20 46.5Z" fill="#C9E86A"/><path d="M20 31V19" stroke="#000" stroke-width="3" stroke-linecap="round"/><path d="M20 23.5c-7.6 0-10.2-5.4-10.2-10 6.4 0 10.2 3.4 10.2 10Z" fill="#000"/><path d="M20 20c0-6.7 3.6-10.3 10.3-10.3 0 6.5-3.7 10.3-10.3 10.3Z" fill="#000"/></svg></div>
+      </div>
+    </article>
+
+    <article class="piste">
+      <div class="scene" style="background:var(--pousse)">
+        <svg viewBox="0 0 250 140" width="100%" style="max-width:320px">
+          <text x="14" y="58" font-family="Archivo" style="font-variation-settings:'wdth' 62" font-weight="900" font-size="56" letter-spacing="-1">SUR</text>
+          <text x="14" y="112" font-family="Archivo" style="font-variation-settings:'wdth' 62" font-weight="900" font-size="56" letter-spacing="-1">PLACE</text>
+          <path d="M124 58C64 52 6 66 5 92c-1 26 66 36 128 33 66-3 110-18 106-40-4-22-62-32-136-24" fill="none" stroke="#1F4A2E" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h2>2. La boucle</h2>
+      <p>Le mot seul, entouré à la main comme on entoure un lieu sur une carte papier. Reprend directement le trait de votre dossier. Fort en couverture, moins lisible en très petit.</p>
+      <div class="declinaisons">
+        <div style="background:var(--foret);color:var(--pousse);font-weight:900;font-variation-settings:'wdth' 62;font-size:20px">SP</div>
+        <div style="background:var(--papier);font-weight:900;font-variation-settings:'wdth' 62;font-size:20px">SP</div>
+      </div>
+    </article>
+
+    <article class="piste">
+      <div class="scene" style="background:var(--foret)">
+        <svg viewBox="0 0 160 160" width="100%" style="max-width:220px">
+          <defs><path id="c2" d="M80 80m-58 0a58 58 0 1 1 116 0a58 58 0 1 1-116 0"/></defs>
+          <circle cx="80" cy="80" r="74" fill="none" stroke="#C9E86A" stroke-width="3"/>
+          <circle cx="80" cy="80" r="44" fill="none" stroke="#C9E86A" stroke-width="1.5"/>
+          <text font-family="Archivo" font-size="15" font-weight="800" fill="#C9E86A" letter-spacing="2.4"><textPath href="#c2">VENDU SUR PLACE • FERME BIO • </textPath></text>
+          <g transform="translate(57 50) scale(1.15)"><path d="M20 46V24" stroke="#C9E86A" stroke-width="3.5" stroke-linecap="round"/><path d="M20 30c-9 0-12-6.5-12-12 7.6 0 12 4 12 12Z" fill="#C9E86A"/><path d="M20 26c0-8 4.2-12.2 12.2-12.2 0 7.7-4.4 12.2-12.2 12.2Z" fill="#C9E86A"/></g>
+        </svg>
+      </div>
+      <h2>3. Le tampon de cagette</h2>
+      <p>Un cachet rond comme on en tamponne sur les caisses. Idéal pour le label « Vérifiée Sur Place » remis aux fermes, à afficher à l'entrée de la ferme.</p>
+      <div class="declinaisons">
+        <div style="background:var(--papier);border-radius:50%"><svg viewBox="0 0 40 50" width="22"><path d="M20 46V24" stroke="#1F4A2E" stroke-width="3.5" stroke-linecap="round"/><path d="M20 30c-9 0-12-6.5-12-12 7.6 0 12 4 12 12Z" fill="#1F4A2E"/><path d="M20 26c0-8 4.2-12.2 12.2-12.2 0 7.7-4.4 12.2-12.2 12.2Z" fill="#1F4A2E"/></svg></div>
+      </div>
+    </article>
+
+  </div>
+</main>
+<footer class="pied">
+  <div class="conteneur">
+    <p>Données : annuaire officiel des opérateurs bio, © Agence Bio, licence ouverte. Sélection et vérifications : Sur Place.</p>
+    <nav aria-label="Pied de page"><a href="/carte.html">La carte</a><a href="/ma-ferme.html">Agriculteurs</a><a href="/mentions-legales.html">Mentions légales</a><a href="mailto:biosurplace@outlook.com">Contact</a></nav>
+  </div>
+</footer>
+</body>
+</html>

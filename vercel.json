@@ -1,0 +1,8 @@
+{
+  "functions": { "api/fermes.js": { "maxDuration": 60 } },
+  "redirects": [
+    { "source": "/dons.html", "destination": "/", "permanent": true },
+    { "source": "/dons", "destination": "/", "permanent": true },
+    { "source": "/landing.html", "destination": "/", "permanent": true }
+  ]
+}
