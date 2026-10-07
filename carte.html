@@ -10,8 +10,7 @@
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
 <link rel="stylesheet" href="/style.css">
 <style>
 html, body { height: 100%; }
@@ -76,13 +75,10 @@ select { font: inherit; font-size: 15px; font-weight: 600; border: var(--trait);
 
 /* Carte */
 #carte { min-height: 0; background: var(--papier-2); }
-.leaflet-tile-pane { filter: saturate(.45) contrast(.96) brightness(1.03); }
-.leaflet-container { font-family: var(--font); }
-.pt { width: 16px; height: 16px; border-radius: 50%; background: var(--foret); border: 2.5px solid var(--papier); box-shadow: 0 0 0 1.5px var(--foret); }
-.pt.ok { background: var(--encre); border-color: var(--pousse); box-shadow: 0 0 0 1.5px var(--encre); }
-.pt.sel { width: 24px; height: 24px; background: var(--pousse); box-shadow: 0 0 0 2.5px var(--encre); margin: -4px; }
-.grappe { background: var(--encre); color: var(--pousse); border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 14px; border: 2.5px solid var(--papier); box-shadow: 0 0 0 1.5px var(--encre); }
-.moi { width: 18px; height: 18px; border-radius: 50%; background: #2a6bd1; border: 3px solid #fff; box-shadow: 0 0 0 1.5px #2a6bd1; }
+.maplibregl-map { font-family: var(--font); }
+.maplibregl-ctrl-group { border: var(--trait) !important; border-radius: 14px !important; box-shadow: none !important; overflow: hidden; }
+.maplibregl-ctrl-attrib { font-size: 11px; background: rgba(232,234,219,.85) !important; }
+.maplibregl-canvas:focus-visible { outline: 3px solid var(--foret-2); }
 
 /* Mobile : bascule liste / carte */
 .bascule { display: none; }
@@ -160,8 +156,8 @@ select { font: inherit; font-size: 15px; font-weight: 600; border: var(--trait);
 </div>
 <button class="bouton bascule" id="bascule" type="button">Voir la carte</button>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="/carte-style.js"></script>
 <script>
 'use strict';
 // ─── Référentiels ───────────────────────────────────────────────────────────
@@ -196,22 +192,56 @@ const etat = { centre: null, label: '', rayon: 30, fermes: [], filtres: new Set(
 const cacheDept = {};
 
 // ─── Carte ─────────────────────────────────────────────────────────────────
-const carte = L.map('carte', { zoomControl: false }).setView([46.6, 2.4], 6);
-L.control.zoom({ position: 'bottomright' }).addTo(carte);
-// Fond de carte : Plan IGN (Géoplateforme), gratuit et sans clé
-L.tileLayer('https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}', {
-  minZoom: 2, maxZoom: 19,
-  attribution: '© <a href="https://www.ign.fr/">IGN</a> – Géoplateforme · Données © <a href="https://www.agencebio.org">Agence Bio</a>'
-}).addTo(carte);
-const grappes = L.markerClusterGroup({
-  showCoverageOnHover: false, maxClusterRadius: 44,
-  iconCreateFunction: g => { const n = g.getChildCount(); const t = n < 10 ? 34 : n < 100 ? 40 : 48;
-    return L.divIcon({ html: `<div class="grappe" style="width:${t}px;height:${t}px">${n}</div>`, className: '', iconSize: [t, t] }); }
+const carte = new maplibregl.Map({
+  container: 'carte', style: window.styleSurPlace, center: [2.4, 46.6], zoom: 4.6, minZoom: 3, maxZoom: 18,
+  dragRotate: false, pitchWithRotate: false, attributionControl: false,
 });
-carte.addLayer(grappes);
-let cercle = null, moi = null;
-const marqueurs = new Map();
-const icone = (f, sel) => L.divIcon({ className: '', html: `<div class="pt${f.verifiee ? ' ok' : ''}${sel ? ' sel' : ''}"></div>`, iconSize: [16, 16], iconAnchor: [8, 8] });
+carte.touchZoomRotate.disableRotation();
+carte.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right');
+carte.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: '<a href="https://openfreemap.org">OpenFreeMap</a> © <a href="https://www.openmaptiles.org/">OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · Données © <a href="https://www.agencebio.org">Agence Bio</a>' }), 'bottom-left');
+const VIDE = { type: 'FeatureCollection', features: [] };
+const carteDispo = new Promise(ok => carte.on('load', () => {
+  carte.addSource('rayon', { type: 'geojson', data: VIDE });
+  carte.addSource('moi', { type: 'geojson', data: VIDE });
+  carte.addSource('fermes', { type: 'geojson', data: VIDE, cluster: true, clusterRadius: 42, clusterMaxZoom: 12 });
+  carte.addSource('selection', { type: 'geojson', data: VIDE });
+  carte.addLayer({ id: 'rayon', type: 'line', source: 'rayon', paint: { 'line-color': '#1F4A2E', 'line-width': 2, 'line-dasharray': [2, 2] } });
+  carte.addLayer({ id: 'grappes', type: 'circle', source: 'fermes', filter: ['has', 'point_count'],
+    paint: { 'circle-color': '#000', 'circle-radius': ['step', ['get', 'point_count'], 15, 10, 19, 50, 24, 200, 29], 'circle-stroke-color': '#E8EADB', 'circle-stroke-width': 2.5 } });
+  carte.addLayer({ id: 'grappes-n', type: 'symbol', source: 'fermes', filter: ['has', 'point_count'],
+    layout: { 'text-field': ['get', 'point_count_abbreviated'], 'text-font': ['Noto Sans Bold'], 'text-size': 13, 'text-allow-overlap': true },
+    paint: { 'text-color': '#C9E86A' } });
+  carte.addLayer({ id: 'points', type: 'circle', source: 'fermes', filter: ['!', ['has', 'point_count']],
+    paint: { 'circle-color': ['case', ['get', 'v'], '#000', '#1F4A2E'], 'circle-radius': ['interpolate', ['linear'], ['zoom'], 8, 5.5, 14, 8],
+      'circle-stroke-color': ['case', ['get', 'v'], '#C9E86A', '#E8EADB'], 'circle-stroke-width': 2.5 } });
+  carte.addLayer({ id: 'noms', type: 'symbol', source: 'fermes', minzoom: 12.5, filter: ['!', ['has', 'point_count']],
+    layout: { 'text-field': ['get', 'n'], 'text-font': ['Noto Sans Bold'], 'text-size': 12, 'text-offset': [0, 1.2], 'text-anchor': 'top', 'text-max-width': 10, 'text-optional': true },
+    paint: { 'text-color': '#1F4A2E', 'text-halo-color': '#E8EADB', 'text-halo-width': 1.6 } });
+  carte.addLayer({ id: 'selection', type: 'circle', source: 'selection',
+    paint: { 'circle-color': '#C9E86A', 'circle-radius': 11, 'circle-stroke-color': '#000', 'circle-stroke-width': 3 } });
+  carte.addLayer({ id: 'moi', type: 'circle', source: 'moi', paint: { 'circle-color': '#2A6BD1', 'circle-radius': 8, 'circle-stroke-color': '#fff', 'circle-stroke-width': 3 } });
+  carte.on('click', 'grappes', async e => {
+    const f = e.features[0];
+    const zoom = await carte.getSource('fermes').getClusterExpansionZoom(f.properties.cluster_id);
+    carte.easeTo({ center: f.geometry.coordinates, zoom: zoom + 0.3 });
+  });
+  carte.on('click', 'points', e => ouvrirFiche(e.features[0].properties.id));
+  for (const l of ['grappes', 'points']) {
+    carte.on('mouseenter', l, () => { carte.getCanvas().style.cursor = 'pointer'; });
+    carte.on('mouseleave', l, () => { carte.getCanvas().style.cursor = ''; });
+  }
+  ok();
+}));
+function cercleGeo(lat, lng, km, n = 72) {
+  const pts = [];
+  for (let i = 0; i <= n; i++) {
+    const a = (i / n) * 2 * Math.PI;
+    pts.push([lng + (km / (111.32 * Math.cos(lat * Math.PI / 180))) * Math.cos(a), lat + (km / 110.57) * Math.sin(a)]);
+  }
+  return { type: 'Feature', geometry: { type: 'LineString', coordinates: pts } };
+}
+const point = (lng, lat, props = {}) => ({ type: 'Feature', geometry: { type: 'Point', coordinates: [lng, lat] }, properties: props });
+async function majCarte(sourceId, data) { await carteDispo; carte.getSource(sourceId).setData(data); }
 
 // ─── Puces de filtre ───────────────────────────────────────────────────────
 $('#puces').innerHTML = Object.entries(FAMILLES).map(([k, v]) => `<button class="puce" type="button" data-f="${k}" aria-pressed="false">${v}</button>`).join('');
@@ -222,12 +252,27 @@ $('#puces').addEventListener('click', e => {
 });
 
 // ─── Géocodage (Géoplateforme IGN, repli sur la BAN) ───────────────────────
+// Géocodage : on interroge en parallèle l'IGN (Géoplateforme) et la Base adresse nationale,
+// avec un délai maximum, puis l'API Découpage administratif en dernier recours.
+function avecDelai(url, ms = 4500) {
+  const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), ms);
+  return fetch(url, { signal: ctl.signal }).finally(() => clearTimeout(t));
+}
+const sansAccent = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 async function geocoder(q, limite = 6) {
   const p = `q=${encodeURIComponent(q)}&type=municipality&limit=${limite}&autocomplete=1`;
-  for (const base of ['https://data.geopf.fr/geocodage/search?', 'https://api-adresse.data.gouv.fr/search/?']) {
-    try { const r = await fetch(base + p); if (r.ok) return (await r.json()).features || []; } catch (e) {}
-  }
-  return [];
+  const banLike = base => avecDelai(base + p).then(r => r.ok ? r.json() : Promise.reject()).then(j => (j.features || []).length ? j.features : Promise.reject());
+  try {
+    return await Promise.any([banLike('https://data.geopf.fr/geocodage/search?'), banLike('https://api-adresse.data.gouv.fr/search/?')]);
+  } catch (e) {}
+  try {
+    const cp = /^\d{5}$/.test(q.trim());
+    const url = `https://geo.api.gouv.fr/communes?${cp ? 'codePostal=' + q.trim() : 'nom=' + encodeURIComponent(q)}&fields=nom,centre,codesPostaux,departement&boost=population&limit=${limite}`;
+    const r = await avecDelai(url, 6000); if (!r.ok) return [];
+    return (await r.json()).filter(c => c.centre).map(c => ({
+      geometry: c.centre, properties: { city: c.nom, postcode: (c.codesPostaux || [])[0] || '', context: `${c.departement?.code || ''}, ${c.departement?.nom || ''}` }
+    }));
+  } catch (e) { return []; }
 }
 let suggs = [], suggIdx = -1, minuteur;
 $('#q').addEventListener('input', () => {
@@ -235,7 +280,9 @@ $('#q').addEventListener('input', () => {
   const q = $('#q').value.trim();
   if (q.length < 2) return fermerSugg();
   minuteur = setTimeout(async () => {
-    suggs = await geocoder(q);
+    const res = await geocoder(q);
+    if ($('#q').value.trim() !== q || document.activeElement !== $('#q')) return;
+    suggs = res;
     suggIdx = -1;
     $('#sugg').innerHTML = suggs.map((f, i) => `<li role="option" data-i="${i}" aria-selected="false">${esc(f.properties.city || f.properties.name)}<small>${esc(f.properties.postcode || '')} · ${esc((f.properties.context || '').split(',').slice(1, 2).join('').trim())}</small></li>`).join('');
     $('#sugg').style.display = suggs.length ? 'block' : 'none';
@@ -248,8 +295,9 @@ $('#q').addEventListener('keydown', e => {
     [...$('#sugg').children].forEach((li, i) => li.setAttribute('aria-selected', i === suggIdx));
   } else if (e.key === 'Escape') fermerSugg();
 });
-$('#sugg').addEventListener('mousedown', e => { const li = e.target.closest('li'); if (li) { e.preventDefault(); choisir(suggs[+li.dataset.i]); } });
-function fermerSugg() { $('#sugg').style.display = 'none'; suggs = []; }
+$('#sugg').addEventListener('pointerdown', e => e.preventDefault());
+$('#sugg').addEventListener('click', e => { const li = e.target.closest('li'); if (li && suggs[+li.dataset.i]) choisir(suggs[+li.dataset.i]); });
+function fermerSugg() { clearTimeout(minuteur); $('#sugg').style.display = 'none'; suggs = []; suggIdx = -1; }
 function choisir(f) {
   fermerSugg();
   const [lng, lat] = f.geometry.coordinates; const nom = f.properties.city || f.properties.name;
@@ -259,6 +307,8 @@ $('#form').addEventListener('submit', async e => {
   e.preventDefault();
   if (suggIdx >= 0 && suggs[suggIdx]) return choisir(suggs[suggIdx]);
   const q = $('#q').value.trim(); if (!q) return;
+  fermerSugg(); $('#q').blur();
+  message(`Recherche de « ${esc(q)} »…`);
   const r = await geocoder(q, 1);
   if (!r.length) return message(`Aucune commune trouvée pour « ${esc(q)} ». Vérifiez l'orthographe ou essayez le code postal.`);
   choisir(r[0]);
@@ -292,11 +342,11 @@ async function chercher(lat, lng, label, estMoi = false) {
   etat.centre = [lat, lng]; etat.label = label; etat.rayon = +$('#rayon').value; etat.fermes = [];
   fermerFiche();
   history.replaceState(null, '', `?lat=${lat.toFixed(4)}&lng=${lng.toFixed(4)}&r=${etat.rayon}&l=${encodeURIComponent(label)}`);
-  if (cercle) carte.removeLayer(cercle);
-  cercle = L.circle([lat, lng], { radius: etat.rayon * 1000, color: '#1F4A2E', weight: 1.5, dashArray: '5 6', fill: false }).addTo(carte);
-  if (moi) { carte.removeLayer(moi); moi = null; }
-  if (estMoi) moi = L.marker([lat, lng], { icon: L.divIcon({ className: '', html: '<div class="moi"></div>', iconSize: [18, 18] }), interactive: false }).addTo(carte);
-  carte.fitBounds(cercle.getBounds(), { padding: [20, 20] });
+  majCarte('rayon', { type: 'FeatureCollection', features: [cercleGeo(lat, lng, etat.rayon)] });
+  majCarte('moi', estMoi ? { type: 'FeatureCollection', features: [point(lng, lat)] } : VIDE);
+  majCarte('selection', VIDE);
+  const dLat = etat.rayon / 110.57, dLng = etat.rayon / (111.32 * Math.cos(lat * Math.PI / 180));
+  carteDispo.then(() => carte.fitBounds([[lng - dLng, lat - dLat], [lng + dLng, lat + dLat]], { padding: 24, duration: 600 }));
 
   // Départements dont le centre est à moins de rayon + 70 km (un département fait ~100 km de large)
   const depts = DEPTS.filter(([, a, b]) => km(lat, lng, a, b) <= etat.rayon + 70).map(([c]) => c);
@@ -318,7 +368,7 @@ async function chercher(lat, lng, label, estMoi = false) {
   if (monJeton !== jeton) return;
   barre(1); setTimeout(() => barre(0), 400);
   if (!etat.fermes.length) {
-    grappes.clearLayers();
+    majCarte('fermes', VIDE);
     return message(erreurs
       ? "L'annuaire de l'Agence Bio ne répond pas pour le moment. Réessayez dans quelques minutes."
       : `Aucune ferme en vente directe à moins de ${etat.rayon} km. Élargissez la distance.`);
@@ -347,22 +397,16 @@ function afficher(enCours = false, erreurs = 0) {
       <span class="fam">${f.verifiee ? '<span class="tag ok">Vérifiée Sur Place</span>' : ''}${f.familles.slice(0, 4).map(x => `<span class="tag">${FAMILLES[x]}</span>`).join('')}</span>
     </button>`).join('') + (l.length > MAX ? `<div class="vide"><p>${l.length - MAX} autres fermes : réduisez la distance ou filtrez par produit.</p></div>` : '')
     : `<div class="vide"><p>Aucune ferme ne correspond à ces filtres. Retirez un filtre ou élargissez la distance.</p></div>`;
-  grappes.clearLayers(); marqueurs.clear();
-  const ms = l.map(f => {
-    const m = L.marker([f.lat, f.lng], { icon: icone(f, f.id === etat.active), title: joli(f.nom) });
-    m.on('click', () => ouvrirFiche(f.id)); marqueurs.set(f.id, m); return m;
-  });
-  grappes.addLayers(ms);
+  majCarte('fermes', { type: 'FeatureCollection', features: l.map(f => point(f.lng, f.lat, { id: f.id, n: joli(f.nom), v: !!f.verifiee })) });
 }
 $('#liste').addEventListener('click', e => { const b = e.target.closest('.ferme'); if (b) ouvrirFiche(+b.dataset.id); });
 
 // ─── Fiche ─────────────────────────────────────────────────────────────────
 function ouvrirFiche(id) {
   const f = etat.fermes.find(x => x.id === id); if (!f) return;
-  const ancien = etat.active; etat.active = id;
-  if (ancien && marqueurs.get(ancien)) marqueurs.get(ancien).setIcon(icone(etat.fermes.find(x => x.id === ancien), false));
-  const m = marqueurs.get(id);
-  if (m) { m.setIcon(icone(f, true)); grappes.zoomToShowLayer(m, () => carte.panTo([f.lat, f.lng])); }
+  etat.active = id;
+  majCarte('selection', { type: 'FeatureCollection', features: [point(f.lng, f.lat)] });
+  carteDispo.then(() => carte.easeTo({ center: [f.lng, f.lat], zoom: Math.max(carte.getZoom(), 13), duration: 600 }));
   const u = new URL(location); u.searchParams.set('ferme', id); history.replaceState(null, '', u);
   const nom = joli(f.nom);
   const itin = `https://www.google.com/maps/dir/?api=1&destination=${f.lat},${f.lng}`;
@@ -399,14 +443,14 @@ function ouvrirFiche(id) {
 }
 function fermerFiche() {
   $('#fiche').classList.remove('ouverte');
-  if (etat.active && marqueurs.get(etat.active)) marqueurs.get(etat.active).setIcon(icone(etat.fermes.find(x => x.id === etat.active), false));
+  majCarte('selection', VIDE);
   etat.active = null;
   const u = new URL(location); u.searchParams.delete('ferme'); history.replaceState(null, '', u);
 }
 
 // ─── Mobile ────────────────────────────────────────────────────────────────
 function majBascule() { $('#bascule').textContent = document.body.classList.contains('vue-carte') ? 'Voir la liste' : 'Voir la carte'; }
-$('#bascule').addEventListener('click', () => { document.body.classList.toggle('vue-carte'); majBascule(); setTimeout(() => carte.invalidateSize(), 50); });
+$('#bascule').addEventListener('click', () => { document.body.classList.toggle('vue-carte'); majBascule(); setTimeout(() => carte.resize(), 50); });
 
 // ─── Démarrage selon l'URL ─────────────────────────────────────────────────
 (function () {
