@@ -77,14 +77,14 @@ const propre = s => (s || '').replace(/\s+/g, ' ').trim();
 
 // Familles de produits lisibles pour le public (déduites des métiers + productions)
 const FAMILLES = [
-  ['legumes', /l[ée]gum|pommes? de terre|salade|tomate|courge|mara[iî]ch|champignon|cresson|ail\b|oignon|carotte/i],
+  ['legumes', /l[ée]gum|pommes? de terre|salade|tomate|courge|mara[iî]ch|champignon|cresson|\bail\b|oignon|carotte/i],
   ['fruits', /fruit|pommes? de table|poire|abricot|cerise|p[êe]che|prune|fraise|baie|cassis|myrtille|figue|noix|noisette|ch[âa]taigne|agrume|kiwi|amande|raisin de table|melon|framboise|arboricult/i],
-  ['vin', /vin|raisin de cuve|viticult|cidre|poir[ée]|spiritueux/i],
+  ['vin', /\bvins?\b|vigne|raisin de cuve|viticult|cidre|poir[ée]\b|spiritueux/i],
   ['viande', /viande|bovins viande|brebis viande|porcins|volaille de chair|charcut|poulets? de chair|canard|lapin/i],
   ['laitier', /lait|fromage|yaourt|beurre|cr[èe]me|brebis laiti|bovins laiti|ch[èe]vre/i],
-  ['oeufs', /[œo]e?ufs?|poules pondeuses/i],
+  ['oeufs', /œuf|\boeufs?\b|poules pondeuses/i],
   ['miel', /miel|apicult|pollen|propolis|gel[ée]e royale/i],
-  ['cereales', /bl[ée]|farine|pain|c[ée]r[ée]al|orge|seigle|[ée]peautre|avoine|ma[iï]s|riz|lentille|pois chiche|sarrasin|quinoa|l[ée]gumineuse/i],
+  ['cereales', /\bbl[ée]s?\b|farine|pain|c[ée]r[ée]al|orge|seigle|[ée]peautre|avoine|\bma[iï]s\b|\briz\b|lentille|pois chiche|sarrasin|quinoa|l[ée]gumineuse/i],
   ['plantes', /aromatique|ppam|thym|romarin|lavand|huiles? essentielle|tisane|[ée]pice|safran|plantes? à parfum|m[ée]dicinal|sauge|menthe|verveine/i],
   ['huile', /olive|ol[ée]icult|huile (de|d')/i],
   ['mer', /hu[iî]tre|ostr[ée]i|moule|mytil|piscicult|truite|aquacult|algue|poisson/i],
