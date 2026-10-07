@@ -278,7 +278,9 @@ function localiser() {
 
 // ─── Chargement des fermes ─────────────────────────────────────────────────
 function chargerDept(d) {
-  if (!cacheDept[d]) cacheDept[d] = fetch(`/api/fermes?dept=${d}`).then(r => { if (!r.ok) throw new Error(d); return r.json(); })
+  // 1) fichier préparé chaque nuit (instantané)  2) repli sur l'API en direct
+  if (!cacheDept[d]) cacheDept[d] = fetch(`/data/fermes/${d}.json`).then(r => r.ok ? r.json() : Promise.reject())
+    .catch(() => fetch(`/api/fermes?dept=${d}`).then(r => { if (!r.ok) throw new Error(d); return r.json(); }))
     .catch(err => { delete cacheDept[d]; throw err; });
   return cacheDept[d];
 }
