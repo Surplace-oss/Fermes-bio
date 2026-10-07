@@ -1,0 +1,13 @@
+{
+  "name": "Sur Place — fermes bio en vente directe",
+  "short_name": "Sur Place",
+  "description": "Les fermes bio certifiées qui produisent et vendent elles-mêmes, près de chez vous.",
+  "lang": "fr",
+  "start_url": "/carte.html",
+  "display": "standalone",
+  "background_color": "#E8EADB",
+  "theme_color": "#1F4A2E",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

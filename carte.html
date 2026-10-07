@@ -2,485 +2,417 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>surplace.bio — Carte des fermes bio</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La carte — Sur Place</title>
+<meta name="description" content="Carte des fermes bio certifiées qui produisent et vendent elles-mêmes, autour de vous.">
+<meta name="theme-color" content="#1F4A2E">
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="/style.css">
 <style>
-:root { --vert:#2d6a4f;--vert-clair:#52b788;--vert-pale:#d8f3dc;--terre:#8b5e3c;--creme:#faf8f3;--gris:#f0ede6;--gris-texte:#7a7067;--noir:#1a1a18;--blanc:#ffffff;--shadow:0 2px 16px rgba(0,0,0,0.08);--radius:14px; }
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'DM Sans',sans-serif;background:var(--creme);color:var(--noir);height:100vh;overflow:hidden;}
-nav{height:64px;background:rgba(247,243,236,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.07);display:flex;align-items:center;padding:0 20px;gap:16px;z-index:1000;position:relative;}
-.nav-link{text-decoration:none;color:var(--vert);font-size:14px;font-weight:500;padding:8px 16px;border-radius:100px;transition:all 0.2s;opacity:0.75;white-space:nowrap;}
-.nav-link:hover,.nav-link.active{opacity:1;background:var(--vert-pale);}
-.nav-cta{background:#1a3d2b!important;color:white!important;opacity:1!important;}
-.nav-cta:hover{background:#2d6a4f!important;}
-.nav-right{margin-left:auto;display:flex;gap:6px;align-items:center;}
-.search-wrap{display:flex;gap:8px;flex:1;max-width:460px;}
-.search-bar{flex:1;display:flex;align-items:center;background:var(--gris);border-radius:30px;padding:0 14px;gap:8px;border:1.5px solid transparent;transition:border-color 0.2s;}
-.search-bar:focus-within{border-color:var(--vert-clair);}
-.search-bar input{border:none;background:transparent;font-family:'DM Sans',sans-serif;font-size:14px;width:100%;padding:9px 0;outline:none;color:var(--noir);}
-.search-btn{background:var(--vert);color:white;border:none;border-radius:30px;padding:9px 18px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;}
-.search-btn:hover{background:#245a42;}
-.rayon-wrap{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--gris-texte);}
-.rayon-wrap select{font-family:'DM Sans',sans-serif;font-size:13px;border:1.5px solid #ddd8ce;border-radius:20px;padding:4px 10px;background:white;cursor:pointer;outline:none;color:var(--noir);}
-.api-badge{display:inline-flex;align-items:center;gap:6px;background:#e8f5e9;border:1px solid #a5d6a7;border-radius:20px;padding:4px 12px;font-size:11px;color:#2d6a4f;font-weight:500;white-space:nowrap;}
-.api-dot{width:6px;height:6px;background:#4caf50;border-radius:50%;animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
-.filters-bar{height:48px;background:var(--blanc);border-bottom:1px solid #e8e3da;display:flex;align-items:center;padding:0 20px;gap:8px;overflow-x:auto;position:relative;z-index:999;}
-.filters-bar::-webkit-scrollbar{display:none;}
-.filter-chip{display:flex;align-items:center;gap:5px;padding:5px 13px;border-radius:20px;border:1.5px solid #ddd8ce;background:var(--blanc);font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;transition:all 0.2s;color:var(--noir);}
-.filter-chip:hover{border-color:var(--vert-clair);background:var(--vert-pale);}
-.filter-chip.active{border-color:var(--vert);background:var(--vert-pale);color:var(--vert);}
-.main-layout{display:flex;height:calc(100vh - 112px);}
-.list-panel{width:440px;flex-shrink:0;overflow-y:auto;background:var(--creme);padding:16px 14px;}
-.list-panel::-webkit-scrollbar{width:4px;}
-.list-panel::-webkit-scrollbar-thumb{background:#ccc;border-radius:2px;}
-.results-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding:0 2px;}
-.results-count{font-size:13px;color:var(--gris-texte);}
-.results-count strong{color:var(--noir);}
-.sort-select{font-family:'DM Sans',sans-serif;font-size:12px;border:1.5px solid #ddd8ce;border-radius:8px;padding:4px 8px;background:white;cursor:pointer;outline:none;}
-.loading-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;gap:16px;color:var(--gris-texte);text-align:center;}
-.spinner{width:40px;height:40px;border:3px solid var(--vert-pale);border-top-color:var(--vert);border-radius:50%;animation:spin 0.8s linear infinite;}
-@keyframes spin{to{transform:rotate(360deg)}}
-.farm-card{background:var(--blanc);border-radius:var(--radius);margin-bottom:10px;overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:all 0.2s;border:2px solid transparent;display:flex;}
-.farm-card:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,0,0,0.12);}
-.farm-card.selected{border-color:var(--vert-clair);}
-.card-thumb{width:90px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:36px;}
-.card-body{padding:12px 14px;flex:1;min-width:0;}
-.card-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.card-location{font-size:12px;color:var(--gris-texte);margin-bottom:8px;}
-.card-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;}
-.tag{font-size:11px;padding:2px 8px;border-radius:20px;font-weight:500;}
-.tag-vert{background:#e8f5e9;color:#2d6a4f;}
-.tag-orange{background:#fff3e0;color:#e65100;}
-.tag-bleu{background:#e3f2fd;color:#1565c0;}
-.tag-rouge{background:#fce4ec;color:#c62828;}
-.tag-gris{background:#f5f5f5;color:#555;}
-.card-footer{display:flex;justify-content:space-between;align-items:center;padding-top:8px;border-top:1px solid var(--gris);font-size:12px;}
-.distance-badge{background:#e8f5e9;color:#2d6a4f;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;}
-.map-panel{flex:1;position:relative;}
-#map{width:100%;height:100%;}
-.custom-marker{background:var(--vert);color:white;padding:4px 10px;border-radius:16px;font-size:12px;font-weight:600;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,0.3);cursor:pointer;}
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2000;display:none;align-items:center;justify-content:center;}
-.modal-overlay.open{display:flex;}
-.modal{background:white;border-radius:20px;width:600px;max-height:85vh;overflow-y:auto;animation:slideUp 0.3s ease;}
-@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.modal-header{width:100%;height:180px;display:flex;align-items:center;justify-content:center;font-size:70px;border-radius:20px 20px 0 0;position:relative;}
-.modal-close{position:absolute;top:12px;right:12px;width:32px;height:32px;background:rgba(255,255,255,0.9);border:none;border-radius:50%;font-size:16px;cursor:pointer;}
-.modal-body{padding:20px 24px;}
-.modal-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:4px;}
-.modal-meta{font-size:13px;color:var(--gris-texte);margin-bottom:16px;display:flex;flex-wrap:wrap;gap:12px;}
-.modal-section{margin-bottom:20px;}
-.modal-section-title{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--gris-texte);margin-bottom:8px;}
-.products-wrap{display:flex;flex-wrap:wrap;gap:6px;}
-.modal-actions{display:flex;gap:10px;padding-top:4px;}
-.btn-modal-primary{flex:1;background:var(--vert);color:white;border:none;border-radius:10px;padding:12px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;}
-.btn-modal-primary:hover{background:#245a42;}
-.btn-modal-secondary{flex:1;background:var(--gris);color:var(--noir);border:none;border-radius:10px;padding:12px;font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer;}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--noir);color:white;padding:10px 20px;border-radius:30px;font-size:13px;font-weight:500;z-index:3000;transition:transform 0.3s ease;}
-.toast.show{transform:translateX(-50%) translateY(0);}
+html, body { height: 100%; }
+body { display: flex; flex-direction: column; overflow: hidden; }
+.entete { position: relative; }
+.entete .conteneur { max-width: none; }
+
+/* Barre de recherche */
+.barre { border-bottom: var(--trait); background: var(--papier); padding: 12px var(--gouttiere); display: grid; gap: 10px; }
+.barre form { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.champ { position: relative; flex: 1 1 260px; max-width: 460px; }
+.champ input { width: 100%; font: inherit; font-size: 16px; border: var(--trait); border-radius: 999px; padding: 10px 18px; background: var(--blanc); outline: none; }
+.champ input:focus { box-shadow: 0 0 0 3px var(--pousse); }
+.suggestions { position: absolute; left: 0; right: 0; top: calc(100% + 6px); background: var(--blanc); border: var(--trait); border-radius: 16px; list-style: none; z-index: 1200; overflow: hidden; display: none; }
+.suggestions li { padding: 10px 16px; cursor: pointer; font-size: 15px; }
+.suggestions li[aria-selected="true"], .suggestions li:hover { background: var(--pousse); }
+.suggestions small { color: var(--encre-2); margin-left: 6px; }
+select { font: inherit; font-size: 15px; font-weight: 600; border: var(--trait); border-radius: 999px; padding: 9px 14px; background: var(--blanc); cursor: pointer; }
+.barre .bouton { padding: 9px 18px; font-size: 15px; }
+.puces { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+.puces::-webkit-scrollbar { display: none; }
+.puce { flex: none; font: inherit; font-size: 14px; font-weight: 600; border: 1.5px solid var(--encre); background: transparent; border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+.puce[aria-pressed="true"] { background: var(--encre); color: var(--pousse); }
+
+/* Zone liste + carte */
+.zone { flex: 1; display: grid; grid-template-columns: minmax(340px, 430px) 1fr; min-height: 0; }
+.panneau { position: relative; border-right: var(--trait); display: flex; flex-direction: column; min-height: 0; background: var(--papier); }
+.etat { padding: 14px 20px; border-bottom: 1.5px solid var(--encre); font-size: 14.5px; display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+.etat b { font-variation-settings: 'wdth' 68; font-size: 22px; font-weight: 800; }
+.etat select { font-size: 13px; padding: 5px 10px; border-width: 1.5px; }
+.liste-fermes { overflow-y: auto; flex: 1; }
+.ferme { display: block; width: 100%; text-align: left; font: inherit; color: inherit; background: none; border: 0; border-bottom: 1px solid rgba(0,0,0,.18); padding: 16px 20px; cursor: pointer; }
+.ferme:hover, .ferme.active { background: var(--blanc); }
+.ferme .nom { font-variation-settings: 'wdth' 70; font-weight: 800; font-size: 22px; line-height: 1.02; display: block; }
+.ferme .ou { font-size: 14px; color: var(--encre-2); display: flex; gap: 10px; margin-top: 4px; }
+.ferme .ou .km { font-weight: 700; color: var(--encre); }
+.ferme .fam { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+.tag { font-size: 12.5px; font-weight: 600; background: var(--papier-2); border-radius: 999px; padding: 2px 9px; }
+.tag.ok { background: var(--encre); color: var(--pousse); }
+.vide { padding: 32px 22px; }
+.vide h2 { font-size: 44px; margin-bottom: 14px; }
+.vide p { color: var(--encre-2); margin-bottom: 18px; max-width: 36ch; }
+.villes { display: flex; flex-wrap: wrap; gap: 8px; }
+.charge { height: 3px; background: var(--pousse); transform-origin: left; transform: scaleX(0); transition: transform .3s ease; }
+
+/* Fiche ferme */
+.fiche { position: absolute; inset: 0; background: var(--papier); overflow-y: auto; z-index: 5; display: none; }
+.fiche.ouverte { display: block; }
+.fiche-haut { position: sticky; top: 0; background: var(--papier); border-bottom: 1.5px solid var(--encre); padding: 10px 20px; z-index: 2; }
+.retour { font: inherit; font-weight: 700; font-size: 15px; background: none; border: 0; cursor: pointer; padding: 6px 0; }
+.fiche-corps { padding: 22px 20px 40px; }
+.fiche h2 { font-size: clamp(34px, 4vw, 46px); margin-bottom: 8px; }
+.fiche .lieu { color: var(--encre-2); margin-bottom: 16px; }
+.statut { border: 1.5px solid var(--encre); border-radius: 14px; padding: 12px 14px; font-size: 14.5px; margin-bottom: 20px; background: var(--blanc); }
+.statut.ok { background: var(--pousse); }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+.actions .bouton { padding: 10px 18px; font-size: 15px; }
+.fiche dl { display: grid; grid-template-columns: 120px 1fr; gap: 10px 14px; font-size: 15.5px; border-top: 1.5px solid var(--encre); padding-top: 18px; }
+.fiche dt { font-weight: 700; }
+.fiche dd ul { list-style: none; display: flex; flex-wrap: wrap; gap: 4px; }
+.fiche .petit { font-size: 13.5px; color: var(--encre-2); margin-top: 22px; }
+
+/* Carte */
+#carte { min-height: 0; background: var(--papier-2); }
+.leaflet-container { font-family: var(--font); }
+.pt { width: 16px; height: 16px; border-radius: 50%; background: var(--foret); border: 2.5px solid var(--papier); box-shadow: 0 0 0 1.5px var(--foret); }
+.pt.ok { background: var(--encre); border-color: var(--pousse); box-shadow: 0 0 0 1.5px var(--encre); }
+.pt.sel { width: 24px; height: 24px; background: var(--pousse); box-shadow: 0 0 0 2.5px var(--encre); margin: -4px; }
+.grappe { background: var(--encre); color: var(--pousse); border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 14px; border: 2.5px solid var(--papier); box-shadow: 0 0 0 1.5px var(--encre); }
+.moi { width: 18px; height: 18px; border-radius: 50%; background: #2a6bd1; border: 3px solid #fff; box-shadow: 0 0 0 1.5px #2a6bd1; }
+
+/* Mobile : bascule liste / carte */
+.bascule { display: none; }
+@media (max-width: 820px) {
+  .zone { grid-template-columns: 1fr; position: relative; }
+  .panneau { border-right: 0; }
+  #carte { position: absolute; inset: 0; visibility: hidden; }
+  body.vue-carte #carte { visibility: visible; z-index: 10; }
+  .bascule { display: inline-flex; position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(18px + env(safe-area-inset-bottom)); z-index: 1100; box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+  .entete .menu a.bouton { display: none; }
+  .champ { flex-basis: 100%; max-width: none; }
+  .barre button[type=submit] { display: none; }
+  .fiche-corps { padding-bottom: 96px; }
+  .barre { padding-top: 10px; padding-bottom: 10px; }
+}
 </style>
 </head>
 <body>
 
-<nav>
-  <a href="index.html"><img src="logo-biosurplace.svg" alt="surplace.bio" style="height:38px;flex-shrink:0;"></a>
-  <div class="search-wrap">
-    <div class="search-bar">
-      <span>🔍</span>
-      <input type="text" id="search-input" placeholder="Ville ou code postal...">
-    </div>
-    <button class="search-btn" onclick="loadFarms()">Rechercher</button>
+<header class="entete">
+  <div class="conteneur">
+    <a class="marque" href="/" aria-label="Sur Place, accueil">
+      <svg viewBox="0 0 40 48" aria-hidden="true"><path d="M20 46.5S3.5 30.6 3.5 18.2a16.5 16.5 0 0 1 33 0C36.5 30.6 20 46.5 20 46.5Z" fill="#1F4A2E"/><path d="M20 31V19" stroke="#C9E86A" stroke-width="3" stroke-linecap="round"/><path d="M20 23.5c-7.6 0-10.2-5.4-10.2-10 6.4 0 10.2 3.4 10.2 10Z" fill="#C9E86A"/><path d="M20 20c0-6.7 3.6-10.3 10.3-10.3 0 6.5-3.7 10.3-10.3 10.3Z" fill="#C9E86A"/></svg>
+      <span>Sur Place</span>
+    </a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="/carte.html" aria-current="page">La carte</a>
+      <a href="/ma-ferme.html">Je suis agriculteur</a>
+    </nav>
   </div>
-  <div class="rayon-wrap">
-    <span>📍 Rayon</span>
-    <select id="rayon-select">
+</header>
+
+<div class="barre">
+  <form id="form" autocomplete="off" role="search">
+    <div class="champ">
+      <label for="q" style="position:absolute;left:-9999px">Ville ou code postal</label>
+      <input id="q" type="search" placeholder="Ville ou code postal" aria-autocomplete="list" aria-controls="sugg">
+      <ul class="suggestions" id="sugg" role="listbox"></ul>
+    </div>
+    <label for="rayon" style="position:absolute;left:-9999px">Distance</label>
+    <select id="rayon">
+      <option value="10">10 km</option>
       <option value="20">20 km</option>
-      <option value="50" selected>50 km</option>
+      <option value="30" selected>30 km</option>
+      <option value="50">50 km</option>
       <option value="100">100 km</option>
-      <option value="200">200 km</option>
     </select>
-  </div>
-  <div class="nav-right">
-    <div class="api-badge"><div class="api-dot"></div> Données Agence Bio officielles</div>
-    <a href="dons.html" class="nav-link">💚 Dons</a>
-    <a href="ma-ferme.html" class="nav-link nav-cta">+ Ma ferme</a>
-  </div>
-</nav>
-
-<div class="filters-bar">
-  <button class="filter-chip active" onclick="toggleFilter(this)">🥕 Légumes</button>
-  <button class="filter-chip" onclick="toggleFilter(this)">🥩 Viande</button>
-  <button class="filter-chip" onclick="toggleFilter(this)">🧀 Fromage</button>
-  <button class="filter-chip" onclick="toggleFilter(this)">🍎 Fruits</button>
-  <button class="filter-chip" onclick="toggleFilter(this)">🍯 Miel</button>
-  <button class="filter-chip" onclick="toggleFilter(this)">🍷 Vin</button>
-  <button class="filter-chip" onclick="toggleFilter(this)">🌾 Céréales</button>
-  <button class="filter-chip" onclick="toggleFilter(this)">🥚 Œufs</button>
+    <button class="bouton" type="submit">Chercher</button>
+    <button class="bouton clair" type="button" id="geo">Autour de moi</button>
+  </form>
+  <div class="puces" id="puces" aria-label="Filtrer par produit"></div>
 </div>
 
-<div class="main-layout">
-  <div class="list-panel" id="list-panel">
-    <div class="results-header">
-      <div class="results-count" id="results-count"></div>
-      <select class="sort-select" onchange="sortFarms(this.value)">
-        <option value="distance">Plus proche</option>
-        <option value="nom">Nom A→Z</option>
-      </select>
+<div class="zone">
+  <aside class="panneau" aria-label="Résultats">
+    <div class="charge" id="charge"></div>
+    <div class="etat" id="etat" hidden>
+      <span id="compte"></span>
+      <select id="tri" aria-label="Trier"><option value="km">Plus proches</option><option value="nom">Nom A-Z</option></select>
     </div>
-    <div id="farms-list">
-      <div class="loading-state">
-        <div class="spinner"></div>
-        <div>Chargement des fermes bio près de Paris...</div>
+    <div class="liste-fermes" id="liste">
+      <div class="vide">
+        <h2>Où êtes-vous&nbsp;?</h2>
+        <p>Tapez votre ville ou utilisez votre position. Nous affichons uniquement les fermes bio qui produisent et vendent elles-mêmes.</p>
+        <div class="villes">
+          <button class="bouton clair" data-ville="Montpellier">Montpellier</button>
+          <button class="bouton clair" data-ville="Lyon">Lyon</button>
+          <button class="bouton clair" data-ville="Rennes">Rennes</button>
+          <button class="bouton clair" data-ville="Perpignan">Perpignan</button>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="map-panel">
-    <div id="map"></div>
-  </div>
+    <section class="fiche" id="fiche" aria-live="polite"></section>
+  </aside>
+  <div id="carte" role="region" aria-label="Carte des fermes"></div>
 </div>
+<button class="bouton bascule" id="bascule" type="button">Voir la carte</button>
 
-<!-- MODAL -->
-<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
-  <div class="modal">
-    <div class="modal-header" id="modal-header">
-      <span id="modal-emoji"></span>
-      <button class="modal-close" onclick="closeModalDirect()">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-title" id="modal-title"></div>
-      <div class="modal-meta" id="modal-meta"></div>
-      <div class="modal-section">
-        <div class="modal-section-title">Productions</div>
-        <div class="products-wrap" id="modal-products"></div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">Contact</div>
-        <div id="modal-contact"></div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">Certification</div>
-        <div id="modal-certif"></div>
-      </div>
-      <div class="modal-actions">
-        <button class="btn-modal-primary" id="modal-maps-btn">🗺️ Itinéraire Google Maps</button>
-        <button class="btn-modal-secondary" id="modal-certif-btn">🏅 Voir la certification</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="toast" id="toast"></div>
-
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script>
-const map = L.map('map', { zoomControl: true }).setView([48.85, 2.35], 9);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a> | Données: <a href="https://www.agencebio.org">Agence Bio</a>',
-  maxZoom: 18
-}).addTo(map);
-
-let allFarms = [], markers = [], searchCircle = null;
-
-const productionEmojis = {
-  'légumes':'🥕','legumes':'🥕','maraîchage':'🥕','maraichage':'🥕',
-  'fruits':'🍎','arboriculture':'🍎','pommes':'🍎',
-  'céréales':'🌾','cereales':'🌾','grandes cultures':'🌾','blé':'🌾',
-  'bovins':'🐄','bovin':'🐄','lait':'🥛',
-  'ovins':'🐑','ovin':'🐑','brebis':'🐑',
-  'caprins':'🐐','caprin':'🐐',
-  'porcins':'🐷','porcs':'🐷',
-  'volailles':'🐔','poulets':'🐔',
-  'apiculture':'🍯','miel':'🍯',
-  'vigne':'🍷','viticulture':'🍷','vin':'🍷','raisin':'🍷',
-  'fromage':'🧀','produits laitiers':'🧀',
-  'oeufs':'🥚','œufs':'🥚',
-  'plantes':'🌿','aromates':'🌿',
-  'champignons':'🍄','pain':'🍞',
+'use strict';
+// ─── Référentiels ───────────────────────────────────────────────────────────
+const FAMILLES = {
+  legumes: 'Légumes', fruits: 'Fruits', viande: 'Viande', laitier: 'Lait & fromages', oeufs: 'Œufs',
+  miel: 'Miel', vin: 'Vin & cidre', cereales: 'Pain & céréales', plantes: 'Plantes & aromates',
+  huile: "Huile d'olive", mer: 'Produits de la mer', plants: 'Plants & fleurs'
 };
+// Centre approximatif des départements métropolitains
+const DEPTS = [['01',46.2,5.23],['02',49.55,3.62],['03',46.34,3.3],['04',44.08,6.24],['05',44.66,6.35],['06',43.93,7.11],['07',44.72,4.53],['08',49.69,4.7],['09',42.96,1.6],['10',48.32,4.07],['11',43.2,2.35],['12',44.35,2.57],['13',43.53,5.44],['14',49.09,-0.36],['15',45.05,2.63],['16',45.7,0.16],['17',45.75,-0.67],['18',47.08,2.4],['19',45.37,1.88],['2A',41.86,8.98],['2B',42.39,9.21],['21',47.32,4.83],['22',48.46,-2.76],['23',46.1,2.04],['24',45.15,0.72],['25',47.24,6.02],['26',44.72,5.05],['27',49.07,1.17],['28',48.44,1.49],['29',48.24,-4.02],['30',44.01,4.17],['31',43.6,1.44],['32',43.64,0.59],['33',44.84,-0.58],['34',43.61,3.88],['35',48.1,-1.68],['36',46.81,1.69],['37',47.39,0.69],['38',45.19,5.72],['39',46.67,5.55],['40',43.89,-0.5],['41',47.59,1.34],['42',45.52,4.07],['43',45.04,3.88],['44',47.37,-1.85],['45',47.91,2.16],['46',44.66,1.74],['47',44.35,0.46],['48',44.5,3.5],['49',47.37,-0.55],['50',49.12,-1.33],['51',49.05,4.37],['52',48.11,5.14],['53',48.07,-0.77],['54',48.69,6.18],['55',48.98,5.38],['56',47.85,-2.76],['57',49.12,6.77],['58',47.06,3.66],['59',50.52,3.08],['60',49.41,2.34],['61',48.56,0.09],['62',50.52,2.64],['63',45.77,3.08],['64',43.3,-0.37],['65',43.23,0.08],['66',42.7,2.55],['67',48.58,7.75],['68',47.83,7.29],['69',45.76,4.84],['70',47.63,6.15],['71',46.67,4.51],['72',47.99,0.19],['73',45.57,6.39],['74',46.01,6.27],['75',48.86,2.35],['76',49.44,1.1],['77',48.73,2.98],['78',48.8,1.85],['79',46.65,-0.37],['80',49.92,2.3],['81',43.93,2.15],['82',44.02,1.35],['83',43.46,6.26],['84',43.95,5.09],['85',46.67,-1.43],['86',46.58,0.34],['87',45.84,1.26],['88',48.17,6.42],['89',47.8,3.57],['90',47.63,6.85],['91',48.63,2.25],['92',48.85,2.25],['93',48.92,2.48],['94',48.79,2.47],['95',49.07,2.1]];
 
-function getEmoji(productions) {
-  if (!productions || productions.length === 0) return '🌿';
-  const firstProd = (productions[0]?.nom || productions[0]?.libelle || '').toLowerCase();
-  for (const [key, emoji] of Object.entries(productionEmojis)) {
-    if (firstProd.includes(key)) return emoji;
+// ─── Outils ─────────────────────────────────────────────────────────────────
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function km(a, b, c, d) {
+  const R = 6371, r = Math.PI / 180, x = (c - a) * r, y = (d - b) * r;
+  const h = Math.sin(x / 2) ** 2 + Math.cos(a * r) * Math.cos(c * r) * Math.sin(y / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+const PETITS = new Set(['de','du','des','la','le','les','et','en','au','aux','sur','d','l']);
+function joli(s) {
+  if (!s) return '';
+  if (s !== s.toUpperCase()) return s;
+  return s.toLowerCase().replace(/(^|[\s'’(-])([\p{L}])/gu, (m, p, l, i) => p + l.toUpperCase())
+    .split(' ').map((w, i) => i && PETITS.has(w.toLowerCase()) ? w.toLowerCase() : w).join(' ')
+    .replace(/\b(Gaec|Earl|Sarl|Sas|Scea|Sca|Eurl|Scop|Gfa)\b/g, m => m.toUpperCase());
+}
+const tel = t => t ? t.replace(/[^\d+]/g, '').replace(/^0033/, '+33') : '';
+
+// ─── État ──────────────────────────────────────────────────────────────────
+const etat = { centre: null, label: '', rayon: 30, fermes: [], filtres: new Set(), tri: 'km', active: null };
+const cacheDept = {};
+
+// ─── Carte ─────────────────────────────────────────────────────────────────
+const carte = L.map('carte', { zoomControl: false }).setView([46.6, 2.4], 6);
+L.control.zoom({ position: 'bottomright' }).addTo(carte);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  maxZoom: 19, subdomains: 'abcd',
+  attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/attributions">CARTO</a> · Données © <a href="https://www.agencebio.org">Agence Bio</a>'
+}).addTo(carte);
+const grappes = L.markerClusterGroup({
+  showCoverageOnHover: false, maxClusterRadius: 44,
+  iconCreateFunction: g => { const n = g.getChildCount(); const t = n < 10 ? 34 : n < 100 ? 40 : 48;
+    return L.divIcon({ html: `<div class="grappe" style="width:${t}px;height:${t}px">${n}</div>`, className: '', iconSize: [t, t] }); }
+});
+carte.addLayer(grappes);
+let cercle = null, moi = null;
+const marqueurs = new Map();
+const icone = (f, sel) => L.divIcon({ className: '', html: `<div class="pt${f.verifiee ? ' ok' : ''}${sel ? ' sel' : ''}"></div>`, iconSize: [16, 16], iconAnchor: [8, 8] });
+
+// ─── Puces de filtre ───────────────────────────────────────────────────────
+$('#puces').innerHTML = Object.entries(FAMILLES).map(([k, v]) => `<button class="puce" type="button" data-f="${k}" aria-pressed="false">${v}</button>`).join('');
+$('#puces').addEventListener('click', e => {
+  const b = e.target.closest('.puce'); if (!b) return;
+  const f = b.dataset.f; etat.filtres.has(f) ? etat.filtres.delete(f) : etat.filtres.add(f);
+  b.setAttribute('aria-pressed', etat.filtres.has(f)); afficher();
+});
+
+// ─── Géocodage (Géoplateforme IGN, repli sur la BAN) ───────────────────────
+async function geocoder(q, limite = 6) {
+  const p = `q=${encodeURIComponent(q)}&type=municipality&limit=${limite}&autocomplete=1`;
+  for (const base of ['https://data.geopf.fr/geocodage/search?', 'https://api-adresse.data.gouv.fr/search/?']) {
+    try { const r = await fetch(base + p); if (r.ok) return (await r.json()).features || []; } catch (e) {}
   }
-  return '🌱';
+  return [];
+}
+let suggs = [], suggIdx = -1, minuteur;
+$('#q').addEventListener('input', () => {
+  clearTimeout(minuteur);
+  const q = $('#q').value.trim();
+  if (q.length < 2) return fermerSugg();
+  minuteur = setTimeout(async () => {
+    suggs = await geocoder(q);
+    suggIdx = -1;
+    $('#sugg').innerHTML = suggs.map((f, i) => `<li role="option" data-i="${i}" aria-selected="false">${esc(f.properties.city || f.properties.name)}<small>${esc(f.properties.postcode || '')} · ${esc((f.properties.context || '').split(',').slice(1, 2).join('').trim())}</small></li>`).join('');
+    $('#sugg').style.display = suggs.length ? 'block' : 'none';
+  }, 180);
+});
+$('#q').addEventListener('keydown', e => {
+  if (!suggs.length || $('#sugg').style.display === 'none') return;
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    e.preventDefault(); suggIdx = (suggIdx + (e.key === 'ArrowDown' ? 1 : -1) + suggs.length) % suggs.length;
+    [...$('#sugg').children].forEach((li, i) => li.setAttribute('aria-selected', i === suggIdx));
+  } else if (e.key === 'Escape') fermerSugg();
+});
+$('#sugg').addEventListener('mousedown', e => { const li = e.target.closest('li'); if (li) { e.preventDefault(); choisir(suggs[+li.dataset.i]); } });
+function fermerSugg() { $('#sugg').style.display = 'none'; suggs = []; }
+function choisir(f) {
+  fermerSugg();
+  const [lng, lat] = f.geometry.coordinates; const nom = f.properties.city || f.properties.name;
+  $('#q').value = nom; chercher(lat, lng, nom);
+}
+$('#form').addEventListener('submit', async e => {
+  e.preventDefault();
+  if (suggIdx >= 0 && suggs[suggIdx]) return choisir(suggs[suggIdx]);
+  const q = $('#q').value.trim(); if (!q) return;
+  const r = await geocoder(q, 1);
+  if (!r.length) return message(`Aucune commune trouvée pour « ${esc(q)} ». Vérifiez l'orthographe ou essayez le code postal.`);
+  choisir(r[0]);
+});
+document.addEventListener('click', e => { if (!e.target.closest('.champ')) fermerSugg(); });
+$('#rayon').addEventListener('change', () => { etat.rayon = +$('#rayon').value; if (etat.centre) chercher(etat.centre[0], etat.centre[1], etat.label); });
+$('#tri').addEventListener('change', () => { etat.tri = $('#tri').value; afficher(); });
+$('#geo').addEventListener('click', localiser);
+$('#liste').addEventListener('click', e => { const b = e.target.closest('[data-ville]'); if (b) { $('#q').value = b.dataset.ville; $('#form').requestSubmit(); } });
+
+function localiser() {
+  if (!navigator.geolocation) return message("Votre navigateur ne permet pas la géolocalisation. Tapez votre ville.");
+  message('Localisation en cours…');
+  navigator.geolocation.getCurrentPosition(
+    p => chercher(p.coords.latitude, p.coords.longitude, 'votre position', true),
+    () => message("Position refusée ou indisponible. Tapez votre ville ou votre code postal."),
+    { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 });
 }
 
-function getTagColor(i) { return ['tag-vert','tag-orange','tag-bleu','tag-rouge','tag-gris'][i % 5]; }
-function getGradient(idx) { return ['linear-gradient(135deg,#d8f3dc,#95d5b2)','linear-gradient(135deg,#fde8c8,#f4a738)','linear-gradient(135deg,#fce4ec,#e57373)','linear-gradient(135deg,#e3f2fd,#64b5f6)','linear-gradient(135deg,#f3e5f5,#ce93d8)','linear-gradient(135deg,#e0f2f1,#4db6ac)'][idx % 6]; }
-
-async function geocodeVille(ville) {
-  const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(ville + ', France')}&format=json&limit=1`;
-  const response = await fetch(url, { headers: { 'Accept-Language': 'fr' } });
-  const data = await response.json();
-  if (data.length === 0) throw new Error('Ville non trouvée');
-  return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon), nom: data[0].display_name };
+// ─── Chargement des fermes ─────────────────────────────────────────────────
+function chargerDept(d) {
+  if (!cacheDept[d]) cacheDept[d] = fetch(`/api/fermes?dept=${d}`).then(r => { if (!r.ok) throw new Error(d); return r.json(); })
+    .catch(err => { delete cacheDept[d]; throw err; });
+  return cacheDept[d];
 }
+let jeton = 0;
+async function chercher(lat, lng, label, estMoi = false) {
+  const monJeton = ++jeton;
+  etat.centre = [lat, lng]; etat.label = label; etat.rayon = +$('#rayon').value; etat.fermes = [];
+  fermerFiche();
+  history.replaceState(null, '', `?lat=${lat.toFixed(4)}&lng=${lng.toFixed(4)}&r=${etat.rayon}&l=${encodeURIComponent(label)}`);
+  if (cercle) carte.removeLayer(cercle);
+  cercle = L.circle([lat, lng], { radius: etat.rayon * 1000, color: '#1F4A2E', weight: 1.5, dashArray: '5 6', fill: false }).addTo(carte);
+  if (moi) { carte.removeLayer(moi); moi = null; }
+  if (estMoi) moi = L.marker([lat, lng], { icon: L.divIcon({ className: '', html: '<div class="moi"></div>', iconSize: [18, 18] }), interactive: false }).addTo(carte);
+  carte.fitBounds(cercle.getBounds(), { padding: [20, 20] });
 
-// ─── DISTANCES ──────────────────────────────────────────────────────────────
-function distanceKm(lat1, lng1, lat2, lng2) {
-  const R = 6371;
-  const dLat = (lat2 - lat1) * Math.PI / 180;
-  const dLng = (lng2 - lng1) * Math.PI / 180;
-  const a = Math.sin(dLat/2)**2 +
-    Math.cos(lat1 * Math.PI/180) * Math.cos(lat2 * Math.PI/180) * Math.sin(dLng/2)**2;
-  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-}
-
-// ─── DÉPARTEMENTS ───────────────────────────────────────────────────────────
-const DEPTS = [
-  ['01',46.20,5.23],['02',49.55,3.62],['03',46.34,3.30],['04',44.08,6.24],['05',44.66,6.35],
-  ['06',43.93,7.11],['07',44.72,4.53],['08',49.69,4.70],['09',42.96,1.60],['10',48.32,4.07],
-  ['11',43.20,2.35],['12',44.35,2.57],['13',43.53,5.44],['14',49.09,-0.36],['15',45.05,2.63],
-  ['16',45.70,0.16],['17',45.75,-0.67],['18',47.08,2.40],['19',45.37,1.88],['21',47.32,4.83],
-  ['22',48.46,-2.76],['23',46.10,2.04],['24',45.15,0.72],['25',47.24,6.02],['26',44.72,5.05],
-  ['27',49.07,1.17],['28',48.44,1.49],['29',48.24,-4.02],['30',44.01,4.17],['31',43.60,1.44],
-  ['32',43.64,0.59],['33',44.84,-0.58],['34',43.61,3.88],['35',48.10,-1.68],['36',46.81,1.69],
-  ['37',47.39,0.69],['38',45.19,5.72],['39',46.67,5.55],['40',43.89,-0.50],['41',47.59,1.34],
-  ['42',45.52,4.07],['43',45.04,3.88],['44',47.37,-1.85],['45',47.91,2.16],['46',44.66,1.74],
-  ['47',44.35,0.46],['48',44.50,3.50],['49',47.37,-0.55],['50',49.12,-1.33],['51',49.05,4.37],
-  ['52',48.11,5.14],['53',48.07,-0.77],['54',48.69,6.18],['55',48.98,5.38],['56',47.85,-2.76],
-  ['57',49.12,6.77],['58',47.06,3.66],['59',50.52,3.08],['60',49.41,2.34],['61',48.56,0.09],
-  ['62',50.52,2.64],['63',45.77,3.08],['64',43.30,-0.37],['65',43.23,0.08],['66',42.70,2.55],
-  ['67',48.58,7.75],['68',47.83,7.29],['69',45.76,4.84],['70',47.63,6.15],['71',46.67,4.51],
-  ['72',47.99,0.19],['73',45.57,6.39],['74',46.01,6.27],['75',48.86,2.35],['76',49.44,1.10],
-  ['77',48.73,2.98],['78',48.80,1.85],['79',46.65,-0.37],['80',49.92,2.30],['81',43.93,2.15],
-  ['82',44.02,1.35],['83',43.46,6.26],['84',43.95,5.09],['85',46.67,-1.43],['86',46.58,0.34],
-  ['87',45.84,1.26],['88',48.17,6.42],['89',47.80,3.57],['90',47.63,6.85],['91',48.63,2.25],
-  ['92',48.85,2.25],['93',48.92,2.48],['94',48.79,2.47],['95',49.07,2.10]
-];
-
-// ─── LOAD FARMS — appel direct API Agence Bio côté client ───────────────────
-// On contourne Vercel qui plafonnait à 20 items (timeout serverless).
-// L'API opendata.agencebio.org est publique, CORS ouvert.
-async function loadFarms(lat, lng, ville) {
-  const list = document.getElementById('farms-list');
-  list.innerHTML = '<div class="loading-state"><div class="spinner"></div><div>Recherche des fermes bio...</div></div>';
-  document.getElementById('results-count').textContent = '';
-  markers.forEach(m => map.removeLayer(m));
-  markers = [];
-
-  try {
-    let coords;
-    if (lat && lng) {
-      coords = { lat, lng, nom: ville || 'Paris' };
-    } else {
-      const villeInput = document.getElementById('search-input').value.trim();
-      if (!villeInput) return;
-      coords = await geocodeVille(villeInput);
-      
+  // Départements dont le centre est à moins de rayon + 70 km (un département fait ~100 km de large)
+  const depts = DEPTS.filter(([, a, b]) => km(lat, lng, a, b) <= etat.rayon + 70).map(([c]) => c);
+  let faits = 0, erreurs = 0; const vus = new Set();
+  message(`Recherche des fermes autour de ${esc(label)}…`);
+  barre(0.08);
+  await Promise.all(depts.map(d => chargerDept(d).then(data => {
+    if (monJeton !== jeton) return;
+    for (const f of data.fermes) {
+      if (vus.has(f.id)) continue;
+      const dist = km(lat, lng, f.lat, f.lng);
+      if (dist <= etat.rayon) { vus.add(f.id); etat.fermes.push({ ...f, km: dist }); }
     }
-
-    const rayon = parseFloat(document.getElementById('rayon-select').value);
-    map.setView([coords.lat, coords.lng], rayon <= 20 ? 12 : rayon <= 50 ? 10 : 8);
-
-    if (searchCircle) { map.removeLayer(searchCircle); searchCircle = null; }
-    searchCircle = L.circle([coords.lat, coords.lng], {
-      radius: rayon * 1000, color: '#2d6a4f', fillColor: '#d8f3dc', fillOpacity: 0.1, weight: 2
-    }).addTo(map);
-
-    // Départements dans le rayon
-    const deptsProches = DEPTS
-      .filter(([, dLat, dLng]) => distanceKm(coords.lat, coords.lng, dLat, dLng) <= rayon + 30)
-      .map(([code]) => code);
-    const depts = deptsProches.join(',');
-
-    // Pagination Agence Bio : nb = taille de page, debut = offset
-    // On lance tous les départements en parallèle pour la 1ère page,
-    // puis on récupère les pages suivantes si nécessaire.
-    const NB = 100;
-    const BASE = 'https://opendata.agencebio.org/api/gouv/operateurs/';
-
-    async function fetchDept(dept) {
-      const items = [];
-      const seen = new Set();
-      let firstRes;
-      try {
-        firstRes = await fetch(`${BASE}?departements=${dept}&nb=${NB}&debut=0`, { headers: { 'Accept': 'application/json' } });
-      } catch(e) { console.warn('fetchDept error', dept, e); return items; }
-      if (!firstRes.ok) return items;
-      const firstData = await firstRes.json();
-      const nbTotal = parseInt(firstData.nbTotal) || 0;
-      (firstData.items || []).forEach(i => { if (!seen.has(i.id)) { seen.add(i.id); items.push(i); } });
-      // Pages suivantes en parallèle
-      const promises = [];
-      for (let debut = NB; debut < nbTotal; debut += NB) {
-        promises.push(fetch(`${BASE}?departements=${dept}&nb=${NB}&debut=${debut}`, { headers: { 'Accept': 'application/json' } }).then(r => r.ok ? r.json() : { items: [] }));
-      }
-      const pages = await Promise.all(promises);
-      pages.forEach(d => (d.items || []).forEach(i => { if (!seen.has(i.id)) { seen.add(i.id); items.push(i); } }));
-      return items;
-    }
-
-    // Tous les départements en parallèle
-    const results = await Promise.all(deptsProches.map(fetchDept));
-    const globalSeen = new Set();
-    const allItems = [];
-    results.flat().forEach(i => { if (!globalSeen.has(i.id)) { globalSeen.add(i.id); allItems.push(i); } });
-    console.log('Total brut récupéré:', allItems.length, 'depuis', deptsProches.length, 'depts');
-
-    // Filtre : venteAnnuaire.venteParticuliers === true + coordonnées GPS
-    // Vérifié sur données réelles : exclut Franprix, Lidl, grossistes
-    const filtered = allItems
-      .filter(op => {
-        const adr = op.adressesOperateurs?.[0];
-        return op.venteAnnuaire?.venteParticuliers === true && adr?.lat && adr?.long;
-      })
-      .map(op => {
-        const adr = op.adressesOperateurs[0];
-        const dist = distanceKm(coords.lat, coords.lng, adr.lat, adr.long);
-        return { ...op, _distance: Math.round(dist * 10) / 10 };
-      })
-      .filter(op => op._distance <= rayon)
-      .sort((a, b) => a._distance - b._distance)
-      .slice(0, 100);
-
-    allFarms = filtered;
-
-    if (allFarms.length === 0) {
-      list.innerHTML = `<div class="loading-state">😕 Aucune ferme trouvée dans un rayon de ${rayon} km.<br><br>Essayez d'augmenter le rayon.</div>`;
-      document.getElementById('results-count').textContent = '0 résultat';
-      return;
-    }
-    renderFarms(allFarms);
-
-  } catch (err) {
-    console.warn('Erreur:', err);
-    list.innerHTML = `<div class="loading-state" style="color:#c0392b;">❌ ${err.message || 'Erreur de chargement'}</div>`;
-    document.getElementById('results-count').textContent = 'Erreur';
+  }).catch(() => { erreurs++; }).finally(() => {
+    if (monJeton !== jeton) return;
+    faits++; barre(faits / depts.length);
+    if (etat.fermes.length) afficher(faits < depts.length);
+  })));
+  if (monJeton !== jeton) return;
+  barre(1); setTimeout(() => barre(0), 400);
+  if (!etat.fermes.length) {
+    grappes.clearLayers();
+    return message(erreurs
+      ? "L'annuaire de l'Agence Bio ne répond pas pour le moment. Réessayez dans quelques minutes."
+      : `Aucune ferme en vente directe à moins de ${etat.rayon} km. Élargissez la distance.`);
   }
+  afficher(false, erreurs);
+  const id = new URLSearchParams(location.search).get('ferme'); if (id) ouvrirFiche(+id);
 }
+function barre(x) { $('#charge').style.transform = `scaleX(${x})`; }
+function message(html) { $('#etat').hidden = true; $('#liste').innerHTML = `<div class="vide"><p>${html}</p></div>`; }
 
-function renderFarms(farms) {
-  const list = document.getElementById('farms-list');
-  list.innerHTML = '';
-  document.getElementById('results-count').innerHTML = `<strong>${farms.length} fermes</strong> trouvées`;
-
-  farms.forEach((f, idx) => {
-    const adresse = f.adressesOperateurs?.[0] || {};
-    const productions = f.productions || [];
-    const emoji = getEmoji(productions);
-    const nom = f.denominationCourante || f.raisonSociale || 'Ferme Bio';
-    const activite = f.activites?.[0]?.nom || 'Producteur';
-    const dist = f._distance ? `${f._distance} km` : '';
-
-    const card = document.createElement('div');
-    card.className = 'farm-card';
-    card.id = `card-${f.id || idx}`;
-    card.innerHTML = `
-      <div class="card-thumb" style="background:${getGradient(idx)}">${emoji}</div>
-      <div class="card-body">
-        <div class="card-name" title="${nom}">${nom}</div>
-        <div class="card-location">📍 ${adresse.ville || ''} ${adresse.codePostal || ''}</div>
-        <div class="card-tags">
-          ${productions.slice(0,3).map((p,i) => `<span class="tag ${getTagColor(i)}">${p.nom || p.libelle || ''}</span>`).join('')}
-          ${productions.length > 3 ? `<span class="tag tag-gris">+${productions.length-3}</span>` : ''}
-        </div>
-        <div class="card-footer">
-          ${dist ? `<span class="distance-badge">🚗 ${dist}</span>` : ''}
-          <span class="tag tag-vert" style="font-size:11px;">${activite}</span>
-        </div>
-      </div>
-    `;
-    card.onclick = () => { openModal(f, emoji, idx); selectCard(f.id || idx); };
-    list.appendChild(card);
-    addMarker(f, emoji, idx);
+// ─── Affichage ─────────────────────────────────────────────────────────────
+function visibles() {
+  let l = etat.fermes;
+  if (etat.filtres.size) l = l.filter(f => [...etat.filtres].some(x => f.familles.includes(x)));
+  return [...l].sort(etat.tri === 'nom' ? (a, b) => a.nom.localeCompare(b.nom, 'fr') : (a, b) => (b.verifiee - a.verifiee) || a.km - b.km);
+}
+function afficher(enCours = false, erreurs = 0) {
+  const l = visibles();
+  $('#etat').hidden = false;
+  $('#compte').innerHTML = `<b>${l.length} ferme${l.length > 1 ? 's' : ''}</b> à moins de ${etat.rayon} km${enCours ? ' · chargement…' : ''}${erreurs ? ' · données partielles' : ''}`;
+  const MAX = 250;
+  $('#liste').innerHTML = l.length ? l.slice(0, MAX).map(f => `
+    <button class="ferme${etat.active === f.id ? ' active' : ''}" data-id="${f.id}">
+      <span class="nom">${esc(joli(f.nom))}</span>
+      <span class="ou"><span class="km">${f.km < 10 ? f.km.toFixed(1) : Math.round(f.km)} km</span><span>${esc(joli(f.ville))}</span></span>
+      <span class="fam">${f.verifiee ? '<span class="tag ok">Vérifiée Sur Place</span>' : ''}${f.familles.slice(0, 4).map(x => `<span class="tag">${FAMILLES[x]}</span>`).join('')}</span>
+    </button>`).join('') + (l.length > MAX ? `<div class="vide"><p>${l.length - MAX} autres fermes : réduisez la distance ou filtrez par produit.</p></div>` : '')
+    : `<div class="vide"><p>Aucune ferme ne correspond à ces filtres. Retirez un filtre ou élargissez la distance.</p></div>`;
+  grappes.clearLayers(); marqueurs.clear();
+  const ms = l.map(f => {
+    const m = L.marker([f.lat, f.lng], { icon: icone(f, f.id === etat.active), title: joli(f.nom) });
+    m.on('click', () => ouvrirFiche(f.id)); marqueurs.set(f.id, m); return m;
   });
+  grappes.addLayers(ms);
+}
+$('#liste').addEventListener('click', e => { const b = e.target.closest('.ferme'); if (b) ouvrirFiche(+b.dataset.id); });
+
+// ─── Fiche ─────────────────────────────────────────────────────────────────
+function ouvrirFiche(id) {
+  const f = etat.fermes.find(x => x.id === id); if (!f) return;
+  const ancien = etat.active; etat.active = id;
+  if (ancien && marqueurs.get(ancien)) marqueurs.get(ancien).setIcon(icone(etat.fermes.find(x => x.id === ancien), false));
+  const m = marqueurs.get(id);
+  if (m) { m.setIcon(icone(f, true)); grappes.zoomToShowLayer(m, () => carte.panTo([f.lat, f.lng])); }
+  const u = new URL(location); u.searchParams.set('ferme', id); history.replaceState(null, '', u);
+  const nom = joli(f.nom);
+  const itin = `https://www.google.com/maps/dir/?api=1&destination=${f.lat},${f.lng}`;
+  const signal = `mailto:biosurplace@outlook.com?subject=${encodeURIComponent(`Correction fiche ${nom} (${f.id})`)}&body=${encodeURIComponent(`Bonjour,\n\nJe signale une information à corriger sur la fiche « ${nom} » (n° ${f.id}, ${f.ville}) :\n\n`)}`;
+  const depuis = f.bioDepuis ? new Date(f.bioDepuis).getFullYear() : null;
+  $('#fiche').innerHTML = `
+    <div class="fiche-haut"><button class="retour" type="button" id="retour">← Retour à la liste</button></div>
+    <div class="fiche-corps">
+      <h2>${esc(nom)}</h2>
+      <p class="lieu">${esc(joli(f.adresse))}${f.adresse ? ', ' : ''}${esc(f.cp)} ${esc(joli(f.ville))} · à ${f.km.toFixed(1)} km</p>
+      ${f.verifiee
+        ? `<div class="statut ok"><b>Vérifiée Sur Place.</b> La ferme nous a confirmé la vente sur place.${f.horaires ? `<br>Horaires : ${esc(f.horaires)}` : ''}</div>`
+        : `<div class="statut">Ferme bio certifiée qui déclare vendre aux particuliers. <b>Pas encore vérifiée par téléphone</b> : appelez avant de vous déplacer.</div>`}
+      <div class="actions">
+        <a class="bouton vert" href="${itin}" target="_blank" rel="noopener">Itinéraire</a>
+        ${f.tel ? `<a class="bouton clair" href="tel:${tel(f.tel)}">Appeler</a>` : ''}
+        ${f.site ? `<a class="bouton clair" href="${esc(/^https?:/.test(f.site) ? f.site : 'https://' + f.site)}" target="_blank" rel="noopener">Site web</a>` : ''}
+      </div>
+      <dl>
+        ${f.familles.length ? `<dt>Produits</dt><dd><ul>${f.familles.map(x => `<li class="tag">${FAMILLES[x]}</li>`).join('')}</ul></dd>` : ''}
+        ${f.productions.length ? `<dt>Détail</dt><dd>${esc(f.productions.join(', '))}</dd>` : ''}
+        ${f.metiers.length ? `<dt>Métier</dt><dd>${esc(f.metiers.join(', '))}</dd>` : ''}
+        ${f.gerant ? `<dt>Tenue par</dt><dd>${esc(joli(f.gerant))}</dd>` : ''}
+        ${f.tel ? `<dt>Téléphone</dt><dd><a href="tel:${tel(f.tel)}">${esc(f.tel)}</a></dd>` : ''}
+        ${depuis ? `<dt>Bio depuis</dt><dd>${depuis}</dd>` : ''}
+        <dt>Certification</dt><dd>${esc(f.certificateur || 'Organisme certificateur')}${f.certifUrl ? ` · <a href="${esc(f.certifUrl)}" target="_blank" rel="noopener">voir le certificat</a>` : ''}</dd>
+      </dl>
+      <p class="petit">Informations issues de l'annuaire officiel de l'Agence Bio${f.maj ? `, mises à jour le ${new Date(f.maj).toLocaleDateString('fr-FR')}` : ''}. <a href="${signal}">Signaler une erreur</a> · <a href="/ma-ferme.html?id=${f.id}&nom=${encodeURIComponent(nom)}">C'est ma ferme</a></p>
+    </div>`;
+  $('#fiche').classList.add('ouverte'); $('#fiche').scrollTop = 0;
+  $('#retour').addEventListener('click', fermerFiche);
+  $('#retour').focus({ preventScroll: true });
+  document.body.classList.remove('vue-carte'); majBascule();
+}
+function fermerFiche() {
+  $('#fiche').classList.remove('ouverte');
+  if (etat.active && marqueurs.get(etat.active)) marqueurs.get(etat.active).setIcon(icone(etat.fermes.find(x => x.id === etat.active), false));
+  etat.active = null;
+  const u = new URL(location); u.searchParams.delete('ferme'); history.replaceState(null, '', u);
 }
 
-function addMarker(farm, emoji, idx) {
-  const adresse = farm.adressesOperateurs?.[0] || {};
-  const lat = adresse.lat, lng = adresse.long;
-  if (!lat || !lng) return;
-  const nom = farm.denominationCourante || farm.raisonSociale || 'Ferme Bio';
-  const icon = L.divIcon({ className: '', html: `<div class="custom-marker">${emoji} ${nom.split(' ').slice(0,2).join(' ')}</div>`, iconAnchor: [40, 12] });
-  const marker = L.marker([lat, lng], { icon }).addTo(map);
-  marker.bindPopup(`
-    <div style="min-width:200px;">
-      <div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:600;margin-bottom:4px;">${emoji} ${nom}</div>
-      <div style="font-size:12px;color:#888;margin-bottom:6px;">📍 ${adresse.ville || ''} ${adresse.codePostal || ''}</div>
-      ${farm._distance ? `<div style="font-size:12px;color:#2d6a4f;font-weight:600;margin-bottom:8px;">🚗 à ${farm._distance} km</div>` : ''}
-      <button onclick="openModalById(${farm.id || idx})" style="width:100%;background:#2d6a4f;color:white;border:none;border-radius:8px;padding:8px;font-size:13px;cursor:pointer;">Voir la fiche →</button>
-    </div>
-  `, { maxWidth: 260 });
-  marker.on('click', () => selectCard(farm.id || idx));
-  markers.push(marker);
-  farm._markerIdx = markers.length - 1;
-  farm._idx = idx;
-  farm._emoji = emoji;
-}
+// ─── Mobile ────────────────────────────────────────────────────────────────
+function majBascule() { $('#bascule').textContent = document.body.classList.contains('vue-carte') ? 'Voir la liste' : 'Voir la carte'; }
+$('#bascule').addEventListener('click', () => { document.body.classList.toggle('vue-carte'); majBascule(); setTimeout(() => carte.invalidateSize(), 50); });
 
-function selectCard(id) {
-  document.querySelectorAll('.farm-card').forEach(c => c.classList.remove('selected'));
-  const card = document.getElementById(`card-${id}`);
-  if (card) { card.classList.add('selected'); card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
-}
-
-function openModalById(idOrIdx) {
-  const f = allFarms.find(x => x.id === idOrIdx) || allFarms[idOrIdx];
-  if (f) openModal(f, f._emoji || '🌿', f._idx || 0);
-}
-
-function openModal(f, emoji, idx) {
-  const nom = f.denominationCourante || f.raisonSociale || 'Ferme Bio';
-  const adresse = f.adressesOperateurs?.[0] || {};
-  const certif = f.certificats?.[0] || {};
-  document.getElementById('modal-emoji').textContent = emoji;
-  document.getElementById('modal-header').style.background = getGradient(idx);
-  document.getElementById('modal-title').textContent = nom;
-  document.getElementById('modal-meta').innerHTML = `
-    <span>📍 ${adresse.lieu || ''}, ${adresse.codePostal || ''} ${adresse.ville || ''}</span>
-    ${f._distance ? `<span>🚗 à ${f._distance} km</span>` : ''}
-    <span>🆔 N° BIO: ${f.numeroBio || '—'}</span>
-  `;
-  const prods = f.productions || [];
-  document.getElementById('modal-products').innerHTML = prods.length
-    ? prods.map(p => `<span class="tag tag-vert" style="font-size:13px;padding:6px 12px;">${getEmoji([p])} ${p.nom || p.libelle || ''}</span>`).join('')
-    : '<span style="color:#888;font-size:13px;">Non renseigné</span>';
-  const tel = f.telephoneNational || f.telephone || '';
-  const contact = [
-    tel ? `📞 ${tel}` : '',
-    f.email ? `✉️ ${f.email}` : '',
-    (f.siteWebs||[]).filter(s => s.url).length > 0 ? `🌐 <a href="${f.siteWebs[0].url}" target="_blank">${f.siteWebs[0].url}</a>` : '',
-  ].filter(Boolean);
-  document.getElementById('modal-contact').innerHTML = contact.length
-    ? contact.map(c => `<div style="font-size:13px;margin-bottom:4px;">${c}</div>`).join('')
-    : '<span style="font-size:13px;color:#888;">Coordonnées non renseignées</span>';
-  document.getElementById('modal-certif').innerHTML = `<div style="font-size:13px;"><span style="background:#e8f5e9;color:#2d6a4f;padding:3px 10px;border-radius:10px;font-weight:500;">🏅 Certifié Agriculture Biologique</span>${certif.organisme ? `<span style="margin-left:8px;color:#888;">${certif.organisme}</span>` : ''}</div>`;
-  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(nom + ' ' + (adresse.ville || ''))}`;
-  document.getElementById('modal-maps-btn').onclick = () => window.open(mapsUrl, '_blank');
-  const certifUrl = certif.url || `https://annuaire.agencebio.org/fiche/${f.numeroBio}`;
-  document.getElementById('modal-certif-btn').onclick = () => window.open(certifUrl, '_blank');
-  document.getElementById('modal-overlay').classList.add('open');
-  selectCard(f.id || idx);
-}
-
-function closeModal(e) { if (e.target === document.getElementById('modal-overlay')) closeModalDirect(); }
-function closeModalDirect() { document.getElementById('modal-overlay').classList.remove('open'); }
-function toggleFilter(btn) { btn.classList.toggle('active'); }
-
-function sortFarms(value) {
-  if (value === 'distance') allFarms.sort((a,b) => (a._distance||999) - (b._distance||999));
-  if (value === 'nom') allFarms.sort((a,b) => (a.denominationCourante||a.raisonSociale||'').localeCompare(b.denominationCourante||b.raisonSociale||''));
-  markers.forEach(m => map.removeLayer(m)); markers = [];
-  renderFarms(allFarms);
-}
-
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2500);
-}
-
-document.getElementById('search-input').addEventListener('keydown', e => { if (e.key === 'Enter') loadFarms(); });
-
-// Chargement automatique Paris 100km
-document.getElementById('rayon-select').value = '100';
-loadFarms(48.8566, 2.3522, 'Paris');
+// ─── Démarrage selon l'URL ─────────────────────────────────────────────────
+(function () {
+  const p = new URLSearchParams(location.search);
+  if (p.get('r')) $('#rayon').value = p.get('r');
+  if (p.get('lat') && p.get('lng')) { $('#q').value = p.get('l') || ''; chercher(+p.get('lat'), +p.get('lng'), p.get('l') || 'ce point'); }
+  else if (p.get('q')) { $('#q').value = p.get('q'); $('#form').requestSubmit(); }
+  else if (p.get('autour')) localiser();
+})();
 </script>
 </body>
 </html>
