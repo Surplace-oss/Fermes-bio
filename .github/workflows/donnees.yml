@@ -1,0 +1,36 @@
+name: Données fermes (chaque nuit)
+
+on:
+  schedule:
+    - cron: '17 2 * * *'   # 4 h 17 à Paris (heure d'été)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: donnees-fermes
+  cancel-in-progress: false
+
+jobs:
+  generer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Récupérer et filtrer les fermes (Agence Bio)
+        run: node scripts/generer-donnees.mjs
+      - name: Publier si les données ont changé
+        run: |
+          git config user.name "surplace-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/fermes
+          if git diff --cached --quiet; then
+            echo "Aucun changement."
+          else
+            git commit -m "Données fermes du $(date -u +%Y-%m-%d)"
+            git push
+          fi
