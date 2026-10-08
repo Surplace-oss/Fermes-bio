@@ -36,13 +36,27 @@ export function estEngage(o) {
   return (o.certificats || []).some(c => c.etatCertification === 'ENGAGEE');
 }
 
+// Adresse où se trouve réellement la ferme.
+// Les opérateurs déclarent souvent un siège social (parfois à Paris, chez un comptable, au domicile
+// d'un associé) distinct du lieu d'activité. On prend d'abord un lieu d'activité qui n'est PAS le siège.
+const libelles = a => (a.typeAdresseOperateurs || []).map(t => typeof t === 'string' ? t : (t && (t.label || t.nom || t.libelle)) || '');
+const estActivite = a => libelles(a).some(t => /^a$|activit/i.test(t));
+const estSiege = a => libelles(a).some(t => /^s$|si[eè]ge/i.test(t));
 export function adresseActivite(o, dept) {
   const adrs = (o.adressesOperateurs || []).filter(a => a && a.active !== false && a.lat && a.long);
   if (!adrs.length) return null;
-  const lieu = a => (a.typeAdresseOperateurs || []).some(t => /activit/i.test(t));
   const dansDept = a => !dept || String(a.codePostal || '').startsWith(dept === '2A' || dept === '2B' ? '20' : dept);
-  return adrs.find(a => lieu(a) && dansDept(a)) || adrs.find(lieu) || adrs.find(dansDept) || adrs[0];
+  const rangs = [a => estActivite(a) && !estSiege(a), estActivite, a => !estSiege(a), () => true];
+  for (const r of rangs) {
+    const c = adrs.filter(r);
+    if (c.length) return c.find(dansDept) || c[0];
+  }
+  return adrs[0];
 }
+
+// Paris intra-muros : seules des productions urbaines sont plausibles (maraîchage, champignons,
+// plantes, miel, fleurs, plants). Vigne, olives, grandes cultures à une adresse parisienne = un siège.
+const PARIS_IMPOSSIBLE = /raisin de cuve|vins? de raisin|olive|tournesol|truffe|bl[ée] |c[ée]r[ée]al|colza|lavandin|bovin|ovin|prairie/i;
 
 export function motifRejet(o) {
   const naf = String(o.codeNAF || '');
@@ -54,7 +68,9 @@ export function motifRejet(o) {
   if (!act.has(1)) return 'pas_production';
   if (!estEngage(o)) return 'non_certifie';
   if (!(cat.has(1) || o.venteAnnuaire?.venteParticuliers === true)) return 'pas_vente_particuliers';
-  if (!adresseActivite(o)) return 'pas_gps';
+  const adr = adresseActivite(o);
+  if (!adr) return 'pas_gps';
+  if (String(adr.codePostal || '').startsWith('75') && PARIS_IMPOSSIBLE.test((o.productions || []).map(p => p.nom).join(' | '))) return 'siege_paris';
   if ([...ann].some(id => ANNUAIRE_COMMERCE.has(id) || estCommerceGros(id))) return 'commerce';
   if (o.reseau && !/^autre$/i.test(o.reseau.trim())) return 'reseau_commercial';
   if (ENSEIGNES.test(nom)) return 'enseigne';
