@@ -46,10 +46,11 @@
 .chiffre-legende { font-size: 16px; max-width: 32ch; margin-top: 10px; font-weight: 600; }
 
 /* ── 1 sur 5 ── */
-.tri { background: var(--encre); color: var(--papier); padding: clamp(56px, 8vw, 104px) 0; }
+.tri { background: var(--foret); color: var(--papier); padding: clamp(56px, 8vw, 104px) 0; }
 .tri .conteneur { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: center; }
 .tri .chiffre { color: var(--pousse); font-size: clamp(110px, 17vw, 240px); }
 .tri h2 { margin-bottom: 22px; }
+.sous-chiffre { font-size: 20px !important; font-weight: 600; max-width: 22ch !important; margin-top: 8px; color: var(--pousse); }
 .tri p { font-size: 19px; max-width: 48ch; }
 .tri p + p { margin-top: 14px; }
 .source { font-size: 13px !important; opacity: .75; margin-top: 18px !important; max-width: 60ch; }
@@ -157,11 +158,13 @@
     <div class="conteneur">
       <div>
         <div class="chiffre">1 sur 5</div>
+        <p class="sous-chiffre">des professionnels du bio est une ferme qui vous vend en direct.</p>
       </div>
       <div>
-        <h2>Ferme ou supermarché&nbsp;?</h2>
-        <p>Sur les 135 629 professionnels du bio inscrits à l'annuaire officiel en France métropolitaine, 1 sur 5 seulement est une ferme qui vend directement aux particuliers : 28 173 fermes. Les autres sont des magasins, des supermarchés, des grossistes, des transformateurs, ou des fermes qui ne vendent qu'aux professionnels.</p>
-        <p>Combien vous accueillent à la ferme ? Personne ne le sait encore précisément. C'est ce que Sur Place vérifie, ferme par ferme.</p>
+        <h2>On a trié pour vous.</h2>
+        <p>Dans l'annuaire officiel du bio, il y a de tout : magasins, supermarchés, grossistes, transformateurs… Sur 135 629 professionnels, seul 1 sur 5 est une ferme qui vend directement aux particuliers.</p>
+        <p><b>Sur Place les a trouvées : 28 173 fermes bio, partout en France, où acheter directement à celles et ceux qui produisent.</b> Et on va plus loin : ferme par ferme, nous vérifions lesquelles vous accueillent sur place.</p>
+        <a class="bouton clair" href="/carte.html" style="margin-top:26px">Trouver une ferme près de chez moi</a>
         <p class="source">Sources : Agence Bio, annuaire officiel des opérateurs bio (données ouvertes, extraction du 7 octobre 2026), tri Sur Place : producteur, certification en cours, vente aux particuliers, hors commerces et grossistes.</p>
       </div>
     </div>
