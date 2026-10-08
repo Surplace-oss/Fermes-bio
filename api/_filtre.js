@@ -30,6 +30,12 @@ const NAF_EXCLUS = ['46', '47', '56', '10', '11', '20', '72'];
 
 const ENSEIGNES = /carrefour|leclerc|lidl|aldi|monoprix|franprix|intermarch|auchan|casino|\bsuper ?u\b|\bhyper ?u\b|biocoop|naturalia|la vie claire|bio ?c'? ?bon|picard|netto|\bspar\b|vival|\bcora\b|\bmatch\b|\bg20\b|grand frais|\bmetro\b|promocash|nature ?o|l.?eau vive|satoriz|botanic|truffaut|clarins/i;
 
+// Collectivités, administrations, prisons : produisent pour leurs cantines ou en régie, pas de vente à la ferme.
+// (Les domaines viticoles municipaux, qui ont souvent un caveau, ne sont pas visés.)
+const COLLECTIVITES = /p[ée]nitenc|p[ée]nitenti|\bprison\b|maison d'arr[êe]t|centre de d[ée]tention|\bmairie\b|\bville d[e'’]|^commune\b|\bcommune d[e'’u]|conseil (d[ée]partemental|r[ée]gional)|communaut[ée] (de communes|urbaine|d'agglom[ée]ration)|\bagglom[ée]ration\b|\bm[ée]tropole\b|\bepci\b|\bsivom\b|\bsivu\b|\bccas\b/i;
+// Marques et laboratoires (cosmétique, pharmacie, boissons) : cultures pour l'industrie, pas d'accueil du public.
+const MARQUES = /yves rocher|pierre fabre|\bsothys\b|french bloom|\blaboratoires?\b/i;
+
 const ids = (o, k) => new Set((o[k] || []).map(x => x && x.id));
 
 export function estEngage(o) {
@@ -74,6 +80,8 @@ export function motifRejet(o) {
   if ([...ann].some(id => ANNUAIRE_COMMERCE.has(id) || estCommerceGros(id))) return 'commerce';
   if (o.reseau && !/^autre$/i.test(o.reseau.trim())) return 'reseau_commercial';
   if (ENSEIGNES.test(nom)) return 'enseigne';
+  if (COLLECTIVITES.test(nom) && !/domaine/i.test(nom)) return 'collectivite';
+  if (MARQUES.test(nom)) return 'marque_industrielle';
   const agricoleAnnuaire = [...ann].some(id => ANNUAIRE_AGRICOLE.has(id));
   if (NAF_EXCLUS.includes(naf.slice(0, 2)) && !agricoleAnnuaire) return 'naf_non_agricole';
   if (['20', '72'].includes(naf.slice(0, 2))) return 'naf_non_agricole';
