@@ -31,7 +31,7 @@
 }
 .etiquette::after { content: ''; position: absolute; inset: 12px; border-radius: 12px; border: 1px solid currentColor; opacity: .35; }
 .etiquette.ferme { background: var(--foret); color: var(--papier); left: 0; top: 20px; transform: rotate(-6deg); font-size: 68px; }
-.etiquette.km { background: var(--encre); color: var(--pousse); left: 50%; top: 110px; transform: rotate(5deg); font-size: 96px; }
+.etiquette.km { background: var(--pousse); color: var(--foret); left: 50%; top: 110px; transform: rotate(5deg); font-size: 96px; }
 .etiquette small { display: block; padding: 0 22px; font-size: 15px; font-weight: 600; font-variation-settings: 'wdth' 100; letter-spacing: 0; margin-top: 14px; opacity: .85; }
 .boucle { position: absolute; left: -8%; top: -10px; width: 74%; height: 112%; pointer-events: none; }
 .boucle path { stroke: var(--foret-2); stroke-width: 2.2; fill: none; stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: trace 1.6s .3s ease-out forwards; }
@@ -48,13 +48,30 @@
 /* ── 1 sur 5 ── */
 .tri { background: var(--foret); color: var(--papier); padding: clamp(56px, 8vw, 104px) 0; }
 .tri .conteneur { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: center; }
-.tri .chiffre { color: var(--pousse); font-size: clamp(110px, 17vw, 240px); }
+.tri .chiffre { color: var(--pousse); font-size: clamp(90px, 13vw, 190px); }
 .tri h2 { margin-bottom: 22px; }
 .sous-chiffre { font-size: 20px !important; font-weight: 600; max-width: 22ch !important; margin-top: 8px; color: var(--pousse); }
 .tri p { font-size: 19px; max-width: 48ch; }
 .tri p + p { margin-top: 14px; }
 .source { font-size: 13px !important; opacity: .75; margin-top: 18px !important; max-width: 60ch; }
 @media (max-width: 900px) { .tri .conteneur { grid-template-columns: 1fr; gap: 16px; } }
+
+
+/* ── Touches de stylo ── */
+.texte-court p { margin-top: 14px; }
+.texte-court p.final { font-size: 21px; margin-top: 22px; }
+.bandeau .texte-court p { font-size: 19px; }
+.sp-titre { white-space: nowrap; }
+.sp-titre .entoure { margin: 0 .22em 0 .1em; }
+.sp-titre .entoure::after { inset: -16% -12% -12% -10%; }
+.bandeau { --stylo: var(--foret); }
+.bloc-chiffre .chiffre { margin-bottom: 30px; white-space: nowrap; }
+.tri { --stylo: var(--pousse); }
+.tri .surligne { color: var(--encre); }
+.tri .sous-chiffre { color: var(--papier) !important; }
+.etapes .num .entoure::after { inset: -22% -40% -14% -40%; }
+.etapes { --stylo: var(--pousse); }
+.hero h1 .souligne::after { bottom: -0.05em; height: 0.16em; }
 
 /* ── Critères ── */
 .criteres { padding: clamp(56px, 8vw, 104px) 0; }
@@ -120,8 +137,8 @@
   <section class="hero">
     <div class="conteneur">
       <div>
-        <h1>Le bio, chez celui qui le fait.</h1>
-        <p class="chapo">Sur Place ne montre que des <span class="surligne">fermes bio certifiées qui produisent et vendent elles-mêmes</span>. Pas de supermarché, pas de grossiste, pas de revendeur.</p>
+        <h1>Le bio, chez celui qui <span class="souligne">le fait.</span></h1>
+        <p class="chapo"><span class="sp">Sur <span class="entoure">Place</span></span> ne montre que des <span class="surligne">fermes bio certifiées qui produisent et vendent elles-mêmes</span>. Pas de supermarché, pas de grossiste, pas de revendeur.</p>
         <form class="recherche" action="/carte.html" role="search">
           <label for="q" class="sr" style="position:absolute;left:-9999px">Ville ou code postal</label>
           <input id="q" name="q" type="search" placeholder="Votre ville ou code postal" autocomplete="off" required>
@@ -139,16 +156,18 @@
 
   <section class="bandeau">
     <div class="conteneur">
-      <div>
-        <h2>Pourquoi Sur Place&nbsp;?</h2>
-        <p style="margin-top:22px"><b>L'alimentation saine, c'est urgent, et c'est accessible.</b> Cadmium, PFAS, pesticides, microplastiques : tous les voyants sont au rouge. Et pourtant, la réponse existe. Elle est locale, humaine, accessible.</p>
-        <p>Et pourtant, autour de chez vous, parfois tout près, il y a la solution&nbsp;!</p>
-        <p>La France compte plus de 60 000 fermes bio. Près d'une sur deux vend en direct. La plupart sont méconnues, voire inconnues. Sur Place veut remédier à ce manque et vous diriger vers les fermes bio les plus proches de chez vous, au quotidien ou en vacances.</p>
-        <p>Sur Place vous montre les producteurs bio certifiés qui vous ouvrent leurs portes, en un clic. Découvrez les agricultrices et les agriculteurs qui se battent au quotidien pour vous donner accès à une alimentation saine. Prenez le temps d'y aller, de les rencontrer, de comprendre leur métier. Aller Sur Place, c'est soutenir le local et garantir une alimentation saine.</p>
+      <div class="texte-court">
+        <h2>Pourquoi <span class="sp-titre">Sur <span class="entoure">Place</span></span>&nbsp;?</h2>
+        <p><b>L'alimentation saine, c'est urgent.</b><br>Cadmium, PFAS, pesticides, microplastiques : tous les voyants sont au rouge.</p>
+        <p><span class="surligne-blanc"><b>Et pourtant, autour de chez vous, parfois tout près, il y a la solution&nbsp;!</b></span></p>
+        <p>La France compte <b>plus de 60 000 fermes bio</b>.<br>Près d'une sur deux vend en direct.<br>La plupart sont méconnues, voire inconnues.</p>
+        <p><span class="sp">Sur <span class="entoure">Place</span></span> vous emmène chez elles : <b>les fermes bio les plus proches de chez vous</b>, au quotidien ou en vacances.</p>
+        <p>Prenez le temps d'y aller. Rencontrez celles et ceux qui les font vivre. Comprenez leur métier.</p>
+        <p class="final">Aller <span class="sp">Sur <span class="entoure">Place</span></span>, c'est <span class="souligne">soutenir le local</span> et <span class="souligne">garantir une alimentation saine</span>.</p>
       </div>
-      <div>
-        <div class="chiffre">61 159</div>
-        <p class="chiffre-legende">fermes bio en France en 2025, soit 17,3 % des fermes du pays.</p>
+      <div class="bloc-chiffre">
+        <div class="chiffre"><span class="entoure large">61 159</span></div>
+        <p class="chiffre-legende">fermes bio en France en 2025,<br>soit <b>17,3 %</b> des fermes du pays.</p>
         <p class="source">Source : Agence Bio, Observatoire de la production bio 2025, juin 2026.</p>
       </div>
     </div>
@@ -156,15 +175,17 @@
 
   <section class="tri">
     <div class="conteneur">
-      <div>
-        <div class="chiffre">1 sur 5</div>
-        <p class="sous-chiffre">des professionnels du bio est une ferme qui vous vend en direct.</p>
+      <div class="bloc-chiffre">
+        <div class="chiffre"><span class="entoure large">1 sur 5</span></div>
+        <p class="sous-chiffre">des professionnels du bio<br>est une ferme qui vous vend en direct.</p>
       </div>
-      <div>
-        <h2>On a trié pour vous.</h2>
-        <p>Dans l'annuaire officiel du bio, il y a de tout : magasins, supermarchés, grossistes, transformateurs… Sur 135 629 professionnels, seul 1 sur 5 est une ferme qui vend directement aux particuliers.</p>
-        <p><b>Sur Place les a trouvées : 28 173 fermes bio, partout en France, où acheter directement à celles et ceux qui produisent.</b> Et on va plus loin : ferme par ferme, nous vérifions lesquelles vous accueillent sur place.</p>
-        <a class="bouton clair" href="/carte.html" style="margin-top:26px">Trouver une ferme près de chez moi</a>
+      <div class="texte-court">
+        <h2>On a fait le tri.<br><span class="souligne">Pour vous.</span></h2>
+        <p>Boutiques, supermarchés, grossistes, transformateurs… <b>L'annuaire officiel du bio mélange tout.</b></p>
+        <p><span class="surligne"><b><span class="sp">Sur <span class="entoure">Place</span></span> ne garde que les fermes.</b></span></p>
+        <p><b>28 173 fermes bio</b>, partout en France, où acheter directement à celles et ceux qui produisent.</p>
+        <p>Derrière chaque ferme, un visage, une histoire, un savoir-faire.<br><b>À vous de les découvrir.</b></p>
+        <a class="bouton clair" href="/carte.html" style="margin-top:22px">Trouver une ferme près de chez moi</a>
         <p class="source">Sources : Agence Bio, annuaire officiel des opérateurs bio (données ouvertes, extraction du 7 octobre 2026), tri Sur Place : producteur, certification en cours, vente aux particuliers, hors commerces et grossistes.</p>
       </div>
     </div>
@@ -211,9 +232,9 @@
     <div class="conteneur">
       <h2>Trois gestes.</h2>
       <ol>
-        <li><span class="num">1</span><div><h3>Votre ville</h3><p>Tapez une commune ou un code postal, ou laissez la carte vous localiser. En vacances aussi.</p></div></li>
-        <li><span class="num">2</span><div><h3>La ferme</h3><p>Ce qu'elle produit, qui la tient, son certificat bio, son téléphone quand il est connu.</p></div></li>
-        <li><span class="num">3</span><div><h3>La route</h3><p>Un appel pour vérifier les horaires, puis l'itinéraire jusqu'à la ferme.</p></div></li>
+        <li><span class="num"><span class="entoure">1</span></span><div><h3>Votre ville</h3><p>Tapez une commune ou un code postal, ou laissez la carte vous localiser. En vacances aussi.</p></div></li>
+        <li><span class="num"><span class="entoure">2</span></span><div><h3>La ferme</h3><p>Ce qu'elle produit, qui la tient, son certificat bio, son téléphone quand il est connu.</p></div></li>
+        <li><span class="num"><span class="entoure">3</span></span><div><h3>La route</h3><p>Un appel pour vérifier les horaires, puis l'itinéraire jusqu'à la ferme.</p></div></li>
       </ol>
     </div>
   </section>
