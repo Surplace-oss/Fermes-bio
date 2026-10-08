@@ -97,7 +97,7 @@ legend { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
       <label>Votre histoire en quelques lignes <span>Elle apparaîtra sur votre fiche</span><textarea name="histoire"></textarea></label>
       <p class="note">Ces informations servent uniquement à compléter votre fiche Sur Place. Elles ne sont ni vendues ni partagées. <a href="/mentions-legales.html">En savoir plus</a></p>
       <button class="bouton vert" type="submit">Préparer ma demande</button>
-      <div class="merci" id="merci" role="status">Votre messagerie s'est ouverte avec la demande pré-remplie : il ne reste qu'à l'envoyer. Si rien ne s'est ouvert, écrivez-nous à <a href="mailto:biosurplace@outlook.com">biosurplace@outlook.com</a>.</div>
+      <div class="merci" id="merci" role="status">Votre messagerie s'est ouverte avec la demande pré-remplie : il ne reste qu'à l'envoyer. Si rien ne s'est ouvert, écrivez-nous à <a href="mailto:contact@surplace.bio">contact@surplace.bio</a>.</div>
     </form>
   </div>
 </main>
@@ -108,7 +108,7 @@ legend { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
     <nav aria-label="Pied de page">
       <a href="/carte.html">La carte</a>
       <a href="/mentions-legales.html">Mentions légales</a>
-      <a href="mailto:biosurplace@outlook.com">Contact</a>
+      <a href="mailto:contact@surplace.bio">Contact</a>
     </nav>
   </div>
 </footer>
@@ -126,7 +126,7 @@ f.addEventListener('submit', e => {
     `Commune : ${d.get('commune')}`, `N° bio / SIRET : ${d.get('numero') || '-'}`, p.get('id') ? `Fiche Sur Place n° ${p.get('id')}` : '',
     `Vente : ${ventes}`, `Horaires : ${d.get('horaires') || '-'}`, `Produits : ${d.get('produits') || '-'}`, '', `Notre histoire :`, d.get('histoire') || '-'
   ].filter(x => x !== '').join('\n');
-  location.href = `mailto:biosurplace@outlook.com?subject=${encodeURIComponent('Fiche ferme : ' + d.get('ferme'))}&body=${encodeURIComponent(corps)}`;
+  location.href = `mailto:contact@surplace.bio?subject=${encodeURIComponent('Fiche ferme : ' + d.get('ferme'))}&body=${encodeURIComponent(corps)}`;
   document.getElementById('merci').style.display = 'block';
 });
 </script>

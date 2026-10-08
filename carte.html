@@ -410,7 +410,7 @@ function ouvrirFiche(id) {
   const u = new URL(location); u.searchParams.set('ferme', id); history.replaceState(null, '', u);
   const nom = joli(f.nom);
   const itin = `https://www.google.com/maps/dir/?api=1&destination=${f.lat},${f.lng}`;
-  const signal = `mailto:biosurplace@outlook.com?subject=${encodeURIComponent(`Correction fiche ${nom} (${f.id})`)}&body=${encodeURIComponent(`Bonjour,\n\nJe signale une information à corriger sur la fiche « ${nom} » (n° ${f.id}, ${f.ville}) :\n\n`)}`;
+  const signal = `mailto:contact@surplace.bio?subject=${encodeURIComponent(`Correction fiche ${nom} (${f.id})`)}&body=${encodeURIComponent(`Bonjour,\n\nJe signale une information à corriger sur la fiche « ${nom} » (n° ${f.id}, ${f.ville}) :\n\n`)}`;
   const depuis = f.bioDepuis ? new Date(f.bioDepuis).getFullYear() : null;
   $('#fiche').innerHTML = `
     <div class="fiche-haut"><button class="retour" type="button" id="retour">← Retour à la liste</button></div>
