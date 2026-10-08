@@ -1,0 +1,1043 @@
+{
+ "opendata": [
+  {
+   "id": 144365,
+   "siret": "98427955400013",
+   "adresses": [
+    {
+     "id": 1207880,
+     "lieu": "143 RUE DE COURCELLES ANGLE 65 RUE PIERRE DEMOURS",
+     "codePostal": "75017",
+     "ville": "PARIS",
+     "lat": 48.883361,
+     "long": 2.298714,
+     "codeCommune": "75056",
+     "active": true,
+     "pays": "FRANCE",
+     "departementId": 77,
+     "coordUpdatedByUser": false,
+     "operateurAdrOpId": 1448954,
+     "typeAdresseOperateurs": [
+      "Lieux d'activité",
+      "Lieux de vente",
+      "Siège social"
+     ]
+    },
+    {
+     "id": 1192462,
+     "lieu": "ANGLE 65 RUE PIERRE DEMOURS 143 RUE DE COURCELLES",
+     "codePostal": "75116",
+     "ville": "Paris",
+     "lat": 48.88440139,
+     "long": 2.3009572,
+     "codeCommune": "75056",
+     "active": true,
+     "pays": "FRANCE",
+     "departementId": 77,
+     "coordUpdatedByUser": false,
+     "operateurAdrOpId": 1461842,
+     "typeAdresseOperateurs": [
+      "Lieux d'activité"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 138000,
+   "siret": "44938249800045",
+   "adresses": [
+    {
+     "id": 1131604,
+     "lieu": "9-11 rue Mademoiselle",
+     "codePostal": "75015",
+     "ville": "PARIS",
+     "lat": 48.843632,
+     "long": 2.294428,
+     "codeCommune": "75056",
+     "active": true,
+     "pays": "FRANCE",
+     "departementId": 77,
+     "coordUpdatedByUser": false,
+     "operateurAdrOpId": 1386387,
+     "typeAdresseOperateurs": [
+      "Siège social",
+      "Lieux de vente",
+      "Lieux d'activité"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 137994,
+   "siret": "97865717900021",
+   "adresses": [
+    {
+     "id": 1131599,
+     "lieu": "107 avenue de la Bourdonnais",
+     "codePostal": "75007",
+     "ville": "PARIS 07",
+     "lat": 48.855171,
+     "long": 2.304268,
+     "codeCommune": "75120",
+     "active": true,
+     "pays": "FRANCE",
+     "departementId": 77,
+     "coordUpdatedByUser": false,
+     "operateurAdrOpId": 1386384,
+     "typeAdresseOperateurs": [
+      "Siège social",
+      "Lieux d'activité",
+      "Lieux de vente"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 49046,
+   "siret": "35261684100024",
+   "adresses": [
+    {
+     "id": 1070137,
+     "lieu": "395 Route de Crumière",
+     "codePostal": "19500",
+     "ville": "LAGLEYGEOLLE",
+     "lat": 45.073047,
+     "long": 1.710929,
+     "codeCommune": "19099",
+     "active": true,
+     "pays": "FRANCE",
+     "departementId": 20,
+     "coordUpdatedByUser": false,
+     "operateurAdrOpId": 1307957,
+     "typeAdresseOperateurs": [
+      "Siège social",
+      "Lieux d'activité"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 62903,
+   "siret": "40533933400030",
+   "adresses": [
+    {
+     "id": 62946,
+     "lieu": "LA DINETTE CHEMIN DE GENESTE",
+     "codePostal": "19800",
+     "ville": "EYREIN",
+     "lat": 45.318415,
+     "long": 1.924397,
+     "codeCommune": "19081",
+     "active": true,
+     "pays": "FRANCE",
+     "departementId": 20,
+     "coordUpdatedByUser": false,
+     "operateurAdrOpId": 51049,
+     "typeAdresseOperateurs": [
+      "Siège social",
+      "Lieux de vente",
+      "Lieux d'activité"
+     ]
+    },
+    {
+     "id": 242031,
+     "lieu": "La Dinette - Chemin de la Geneste",
+     "codePostal": "19800",
+     "ville": "EYREIN",
+     "lat": 45.318495,
+     "long": 1.924489,
+     "codeCommune": "19081",
+     "active": true,
+     "pays": "FRANCE",
+     "departementId": 20,
+     "coordUpdatedByUser": false,
+     "operateurAdrOpId": 243015,
+     "typeAdresseOperateurs": [
+      "Lieux d'activité"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 160504,
+   "siret": "92103389000028",
+   "adresses": [
+    {
+     "id": 1243999,
+     "lieu": "7 route de Forgès",
+     "codePostal": "19380",
+     "ville": "Saint Sylvain",
+     "lat": 45.173704,
+     "long": 1.875204,
+     "codeCommune": "19245",
+     "active": true,
+     "pays": "FRANCE",
+     "departementId": 20,
+     "coordUpdatedByUser": false,
+     "operateurAdrOpId": 1495057,
+     "typeAdresseOperateurs": [
+      "Siège social",
+      "Lieux d'activité"
+     ]
+    }
+   ]
+  }
+ ],
+ "sirene": [
+  {
+   "s": "984279554",
+   "status": 200,
+   "body": {
+    "results": [
+     {
+      "siren": "984279554",
+      "siren_conserve": null,
+      "nom_complet": "143 COURCELLES (LA POMPADOUR)",
+      "nom_raison_sociale": "143 COURCELLES",
+      "sigle": null,
+      "nombre_etablissements": 1,
+      "nombre_etablissements_ouverts": 1,
+      "siege": {
+       "activite_principale": "10.71C",
+       "activite_principale_naf25": "10.71H",
+       "activite_principale_registre_metier": null,
+       "annee_tranche_effectif_salarie": "2024",
+       "adresse": "ANGLE 65 RUE  PIERRE DEMOURS 143 RUE DE COURCELLES 75017 PARIS",
+       "caractere_employeur": "O",
+       "cedex": null,
+       "code_pays_etranger": null,
+       "code_postal": "75017",
+       "commune": "75117",
+       "complement_adresse": "ANGLE 65 RUE  PIERRE DEMOURS",
+       "coordonnees": "48.879772537,2.291656531",
+       "date_creation": "2024-02-05",
+       "date_debut_activite": "2024-02-20",
+       "date_fermeture": null,
+       "date_mise_a_jour": null,
+       "date_mise_a_jour_insee": "2025-12-05T16:14:28",
+       "departement": "75",
+       "distribution_speciale": null,
+       "epci": "200054781",
+       "est_siege": true,
+       "etat_administratif": "A",
+       "geo_adresse": null,
+       "geo_id": null,
+       "indice_repetition": null,
+       "latitude": "48.879772537",
+       "libelle_cedex": null,
+       "libelle_commune": "PARIS",
+       "libelle_commune_etranger": null,
+       "libelle_pays_etranger": null,
+       "libelle_voie": "DE COURCELLES",
+       "liste_enseignes": [
+        "LA POMPADOUR"
+       ],
+       "liste_finess": null,
+       "liste_id_bio": null,
+       "liste_idcc": [
+        "0843"
+       ],
+       "liste_id_organisme_formation": null,
+       "liste_rge": null,
+       "liste_uai": null,
+       "longitude": "2.291656531",
+       "nom_commercial": "LA POMPADOUR",
+       "numero_voie": "143",
+       "dernier_numero_voie": null,
+       "region": "11",
+       "siret": "98427955400013",
+       "statut_diffusion_etablissement": "O",
+       "tranche_effectif_salarie": "12",
+       "type_voie": "RUE"
+      },
+      "activite_principale": "10.71C",
+      "activite_principale_naf25": "10.71H",
+      "categorie_entreprise": "PME",
+      "caractere_employeur": null,
+      "annee_categorie_entreprise": "2024",
+      "date_creation": "2024-02-05",
+      "date_fermeture": null,
+      "date_mise_a_jour": "2026-10-08T10:13:45",
+      "date_mise_a_jour_insee": "2025-12-06T09:13:04",
+      "date_mise_a_jour_rne": "2026-07-16T19:23:06",
+      "dirigeants": [
+       {
+        "siren": "983670035",
+        "denomination": "M-C-FINANCE",
+        "qualite": "Président de SAS",
+        "type_dirigeant": "personne morale"
+       }
+      ],
+      "etat_administratif": "A",
+      "nature_juridique": "5710",
+      "section_activite_principale": "C",
+      "tranche_effectif_salarie": "12",
+      "annee_tranche_effectif_salarie": "2024",
+      "statut_diffusion": "O",
+      "matching_etablissements": [],
+      "finances": null,
+      "complements": {
+       "collectivite_territoriale": null,
+       "convention_collective_renseignee": true,
+       "liste_idcc": [
+        "0843"
+       ],
+       "liste_finess_juridique": null,
+       "numero_rnf": null,
+       "egapro_renseignee": false,
+       "est_achats_responsables": false,
+       "est_alim_confiance": false,
+       "est_association": false,
+       "est_avocat": false,
+       "est_bio": false,
+       "est_entrepreneur_individuel": false,
+       "est_entrepreneur_spectacle": false,
+       "est_ess": false,
+       "est_finess": false,
+       "est_organisme_formation": false,
+       "est_qualiopi": false,
+       "liste_id_organisme_formation": null,
+       "est_rge": false,
+       "est_siae": false,
+       "est_societe_mission": false,
+       "est_uai": false,
+       "est_patrimoine_vivant": false,
+       "bilan_ges_renseigne": false,
+       "identifiant_association": null,
+       "statut_entrepreneur_spectacle": null,
+       "type_siae": null,
+       "a_aide_minimis": false,
+       "a_aide_ademe": false,
+       "est_administration": false,
+       "est_service_public": null,
+       "est_l100_3": null
+      },
+      "tva": [
+       "FR79984279554"
+      ]
+     }
+    ],
+    "total_results": 1,
+    "page": 1,
+    "per_page": 1,
+    "total_pages": 1
+   }
+  },
+  {
+   "s": "449382498",
+   "status": 200,
+   "body": {
+    "results": [
+     {
+      "siren": "449382498",
+      "siren_conserve": null,
+      "nom_complet": "DISTRIPARC",
+      "nom_raison_sociale": "DISTRIPARC",
+      "sigle": null,
+      "nombre_etablissements": 4,
+      "nombre_etablissements_ouverts": 1,
+      "siege": {
+       "activite_principale": "47.11D",
+       "activite_principale_naf25": "47.11J",
+       "activite_principale_registre_metier": null,
+       "annee_tranche_effectif_salarie": "2024",
+       "adresse": "9 RUE MADEMOISELLE 75015 PARIS",
+       "caractere_employeur": "O",
+       "cedex": null,
+       "code_pays_etranger": null,
+       "code_postal": "75015",
+       "commune": "75115",
+       "complement_adresse": null,
+       "coordonnees": "48.843618349,2.2942095419",
+       "date_creation": "2023-05-05",
+       "date_debut_activite": "2023-05-05",
+       "date_fermeture": null,
+       "date_mise_a_jour": null,
+       "date_mise_a_jour_insee": "2025-12-06T04:11:17",
+       "departement": "75",
+       "distribution_speciale": null,
+       "epci": "200054781",
+       "est_siege": true,
+       "etat_administratif": "A",
+       "geo_adresse": null,
+       "geo_id": null,
+       "indice_repetition": null,
+       "latitude": "48.843618349",
+       "libelle_cedex": null,
+       "libelle_commune": "PARIS",
+       "libelle_commune_etranger": null,
+       "libelle_pays_etranger": null,
+       "libelle_voie": "MADEMOISELLE",
+       "liste_enseignes": null,
+       "liste_finess": null,
+       "liste_id_bio": null,
+       "liste_idcc": [
+        "2216"
+       ],
+       "liste_id_organisme_formation": null,
+       "liste_rge": null,
+       "liste_uai": null,
+       "longitude": "2.2942095419",
+       "nom_commercial": null,
+       "numero_voie": "9",
+       "dernier_numero_voie": null,
+       "region": "11",
+       "siret": "44938249800045",
+       "statut_diffusion_etablissement": "O",
+       "tranche_effectif_salarie": "03",
+       "type_voie": "RUE"
+      },
+      "activite_principale": "47.11D",
+      "activite_principale_naf25": "47.11J",
+      "categorie_entreprise": "GE",
+      "caractere_employeur": null,
+      "annee_categorie_entreprise": "2024",
+      "date_creation": "2003-07-07",
+      "date_fermeture": null,
+      "date_mise_a_jour": "2026-10-08T09:35:56",
+      "date_mise_a_jour_insee": "2025-12-06T06:40:38",
+      "date_mise_a_jour_rne": "2026-09-23T15:34:53",
+      "dirigeants": [
+       {
+        "siren": "818468647",
+        "denomination": "EMERIS",
+        "qualite": "Président de SAS",
+        "type_dirigeant": "personne morale"
+       }
+      ],
+      "etat_administratif": "A",
+      "nature_juridique": "5710",
+      "section_activite_principale": "G",
+      "tranche_effectif_salarie": "03",
+      "annee_tranche_effectif_salarie": "2024",
+      "statut_diffusion": "O",
+      "matching_etablissements": [],
+      "finances": {
+       "2024": {
+        "ca": 1846014,
+        "resultat_net": -465873
+       }
+      },
+      "complements": {
+       "collectivite_territoriale": null,
+       "convention_collective_renseignee": true,
+       "liste_idcc": [
+        "2216"
+       ],
+       "liste_finess_juridique": null,
+       "numero_rnf": null,
+       "egapro_renseignee": false,
+       "est_achats_responsables": false,
+       "est_alim_confiance": false,
+       "est_association": false,
+       "est_avocat": false,
+       "est_bio": false,
+       "est_entrepreneur_individuel": false,
+       "est_entrepreneur_spectacle": false,
+       "est_ess": false,
+       "est_finess": false,
+       "est_organisme_formation": false,
+       "est_qualiopi": false,
+       "liste_id_organisme_formation": null,
+       "est_rge": false,
+       "est_siae": false,
+       "est_societe_mission": false,
+       "est_uai": false,
+       "est_patrimoine_vivant": false,
+       "bilan_ges_renseigne": false,
+       "identifiant_association": null,
+       "statut_entrepreneur_spectacle": null,
+       "type_siae": null,
+       "a_aide_minimis": false,
+       "a_aide_ademe": false,
+       "est_administration": false,
+       "est_service_public": null,
+       "est_l100_3": null
+      },
+      "tva": [
+       "FR87449382498"
+      ]
+     }
+    ],
+    "total_results": 1,
+    "page": 1,
+    "per_page": 1,
+    "total_pages": 1
+   }
+  },
+  {
+   "s": "978657179",
+   "status": 200,
+   "body": {
+    "results": [
+     {
+      "siren": "978657179",
+      "siren_conserve": null,
+      "nom_complet": "GREECE FP12",
+      "nom_raison_sociale": "GREECE FP12",
+      "sigle": null,
+      "nombre_etablissements": 3,
+      "nombre_etablissements_ouverts": 1,
+      "siege": {
+       "activite_principale": "47.11D",
+       "activite_principale_naf25": "47.11J",
+       "activite_principale_registre_metier": null,
+       "annee_tranche_effectif_salarie": "2024",
+       "adresse": "107 AVENUE DE LA BOURDONNAIS 75007 PARIS",
+       "caractere_employeur": "O",
+       "cedex": null,
+       "code_pays_etranger": null,
+       "code_postal": "75007",
+       "commune": "75107",
+       "complement_adresse": null,
+       "coordonnees": "48.855178225,2.3042542774",
+       "date_creation": "2023-09-30",
+       "date_debut_activite": "2023-10-01",
+       "date_fermeture": null,
+       "date_mise_a_jour": null,
+       "date_mise_a_jour_insee": "2025-12-06T03:59:04",
+       "departement": "75",
+       "distribution_speciale": null,
+       "epci": "200054781",
+       "est_siege": true,
+       "etat_administratif": "A",
+       "geo_adresse": null,
+       "geo_id": null,
+       "indice_repetition": null,
+       "latitude": "48.855178225",
+       "libelle_cedex": null,
+       "libelle_commune": "PARIS",
+       "libelle_commune_etranger": null,
+       "libelle_pays_etranger": null,
+       "libelle_voie": "DE LA BOURDONNAIS",
+       "liste_enseignes": [
+        "FRANPRIX"
+       ],
+       "liste_finess": null,
+       "liste_id_bio": null,
+       "liste_idcc": [
+        "2216"
+       ],
+       "liste_id_organisme_formation": null,
+       "liste_rge": null,
+       "liste_uai": null,
+       "longitude": "2.3042542774",
+       "nom_commercial": null,
+       "numero_voie": "107",
+       "dernier_numero_voie": null,
+       "region": "11",
+       "siret": "97865717900021",
+       "statut_diffusion_etablissement": "O",
+       "tranche_effectif_salarie": "11",
+       "type_voie": "AVENUE"
+      },
+      "activite_principale": "47.11D",
+      "activite_principale_naf25": "47.11J",
+      "categorie_entreprise": "GE",
+      "caractere_employeur": null,
+      "annee_categorie_entreprise": "2024",
+      "date_creation": "2023-08-17",
+      "date_fermeture": null,
+      "date_mise_a_jour": "2026-10-08T10:07:43",
+      "date_mise_a_jour_insee": "2026-04-15T18:31:48",
+      "date_mise_a_jour_rne": "2026-08-17T08:26:18",
+      "dirigeants": [
+       {
+        "nom": "LENOBLE",
+        "prenoms": "KLAUS LAURENT BENOÎT",
+        "annee_de_naissance": "1990",
+        "date_de_naissance": "1990-02",
+        "qualite": "Directeur Général",
+        "nationalite": null,
+        "type_dirigeant": "personne physique"
+       },
+       {
+        "siren": "452532856",
+        "denomination": "ITM ALIMENTAIRE REGION PARISIENNE",
+        "qualite": "Président de SAS",
+        "type_dirigeant": "personne morale"
+       }
+      ],
+      "etat_administratif": "A",
+      "nature_juridique": "5710",
+      "section_activite_principale": "G",
+      "tranche_effectif_salarie": "11",
+      "annee_tranche_effectif_salarie": "2024",
+      "statut_diffusion": "O",
+      "matching_etablissements": [],
+      "finances": {
+       "2024": {
+        "ca": 3142780,
+        "resultat_net": -366395
+       }
+      },
+      "complements": {
+       "collectivite_territoriale": null,
+       "convention_collective_renseignee": true,
+       "liste_idcc": [
+        "2216"
+       ],
+       "liste_finess_juridique": null,
+       "numero_rnf": null,
+       "egapro_renseignee": false,
+       "est_achats_responsables": false,
+       "est_alim_confiance": false,
+       "est_association": false,
+       "est_avocat": false,
+       "est_bio": false,
+       "est_entrepreneur_individuel": false,
+       "est_entrepreneur_spectacle": false,
+       "est_ess": false,
+       "est_finess": false,
+       "est_organisme_formation": false,
+       "est_qualiopi": false,
+       "liste_id_organisme_formation": null,
+       "est_rge": false,
+       "est_siae": false,
+       "est_societe_mission": false,
+       "est_uai": false,
+       "est_patrimoine_vivant": false,
+       "bilan_ges_renseigne": false,
+       "identifiant_association": null,
+       "statut_entrepreneur_spectacle": null,
+       "type_siae": null,
+       "a_aide_minimis": false,
+       "a_aide_ademe": false,
+       "est_administration": false,
+       "est_service_public": null,
+       "est_l100_3": null
+      },
+      "tva": [
+       "FR90978657179"
+      ]
+     }
+    ],
+    "total_results": 1,
+    "page": 1,
+    "per_page": 1,
+    "total_pages": 1
+   }
+  },
+  {
+   "s": "352616841",
+   "status": 200,
+   "body": {
+    "results": [
+     {
+      "siren": "352616841",
+      "siren_conserve": null,
+      "nom_complet": "LAURENT JAYLE",
+      "nom_raison_sociale": null,
+      "sigle": null,
+      "nombre_etablissements": 3,
+      "nombre_etablissements_ouverts": 2,
+      "siege": {
+       "activite_principale": "01.25Z",
+       "activite_principale_naf25": "01.25Y",
+       "activite_principale_registre_metier": null,
+       "annee_tranche_effectif_salarie": null,
+       "adresse": "LE PEUCH 19500 LAGLEYGEOLLE",
+       "caractere_employeur": "O",
+       "cedex": null,
+       "code_pays_etranger": null,
+       "code_postal": "19500",
+       "commune": "19099",
+       "complement_adresse": null,
+       "coordonnees": "45.070285128,1.7134203778",
+       "date_creation": "2010-03-14",
+       "date_debut_activite": "2020-09-08",
+       "date_fermeture": null,
+       "date_mise_a_jour": null,
+       "date_mise_a_jour_insee": "2025-12-05T23:50:18",
+       "departement": "19",
+       "distribution_speciale": null,
+       "epci": "200066769",
+       "est_siege": true,
+       "etat_administratif": "A",
+       "geo_adresse": null,
+       "geo_id": null,
+       "indice_repetition": null,
+       "latitude": "45.070285128",
+       "libelle_cedex": null,
+       "libelle_commune": "LAGLEYGEOLLE",
+       "libelle_commune_etranger": null,
+       "libelle_pays_etranger": null,
+       "libelle_voie": "LE PEUCH",
+       "liste_enseignes": null,
+       "liste_finess": null,
+       "liste_id_bio": null,
+       "liste_idcc": null,
+       "liste_id_organisme_formation": null,
+       "liste_rge": null,
+       "liste_uai": null,
+       "longitude": "1.7134203778",
+       "nom_commercial": null,
+       "numero_voie": null,
+       "dernier_numero_voie": null,
+       "region": "75",
+       "siret": "35261684100024",
+       "statut_diffusion_etablissement": "O",
+       "tranche_effectif_salarie": "NN",
+       "type_voie": null
+      },
+      "activite_principale": "01.25Z",
+      "activite_principale_naf25": "01.25Y",
+      "categorie_entreprise": null,
+      "caractere_employeur": null,
+      "annee_categorie_entreprise": null,
+      "date_creation": "1989-09-25",
+      "date_fermeture": null,
+      "date_mise_a_jour": "2026-10-08T09:55:52",
+      "date_mise_a_jour_insee": "2025-12-06T10:20:47",
+      "date_mise_a_jour_rne": "2026-08-31T14:36:43",
+      "dirigeants": [
+       {
+        "nom": "JAYLE",
+        "prenoms": "LAURENT",
+        "annee_de_naissance": null,
+        "date_de_naissance": null,
+        "qualite": null,
+        "nationalite": null,
+        "type_dirigeant": "personne physique"
+       }
+      ],
+      "etat_administratif": "A",
+      "nature_juridique": "1000",
+      "section_activite_principale": "A",
+      "tranche_effectif_salarie": "NN",
+      "annee_tranche_effectif_salarie": null,
+      "statut_diffusion": "O",
+      "matching_etablissements": [],
+      "finances": null,
+      "complements": {
+       "collectivite_territoriale": null,
+       "convention_collective_renseignee": false,
+       "liste_idcc": null,
+       "liste_finess_juridique": null,
+       "numero_rnf": null,
+       "egapro_renseignee": false,
+       "est_achats_responsables": false,
+       "est_alim_confiance": false,
+       "est_association": false,
+       "est_avocat": false,
+       "est_bio": false,
+       "est_entrepreneur_individuel": true,
+       "est_entrepreneur_spectacle": false,
+       "est_ess": false,
+       "est_finess": false,
+       "est_organisme_formation": false,
+       "est_qualiopi": false,
+       "liste_id_organisme_formation": null,
+       "est_rge": false,
+       "est_siae": false,
+       "est_societe_mission": false,
+       "est_uai": false,
+       "est_patrimoine_vivant": false,
+       "bilan_ges_renseigne": false,
+       "identifiant_association": null,
+       "statut_entrepreneur_spectacle": null,
+       "type_siae": null,
+       "a_aide_minimis": false,
+       "a_aide_ademe": false,
+       "est_administration": false,
+       "est_service_public": null,
+       "est_l100_3": null
+      },
+      "tva": [
+       "FR0U352616841",
+       "FR1G352616841"
+      ]
+     }
+    ],
+    "total_results": 1,
+    "page": 1,
+    "per_page": 1,
+    "total_pages": 1
+   }
+  },
+  {
+   "s": "405339334",
+   "status": 200,
+   "body": {
+    "results": [
+     {
+      "siren": "405339334",
+      "siren_conserve": null,
+      "nom_complet": "PASCAL-MARIE ADAM",
+      "nom_raison_sociale": null,
+      "sigle": null,
+      "nombre_etablissements": 3,
+      "nombre_etablissements_ouverts": 1,
+      "siege": {
+       "activite_principale": "01.25Z",
+       "activite_principale_naf25": "01.25Y",
+       "activite_principale_registre_metier": null,
+       "annee_tranche_effectif_salarie": null,
+       "adresse": "LA GENESTE 19800 EYREIN",
+       "caractere_employeur": "N",
+       "cedex": null,
+       "code_pays_etranger": null,
+       "code_postal": "19800",
+       "commune": "19081",
+       "complement_adresse": null,
+       "coordonnees": "45.317860103,1.9239772987",
+       "date_creation": "2013-08-01",
+       "date_debut_activite": "2013-08-01",
+       "date_fermeture": null,
+       "date_mise_a_jour": null,
+       "date_mise_a_jour_insee": "2025-12-05T18:56:42",
+       "departement": "19",
+       "distribution_speciale": null,
+       "epci": "241927201",
+       "est_siege": true,
+       "etat_administratif": "A",
+       "geo_adresse": null,
+       "geo_id": null,
+       "indice_repetition": null,
+       "latitude": "45.317860103",
+       "libelle_cedex": null,
+       "libelle_commune": "EYREIN",
+       "libelle_commune_etranger": null,
+       "libelle_pays_etranger": null,
+       "libelle_voie": "LA GENESTE",
+       "liste_enseignes": null,
+       "liste_finess": null,
+       "liste_id_bio": [
+        160985
+       ],
+       "liste_idcc": [
+        "9191"
+       ],
+       "liste_id_organisme_formation": null,
+       "liste_rge": null,
+       "liste_uai": null,
+       "longitude": "1.9239772987",
+       "nom_commercial": null,
+       "numero_voie": null,
+       "dernier_numero_voie": null,
+       "region": "75",
+       "siret": "40533933400030",
+       "statut_diffusion_etablissement": "O",
+       "tranche_effectif_salarie": "NN",
+       "type_voie": null
+      },
+      "activite_principale": "01.25Z",
+      "activite_principale_naf25": "01.25Y",
+      "categorie_entreprise": null,
+      "caractere_employeur": null,
+      "annee_categorie_entreprise": null,
+      "date_creation": "1995-01-01",
+      "date_fermeture": null,
+      "date_mise_a_jour": "2026-10-08T08:58:57",
+      "date_mise_a_jour_insee": "2025-12-06T06:19:11",
+      "date_mise_a_jour_rne": "2026-09-01T16:50:54",
+      "dirigeants": [
+       {
+        "nom": "ADAM",
+        "prenoms": "PASCAL-MARIE JACQUES PASCAL MARIE",
+        "annee_de_naissance": "1959",
+        "date_de_naissance": "1959-09",
+        "qualite": null,
+        "nationalite": null,
+        "type_dirigeant": "personne physique"
+       }
+      ],
+      "etat_administratif": "A",
+      "nature_juridique": "1000",
+      "section_activite_principale": "A",
+      "tranche_effectif_salarie": "NN",
+      "annee_tranche_effectif_salarie": null,
+      "statut_diffusion": "O",
+      "matching_etablissements": [],
+      "finances": null,
+      "complements": {
+       "collectivite_territoriale": null,
+       "convention_collective_renseignee": true,
+       "liste_idcc": [
+        "9191"
+       ],
+       "liste_finess_juridique": null,
+       "numero_rnf": null,
+       "egapro_renseignee": false,
+       "est_achats_responsables": false,
+       "est_alim_confiance": false,
+       "est_association": false,
+       "est_avocat": false,
+       "est_bio": true,
+       "est_entrepreneur_individuel": true,
+       "est_entrepreneur_spectacle": false,
+       "est_ess": false,
+       "est_finess": false,
+       "est_organisme_formation": false,
+       "est_qualiopi": false,
+       "liste_id_organisme_formation": null,
+       "est_rge": false,
+       "est_siae": false,
+       "est_societe_mission": false,
+       "est_uai": false,
+       "est_patrimoine_vivant": false,
+       "bilan_ges_renseigne": false,
+       "identifiant_association": null,
+       "statut_entrepreneur_spectacle": null,
+       "type_siae": null,
+       "a_aide_minimis": false,
+       "a_aide_ademe": false,
+       "est_administration": false,
+       "est_service_public": null,
+       "est_l100_3": null
+      },
+      "tva": [
+       "FR0F405339334"
+      ]
+     }
+    ],
+    "total_results": 1,
+    "page": 1,
+    "per_page": 1,
+    "total_pages": 1
+   }
+  },
+  {
+   "s": "921033890",
+   "status": 200,
+   "body": {
+    "results": [
+     {
+      "siren": "921033890",
+      "siren_conserve": null,
+      "nom_complet": "[NON-DIFFUSIBLE]",
+      "nom_raison_sociale": "[NON-DIFFUSIBLE]",
+      "sigle": "[NON-DIFFUSIBLE]",
+      "nombre_etablissements": 2,
+      "nombre_etablissements_ouverts": 1,
+      "siege": {
+       "activite_principale": "01.13Z",
+       "activite_principale_naf25": "01.13Y",
+       "activite_principale_registre_metier": "2319ZA",
+       "annee_tranche_effectif_salarie": null,
+       "adresse": "[NON-DIFFUSIBLE]",
+       "caractere_employeur": "N",
+       "cedex": "[NON-DIFFUSIBLE]",
+       "code_pays_etranger": null,
+       "code_postal": "[NON-DIFFUSIBLE]",
+       "commune": "19245",
+       "complement_adresse": "[NON-DIFFUSIBLE]",
+       "coordonnees": "[NON-DIFFUSIBLE]",
+       "date_creation": "2023-04-24",
+       "date_debut_activite": "2026-02-01",
+       "date_fermeture": null,
+       "date_mise_a_jour": null,
+       "date_mise_a_jour_insee": "2026-02-06T15:04:04",
+       "departement": "19",
+       "distribution_speciale": "[NON-DIFFUSIBLE]",
+       "epci": "200066751",
+       "est_siege": true,
+       "etat_administratif": "A",
+       "geo_adresse": null,
+       "geo_id": null,
+       "indice_repetition": "[NON-DIFFUSIBLE]",
+       "latitude": "[NON-DIFFUSIBLE]",
+       "libelle_cedex": "[NON-DIFFUSIBLE]",
+       "libelle_commune": "SAINT-SYLVAIN",
+       "libelle_commune_etranger": null,
+       "libelle_pays_etranger": null,
+       "libelle_voie": "[NON-DIFFUSIBLE]",
+       "liste_enseignes": [
+        "[NON-DIFFUSIBLE]",
+        "[NON-DIFFUSIBLE]",
+        "[NON-DIFFUSIBLE]"
+       ],
+       "liste_finess": null,
+       "liste_id_bio": [
+        304691
+       ],
+       "liste_idcc": null,
+       "liste_id_organisme_formation": null,
+       "liste_rge": null,
+       "liste_uai": null,
+       "longitude": "[NON-DIFFUSIBLE]",
+       "nom_commercial": "[NON-DIFFUSIBLE]",
+       "numero_voie": "[NON-DIFFUSIBLE]",
+       "dernier_numero_voie": "[NON-DIFFUSIBLE]",
+       "region": "75",
+       "siret": "92103389000028",
+       "statut_diffusion_etablissement": "P",
+       "tranche_effectif_salarie": "NN",
+       "type_voie": "[NON-DIFFUSIBLE]"
+      },
+      "activite_principale": "01.13Z",
+      "activite_principale_naf25": "01.13Y",
+      "categorie_entreprise": null,
+      "caractere_employeur": null,
+      "annee_categorie_entreprise": null,
+      "date_creation": "2022-11-07",
+      "date_fermeture": null,
+      "date_mise_a_jour": "2026-10-08T09:37:52",
+      "date_mise_a_jour_insee": "2026-02-06T15:04:04",
+      "date_mise_a_jour_rne": "2026-09-01T15:36:37",
+      "dirigeants": [
+       {
+        "nom": "[NON-DIFFUSIBLE]",
+        "prenoms": "[NON-DIFFUSIBLE]",
+        "annee_de_naissance": "[NON-DIFFUSIBLE]",
+        "date_de_naissance": "[NON-DIFFUSIBLE]",
+        "qualite": null,
+        "nationalite": "[NON-DIFFUSIBLE]",
+        "type_dirigeant": "personne physique"
+       }
+      ],
+      "etat_administratif": "A",
+      "nature_juridique": "1000",
+      "section_activite_principale": "A",
+      "tranche_effectif_salarie": "NN",
+      "annee_tranche_effectif_salarie": null,
+      "statut_diffusion": "P",
+      "matching_etablissements": [],
+      "finances": null,
+      "complements": {
+       "collectivite_territoriale": null,
+       "convention_collective_renseignee": false,
+       "liste_idcc": null,
+       "liste_finess_juridique": null,
+       "numero_rnf": null,
+       "egapro_renseignee": false,
+       "est_achats_responsables": false,
+       "est_alim_confiance": false,
+       "est_association": false,
+       "est_avocat": false,
+       "est_bio": true,
+       "est_entrepreneur_individuel": true,
+       "est_entrepreneur_spectacle": false,
+       "est_ess": false,
+       "est_finess": false,
+       "est_organisme_formation": false,
+       "est_qualiopi": false,
+       "liste_id_organisme_formation": null,
+       "est_rge": false,
+       "est_siae": false,
+       "est_societe_mission": false,
+       "est_uai": false,
+       "est_patrimoine_vivant": false,
+       "bilan_ges_renseigne": false,
+       "identifiant_association": null,
+       "statut_entrepreneur_spectacle": null,
+       "type_siae": null,
+       "a_aide_minimis": false,
+       "a_aide_ademe": false,
+       "est_administration": false,
+       "est_service_public": null,
+       "est_l100_3": null
+      },
+      "tva": [
+       "FR34921033890"
+      ]
+     }
+    ],
+    "total_results": 1,
+    "page": 1,
+    "per_page": 1,
+    "total_pages": 1
+   }
+  }
+ ]
+}
