@@ -3,6 +3,7 @@
 // Lancé après generer-donnees.mjs. Les réponses sont gardées en cache 30 jours (.cache/sirene.json,
 // conservé entre deux nuits par actions/cache) pour ne pas réinterroger 28 000 entreprises chaque nuit.
 import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
+import { VERIFICATIONS } from '../api/_verifications.js';
 
 const DOSSIER = new URL('../data/fermes/', import.meta.url);
 const CACHE = new URL('../.cache/sirene.json', import.meta.url);
@@ -87,7 +88,9 @@ for (const [f, d] of Object.entries(depts)) {
     if (!x.siret) { rapport.sansSiret++; return true; }
     const s = cache[x.siret]; if (!s) return true;
     rapport.verifiees++;
-    const dec = decider(s); if (!dec) return true;
+    let dec = decider(s); if (!dec) return true;
+    // Relue à la main et gardée : on signale au lieu de retirer
+    if (dec.exclure && VERIFICATIONS[x.id]?.statut === 'maintenue') dec = { signal: 'maintenue_' + dec.motif };
     if (dec.exclure) {
       rapport.exclues[dec.motif] = (rapport.exclues[dec.motif] || 0) + 1;
       rapport.liste.push({ id: x.id, nom: x.nom, cp: x.cp, ville: x.ville, decision: 'exclue', motif: dec.motif, naf: s.naf });
