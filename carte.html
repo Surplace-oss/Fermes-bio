@@ -433,7 +433,7 @@ function afficher(enCours = false, erreurs = 0) {
   const nv = l.filter(f => f.vigneron).length, nf = l.length - nv;
   const morceaux = [];
   if (etat.types.has('ferme')) morceaux.push(`${nf} ferme${nf > 1 ? 's' : ''}`);
-  if (etat.types.has('vigneron')) morceaux.push(`${nv} vigneron${nv > 1 ? 's' : ''}`);
+  if (etat.types.has('vigneron') && (nv || !etat.types.has('ferme'))) morceaux.push(`${nv} vigneron${nv > 1 ? 's' : ''}`);
   $('#compte').innerHTML = `<b>${morceaux.join(' · ')}</b> à moins de ${etat.rayon} km${enCours ? ' · chargement…' : ''}${erreurs ? ' · données partielles' : ''}`;
   const MAX = 250;
   $('#liste').innerHTML = l.length ? l.slice(0, MAX).map(f => `
