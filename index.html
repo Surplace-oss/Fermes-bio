@@ -45,6 +45,16 @@
 .chiffre { font-variation-settings: 'wdth' 62; font-weight: 900; font-size: clamp(88px, 13vw, 180px); line-height: .85; letter-spacing: -0.03em; }
 .chiffre-legende { font-size: 16px; max-width: 32ch; margin-top: 10px; font-weight: 600; }
 
+/* ── 1 sur 5 ── */
+.tri { background: var(--encre); color: var(--papier); padding: clamp(56px, 8vw, 104px) 0; }
+.tri .conteneur { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: center; }
+.tri .chiffre { color: var(--pousse); font-size: clamp(110px, 17vw, 240px); }
+.tri h2 { margin-bottom: 22px; }
+.tri p { font-size: 19px; max-width: 48ch; }
+.tri p + p { margin-top: 14px; }
+.source { font-size: 13px !important; opacity: .75; margin-top: 18px !important; max-width: 60ch; }
+@media (max-width: 900px) { .tri .conteneur { grid-template-columns: 1fr; gap: 16px; } }
+
 /* ── Critères ── */
 .criteres { padding: clamp(56px, 8vw, 104px) 0; }
 .criteres h2 { max-width: 14ch; margin-bottom: 44px; }
@@ -132,12 +142,27 @@
         <h2>Pourquoi Sur Place&nbsp;?</h2>
         <p style="margin-top:22px"><b>L'alimentation saine, c'est urgent, et c'est accessible.</b> Cadmium, PFAS, pesticides, microplastiques : tous les voyants sont au rouge. Et pourtant, la réponse existe. Elle est locale, humaine, accessible.</p>
         <p>Autour de chez vous, il y a des mines de bons aliments, souvent moins chers qu'au supermarché. Sauf que vous ne le savez pas.</p>
-        <p>Depuis 2010, plus de 40 000 fermes françaises ont choisi de se convertir au bio. Elles sont là. Elles produisent. Elles vendent sur place. La plupart sont méconnues, voire inconnues. Sur Place veut remédier à ce manque.</p>
+        <p>La France compte 61 159 fermes bio. Elles sont là. Elles produisent. Près d'une sur deux vend en direct. La plupart sont méconnues, voire inconnues. Sur Place veut remédier à ce manque.</p>
         <p>Sur Place vous montre les producteurs bio certifiés qui vous ouvrent leurs portes, autour de chez vous, en un clic. Découvrez les agricultrices et les agriculteurs qui se battent au quotidien pour vous donner accès à une alimentation saine. Prenez le temps d'y aller, de les rencontrer, de comprendre leur métier.</p>
       </div>
       <div>
-        <div class="chiffre">62 000</div>
-        <p class="chiffre-legende">fermes bio en France, 14,9 % des exploitations du pays. Souvent à moins d'une heure de chez vous.</p>
+        <div class="chiffre">61 159</div>
+        <p class="chiffre-legende">fermes bio en France en 2025, soit 17,3 % des fermes du pays.</p>
+        <p class="source">Source : Agence Bio, Observatoire de la production bio 2025, juin 2026.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tri">
+    <div class="conteneur">
+      <div>
+        <div class="chiffre">1 sur 5</div>
+      </div>
+      <div>
+        <h2>Ferme ou supermarché&nbsp;?</h2>
+        <p>Sur les 135 629 professionnels du bio inscrits à l'annuaire officiel en France métropolitaine, 1 sur 5 seulement est une ferme qui vend directement aux particuliers : 28 173 fermes. Les autres sont des magasins, des supermarchés, des grossistes, des transformateurs, ou des fermes qui ne vendent qu'aux professionnels.</p>
+        <p>Combien vous accueillent à la ferme ? Personne ne le sait encore précisément. C'est ce que Sur Place vérifie, ferme par ferme.</p>
+        <p class="source">Sources : Agence Bio, annuaire officiel des opérateurs bio (données ouvertes, extraction du 7 octobre 2026), tri Sur Place : producteur, certification en cours, vente aux particuliers, hors commerces et grossistes.</p>
       </div>
     </div>
   </section>
