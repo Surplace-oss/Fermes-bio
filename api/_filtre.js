@@ -147,6 +147,7 @@ export function compacter(o, dept) {
     tel: telephone(o),
     site,
     numeroBio: o.numeroBio,
+    siret: o.siret ? String(o.siret).replace(/\D/g, '') || null : null,
     certificateur: certif.organisme || null,
     certifUrl: certif.url || null,
     bioDepuis: o.datePremierEngagement || null,
