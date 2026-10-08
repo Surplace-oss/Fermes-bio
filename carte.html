@@ -221,7 +221,7 @@ const carte = new maplibregl.Map({
 });
 carte.touchZoomRotate.disableRotation();
 carte.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right');
-carte.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: '<a href="https://openfreemap.org">OpenFreeMap</a> © <a href="https://www.openmaptiles.org/">OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · Données © <a href="https://www.agencebio.org">Agence Bio</a>' }), 'bottom-left');
+carte.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: 'Données bio © <a href="https://www.agencebio.org">Agence Bio</a>' }), 'bottom-left');
 const VIDE = { type: 'FeatureCollection', features: [] };
 // Pictogramme vigneron : grappe blanche sur pastille couleur raisin (contour vert pousse si vérifié)
 function imageRaisin(contour) {

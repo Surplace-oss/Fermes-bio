@@ -2,21 +2,21 @@
 // Palette de la charte : papier, forêt, pousse, encre.
 (function () {
   const C = {
-    papier: '#E8EADB',
-    papier2: '#DFE2CE',
-    bati: '#D6D9C3',
-    bois: '#D2DBBB',
-    prairie: '#DCE3C6',
-    eau: '#B9CEC4',
-    eauTrait: '#9FBBAE',
+    papier: '#E8EADB',      // terre : le papier de la charte
+    papier2: '#E0E4CC',     // zones bâties
+    bati: '#D5DABF',
+    prairie: '#E1E8C6',     // campagne, légèrement pousse
+    bois: '#CCDCA6',        // bois et forêts : pousse adouci
+    eau: '#2E6A42',         // mers et lacs : vert forêt de la charte, en aplat
+    eauTrait: '#2E6A42',
     route: '#FFFFFF',
-    bordRoute: '#C9CCB6',
-    grandeRoute: '#F6F7EE',
-    bordGrande: '#A9AE95',
-    rail: '#A3A891',
-    limite: '#8D937C',
-    texte: '#2B2F27',
-    texte2: '#5A5F52',
+    bordRoute: '#C5CBAE',
+    grandeRoute: '#C9E86A', // grands axes : vert pousse
+    bordGrande: '#7E9A5C',
+    rail: '#9AA284',
+    limite: '#1F4A2E',
+    texte: '#1F2A1F',
+    texte2: '#4E5A47',
     foret: '#1F4A2E',
   };
   const z = (a, b) => ['interpolate', ['exponential', 1.5], ['zoom'], ...a.flatMap((v, i) => [b[i], v])];
@@ -43,15 +43,15 @@
       { id: 'grandes-bord', type: 'line', source: 'omt', 'source-layer': 'transportation', minzoom: 6, filter: classe('motorway', 'trunk', 'primary', 'secondary'), layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': C.bordGrande, 'line-width': z([0.6, 2.4, 5, 16], [6, 10, 13, 18]) } },
       { id: 'grandes', type: 'line', source: 'omt', 'source-layer': 'transportation', minzoom: 8, filter: classe('motorway', 'trunk', 'primary', 'secondary'), layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': C.grandeRoute, 'line-width': z([0.4, 1.4, 3.4, 13], [8, 10, 13, 18]) } },
       { id: 'rail', type: 'line', source: 'omt', 'source-layer': 'transportation', minzoom: 10, filter: classe('rail'), paint: { 'line-color': C.rail, 'line-width': 1, 'line-dasharray': [4, 3] } },
-      { id: 'limites-dept', type: 'line', source: 'omt', 'source-layer': 'boundary', filter: ['all', ['==', ['get', 'admin_level'], 6], ['!=', ['get', 'maritime'], 1]], minzoom: 6, paint: { 'line-color': C.limite, 'line-width': 0.8, 'line-dasharray': [5, 4], 'line-opacity': 0.6 } },
-      { id: 'limites-pays', type: 'line', source: 'omt', 'source-layer': 'boundary', filter: ['all', ['==', ['get', 'admin_level'], 2], ['!=', ['get', 'maritime'], 1]], paint: { 'line-color': C.limite, 'line-width': 1.4 } },
+      { id: 'limites-dept', type: 'line', source: 'omt', 'source-layer': 'boundary', filter: ['all', ['==', ['get', 'admin_level'], 6], ['!=', ['get', 'maritime'], 1]], minzoom: 6, paint: { 'line-color': C.limite, 'line-width': 0.8, 'line-dasharray': [5, 4], 'line-opacity': 0.45 } },
+      { id: 'limites-pays', type: 'line', source: 'omt', 'source-layer': 'boundary', filter: ['all', ['==', ['get', 'admin_level'], 2], ['!=', ['get', 'maritime'], 1]], paint: { 'line-color': C.limite, 'line-width': 1.6, 'line-opacity': 0.8 } },
 
-      { id: 'nom-eau', type: 'symbol', source: 'omt', 'source-layer': 'water_name', minzoom: 9, layout: { 'text-field': ['get', 'name:fr'], 'text-font': NOTO_I, 'text-size': 12 }, paint: { 'text-color': C.foret, 'text-halo-color': C.papier, 'text-halo-width': 1.2 } },
+      { id: 'nom-eau', type: 'symbol', source: 'omt', 'source-layer': 'water_name', minzoom: 9, layout: { 'text-field': ['get', 'name:fr'], 'text-font': NOTO_I, 'text-size': 12 }, paint: { 'text-color': '#C9E86A', 'text-halo-color': C.eau, 'text-halo-width': 1 } },
       { id: 'nom-rue', type: 'symbol', source: 'omt', 'source-layer': 'transportation_name', minzoom: 14, layout: { 'symbol-placement': 'line', 'text-field': ['get', 'name'], 'text-font': NOTO, 'text-size': 11 }, paint: { 'text-color': C.texte2, 'text-halo-color': C.route, 'text-halo-width': 1.5 } },
       { id: 'hameaux', type: 'symbol', source: 'omt', 'source-layer': 'place', minzoom: 12, filter: classe('hamlet', 'isolated_dwelling', 'locality'), layout: { 'text-field': ['coalesce', ['get', 'name:fr'], ['get', 'name']], 'text-font': NOTO, 'text-size': 11 }, paint: { 'text-color': C.texte2, 'text-halo-color': C.papier, 'text-halo-width': 1.4 } },
       { id: 'villages', type: 'symbol', source: 'omt', 'source-layer': 'place', minzoom: 10, filter: classe('village', 'suburb'), layout: { 'text-field': ['coalesce', ['get', 'name:fr'], ['get', 'name']], 'text-font': NOTO, 'text-size': z([11, 14], [10, 15]) }, paint: { 'text-color': C.texte, 'text-halo-color': C.papier, 'text-halo-width': 1.5 } },
       { id: 'villes', type: 'symbol', source: 'omt', 'source-layer': 'place', minzoom: 6, filter: classe('town'), layout: { 'text-field': ['coalesce', ['get', 'name:fr'], ['get', 'name']], 'text-font': NOTO_B, 'text-size': z([11, 16], [7, 13]) }, paint: { 'text-color': C.texte, 'text-halo-color': C.papier, 'text-halo-width': 1.6 } },
-      { id: 'grandes-villes', type: 'symbol', source: 'omt', 'source-layer': 'place', filter: classe('city'), layout: { 'text-field': ['coalesce', ['get', 'name:fr'], ['get', 'name']], 'text-font': NOTO_B, 'text-size': z([12, 20], [5, 12]), 'text-transform': 'uppercase', 'text-letter-spacing': 0.06 }, paint: { 'text-color': '#000', 'text-halo-color': C.papier, 'text-halo-width': 2 } },
+      { id: 'grandes-villes', type: 'symbol', source: 'omt', 'source-layer': 'place', filter: classe('city'), layout: { 'text-field': ['coalesce', ['get', 'name:fr'], ['get', 'name']], 'text-font': NOTO_B, 'text-size': z([12, 20], [5, 12]), 'text-transform': 'uppercase', 'text-letter-spacing': 0.06 }, paint: { 'text-color': C.foret, 'text-halo-color': C.papier, 'text-halo-width': 2 } },
     ],
   };
 })();

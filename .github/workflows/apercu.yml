@@ -1,0 +1,19 @@
+name: apercu
+on: { push: { branches: [carte-couleurs], paths: [carte-style.js, carte.html, index.html, scripts/apercu.mjs, .github/workflows/apercu.yml] } }
+permissions: { contents: write }
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm i --no-save playwright@1.47.2 http-server@14 && npx playwright install --with-deps chromium
+      - run: |
+          mkdir -p out
+          npx http-server -p 8080 -s . &
+          sleep 3
+          node scripts/apercu.mjs
+      - run: |
+          git config user.name "surplace-bot"; git config user.email "bot@surplace.bio"
+          git add out && git commit -m "aperçus" && git push
