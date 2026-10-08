@@ -5,14 +5,14 @@
     papier: '#E8EADB',      // terre : le papier de la charte
     papier2: '#E0E4CC',     // zones bâties
     bati: '#D5DABF',
-    prairie: '#E1E8C6',     // campagne, légèrement pousse
-    bois: '#CCDCA6',        // bois et forêts : pousse adouci
+    prairie: '#E4E8CF',     // campagne, légèrement pousse
+    bois: '#D6E0BA',        // bois et forêts : pousse adouci
     eau: '#2E6A42',         // mers et lacs : vert forêt de la charte, en aplat
     eauTrait: '#2E6A42',
     route: '#FFFFFF',
     bordRoute: '#C5CBAE',
-    grandeRoute: '#C9E86A', // grands axes : vert pousse
-    bordGrande: '#7E9A5C',
+    grandeRoute: '#F7F8EF',
+    bordGrande: '#AEB993',
     rail: '#9AA284',
     limite: '#1F4A2E',
     texte: '#1F2A1F',
@@ -42,6 +42,7 @@
       { id: 'routes', type: 'line', source: 'omt', 'source-layer': 'transportation', minzoom: 11, filter: classe('minor', 'service', 'tertiary'), layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': C.route, 'line-width': z([0.6, 2, 10], [11, 14, 18]) } },
       { id: 'grandes-bord', type: 'line', source: 'omt', 'source-layer': 'transportation', minzoom: 6, filter: classe('motorway', 'trunk', 'primary', 'secondary'), layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': C.bordGrande, 'line-width': z([0.6, 2.4, 5, 16], [6, 10, 13, 18]) } },
       { id: 'grandes', type: 'line', source: 'omt', 'source-layer': 'transportation', minzoom: 8, filter: classe('motorway', 'trunk', 'primary', 'secondary'), layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': C.grandeRoute, 'line-width': z([0.4, 1.4, 3.4, 13], [8, 10, 13, 18]) } },
+      { id: 'autoroutes', type: 'line', source: 'omt', 'source-layer': 'transportation', minzoom: 6, filter: classe('motorway'), layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#C9E86A', 'line-width': z([0.6, 1.6, 3.6, 13], [6, 10, 13, 18]) } },
       { id: 'rail', type: 'line', source: 'omt', 'source-layer': 'transportation', minzoom: 10, filter: classe('rail'), paint: { 'line-color': C.rail, 'line-width': 1, 'line-dasharray': [4, 3] } },
       { id: 'limites-dept', type: 'line', source: 'omt', 'source-layer': 'boundary', filter: ['all', ['==', ['get', 'admin_level'], 6], ['!=', ['get', 'maritime'], 1]], minzoom: 6, paint: { 'line-color': C.limite, 'line-width': 0.8, 'line-dasharray': [5, 4], 'line-opacity': 0.45 } },
       { id: 'limites-pays', type: 'line', source: 'omt', 'source-layer': 'boundary', filter: ['all', ['==', ['get', 'admin_level'], 2], ['!=', ['get', 'maritime'], 1]], paint: { 'line-color': C.limite, 'line-width': 1.6, 'line-opacity': 0.8 } },
