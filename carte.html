@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
 <link rel="stylesheet" href="/style.css">
 <style>
+:root { --raisin: #6B2D5C; }
 html, body { height: 100%; }
 body { display: flex; flex-direction: column; overflow: hidden; }
 .entete { position: relative; }
@@ -32,6 +33,7 @@ select { font: inherit; font-size: 15px; font-weight: 600; border: var(--trait);
 .barre .bouton { padding: 9px 18px; font-size: 15px; }
 .puces { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
 .puces::-webkit-scrollbar { display: none; }
+.puces .puces { overflow: visible; padding: 0; }
 .puce { flex: none; font: inherit; font-size: 14px; font-weight: 600; border: 1.5px solid var(--encre); background: transparent; border-radius: 999px; padding: 5px 12px; cursor: pointer; }
 .puce[aria-pressed="true"] { background: var(--encre); color: var(--pousse); }
 
@@ -50,6 +52,15 @@ select { font: inherit; font-size: 15px; font-weight: 600; border: var(--trait);
 .ferme .fam { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
 .tag { font-size: 12.5px; font-weight: 600; background: var(--papier-2); border-radius: 999px; padding: 2px 9px; }
 .tag.ok { background: var(--encre); color: var(--pousse); }
+.tag.vigne { background: var(--raisin); color: var(--blanc); display: inline-flex; align-items: center; gap: 4px; }
+.tag.vigne svg, .puce svg, .legende svg { width: 14px; height: 14px; flex: none; }
+.types { display: flex; gap: 6px; padding-right: 10px; margin-right: 4px; border-right: 1.5px solid var(--encre); flex: none; }
+.types .puce { display: inline-flex; align-items: center; gap: 6px; }
+.types .puce .rond { width: 12px; height: 12px; border-radius: 50%; background: var(--foret); border: 2px solid var(--papier); box-shadow: 0 0 0 1px var(--foret); }
+.types .puce[aria-pressed="false"] { opacity: .5; }
+.types .puce[aria-pressed="true"] { background: var(--blanc); color: var(--encre); }
+.types .puce[data-t="vigneron"][aria-pressed="true"] { background: var(--raisin); color: var(--blanc); border-color: var(--raisin); }
+.statut.vigne { border-color: var(--raisin); }
 .vide { padding: 32px 22px; }
 .vide h2 { font-size: 44px; margin-bottom: 14px; }
 .vide p { color: var(--encre-2); margin-bottom: 18px; max-width: 36ch; }
@@ -97,6 +108,9 @@ select { font: inherit; font-size: 15px; font-weight: 600; border: var(--trait);
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="ico-raisin" viewBox="0 0 24 24"><path d="M12 6.5V3.2M12 4.2c1.6-1.8 4-2 5.6-1.2-.6 1.9-2.6 3-5.6 2.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><g fill="currentColor"><circle cx="8.2" cy="9.4" r="2.5"/><circle cx="12" cy="9.4" r="2.5"/><circle cx="15.8" cy="9.4" r="2.5"/><circle cx="10.1" cy="13.2" r="2.5"/><circle cx="13.9" cy="13.2" r="2.5"/><circle cx="12" cy="17" r="2.5"/></g></symbol>
+</defs></svg>
 
 <header class="entete">
   <div class="conteneur">
@@ -128,7 +142,13 @@ select { font: inherit; font-size: 15px; font-weight: 600; border: var(--trait);
     <button class="bouton" type="submit">Chercher</button>
     <button class="bouton clair" type="button" id="geo">Autour de moi</button>
   </form>
-  <div class="puces" id="puces" aria-label="Filtrer par produit"></div>
+  <div class="puces">
+    <div class="types" id="types" aria-label="Type de producteur">
+      <button class="puce" type="button" data-t="ferme" aria-pressed="true"><span class="rond"></span>Fermes</button>
+      <button class="puce" type="button" data-t="vigneron" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-raisin"/></svg>Vignerons</button>
+    </div>
+    <div class="puces" id="puces" aria-label="Filtrer par produit"></div>
+  </div>
 </div>
 
 <div class="zone">
@@ -185,10 +205,13 @@ function joli(s) {
     .split(' ').map((w, i) => i && PETITS.has(w.toLowerCase()) ? w.toLowerCase() : w).join(' ')
     .replace(/\b(Gaec|Earl|Sarl|Sas|Scea|Sca|Eurl|Scop|Gfa)\b/g, m => m.toUpperCase());
 }
+// Vigneron : producteur dont la seule activité déclarée à l'Agence Bio est la vigne.
+const estVigneron = f => !!(f.metiers && f.metiers.length && f.metiers.every(m => /^(Viticulture|Vins)$/.test(m)));
+const ICO_RAISIN = '<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-raisin"/></svg>';
 const tel = t => t ? t.replace(/[^\d+]/g, '').replace(/^0033/, '+33') : '';
 
 // ─── État ──────────────────────────────────────────────────────────────────
-const etat = { centre: null, label: '', rayon: 30, fermes: [], filtres: new Set(), tri: 'km', active: null };
+const etat = { centre: null, label: '', rayon: 30, fermes: [], filtres: new Set(), types: new Set(['ferme', 'vigneron']), tri: 'km', active: null };
 const cacheDept = {};
 
 // ─── Carte ─────────────────────────────────────────────────────────────────
@@ -200,7 +223,15 @@ carte.touchZoomRotate.disableRotation();
 carte.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right');
 carte.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: '<a href="https://openfreemap.org">OpenFreeMap</a> © <a href="https://www.openmaptiles.org/">OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · Données © <a href="https://www.agencebio.org">Agence Bio</a>' }), 'bottom-left');
 const VIDE = { type: 'FeatureCollection', features: [] };
-const carteDispo = new Promise(ok => carte.on('load', () => {
+// Pictogramme vigneron : grappe blanche sur pastille couleur raisin (contour vert pousse si vérifié)
+function imageRaisin(contour) {
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><circle cx='32' cy='32' r='27' fill='#6B2D5C' stroke='${contour}' stroke-width='5'/><g transform='translate(14 13) scale(1.5)'><path d='M12 6.5V3.2M12 4.2c1.6-1.8 4-2 5.6-1.2-.6 1.9-2.6 3-5.6 2.4' fill='none' stroke='#C9E86A' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/><g fill='#fff'><circle cx='8.2' cy='9.4' r='2.4'/><circle cx='12' cy='9.4' r='2.4'/><circle cx='15.8' cy='9.4' r='2.4'/><circle cx='10.1' cy='13.2' r='2.4'/><circle cx='13.9' cy='13.2' r='2.4'/><circle cx='12' cy='17' r='2.4'/></g></g></svg>`;
+  const img = new Image(64, 64); img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  return img.decode().then(() => img);
+}
+const carteDispo = new Promise(ok => carte.on('load', async () => {
+  const [r1, r2] = await Promise.all([imageRaisin('#E8EADB'), imageRaisin('#C9E86A')]);
+  carte.addImage('raisin', r1, { pixelRatio: 2 }); carte.addImage('raisin-ok', r2, { pixelRatio: 2 });
   carte.addSource('rayon', { type: 'geojson', data: VIDE });
   carte.addSource('moi', { type: 'geojson', data: VIDE });
   carte.addSource('fermes', { type: 'geojson', data: VIDE, cluster: true, clusterRadius: 42, clusterMaxZoom: 12 });
@@ -211,9 +242,11 @@ const carteDispo = new Promise(ok => carte.on('load', () => {
   carte.addLayer({ id: 'grappes-n', type: 'symbol', source: 'fermes', filter: ['has', 'point_count'],
     layout: { 'text-field': ['get', 'point_count_abbreviated'], 'text-font': ['Noto Sans Bold'], 'text-size': 13, 'text-allow-overlap': true },
     paint: { 'text-color': '#C9E86A' } });
-  carte.addLayer({ id: 'points', type: 'circle', source: 'fermes', filter: ['!', ['has', 'point_count']],
+  carte.addLayer({ id: 'points', type: 'circle', source: 'fermes', filter: ['all', ['!', ['has', 'point_count']], ['!', ['get', 'w']]],
     paint: { 'circle-color': ['case', ['get', 'v'], '#000', '#1F4A2E'], 'circle-radius': ['interpolate', ['linear'], ['zoom'], 8, 5.5, 14, 8],
       'circle-stroke-color': ['case', ['get', 'v'], '#C9E86A', '#E8EADB'], 'circle-stroke-width': 2.5 } });
+  carte.addLayer({ id: 'vignes', type: 'symbol', source: 'fermes', filter: ['all', ['!', ['has', 'point_count']], ['get', 'w']],
+    layout: { 'icon-image': ['case', ['get', 'v'], 'raisin-ok', 'raisin'], 'icon-size': ['interpolate', ['linear'], ['zoom'], 8, 0.68, 14, 0.9], 'icon-allow-overlap': true, 'icon-ignore-placement': true } });
   carte.addLayer({ id: 'noms', type: 'symbol', source: 'fermes', minzoom: 12.5, filter: ['!', ['has', 'point_count']],
     layout: { 'text-field': ['get', 'n'], 'text-font': ['Noto Sans Bold'], 'text-size': 12, 'text-offset': [0, 1.2], 'text-anchor': 'top', 'text-max-width': 10, 'text-optional': true },
     paint: { 'text-color': '#1F4A2E', 'text-halo-color': '#E8EADB', 'text-halo-width': 1.6 } });
@@ -225,8 +258,8 @@ const carteDispo = new Promise(ok => carte.on('load', () => {
     const zoom = await carte.getSource('fermes').getClusterExpansionZoom(f.properties.cluster_id);
     carte.easeTo({ center: f.geometry.coordinates, zoom: zoom + 0.3 });
   });
-  carte.on('click', 'points', e => ouvrirFiche(e.features[0].properties.id));
-  for (const l of ['grappes', 'points']) {
+  for (const l of ['points', 'vignes']) carte.on('click', l, e => ouvrirFiche(e.features[0].properties.id));
+  for (const l of ['grappes', 'points', 'vignes']) {
     carte.on('mouseenter', l, () => { carte.getCanvas().style.cursor = 'pointer'; });
     carte.on('mouseleave', l, () => { carte.getCanvas().style.cursor = ''; });
   }
@@ -249,6 +282,14 @@ $('#puces').addEventListener('click', e => {
   const b = e.target.closest('.puce'); if (!b) return;
   const f = b.dataset.f; etat.filtres.has(f) ? etat.filtres.delete(f) : etat.filtres.add(f);
   b.setAttribute('aria-pressed', etat.filtres.has(f)); afficher();
+});
+
+$('#types').addEventListener('click', e => {
+  const b = e.target.closest('.puce'); if (!b) return;
+  const t = b.dataset.t;
+  if (etat.types.has(t) && etat.types.size === 1) return; // au moins un type affiché
+  etat.types.has(t) ? etat.types.delete(t) : etat.types.add(t);
+  b.setAttribute('aria-pressed', etat.types.has(t)); if (etat.centre) afficher();
 });
 
 // ─── Géocodage (Géoplateforme IGN, repli sur la BAN) ───────────────────────
@@ -358,7 +399,7 @@ async function chercher(lat, lng, label, estMoi = false) {
     for (const f of data.fermes) {
       if (vus.has(f.id)) continue;
       const dist = km(lat, lng, f.lat, f.lng);
-      if (dist <= etat.rayon) { vus.add(f.id); etat.fermes.push({ ...f, km: dist }); }
+      if (dist <= etat.rayon) { vus.add(f.id); etat.fermes.push({ ...f, km: dist, vigneron: estVigneron(f) }); }
     }
   }).catch(() => { erreurs++; }).finally(() => {
     if (monJeton !== jeton) return;
@@ -382,22 +423,27 @@ function message(html) { $('#etat').hidden = true; $('#liste').innerHTML = `<div
 // ─── Affichage ─────────────────────────────────────────────────────────────
 function visibles() {
   let l = etat.fermes;
+  l = l.filter(f => etat.types.has(f.vigneron ? 'vigneron' : 'ferme'));
   if (etat.filtres.size) l = l.filter(f => [...etat.filtres].some(x => f.familles.includes(x)));
   return [...l].sort(etat.tri === 'nom' ? (a, b) => a.nom.localeCompare(b.nom, 'fr') : (a, b) => (b.verifiee - a.verifiee) || a.km - b.km);
 }
 function afficher(enCours = false, erreurs = 0) {
   const l = visibles();
   $('#etat').hidden = false;
-  $('#compte').innerHTML = `<b>${l.length} ferme${l.length > 1 ? 's' : ''}</b> à moins de ${etat.rayon} km${enCours ? ' · chargement…' : ''}${erreurs ? ' · données partielles' : ''}`;
+  const nv = l.filter(f => f.vigneron).length, nf = l.length - nv;
+  const morceaux = [];
+  if (etat.types.has('ferme')) morceaux.push(`${nf} ferme${nf > 1 ? 's' : ''}`);
+  if (etat.types.has('vigneron')) morceaux.push(`${nv} vigneron${nv > 1 ? 's' : ''}`);
+  $('#compte').innerHTML = `<b>${morceaux.join(' · ')}</b> à moins de ${etat.rayon} km${enCours ? ' · chargement…' : ''}${erreurs ? ' · données partielles' : ''}`;
   const MAX = 250;
   $('#liste').innerHTML = l.length ? l.slice(0, MAX).map(f => `
     <button class="ferme${etat.active === f.id ? ' active' : ''}" data-id="${f.id}">
       <span class="nom">${esc(joli(f.nom))}</span>
       <span class="ou"><span class="km">${f.km < 10 ? f.km.toFixed(1) : Math.round(f.km)} km</span><span>${esc(joli(f.ville))}</span></span>
-      <span class="fam">${f.verifiee ? '<span class="tag ok">Vérifiée Sur Place</span>' : ''}${f.familles.slice(0, 4).map(x => `<span class="tag">${FAMILLES[x]}</span>`).join('')}</span>
+      <span class="fam">${f.verifiee ? '<span class="tag ok">Vérifiée Sur Place</span>' : ''}${f.vigneron ? `<span class="tag vigne">${ICO_RAISIN}Vigneron</span>` : ''}${f.familles.filter(x => !(f.vigneron && x === 'vin')).slice(0, 4).map(x => `<span class="tag">${FAMILLES[x]}</span>`).join('')}</span>
     </button>`).join('') + (l.length > MAX ? `<div class="vide"><p>${l.length - MAX} autres fermes : réduisez la distance ou filtrez par produit.</p></div>` : '')
     : `<div class="vide"><p>Aucune ferme ne correspond à ces filtres. Retirez un filtre ou élargissez la distance.</p></div>`;
-  majCarte('fermes', { type: 'FeatureCollection', features: l.map(f => point(f.lng, f.lat, { id: f.id, n: joli(f.nom), v: !!f.verifiee })) });
+  majCarte('fermes', { type: 'FeatureCollection', features: l.map(f => point(f.lng, f.lat, { id: f.id, n: joli(f.nom), v: !!f.verifiee, w: !!f.vigneron })) });
 }
 $('#liste').addEventListener('click', e => { const b = e.target.closest('.ferme'); if (b) ouvrirFiche(+b.dataset.id); });
 
@@ -419,7 +465,9 @@ function ouvrirFiche(id) {
       <p class="lieu">${esc(joli(f.adresse))}${f.adresse ? ', ' : ''}${esc(f.cp)} ${esc(joli(f.ville))} · à ${f.km.toFixed(1)} km</p>
       ${f.verifiee
         ? `<div class="statut ok"><b>Vérifiée Sur Place.</b> La ferme nous a confirmé la vente sur place.${f.horaires ? `<br>Horaires : ${esc(f.horaires)}` : ''}</div>`
-        : `<div class="statut">Ferme bio certifiée qui déclare vendre aux particuliers. <b>Pas encore vérifiée par téléphone</b> : appelez avant de vous déplacer.</div>`}
+        : f.vigneron
+          ? `<div class="statut vigne"><span class="tag vigne">${ICO_RAISIN}Vigneron</span> Domaine viticole bio certifié qui déclare vendre aux particuliers, souvent au caveau. <b>Pas encore vérifié par téléphone</b> : appelez avant de vous déplacer.</div>`
+          : `<div class="statut">Ferme bio certifiée qui déclare vendre aux particuliers. <b>Pas encore vérifiée par téléphone</b> : appelez avant de vous déplacer.</div>`}
       <div class="actions">
         <a class="bouton vert" href="${itin}" target="_blank" rel="noopener">Itinéraire</a>
         ${f.tel ? `<a class="bouton clair" href="tel:${tel(f.tel)}">Appeler</a>` : ''}
