@@ -4,6 +4,7 @@
 //   statut "exclue"   : pas de vente sur place, revendeur, ferme fermée… → masquée de la carte
 // Champs libres : horaires, note, date de vérification.
 export const VERIFICATIONS = {
+  158303: { statut: 'exclue', date: '2026-10-08', note: "French Bloom (Moët Hennessy) : marque de vin sans alcool, siège 32 rue Washington Paris 8e ; domaine de Tourreilles acheté fin 2025, pas de vente au public sur place annoncée." },
   // 12345: { statut: 'verifiee', date: '2026-10-08', horaires: 'Mer. et sam. 9h-12h', note: 'Vente au hangar' },
   // 67890: { statut: 'exclue', date: '2026-10-08', note: 'Ne vend plus aux particuliers' },
 };
