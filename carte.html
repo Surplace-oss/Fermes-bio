@@ -57,8 +57,9 @@ select { font: inherit; font-size: 15px; font-weight: 600; border: var(--trait);
 .types { display: flex; gap: 6px; padding-right: 10px; margin-right: 4px; border-right: 1.5px solid var(--encre); flex: none; }
 .types .puce { display: inline-flex; align-items: center; gap: 6px; }
 .types .puce .rond { width: 12px; height: 12px; border-radius: 50%; background: var(--foret); border: 2px solid var(--papier); box-shadow: 0 0 0 1px var(--foret); }
-.types .puce[aria-pressed="false"] { opacity: .5; }
-.types .puce[aria-pressed="true"] { background: var(--blanc); color: var(--encre); }
+.types .puce[aria-pressed="true"] { background: var(--foret); color: var(--blanc); border-color: var(--foret); }
+.types .puce[data-t="vigneron"] svg { color: var(--raisin); }
+.types .puce[data-t="vigneron"][aria-pressed="true"] svg { color: var(--blanc); }
 .types .puce[data-t="vigneron"][aria-pressed="true"] { background: var(--raisin); color: var(--blanc); border-color: var(--raisin); }
 .statut.vigne { border-color: var(--raisin); }
 .vide { padding: 32px 22px; }
@@ -144,8 +145,8 @@ select { font: inherit; font-size: 15px; font-weight: 600; border: var(--trait);
   </form>
   <div class="puces">
     <div class="types" id="types" aria-label="Type de producteur">
-      <button class="puce" type="button" data-t="ferme" aria-pressed="true"><span class="rond"></span>Fermes</button>
-      <button class="puce" type="button" data-t="vigneron" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-raisin"/></svg>Vignerons</button>
+      <button class="puce" type="button" data-t="ferme" aria-pressed="false"><span class="rond"></span>Fermes</button>
+      <button class="puce" type="button" data-t="vigneron" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-raisin"/></svg>Vignerons</button>
     </div>
     <div class="puces" id="puces" aria-label="Filtrer par produit"></div>
   </div>
@@ -211,7 +212,7 @@ const ICO_RAISIN = '<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-
 const tel = t => t ? t.replace(/[^\d+]/g, '').replace(/^0033/, '+33') : '';
 
 // ─── État ──────────────────────────────────────────────────────────────────
-const etat = { centre: null, label: '', rayon: 30, fermes: [], filtres: new Set(), types: new Set(['ferme', 'vigneron']), tri: 'km', active: null };
+const etat = { centre: null, label: '', rayon: 30, fermes: [], filtres: new Set(), types: new Set(), tri: 'km', active: null };
 const cacheDept = {};
 
 // ─── Carte ─────────────────────────────────────────────────────────────────
@@ -287,7 +288,6 @@ $('#puces').addEventListener('click', e => {
 $('#types').addEventListener('click', e => {
   const b = e.target.closest('.puce'); if (!b) return;
   const t = b.dataset.t;
-  if (etat.types.has(t) && etat.types.size === 1) return; // au moins un type affiché
   etat.types.has(t) ? etat.types.delete(t) : etat.types.add(t);
   b.setAttribute('aria-pressed', etat.types.has(t)); if (etat.centre) afficher();
 });
@@ -423,7 +423,8 @@ function message(html) { $('#etat').hidden = true; $('#liste').innerHTML = `<div
 // ─── Affichage ─────────────────────────────────────────────────────────────
 function visibles() {
   let l = etat.fermes;
-  l = l.filter(f => etat.types.has(f.vigneron ? 'vigneron' : 'ferme'));
+  // Aucun bouton (ou les deux) : tout afficher ; sinon seulement le type choisi
+  if (etat.types.size === 1) l = l.filter(f => etat.types.has(f.vigneron ? 'vigneron' : 'ferme'));
   if (etat.filtres.size) l = l.filter(f => [...etat.filtres].some(x => f.familles.includes(x)));
   return [...l].sort(etat.tri === 'nom' ? (a, b) => a.nom.localeCompare(b.nom, 'fr') : (a, b) => (b.verifiee - a.verifiee) || a.km - b.km);
 }
@@ -432,8 +433,9 @@ function afficher(enCours = false, erreurs = 0) {
   $('#etat').hidden = false;
   const nv = l.filter(f => f.vigneron).length, nf = l.length - nv;
   const morceaux = [];
-  if (etat.types.has('ferme')) morceaux.push(`${nf} ferme${nf > 1 ? 's' : ''}`);
-  if (etat.types.has('vigneron') && (nv || !etat.types.has('ferme'))) morceaux.push(`${nv} vigneron${nv > 1 ? 's' : ''}`);
+  const voit = t => etat.types.size !== 1 || etat.types.has(t);
+  if (voit('ferme')) morceaux.push(`${nf} ferme${nf > 1 ? 's' : ''}`);
+  if (voit('vigneron') && (nv || !voit('ferme'))) morceaux.push(`${nv} vigneron${nv > 1 ? 's' : ''}`);
   $('#compte').innerHTML = `<b>${morceaux.join(' · ')}</b> à moins de ${etat.rayon} km${enCours ? ' · chargement…' : ''}${erreurs ? ' · données partielles' : ''}`;
   const MAX = 250;
   $('#liste').innerHTML = l.length ? l.slice(0, MAX).map(f => `
