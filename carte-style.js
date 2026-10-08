@@ -7,8 +7,8 @@
     bati: '#D5DABF',
     prairie: '#E4E8CF',     // campagne, légèrement pousse
     bois: '#D6E0BA',        // bois et forêts : pousse adouci
-    eau: '#2E6A42',         // mers et lacs : vert forêt de la charte, en aplat
-    eauTrait: '#2E6A42',
+    eau: '#B4CDBC',         // mers et lacs : gris-bleu d'origine, voilé de vert
+    eauTrait: '#98B9A4',
     route: '#FFFFFF',
     bordRoute: '#C5CBAE',
     grandeRoute: '#F7F8EF',
@@ -47,7 +47,7 @@
       { id: 'limites-dept', type: 'line', source: 'omt', 'source-layer': 'boundary', filter: ['all', ['==', ['get', 'admin_level'], 6], ['!=', ['get', 'maritime'], 1]], minzoom: 6, paint: { 'line-color': C.limite, 'line-width': 0.8, 'line-dasharray': [5, 4], 'line-opacity': 0.45 } },
       { id: 'limites-pays', type: 'line', source: 'omt', 'source-layer': 'boundary', filter: ['all', ['==', ['get', 'admin_level'], 2], ['!=', ['get', 'maritime'], 1]], paint: { 'line-color': C.limite, 'line-width': 1.6, 'line-opacity': 0.8 } },
 
-      { id: 'nom-eau', type: 'symbol', source: 'omt', 'source-layer': 'water_name', minzoom: 9, layout: { 'text-field': ['get', 'name:fr'], 'text-font': NOTO_I, 'text-size': 12 }, paint: { 'text-color': '#C9E86A', 'text-halo-color': C.eau, 'text-halo-width': 1 } },
+      { id: 'nom-eau', type: 'symbol', source: 'omt', 'source-layer': 'water_name', minzoom: 9, layout: { 'text-field': ['get', 'name:fr'], 'text-font': NOTO_I, 'text-size': 12 }, paint: { 'text-color': C.foret, 'text-halo-color': C.eau, 'text-halo-width': 1.2 } },
       { id: 'nom-rue', type: 'symbol', source: 'omt', 'source-layer': 'transportation_name', minzoom: 14, layout: { 'symbol-placement': 'line', 'text-field': ['get', 'name'], 'text-font': NOTO, 'text-size': 11 }, paint: { 'text-color': C.texte2, 'text-halo-color': C.route, 'text-halo-width': 1.5 } },
       { id: 'hameaux', type: 'symbol', source: 'omt', 'source-layer': 'place', minzoom: 12, filter: classe('hamlet', 'isolated_dwelling', 'locality'), layout: { 'text-field': ['coalesce', ['get', 'name:fr'], ['get', 'name']], 'text-font': NOTO, 'text-size': 11 }, paint: { 'text-color': C.texte2, 'text-halo-color': C.papier, 'text-halo-width': 1.4 } },
       { id: 'villages', type: 'symbol', source: 'omt', 'source-layer': 'place', minzoom: 10, filter: classe('village', 'suburb'), layout: { 'text-field': ['coalesce', ['get', 'name:fr'], ['get', 'name']], 'text-font': NOTO, 'text-size': z([11, 14], [10, 15]) }, paint: { 'text-color': C.texte, 'text-halo-color': C.papier, 'text-halo-width': 1.5 } },
