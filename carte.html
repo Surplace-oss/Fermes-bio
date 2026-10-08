@@ -235,14 +235,18 @@ const carteDispo = new Promise(ok => carte.on('load', async () => {
   carte.addImage('raisin', r1, { pixelRatio: 2 }); carte.addImage('raisin-ok', r2, { pixelRatio: 2 });
   carte.addSource('rayon', { type: 'geojson', data: VIDE });
   carte.addSource('moi', { type: 'geojson', data: VIDE });
-  carte.addSource('fermes', { type: 'geojson', data: VIDE, cluster: true, clusterRadius: 42, clusterMaxZoom: 12 });
+  carte.addSource('fermes', { type: 'geojson', data: VIDE, cluster: true, clusterRadius: 42, clusterMaxZoom: 12,
+    clusterProperties: { nv: ['+', ['case', ['get', 'w'], 1, 0]] } });
   carte.addSource('selection', { type: 'geojson', data: VIDE });
   carte.addLayer({ id: 'rayon', type: 'line', source: 'rayon', paint: { 'line-color': '#1F4A2E', 'line-width': 2, 'line-dasharray': [2, 2] } });
   carte.addLayer({ id: 'grappes', type: 'circle', source: 'fermes', filter: ['has', 'point_count'],
-    paint: { 'circle-color': '#1F4A2E', 'circle-radius': ['step', ['get', 'point_count'], 15, 10, 19, 50, 24, 200, 29], 'circle-stroke-color': '#E8EADB', 'circle-stroke-width': 2.5 } });
+    paint: { 'circle-color': ['case', ['==', ['get', 'nv'], ['get', 'point_count']], '#6B2D5C', '#1F4A2E'], 'circle-radius': ['step', ['get', 'point_count'], 15, 10, 19, 50, 24, 200, 29], 'circle-stroke-color': '#E8EADB', 'circle-stroke-width': 2.5 } });
   carte.addLayer({ id: 'grappes-n', type: 'symbol', source: 'fermes', filter: ['has', 'point_count'],
     layout: { 'text-field': ['get', 'point_count_abbreviated'], 'text-font': ['Noto Sans Bold'], 'text-size': 13, 'text-allow-overlap': true },
     paint: { 'text-color': '#C9E86A' } });
+  carte.addLayer({ id: 'grappes-vigne', type: 'symbol', source: 'fermes', filter: ['all', ['has', 'point_count'], ['>', ['get', 'nv'], 0]],
+    layout: { 'icon-image': 'raisin', 'icon-size': 0.5, 'icon-allow-overlap': true, 'icon-ignore-placement': true,
+      'icon-offset': ['step', ['get', 'point_count'], ['literal', [26, -26]], 10, ['literal', [32, -32]], 50, ['literal', [40, -40]], 200, ['literal', [46, -46]]] } });
   carte.addLayer({ id: 'points', type: 'circle', source: 'fermes', filter: ['all', ['!', ['has', 'point_count']], ['!', ['get', 'w']]],
     paint: { 'circle-color': ['case', ['get', 'v'], '#1F4A2E', '#2F8F4E'], 'circle-radius': ['interpolate', ['linear'], ['zoom'], 8, 6, 14, 9],
       'circle-stroke-color': ['case', ['get', 'v'], '#C9E86A', '#FFFFFF'], 'circle-stroke-width': ['case', ['get', 'v'], 3.5, 2.5] } });
