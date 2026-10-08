@@ -3,13 +3,15 @@
  "verifiees": 27639,
  "sansSiret": 486,
  "exclues": {
-  "activite_non_agricole": 227,
-  "personne_publique": 91,
-  "entreprise_fermee": 148
+  "entreprise_fermee": 148,
+  "holding_ou_finance": 6,
+  "collectivite_ou_etat": 8
  },
  "signalees": {
   "association": 333,
   "commerce_ou_transformation": 403,
+  "activite_principale_non_agricole": 221,
+  "etablissement_public": 83,
   "etablissement_ferme": 160
  },
  "liste": [
@@ -54,8 +56,8 @@
    "nom": "LES CHEVRIERS D'ECHAZEAUX",
    "cp": "01250",
    "ville": "CORVEISSIAT",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -72,8 +74,8 @@
    "nom": "LYCEE AGRICOLE DE CREZANCY",
    "cp": "02380",
    "ville": "COUCY LA VILLE",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -135,8 +137,8 @@
    "nom": "E.P.L. DU BOURBONNAIS",
    "cp": "03000",
    "ville": "Moulins",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -171,8 +173,8 @@
    "nom": "LE GUBIANET",
    "cp": "04150",
    "ville": "REVEST DES BROUSSES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -234,8 +236,8 @@
    "nom": "MABILLE CLAUDE",
    "cp": "04200",
    "ville": "LES OMERGUES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -324,8 +326,8 @@
    "nom": "DES MAILLET MAILLET Charles et Aurore",
    "cp": "05100",
    "ville": "CERVIERES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -396,8 +398,8 @@
    "nom": "LES CHAMPS LONGS",
    "cp": "05800",
    "ville": "LE GLAIZIL",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -441,8 +443,8 @@
    "nom": "EXPLOITATION AGRICOLE DU LEGTA ANTIBES",
    "cp": "06600",
    "ville": "ANTIBES",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -540,8 +542,8 @@
    "nom": "GFA DU BELLUNY",
    "cp": "06580",
    "ville": "PEGOMAS",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -558,8 +560,8 @@
    "nom": "VIGNOBLE MARMANDE LASSOLE",
    "cp": "06000",
    "ville": "Nice",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -585,8 +587,8 @@
    "nom": "MADAME AURIANE-MARIE BERTRAND",
    "cp": "06430",
    "ville": "LA BRIGUE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.22Z"
   },
   {
@@ -594,8 +596,8 @@
    "nom": "CIAIS CHRISTOPHE HENRI",
    "cp": "06420",
    "ville": "VALDEBLORE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -603,8 +605,8 @@
    "nom": "NENNINGER DAVY",
    "cp": "06150",
    "ville": "CANNES LA BOCCA",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -612,8 +614,8 @@
    "nom": "MONSIEUR LAURENS VAN DER VALK",
    "cp": "06410",
    "ville": "BIOT",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "74.30Z"
   },
   {
@@ -630,8 +632,8 @@
    "nom": "AUREA MUNDI",
    "cp": "06220",
    "ville": "Vallauris",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -657,8 +659,8 @@
    "nom": "GAEC LES VERGERS DULAC",
    "cp": "07140",
    "ville": "GRAVIERES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -666,8 +668,8 @@
    "nom": "GFA DE LA PIZE",
    "cp": "07150",
    "ville": "BESSAS",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -675,8 +677,8 @@
    "nom": "LA FERME DE PEYROU LOUCHE Pierre-Thibaut et Isabelle",
    "cp": "07590",
    "ville": "Saint Laurent les Bains",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -702,8 +704,8 @@
    "nom": "DOMAINE ROUCHIER ROUCHIER Christian",
    "cp": "07300",
    "ville": "SAINT JEAN DE MUZOLS",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -720,8 +722,8 @@
    "nom": "LA FERME AU CHATEAU SABOT Maxime / VIELFAURE Jean-Luc",
    "cp": "07110",
    "ville": "VALGORGE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -891,8 +893,8 @@
    "nom": "BECK MALICIA",
    "cp": "07150",
    "ville": "Salavas",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "74.30Z"
   },
   {
@@ -963,8 +965,8 @@
    "nom": "LAPIERRE Jonas",
    "cp": "08240",
    "ville": "FOSSE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.31Z"
   },
   {
@@ -1053,8 +1055,8 @@
    "nom": "DE FAUREJEAN",
    "cp": "09100",
    "ville": "SAINT-JEAN-DU-FALGA",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -1062,8 +1064,8 @@
    "nom": "LA BERGERIE DU LORIOT DUPIRE Emilie PRAT Frédéric",
    "cp": "09160",
    "ville": "BETCHAT",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -1179,8 +1181,8 @@
    "nom": "SIAMES Julie - SCI LA BIDOUNE",
    "cp": "09100",
    "ville": "Escosse",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -1251,8 +1253,8 @@
    "nom": "SAINFOLIA",
    "cp": "10380",
    "ville": "VIAPRES-LE-PETIT",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "82.99Z"
   },
   {
@@ -1261,7 +1263,7 @@
    "cp": "10110",
    "ville": "Bar-sur-Seine",
    "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "motif": "holding_ou_finance",
    "naf": "66.22Z"
   },
   {
@@ -1296,8 +1298,8 @@
    "nom": "DOMAINE DE PEYREMALE CORONA Antoine",
    "cp": "11220",
    "ville": "FAJAC EN VAL",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -1440,8 +1442,8 @@
    "nom": "LA FERME DU MAS D'ANDRIEU LAYRAC Jean-Louis",
    "cp": "12260",
    "ville": "BALAGUIER D'OLT",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -1458,8 +1460,8 @@
    "nom": "DES INFRUTS BODOT Pierre et RAMBAUD Sophie",
    "cp": "12230",
    "ville": "LA COUVERTOIRADE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -1503,8 +1505,8 @@
    "nom": "ALBOUY RL ALBOUY Rodolphe",
    "cp": "12120",
    "ville": "ARVIEU",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -1512,8 +1514,8 @@
    "nom": "DES CAIRNS FOURNIER Fabien et FAVIER Michaël",
    "cp": "12490",
    "ville": "VIALA-DU-TARN",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -1539,8 +1541,8 @@
    "nom": "LA FERME DE BOUTEILLOUS BORDES Serge et FERRAND Benjamin",
    "cp": "12330",
    "ville": "NAUVIALE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -1548,8 +1550,8 @@
    "nom": "DE PERSEGOL MAILLE Renaud & DEPEE Annick",
    "cp": "12100",
    "ville": "MILLAU",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -1575,8 +1577,8 @@
    "nom": "FERME DU MULET CHAYRIGUES Jérôme",
    "cp": "12150",
    "ville": "Severac d'Aveyron",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -1602,8 +1604,8 @@
    "nom": "LES JARDINS DE L'ERMITE (SARL)",
    "cp": "12620",
    "ville": "CASTELNAU-PEGAYROLS",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "74.10Z"
   },
   {
@@ -1647,8 +1649,8 @@
    "nom": "EPLEFPA - Lycée Agricole Les ALPILLES CERANI Béatrice",
    "cp": "13210",
    "ville": "SAINT-REMY-DE-PROVENCE",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -1656,8 +1658,8 @@
    "nom": "GUIGUES FRANCIS JEAN-PAUL",
    "cp": "13130",
    "ville": "BERRE L'ETANG",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -1683,8 +1685,8 @@
    "nom": "DOMAINE DE LA FANETTE-BERGE ORLANE",
    "cp": "13610",
    "ville": "LE PUY-SAINTE-REPARADE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -1692,8 +1694,8 @@
    "nom": "EDITH CLAUDE BEZY",
    "cp": "13890",
    "ville": "MOURIES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -1818,8 +1820,8 @@
    "nom": "HYDRA",
    "cp": "13008",
    "ville": "MARSEILLE 8",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "82.11Z"
   },
   {
@@ -1827,8 +1829,8 @@
    "nom": "ACETO",
    "cp": "13100",
    "ville": "AIX-EN-PROVENCE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -1845,8 +1847,8 @@
    "nom": "CULTURE ECO",
    "cp": "13013",
    "ville": "MARSEILLE 13",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -1872,8 +1874,8 @@
    "nom": "DURRBACH ANTOINE LUCIEN",
    "cp": "13630",
    "ville": "EYRAGUES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "74.90B"
   },
   {
@@ -1881,8 +1883,8 @@
    "nom": "MAROQUESNE Romain",
    "cp": "14320",
    "ville": "Laize clinchamps",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -1890,8 +1892,8 @@
    "nom": "PATIN PATIN Cyrille et Céline",
    "cp": "14130",
    "ville": "SAINT ANDRÉ D’HÉBERTOT",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -1926,8 +1928,8 @@
    "nom": "DAUTRESOUL Anne-sophie",
    "cp": "14230",
    "ville": "Saint-Germain-du-Pert",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -1962,8 +1964,8 @@
    "nom": "LYCEE AGRICOLE LE ROBILLARD",
    "cp": "14140",
    "ville": "SAINT PIERRE EN AUGE",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -1989,8 +1991,8 @@
    "nom": "ASSOCIATION ENTREPRISE A BUT D'EMPLOI - COLOMBELLES",
    "cp": "14460",
    "ville": "COLOMBELLES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "82.99Z"
   },
   {
@@ -2016,8 +2018,8 @@
    "nom": "VULDY Murielle",
    "cp": "14140",
    "ville": "Livarot-Pays-d'Auge",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -2025,8 +2027,8 @@
    "nom": "LES FLORISTES GIRAUD Aurélie",
    "cp": "14130",
    "ville": "LE MESNIL-SUR-BLANGY",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.22Z"
   },
   {
@@ -2043,8 +2045,8 @@
    "nom": "DAUZET Jérôme",
    "cp": "15130",
    "ville": "YTRAC",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -2052,8 +2054,8 @@
    "nom": "LYCEE AGRICOLE GEORGES POMPIDOU - ENIL LYCEE AGRICOLE",
    "cp": "15000",
    "ville": "AURILLAC",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -2061,8 +2063,8 @@
    "nom": "IZOULET ALEXANDRE",
    "cp": "15290",
    "ville": "PARLAN",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -2187,8 +2189,8 @@
    "nom": "LYCEE HORTICOLE CHADIGNAC",
    "cp": "17119",
    "ville": "SAINTES CEDEX",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -2196,8 +2198,8 @@
    "nom": "LYCEE GEORGES DESCLAUDE",
    "cp": "17100",
    "ville": "SAINTES",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -2205,8 +2207,8 @@
    "nom": "MATARD Delphine",
    "cp": "17250",
    "ville": "Trizay",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "36.00Z"
   },
   {
@@ -2286,8 +2288,8 @@
    "nom": "ODACIO - COUVEUSE D'ENTREPRENEURS DE CHARENTE-MARITIME",
    "cp": "17140",
    "ville": "Lagord",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.22Z"
   },
   {
@@ -2295,8 +2297,8 @@
    "nom": "PAURION JOUBERT MARTINE LES VERGERS DE LA BROUSSE",
    "cp": "17160",
    "ville": "La Brousse",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -2403,8 +2405,8 @@
    "nom": "DE LA FONTENILLE",
    "cp": "18350",
    "ville": "Ignol",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.32A"
   },
   {
@@ -2439,8 +2441,8 @@
    "nom": "LYCEE AGRICOLE EDGARD PISANI DE TULLE NAVES",
    "cp": "19460",
    "ville": "NAVES",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -2448,8 +2450,8 @@
    "nom": "EPLEFPA DE BRIVE VOUTEZAC",
    "cp": "19130",
    "ville": "VOUTEZAC",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -2457,8 +2459,8 @@
    "nom": "DE LABORIE",
    "cp": "19550",
    "ville": "LAPLEAU",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -2475,8 +2477,8 @@
    "nom": "LES VERGERS DE BOUREGE BONNEVAL Gilles",
    "cp": "19500",
    "ville": "MEYSSAC",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -2493,8 +2495,8 @@
    "nom": "Ferme du Manus - EPL de Haute Corrèze",
    "cp": "19160",
    "ville": "NEUVIC",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -2502,8 +2504,8 @@
    "nom": "SCEA du Clos",
    "cp": "19700",
    "ville": "SAINT-CLEMENT",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -2646,8 +2648,8 @@
    "nom": "GFA MONTLIVAULT",
    "cp": "21190",
    "ville": "PULIGNY-MONTRACHET",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -2682,8 +2684,8 @@
    "nom": "DOMAINE BENJAMIN ROBLOT ROBLOT Benjamin",
    "cp": "21220",
    "ville": "CHAMBOLLE-MUSIGNY",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -2700,8 +2702,8 @@
    "nom": "UNIVERSITE BOURGOGNE EUROPE",
    "cp": "21160",
    "ville": "Marsannay-la-Côte",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.42Z"
   },
   {
@@ -2763,8 +2765,8 @@
    "nom": "LE MAITRE François",
    "cp": "22340",
    "ville": "MAEL CARHAIX",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -2772,8 +2774,8 @@
    "nom": "DU RHUN",
    "cp": "22420",
    "ville": "LE VIEUX MARCHE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -2781,8 +2783,8 @@
    "nom": "EPSMS AR GOUED",
    "cp": "22000",
    "ville": "Saint-Brieuc",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "87.10B"
   },
   {
@@ -2808,8 +2810,8 @@
    "nom": "AU FOUR A PAIN",
    "cp": "22400",
    "ville": "HENANSAL",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -2826,8 +2828,8 @@
    "nom": "LE FOLL MARYSE",
    "cp": "22470",
    "ville": "PLOUEZEC",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -2853,8 +2855,8 @@
    "nom": "LEFEVRE JEHAN",
    "cp": "22380",
    "ville": "Saint-Cast-le-Guildo",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -2871,8 +2873,8 @@
    "nom": "DE PONT GUEN ROUSSEAU Erwan",
    "cp": "22450",
    "ville": "KERMARIA-SULARD",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -2916,8 +2918,8 @@
    "nom": "PALACE POULETTE MONTHULEY Fabrice et Laetitia",
    "cp": "22110",
    "ville": "MELLIONNEC",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -2943,8 +2945,8 @@
    "nom": "RUAULT BRIAG",
    "cp": "22250",
    "ville": "EREAC",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.22Z"
   },
   {
@@ -3006,8 +3008,8 @@
    "nom": "BLASSEL MICHEL",
    "cp": "23250",
    "ville": "SAINT-HILAIRE-LE-CHATEAU",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -3024,8 +3026,8 @@
    "nom": "DES PERRIERES AUCLAIR Lionel et Nathalie",
    "cp": "23140",
    "ville": "DOMEYROT",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -3042,8 +3044,8 @@
    "nom": "EPLEFPA D'AHUN LAINE Jean-Luc",
    "cp": "23150",
    "ville": "AHUN",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -3051,8 +3053,8 @@
    "nom": "EI FARON Philippe",
    "cp": "23460",
    "ville": "Saint Marc à Loubaud",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -3069,8 +3071,8 @@
    "nom": "kydjian",
    "cp": "23000",
    "ville": "la chapelle taillefert",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.22Z"
   },
   {
@@ -3096,8 +3098,8 @@
    "nom": "BUSSELET PLM",
    "cp": "24320",
    "ville": "LUSIGNAC",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -3123,8 +3125,8 @@
    "nom": "DES CHEVRES SUR LE PLATEAU CHAPELLE Jean-Paul",
    "cp": "24590",
    "ville": "Salignac Eyvigues",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -3141,8 +3143,8 @@
    "nom": "ALAIN DE LA VILLE",
    "cp": "24320",
    "ville": "Verteillac",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "71.11Z"
   },
   {
@@ -3159,8 +3161,8 @@
    "nom": "MANSEAU RICHARD MICHEL RENE",
    "cp": "24260",
    "ville": "Saint Felix de Reillac et Mort",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -3168,8 +3170,8 @@
    "nom": "LA FERME DE LA CHAPELLE TRAVERSE Jean-Pierre et Alexandre",
    "cp": "24370",
    "ville": "Carlux",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -3240,8 +3242,8 @@
    "nom": "IRISCOP",
    "cp": "24290",
    "ville": "Montignac - Lascaux",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "82.99Z"
   },
   {
@@ -3294,8 +3296,8 @@
    "nom": "SALVETAT ALAIN",
    "cp": "24200",
    "ville": "SAINTE-NATHALENE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -3312,8 +3314,8 @@
    "nom": "Gulo Calcis",
    "cp": "24310",
    "ville": "Paussac-et-Saint-Vivien",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "74.10Z"
   },
   {
@@ -3330,8 +3332,8 @@
    "nom": "LOMBARDET LEA",
    "cp": "24260",
    "ville": "LE BUGUE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "74.30Z"
   },
   {
@@ -3375,8 +3377,8 @@
    "nom": "SASU LES TILLEULS DUPREZ Olivier",
    "cp": "25870",
    "ville": "CHATILLON-LE-DUC",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.10Z"
   },
   {
@@ -3393,8 +3395,8 @@
    "nom": "DE LA DISTILLERIE BOURGEOIS BOURGEOIS Anne-Sophie et Arnaud",
    "cp": "25300",
    "ville": "ARCON",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -3402,8 +3404,8 @@
    "nom": "COOPILOTE",
    "cp": "25200",
    "ville": "Montbéliard",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.22Z"
   },
   {
@@ -3447,8 +3449,8 @@
    "nom": "LYCEE TECHNOLOGIQUE AGRICOLE LE VALENTIN",
    "cp": "26500",
    "ville": "BOURG LES VALENCE",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -3537,8 +3539,8 @@
    "nom": "EPLEFPA TERRE D'HORIZON ROUDIL Olivier",
    "cp": "26100",
    "ville": "ROMANS-SUR-ISERE",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -3735,8 +3737,8 @@
    "nom": "LYCEE AGRICOLE DE CHAMBRAY",
    "cp": "27240",
    "ville": "GOUVILLE",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -3771,8 +3773,8 @@
    "nom": "DOMAINE DES HULOTTES DENIZE Guillaume et Hélène",
    "cp": "27150",
    "ville": "Mainneville",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -3798,8 +3800,8 @@
    "nom": "ESAT LA FERME",
    "cp": "28800",
    "ville": "BONNEVAL",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "86.10Z"
   },
   {
@@ -3825,8 +3827,8 @@
    "nom": "LYCEE AGRICOLE DE LA SAUSSAYE",
    "cp": "28630",
    "ville": "SOURS",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -3834,8 +3836,8 @@
    "nom": "LYCEE GENERAL ET TECHNOLOGIQUE AGRICOLE",
    "cp": "29170",
    "ville": "FOUESNANT",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -3843,8 +3845,8 @@
    "nom": "LEGTA DE L'AULNE",
    "cp": "29460",
    "ville": "HANVEC",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -3852,8 +3854,8 @@
    "nom": "DE CREACH AR BLOAS",
    "cp": "29250",
    "ville": "SAINT-POL-DE-LEON",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -3906,8 +3908,8 @@
    "nom": "BIGER MICHEL",
    "cp": "29730",
    "ville": "TREFFIAGAT",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -3924,8 +3926,8 @@
    "nom": "DE KERAMPLEN ROUGE Thierry",
    "cp": "29900",
    "ville": "CONCARNEAU",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -3933,8 +3935,8 @@
    "nom": "SCI DES ALOUETTES LE LAGADEC François",
    "cp": "29600",
    "ville": "Taule",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -3969,8 +3971,8 @@
    "nom": "HALL CLEMENT CLEMENT Françoise",
    "cp": "29810",
    "ville": "PLOUMOGUER",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -4014,8 +4016,8 @@
    "nom": "BARON ERIC - EURL DOMAINE DE KERVEGEN",
    "cp": "29620",
    "ville": "GUIMAEC",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -4203,8 +4205,8 @@
    "nom": "A MANZA",
    "cp": "20100",
    "ville": "SARTENE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -4257,8 +4259,8 @@
    "nom": "MARIE LOUISE SAVELLI",
    "cp": "20220",
    "ville": "L'Ile Rousse",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -4266,8 +4268,8 @@
    "nom": "SAN LISEI",
    "cp": "20224",
    "ville": "Lozzi",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -4293,8 +4295,8 @@
    "nom": "EPLEFPA AGROCAMPUS Marie Durand NîMES RHODILHAN DOMAINE DE DONADILLE",
    "cp": "30230",
    "ville": "RODILHAN",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -4347,8 +4349,8 @@
    "nom": "L'ANGUS LACAN",
    "cp": "30600",
    "ville": "VAUVERT",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -4356,8 +4358,8 @@
    "nom": "DOMAINE ST ROCH AGREIL Jean Joseph",
    "cp": "30128",
    "ville": "GARONS",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -4446,8 +4448,8 @@
    "nom": "FERME AGROECOLOGIQUE DE ST ANDRE GROSSENBACHER-DOUAY Isée",
    "cp": "30320",
    "ville": "SAINT-GERVASY",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "74.90B"
   },
   {
@@ -4455,8 +4457,8 @@
    "nom": "DOMAINE DE GUIOT (GFA)",
    "cp": "30800",
    "ville": "SAINT GILLES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -4500,8 +4502,8 @@
    "nom": "THOMASSOT CLAIRE LAURENCE",
    "cp": "30630",
    "ville": "VERFEUIL",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -4563,8 +4565,8 @@
    "nom": "AGROOF (SARL)",
    "cp": "30360",
    "ville": "VEZENOBRES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "71.12B"
   },
   {
@@ -4653,8 +4655,8 @@
    "nom": "ALTITUDE CAMEO PONZ Frédéric",
    "cp": "31100",
    "ville": "TOULOUSE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.22Z"
   },
   {
@@ -4689,8 +4691,8 @@
    "nom": "EXPLOITATION AGRICOLE DU LPA DE ST GAUDENS DEBOEUF Eric",
    "cp": "31360",
    "ville": "SAINT MEDARD",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -4779,8 +4781,8 @@
    "nom": "LOISIL Sylvie",
    "cp": "31230",
    "ville": "LILHAC",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -4788,8 +4790,8 @@
    "nom": "LES POUTOUNETS",
    "cp": "31230",
    "ville": "PUYMAURIN",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -4851,8 +4853,8 @@
    "nom": "CFPPA",
    "cp": "31320",
    "ville": "Auzeville Tolosane",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -5031,8 +5033,8 @@
    "nom": "DESPAUX Alexia",
    "cp": "32450",
    "ville": "TIRENT PONTEJAC",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -5040,8 +5042,8 @@
    "nom": "PENDARIES Marc André Richard",
    "cp": "32190",
    "ville": "Vic Fezensac",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "74.10Z"
   },
   {
@@ -5121,8 +5123,8 @@
    "nom": "TERRALYA BADOURALY Aurélien",
    "cp": "32000",
    "ville": "AUCH",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -5149,7 +5151,7 @@
    "cp": "33620",
    "ville": "CAVIGNAC",
    "decision": "exclue",
-   "motif": "personne_publique",
+   "motif": "collectivite_ou_etat",
    "naf": "84.11Z"
   },
   {
@@ -5166,8 +5168,8 @@
    "nom": "DES DOMAINES DE ST PAUL",
    "cp": "33390",
    "ville": "SAINT PAUL",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -5175,8 +5177,8 @@
    "nom": "VIGNOBLES FAMILLE CASSY Laurent (SCEA)",
    "cp": "33190",
    "ville": "MORIZES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -5184,8 +5186,8 @@
    "nom": "CHEVREUX Christophe",
    "cp": "33820",
    "ville": "Saint Ciers sur Gironde",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -5238,8 +5240,8 @@
    "nom": "CO-ACTIONS COOPERATIVE D'ENTREPRENEUR.E.S SOLIDAIRES",
    "cp": "33650",
    "ville": "Saint Medard d'Eyrans",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "82.99Z"
   },
   {
@@ -5265,8 +5267,8 @@
    "nom": "CHATEAU LA TOUR BLANCHE",
    "cp": "33210",
    "ville": "BOMMES",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -5274,8 +5276,8 @@
    "nom": "LE POTAGER D'IRIS ROBILLARD Cédric & CRUANES Julie",
    "cp": "33990",
    "ville": "Naujac sur Mer",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -5283,8 +5285,8 @@
    "nom": "CHATEAU OLIVIER LEBRUN Laurent",
    "cp": "33850",
    "ville": "LEOGNAN",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -5328,8 +5330,8 @@
    "nom": "ENS DES SCIENCES AGRONOMIQUES DE BORDEAUX AQUITAINE",
    "cp": "33170",
    "ville": "GRADIGNAN",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.42Z"
   },
   {
@@ -5391,8 +5393,8 @@
    "nom": "Grenier Emilian",
    "cp": "33760",
    "ville": "LUGASSON",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.22Z"
   },
   {
@@ -5409,8 +5411,8 @@
    "nom": "SAS VIGNOBLES CAMBIOM",
    "cp": "33130",
    "ville": "BEGLES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -5436,8 +5438,8 @@
    "nom": "CHATEAU MIGNAN",
    "cp": "34210",
    "ville": "SIRAN",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.22Z"
   },
   {
@@ -5445,8 +5447,8 @@
    "nom": "FLORE EN THYM",
    "cp": "34380",
    "ville": "Saint-Martin-de-Londres",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "74.90B"
   },
   {
@@ -5454,8 +5456,8 @@
    "nom": "DOMAINE DE CANTAGRIL HENNEBERT Florence",
    "cp": "34560",
    "ville": "Montbazin",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -5472,8 +5474,8 @@
    "nom": "CARAGLIO YVES",
    "cp": "34160",
    "ville": "BEAULIEU",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.22Z"
   },
   {
@@ -5499,8 +5501,8 @@
    "nom": "DOMAINE VIRGILE JOLY",
    "cp": "34725",
    "ville": "SAINT SATURNIN",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -5535,8 +5537,8 @@
    "nom": "saccucci bruno",
    "cp": "34120",
    "ville": "PEZENAS",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -5553,8 +5555,8 @@
    "nom": "VERT CARRE BLANGILLE Thomas",
    "cp": "34380",
    "ville": "SAINT-MARTIN-DE-LONDRES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "74.90B"
   },
   {
@@ -5616,8 +5618,8 @@
    "nom": "LEP AGRICOLE ST AUBIN DU CORMIER",
    "cp": "35140",
    "ville": "ST AUBIN DU CORMIER",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -5625,8 +5627,8 @@
    "nom": "PACEA",
    "cp": "35550",
    "ville": "PIPRIAC",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -5634,8 +5636,8 @@
    "nom": "PLANTAGO",
    "cp": "35150",
    "ville": "CORPS NUDS",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -5670,8 +5672,8 @@
    "nom": "LYCEE THEODORE MONOD",
    "cp": "35650",
    "ville": "LE RHEU",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -5697,8 +5699,8 @@
    "nom": "LA FERME DE L'HOTIE",
    "cp": "35380",
    "ville": "Paimpont",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -5806,7 +5808,7 @@
    "cp": "35500",
    "ville": "Vitré",
    "decision": "exclue",
-   "motif": "personne_publique",
+   "motif": "collectivite_ou_etat",
    "naf": "84.11Z"
   },
   {
@@ -5904,8 +5906,8 @@
    "nom": "LES SERRES DU LYCEE HORTICOLE",
    "cp": "38110",
    "ville": "LA TOUR-DU-PIN",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -5949,8 +5951,8 @@
    "nom": "MAGAL MAUDE MYRIAM",
    "cp": "38110",
    "ville": "Saint Didier de la Tour",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "82.11Z"
   },
   {
@@ -5958,8 +5960,8 @@
    "nom": "LYCEE AGRICOLE DE GRENOBLE - SAINT-ISMIER",
    "cp": "38330",
    "ville": "ST ISMIER",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -6138,8 +6140,8 @@
    "nom": "EPLEFPA DE LONS-LE-SAUNIER EDGAR FAURE",
    "cp": "39570",
    "ville": "MONTMOROT",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -6156,8 +6158,8 @@
    "nom": "CENTRE HIPPIQUE MANCY",
    "cp": "39000",
    "ville": "LONS-LE-SAUNIER",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -6165,8 +6167,8 @@
    "nom": "GAEC LA FERME DU MUGUET",
    "cp": "39330",
    "ville": "Pagnoz",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -6174,8 +6176,8 @@
    "nom": "FERMES DES LYRES",
    "cp": "39370",
    "ville": "CHOUX",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -6256,7 +6258,7 @@
    "cp": "40000",
    "ville": "MONT-DE-MARSAN",
    "decision": "exclue",
-   "motif": "personne_publique",
+   "motif": "collectivite_ou_etat",
    "naf": "84.11Z"
   },
   {
@@ -6264,8 +6266,8 @@
    "nom": "ENVOLEA - ETAL40",
    "cp": "40110",
    "ville": "Morcenx-la-Nouvelle",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.22Z"
   },
   {
@@ -6318,8 +6320,8 @@
    "nom": "SCI DE LA MAHAUDIERE",
    "cp": "41400",
    "ville": "PONTLEVOY",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -6336,8 +6338,8 @@
    "nom": "EXPLOITATION AGRICOLE DE VILLAVARD",
    "cp": "41800",
    "ville": "VILLAVARD",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -6390,8 +6392,8 @@
    "nom": "Les Jardins du Moulin",
    "cp": "41160",
    "ville": "Saint Jean Froidmentel",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -6408,8 +6410,8 @@
    "nom": "LYCEE PROFESSIONNEL AGRICOLE",
    "cp": "42390",
    "ville": "VILLARS",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -6426,8 +6428,8 @@
    "nom": "FERME DE LA VALLERINE",
    "cp": "42410",
    "ville": "La Chapelle Villars",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -6444,8 +6446,8 @@
    "nom": "TRAMASSAC",
    "cp": "42800",
    "ville": "DARGOIRE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -6453,8 +6455,8 @@
    "nom": "EPLEFPA CAMPUS AGRONOVA",
    "cp": "42660",
    "ville": "SAINT GENEST MALIFAUX",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -6498,8 +6500,8 @@
    "nom": "EPLEFPA ROANNE CHERVE NOIRETABLE",
    "cp": "42120",
    "ville": "Perreux",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -6507,8 +6509,8 @@
    "nom": "DU TILLEUL CHAUVIN JOUVE Cédric et Agnès",
    "cp": "43200",
    "ville": "LAPTE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -6525,8 +6527,8 @@
    "nom": "LYCEE AGRICOLE DE BONNEFONT",
    "cp": "43100",
    "ville": "FONTANNES",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -6588,8 +6590,8 @@
    "nom": "NOIR D'ABEILLES",
    "cp": "43440",
    "ville": "SAINT-DIDIER-SUR-DOULON",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -6660,8 +6662,8 @@
    "nom": "DE LA BARRE",
    "cp": "44390",
    "ville": "SAFFRE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -6669,8 +6671,8 @@
    "nom": "EPLEFPA NANTES TERRE ATLANTIQUE",
    "cp": "44800",
    "ville": "SAINT-HERBLAIN",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -6678,8 +6680,8 @@
    "nom": "ANCRE",
    "cp": "44850",
    "ville": "Ligne",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "78.30Z"
   },
   {
@@ -6723,8 +6725,8 @@
    "nom": "FERME DE BEAULIEU",
    "cp": "44630",
    "ville": "PLESSE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -6741,8 +6743,8 @@
    "nom": "CHEVRERIE DE LA METAIRIE D'ARDENNES DUBREIL Laurianne",
    "cp": "44680",
    "ville": "SAINTE-PAZANNE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -6750,8 +6752,8 @@
    "nom": "DES LANDES DU LUQUET",
    "cp": "44170",
    "ville": "VAY",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -6849,8 +6851,8 @@
    "nom": "ESAT DE LA VERTONNE LINO Nathalie",
    "cp": "44120",
    "ville": "VERTOU",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "88.10C"
   },
   {
@@ -6876,8 +6878,8 @@
    "nom": "TERRE DE BRIORD (SAS)",
    "cp": "44710",
    "ville": "PORT SAINT PERE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.21Z"
   },
   {
@@ -6894,8 +6896,8 @@
    "nom": "LA GREE",
    "cp": "44660",
    "ville": "SOULVACHE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -6948,8 +6950,8 @@
    "nom": "DE PECH-REVEL ROBERT Pierre-Jean",
    "cp": "46170",
    "ville": "Saint-Paul-Flaugnac",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7056,8 +7058,8 @@
    "nom": "EPLEFPA de Ste Livrade",
    "cp": "47110",
    "ville": "SAINTE LIVRADE SUR LOT",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -7065,8 +7067,8 @@
    "nom": "Exploitation horticole de l'EPLEFPA de Fazanis",
    "cp": "47400",
    "ville": "TONNEINS",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -7083,8 +7085,8 @@
    "nom": "RL CONSEILS REMI LAURANT",
    "cp": "47600",
    "ville": "MONCRABEAU",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.22Z"
   },
   {
@@ -7128,8 +7130,8 @@
    "nom": "GIE PLANTE INFUSE",
    "cp": "48110",
    "ville": "SAINTE-CROIX-VALLEE-FRANCAISE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "82.92Z"
   },
   {
@@ -7137,8 +7139,8 @@
    "nom": "LA BELLE ROCHE",
    "cp": "48240",
    "ville": "SAINT-ANDRE-DE-LANCIZE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7155,8 +7157,8 @@
    "nom": "DE L'HORT",
    "cp": "48400",
    "ville": "VEBRON",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7164,8 +7166,8 @@
    "nom": "CLAPEYROUX",
    "cp": "48190",
    "ville": "MAS D'ORCIÈRES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7173,8 +7175,8 @@
    "nom": "PLANTES DE LA BORIA",
    "cp": "48110",
    "ville": "Le Pompidou",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "82.99Z"
   },
   {
@@ -7191,8 +7193,8 @@
    "nom": "ETAB PUPLIC LOCAL ENSEIGNEMENT FORMATION PROFESSIONNELLE AGRICOLE DE LA LOZERE",
    "cp": "48200",
    "ville": "Saint Chely d'Apcher",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -7209,8 +7211,8 @@
    "nom": "LES TROIS CHENES",
    "cp": "49710",
    "ville": "LE LONGERON",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7236,8 +7238,8 @@
    "nom": "ORAN NICOLAS GILLES",
    "cp": "49630",
    "ville": "LOIRE-AUTHION",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7263,8 +7265,8 @@
    "nom": "CAILLEAU HERBIO",
    "cp": "49120",
    "ville": "CHEMILLE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7299,8 +7301,8 @@
    "nom": "HULSMAN HULSMAN Egbert",
    "cp": "49520",
    "ville": "BOUILLE-MENARD",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7371,8 +7373,8 @@
    "nom": "DE GRAEVE Emeline",
    "cp": "49330",
    "ville": "QUERRE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7434,8 +7436,8 @@
    "nom": "SIMON Marion",
    "cp": "49130",
    "ville": "Sainte Gemmes sur Loire",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.22Z"
   },
   {
@@ -7461,8 +7463,8 @@
    "nom": "EPLEFPA ST LO THERE LAHAYE Pascal",
    "cp": "50620",
    "ville": "Le Hommet d'Arthenay",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -7470,8 +7472,8 @@
    "nom": "ETP DE SAINT JAMES",
    "cp": "50240",
    "ville": "SAINT JAMES",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "88.10C"
   },
   {
@@ -7506,8 +7508,8 @@
    "nom": "LYCEE AGRICOLE COUTANCES",
    "cp": "50200",
    "ville": "Coutances",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -7524,8 +7526,8 @@
    "nom": "ANGOT BIO",
    "cp": "50390",
    "ville": "SAINT SAUVEUR LE VICOMTE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7569,8 +7571,8 @@
    "nom": "LES CHEVRES DU CLOS AUX MOINES LETOUSEY Franck",
    "cp": "50510",
    "ville": "CERENCES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7633,7 +7635,7 @@
    "cp": "51160",
    "ville": "AY-CHAMPAGNE",
    "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "motif": "holding_ou_finance",
    "naf": "64.20Z"
   },
   {
@@ -7794,8 +7796,8 @@
    "nom": "HALOUZE MARION CLAIRE",
    "cp": "53940",
    "ville": "SAINT-BERTHEVIN",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7830,8 +7832,8 @@
    "nom": "DOMAINE DE LA COLLINE",
    "cp": "54330",
    "ville": "VAUDEMONT",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7875,8 +7877,8 @@
    "nom": "EPL AGRO Ferme de BELLERAY",
    "cp": "55000",
    "ville": "BAR LE DUC",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -7884,8 +7886,8 @@
    "nom": "LES JARDINS DE KERHAN",
    "cp": "56440",
    "ville": "LANGUIDIC",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7893,8 +7895,8 @@
    "nom": "DE COQUEREL",
    "cp": "56330",
    "ville": "Camors",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7911,8 +7913,8 @@
    "nom": "FERME DE KERHORS JARDIN Yves",
    "cp": "56420",
    "ville": "PLUMELEC",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7920,8 +7922,8 @@
    "nom": "LES ECOTONES",
    "cp": "56380",
    "ville": "GUER",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7956,8 +7958,8 @@
    "nom": "la ferme de Bovenant",
    "cp": "56130",
    "ville": "NIVILLAC",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -7983,8 +7985,8 @@
    "nom": "LES POULES DU BOIS DE SAPINS",
    "cp": "56420",
    "ville": "BULEON",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -8001,8 +8003,8 @@
    "nom": "FERME DE CARDENOUAL MASSARD Ludovic et MOLY Claire",
    "cp": "56420",
    "ville": "Buleon",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -8019,8 +8021,8 @@
    "nom": "LYCEE TECHNO.AGRICOLE LE GROS CHENE",
    "cp": "56300",
    "ville": "Pontivy",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -8055,8 +8057,8 @@
    "nom": "SCI KORN ER HOUET SANANIKONE Maly",
    "cp": "56390",
    "ville": "COLPO",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "82.30Z"
   },
   {
@@ -8127,8 +8129,8 @@
    "nom": "EPLEA COURCELLES CHAUSSY",
    "cp": "57530",
    "ville": "COURCELLES CHAUSSY",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -8146,7 +8148,7 @@
    "cp": "57000",
    "ville": "METZ",
    "decision": "exclue",
-   "motif": "personne_publique",
+   "motif": "collectivite_ou_etat",
    "naf": "84.11Z"
   },
   {
@@ -8190,8 +8192,8 @@
    "nom": "EI BAUMANN Aline",
    "cp": "58240",
    "ville": "Saint-Pierre-le-Moûtier",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "82.11Z"
   },
   {
@@ -8208,8 +8210,8 @@
    "nom": "EPLEFPA NEVERS COSNES PLAGNY",
    "cp": "58200",
    "ville": "Cosne Cours sur Loire",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -8235,8 +8237,8 @@
    "nom": "EXPLOITATION DU LPA DE PLAGNY SERMOISE",
    "cp": "58000",
    "ville": "SERMOISE-SUR-LOIRE",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -8244,8 +8246,8 @@
    "nom": "FERME DU DEFRICHE - LEGTA DU NORD",
    "cp": "59177",
    "ville": "SAINS DU NORD",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -8298,8 +8300,8 @@
    "nom": "LA FERME DE MARCELEINE",
    "cp": "59870",
    "ville": "RIEULAY",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -8361,8 +8363,8 @@
    "nom": "EPLEFPA DE DOUAI",
    "cp": "59530",
    "ville": "Le Quesnoy",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -8370,8 +8372,8 @@
    "nom": "EPLEFPA DES FLANDRES / Ferme Horticole de Lomme",
    "cp": "59463",
    "ville": "Lomme Cedex",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -8451,8 +8453,8 @@
    "nom": "ASSOCIATION AGEVAL",
    "cp": "59300",
    "ville": "VALENCIENNES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "78.30Z"
   },
   {
@@ -8478,8 +8480,8 @@
    "nom": "EPLEFPA DE RIBECOURT",
    "cp": "60170",
    "ville": "RIBECOURT-DRESLINCOURT",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -8514,8 +8516,8 @@
    "nom": "DE LA TOUCHE LAURENT Adèle et Tanguy",
    "cp": "61700",
    "ville": "DOMFRONT-EN-POIRAIE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -8532,8 +8534,8 @@
    "nom": "LYCEE AGRICOLE DE SEES",
    "cp": "61500",
    "ville": "SEES",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -8550,8 +8552,8 @@
    "nom": "DES HORDOUSEAUX",
    "cp": "61160",
    "ville": "ECORCHES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -8604,8 +8606,8 @@
    "nom": "LAIR Pierre-Yves",
    "cp": "61250",
    "ville": "VALFRAMBERT",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -8640,8 +8642,8 @@
    "nom": "LUCIE ROBLOT",
    "cp": "61110",
    "ville": "COUR-MAUGIS SUR HUISNE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.21Z"
   },
   {
@@ -8658,8 +8660,8 @@
    "nom": "DELDICQUE PIERRE",
    "cp": "62570",
    "ville": "HELFAUT",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -8766,8 +8768,8 @@
    "nom": "EPLEFPA DES COMBRAILLES",
    "cp": "63390",
    "ville": "Saint Gervais d'Auvergne",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -8775,8 +8777,8 @@
    "nom": "EPLEFPA de MARMILHAT",
    "cp": "63370",
    "ville": "LEMPDES",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -8784,8 +8786,8 @@
    "nom": "LYCEE PROFESSIONNEL AGRICOLE DE ROCHEFORT MONTAGNE",
    "cp": "63210",
    "ville": "ROCHEFORT-MONTAGNE",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -8811,8 +8813,8 @@
    "nom": "DELBREIL Nathalie",
    "cp": "63380",
    "ville": "Landogne",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "82.19Z"
   },
   {
@@ -8910,8 +8912,8 @@
    "nom": "LURZAINDIA",
    "cp": "64240",
    "ville": "URT",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -8919,8 +8921,8 @@
    "nom": "LOUIT FREDERIC",
    "cp": "64330",
    "ville": "SAINT JEAN POUDGE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -8928,8 +8930,8 @@
    "nom": "POUBLAN TURAN Brigitte et Clovis",
    "cp": "64300",
    "ville": "Loubieng",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -8982,8 +8984,8 @@
    "nom": "CLABETOUS LAMONGESSE Hervé",
    "cp": "64400",
    "ville": "AREN",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -9081,8 +9083,8 @@
    "nom": "EI RECALDE VINCENT",
    "cp": "64120",
    "ville": "Béhasque-Lapiste",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "71.20B"
   },
   {
@@ -9243,8 +9245,8 @@
    "nom": "GAEC A L'OMBRE DU CHENE GENDRE Amandine",
    "cp": "66300",
    "ville": "Passa",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -9252,8 +9254,8 @@
    "nom": "LA PALETTE BIO TOSTIVINT Loïc",
    "cp": "66500",
    "ville": "EUS",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -9270,8 +9272,8 @@
    "nom": "DOMAINE DU LYCEE AGRICOLE EPLEFPA DES P.O",
    "cp": "66600",
    "ville": "RIVESALTES",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -9288,8 +9290,8 @@
    "nom": "VALL'ESPIR - PERSPECTIVES",
    "cp": "66350",
    "ville": "TOULOUGES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.22Z"
   },
   {
@@ -9405,8 +9407,8 @@
    "nom": "FERME SOMMER SOMMER Jacqueline",
    "cp": "67360",
    "ville": "FROESCHWILLER",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -9414,8 +9416,8 @@
    "nom": "FERME SAINT BLAISE",
    "cp": "67210",
    "ville": "VALFF",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -9468,8 +9470,8 @@
    "nom": "EPLEFPA Les Sillons de Haute-Alsace Ferme JUDENMATT",
    "cp": "68920",
    "ville": "WINTZENHEIM",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -9621,8 +9623,8 @@
    "nom": "CHAMBE PRODUCTION CHAMBE Henry et Olivier",
    "cp": "69210",
    "ville": "FLEURIEUX SUR L'ARBRESLE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -9630,8 +9632,8 @@
    "nom": "LA FERME DU CHIPIER CELLARD Annick",
    "cp": "69420",
    "ville": "TUPIN-ET-SEMONS",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -9657,8 +9659,8 @@
    "nom": "GAEC A VOL D'OISEAU",
    "cp": "69640",
    "ville": "RIVOLET",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -9684,8 +9686,8 @@
    "nom": "BIOVALLON",
    "cp": "69510",
    "ville": "MESSIMY",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -9765,8 +9767,8 @@
    "nom": "FAMILLE MORIN",
    "cp": "69115",
    "ville": "Chiroubles",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -9820,7 +9822,7 @@
    "cp": "69670",
    "ville": "VAUGNERAY",
    "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "motif": "holding_ou_finance",
    "naf": "64.20Z"
   },
   {
@@ -9846,8 +9848,8 @@
    "nom": "DU CHAMP LE ROY",
    "cp": "70000",
    "ville": "COLOMBE-LES-VESOUL",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -9873,8 +9875,8 @@
    "nom": "FERME DE LA CHARMOYE LORIDAT Philippe",
    "cp": "70200",
    "ville": "FRANCHEVELLE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -9891,8 +9893,8 @@
    "nom": "LYCEE DE L'HORTICULTURE ET DU PAYSAGE",
    "cp": "71700",
    "ville": "TOURNUS",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -9927,8 +9929,8 @@
    "nom": "GAZEAU-MONTRASI GAZEAU-MONTRASI Claire et Fabio",
    "cp": "71960",
    "ville": "FUISSE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -10215,8 +10217,8 @@
    "nom": "MADAME MARIE PIERRE CHEVALLIER",
    "cp": "73170",
    "ville": "JONGIEUX",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -10242,8 +10244,8 @@
    "nom": "PASSERAT Morgan",
    "cp": "74270",
    "ville": "CLERMONT",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -10368,8 +10370,8 @@
    "nom": "du Pays de Bray",
    "cp": "76220",
    "ville": "BREMONTIER MERVAL",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.31Z"
   },
   {
@@ -10395,8 +10397,8 @@
    "nom": "EXPLOITATION AGRICOLE DE L'EPL DE SEINE MARITIME IZABELLE Arnaud",
    "cp": "76190",
    "ville": "YVETOT",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.31Z"
   },
   {
@@ -10431,8 +10433,8 @@
    "nom": "FERME BRASSERIE LA CHAPELLE",
    "cp": "76780",
    "ville": "La Chapelle Saint Ouen",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -10449,8 +10451,8 @@
    "nom": "JACQUEMIN Ethel",
    "cp": "76740",
    "ville": "HEBERVILLE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -10476,8 +10478,8 @@
    "nom": "INTERM'AIDE EMPLOI DALLE Arnaud / LAMARRE Grégory",
    "cp": "76000",
    "ville": "Rouen",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "78.30Z"
   },
   {
@@ -10540,7 +10542,7 @@
    "cp": "77164",
    "ville": "FERRIERES EN BRIE",
    "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "motif": "holding_ou_finance",
    "naf": "64.30Z"
   },
   {
@@ -10602,8 +10604,8 @@
    "nom": "DE LASSUS SAINT GENIES ARTHUR JEAN EMMANUEL",
    "cp": "77130",
    "ville": "FORGES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "74.90B"
   },
   {
@@ -10611,8 +10613,8 @@
    "nom": "SCEA L ARCHE D ALATTIA",
    "cp": "78610",
    "ville": "Auffargis",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -10620,8 +10622,8 @@
    "nom": "LYCEE AGRICOLE ET HORTICOLE de St Germain-Chambourcy",
    "cp": "78100",
    "ville": "SAIN GERMAIN EN LAYE",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -10647,8 +10649,8 @@
    "nom": "ECOLE NATIONALE SUPERIEURE DE PAYSAGE DELBOUIS François - Xavier",
    "cp": "78000",
    "ville": "VERSAILLES",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.42Z"
   },
   {
@@ -10656,8 +10658,8 @@
    "nom": "CENTRE D'ENSEIGNEMENT ZOOTECHNIQUE",
    "cp": "78120",
    "ville": "RAMBOUILLET",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -10692,8 +10694,8 @@
    "nom": "LYCEE AGRICOLE LES SICAUDIERES",
    "cp": "79308",
    "ville": "BRESSUIRE",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -10701,8 +10703,8 @@
    "nom": "LYCEE AGRICOLE JACQUES BUJAULT",
    "cp": "79500",
    "ville": "MELLE",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -10746,8 +10748,8 @@
    "nom": "EPLEFPA TERRES ET PAYSAGES SUD DEUX-SEVRES MEYNARD Jerome",
    "cp": "79000",
    "ville": "Niort",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -10872,8 +10874,8 @@
    "nom": "CFPPA TARN",
    "cp": "81990",
    "ville": "Le Sequestre",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -10881,8 +10883,8 @@
    "nom": "MORENO MAXIME",
    "cp": "81240",
    "ville": "SAINT AMANS SOULT",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -10998,8 +11000,8 @@
    "nom": "ETABLISSEMENT PUBLIC LOCAL D ENSEIGNEMENT ET DE FORMATION PROFESSIONNELLE AGRICOLES DES TARN ET GARONNE",
    "cp": "82000",
    "ville": "MONTAUBAN",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -11007,8 +11009,8 @@
    "nom": "EXPLOITATION ARBORICOLE DE MOISSAC",
    "cp": "82200",
    "ville": "MOISSAC",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -11052,8 +11054,8 @@
    "nom": "CHATEAU COMBECAVE",
    "cp": "82190",
    "ville": "TOUFFAILLES",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -11061,8 +11063,8 @@
    "nom": "DEBANT Mélanie",
    "cp": "83570",
    "ville": "COTIGNAC",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.31Z"
   },
   {
@@ -11071,7 +11073,7 @@
    "cp": "83330",
    "ville": "EVENOS",
    "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "motif": "holding_ou_finance",
    "naf": "66.19A"
   },
   {
@@ -11107,7 +11109,7 @@
    "cp": "83340",
    "ville": "Le Cannet des Maures",
    "decision": "exclue",
-   "motif": "personne_publique",
+   "motif": "collectivite_ou_etat",
    "naf": "84.11Z"
   },
   {
@@ -11133,8 +11135,8 @@
    "nom": "EPLEFPA AGRICAMPUS",
    "cp": "83400",
    "ville": "HYÈRES",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -11151,8 +11153,8 @@
    "nom": "POTAGERS ET COMPAGNIE",
    "cp": "83143",
    "ville": "LE VAL",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "71.12B"
   },
   {
@@ -11178,8 +11180,8 @@
    "nom": "DOMAINES BM COSTAMAGNA",
    "cp": "83480",
    "ville": "PUGET-SUR-ARGENS",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -11205,8 +11207,8 @@
    "nom": "AUGER Jessica - TETE EN L'AIR & TOURNE AU SOL",
    "cp": "83136",
    "ville": "Gareoult",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "82.19Z"
   },
   {
@@ -11304,8 +11306,8 @@
    "nom": "CIBRARIO Didier",
    "cp": "84410",
    "ville": "CRILLON-LE-BRAVE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -11359,7 +11361,7 @@
    "cp": "84600",
    "ville": "Valréas",
    "decision": "exclue",
-   "motif": "personne_publique",
+   "motif": "collectivite_ou_etat",
    "naf": "84.11Z"
   },
   {
@@ -11367,8 +11369,8 @@
    "nom": "EPLEFPA DE CARPENTRAS LOUIS GIRAUD",
    "cp": "84200",
    "ville": "CARPENTRAS",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -11376,8 +11378,8 @@
    "nom": "ETS LAPEYRE LAPEYRE Danièle",
    "cp": "84160",
    "ville": "Cadenet",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
   },
   {
@@ -11394,8 +11396,8 @@
    "nom": "COQOVIN VALADE Jean Pierre",
    "cp": "84810",
    "ville": "AUBIGNAN",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.21Z"
   },
   {
@@ -11403,8 +11405,8 @@
    "nom": "NIBBIO Frederic",
    "cp": "84580",
    "ville": "Oppede",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -11412,8 +11414,8 @@
    "nom": "PARC NATUREL REGIONAL DU LUBERON GALPIN Laure",
    "cp": "84400",
    "ville": "APT",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "84.13Z"
   },
   {
@@ -11439,8 +11441,8 @@
    "nom": "MONSIEUR JEAN-NOeL CRESPI",
    "cp": "84250",
    "ville": "LE THOR",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "74.90B"
   },
   {
@@ -11448,8 +11450,8 @@
    "nom": "MARTIN Oriane / APINAE APICULTURE",
    "cp": "84430",
    "ville": "Mondragon",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "70.21Z"
   },
   {
@@ -11511,8 +11513,8 @@
    "nom": "LA FOUGASSE",
    "cp": "84440",
    "ville": "ROBION",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -11529,8 +11531,8 @@
    "nom": "ESNOV CHANTIERS",
    "cp": "85300",
    "ville": "CHALLANS",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "78.30Z"
   },
   {
@@ -11547,8 +11549,8 @@
    "nom": "LE JARDIN DE LA BARDONNIERE HALLOIN Yannick MATHE Louise",
    "cp": "85710",
    "ville": "BOIS DE CENE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -11601,8 +11603,8 @@
    "nom": "LE PONT A DIDOT",
    "cp": "85400",
    "ville": "LUCON",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -11628,8 +11630,8 @@
    "nom": "BATI-INSERT",
    "cp": "85600",
    "ville": "TREIZE SEPTIERS",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "88.99B"
   },
   {
@@ -11646,8 +11648,8 @@
    "nom": "JMC LEGUMES LIMOUSIN Gisèle et David",
    "cp": "85390",
    "ville": "MOUILLERON-SAINT-GERMAIN",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -11664,8 +11666,8 @@
    "nom": "LYCEE AGRICOLE LUCON-PETRE",
    "cp": "85400",
    "ville": "SAINTE GEMME LA PLAINE",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -11674,7 +11676,7 @@
    "cp": "85320",
    "ville": "ROSNAY",
    "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "motif": "holding_ou_finance",
    "naf": "66.22Z"
   },
   {
@@ -11691,8 +11693,8 @@
    "nom": "RETAILLEAU Cécile",
    "cp": "85130",
    "ville": "CHANVERRIE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "71.12B"
   },
   {
@@ -11790,8 +11792,8 @@
    "nom": "LPA THURÉ",
    "cp": "86540",
    "ville": "THURE",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -11862,8 +11864,8 @@
    "nom": "EPL LIMOGES et NORD HAUTE VIENNE",
    "cp": "87430",
    "ville": "VERNEUIL SUR VIENNE",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "72.19Z"
   },
   {
@@ -11871,8 +11873,8 @@
    "nom": "LES P'TITS BIOS D'AMBAZAC",
    "cp": "87240",
    "ville": "AMBAZAC",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -11916,8 +11918,8 @@
    "nom": "PEPINIERES COLLECTIVE DU LIMOUSIN",
    "cp": "87380",
    "ville": "CHATEAU-CHERVIX",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "82.99Z"
   },
   {
@@ -11943,8 +11945,8 @@
    "nom": "ANTOINE Thomas",
    "cp": "88160",
    "ville": "FRESSE SUR MOSELLE",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "94.11Z"
   },
   {
@@ -11952,8 +11954,8 @@
    "nom": "EPL DES VOSGES PECHEUR Joel",
    "cp": "88500",
    "ville": "POUSSAY",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -12051,8 +12053,8 @@
    "nom": "EXPLOITATION DU LYCEE AGRICOLE DE VALDOIE",
    "cp": "90300",
    "ville": "VALDOIE",
-   "decision": "exclue",
-   "motif": "personne_publique",
+   "decision": "a_verifier",
+   "motif": "etablissement_public",
    "naf": "85.32Z"
   },
   {
@@ -12060,8 +12062,8 @@
    "nom": "ABEILLES AIDE ET ENTRAIDE SMYK Zofia",
    "cp": "91560",
    "ville": "Crosne",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "78.30Z"
   },
   {
@@ -12124,7 +12126,7 @@
    "cp": "91600",
    "ville": "SAVIGNY-SUR-ORGE",
    "decision": "exclue",
-   "motif": "personne_publique",
+   "motif": "collectivite_ou_etat",
    "naf": "84.23Z"
   },
   {
@@ -12132,8 +12134,8 @@
    "nom": "EXPLOITATION SCI MAS SAINT TROPHIME",
    "cp": "92200",
    "ville": "NEUILLY-SUR-SEINE",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -12168,8 +12170,8 @@
    "nom": "LE RELAIS DE LA LANDE",
    "cp": "93500",
    "ville": "PANTIN",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -12186,8 +12188,8 @@
    "nom": "ATLI AGRI ATLI Kerim",
    "cp": "93140",
    "ville": "BONDY",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   },
   {
@@ -12214,7 +12216,7 @@
    "cp": "94800",
    "ville": "VILLEJUIF",
    "decision": "exclue",
-   "motif": "personne_publique",
+   "motif": "collectivite_ou_etat",
    "naf": "84.11Z"
   },
   {
@@ -12240,8 +12242,8 @@
    "nom": "EI GALAND Nicolas",
    "cp": "95450",
    "ville": "Guiry-en-Vexin",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "74.90B"
   },
   {
@@ -12267,8 +12269,8 @@
    "nom": "BOURVEN",
    "cp": "95000",
    "ville": "CERGY",
-   "decision": "exclue",
-   "motif": "activite_non_agricole",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
   }
  ],
