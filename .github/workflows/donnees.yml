@@ -15,7 +15,7 @@ concurrency:
 jobs:
   generer:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -23,11 +23,25 @@ jobs:
           node-version: 22
       - name: Récupérer et filtrer les fermes (Agence Bio)
         run: node scripts/generer-donnees.mjs
+      - name: Reprendre le cache Sirene
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache
+          key: sirene-${{ github.run_id }}
+          restore-keys: sirene-
+      - name: Vérifier chaque ferme dans Sirene (entreprise active, activité agricole)
+        run: node scripts/verifier-sirene.mjs
+      - name: Garder le cache Sirene
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache
+          key: sirene-${{ github.run_id }}
       - name: Publier si les données ont changé
         run: |
           git config user.name "surplace-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/fermes
+          git add data/fermes rapports
           if git diff --cached --quiet; then
             echo "Aucun changement."
           else
