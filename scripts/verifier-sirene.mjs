@@ -16,10 +16,12 @@ try { cache = JSON.parse(await readFile(CACHE, 'utf8')); } catch {}
 
 // ── Ce qu'on garde de la réponse ─────────────────────────────────────────────
 function resumer(siret, j) {
-  const r = (j.results || []).find(x => x.siren === siret.slice(0, 9)) || (j.results || [])[0];
-  if (!r) return { introuvable: true };
+  // Uniquement l'entreprise dont le SIREN correspond : jamais un « résultat proche »
+  const r = (j.results || []).find(x => x.siren === siret.slice(0, 9));
+  if (!r) return { v: 2, introuvable: true };
   const etab = (r.matching_etablissements || []).find(e => e.siret === siret) || (r.siege?.siret === siret ? r.siege : null);
   return {
+    v: 2, siren: r.siren,
     etat: r.etat_administratif, nature: r.nature_juridique, naf: r.activite_principale,
     asso: !!r.complements?.est_association, collectivite: !!r.complements?.collectivite_territoriale,
     etabEtat: etab?.etat_administratif || null, etabNaf: etab?.activite_principale || null,
@@ -27,12 +29,17 @@ function resumer(siret, j) {
 }
 
 // ── Décision ─────────────────────────────────────────────────────────────────
-const NAF_PAS_FERME = /^(64|65|66|68|69|70|71|73|74|77|78|82)\./; // finance, immobilier, conseil, holdings, services aux entreprises
+// Prudence : on ne retire que ce qui est certain. Le reste est signalé pour vérification humaine.
+//  - lycées agricoles (établissements publics d'enseignement) : souvent une boutique → signalés, pas retirés
+//  - 68.20 (location de terres) ou conseil en activité principale : fréquent chez les agriculteurs → signalés
+const HOLDING = /^(64\.2|64\.3|66\.)/;
 function decider(s) {
-  if (!s || s.introuvable) return null;
+  if (!s || s.introuvable || s.v !== 2) return null;
   if (s.etat === 'C') return { exclure: true, motif: 'entreprise_fermee' };
-  if (/^7/.test(s.nature || '') || s.collectivite) return { exclure: true, motif: 'personne_publique' };
-  if (NAF_PAS_FERME.test(s.naf || '') && !/^0[123]\./.test(s.etabNaf || '')) return { exclure: true, motif: 'activite_non_agricole' };
+  if (/^7[12]/.test(s.nature || '') || s.collectivite) return { exclure: true, motif: 'collectivite_ou_etat' };
+  if (HOLDING.test(s.naf || '') && !/^0[123]\./.test(s.etabNaf || '')) return { exclure: true, motif: 'holding_ou_finance' };
+  if (/^7/.test(s.nature || '')) return { signal: 'etablissement_public' };
+  if (/^(64|65|66|68|69|70|71|73|74|77|78|82)\./.test(s.naf || '') && !/^0[123]\./.test(s.etabNaf || '')) return { signal: 'activite_principale_non_agricole' };
   if (s.etabEtat === 'F') return { signal: 'etablissement_ferme' };
   if (/^(10|11|46|47|56)\./.test(s.naf || '')) return { signal: 'commerce_ou_transformation' };
   if (s.asso || /^92/.test(s.nature || '')) return { signal: 'association' };
@@ -54,7 +61,7 @@ const fichiers = (await readdir(DOSSIER)).filter(f => /^[0-9AB]{2,3}\.json$/.tes
 const depts = {};
 for (const f of fichiers) depts[f] = JSON.parse(await readFile(new URL(f, DOSSIER), 'utf8'));
 const toutes = Object.values(depts).flatMap(d => d.fermes);
-const aFaire = [...new Set(toutes.map(f => f.siret).filter(s => s && s.length === 14 && !(cache[s] && Date.now() - cache[s].t < DUREE)))];
+const aFaire = [...new Set(toutes.map(f => f.siret).filter(s => s && s.length === 14 && !(cache[s] && cache[s].v === 2 && Date.now() - cache[s].t < DUREE)))];
 console.log(`${toutes.length} fermes, ${aFaire.length} SIRET à interroger`);
 
 let faits = 0, arret = false;
