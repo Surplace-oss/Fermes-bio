@@ -1,6 +1,6 @@
 {
  "date": "2026-10-09",
- "verifiees": 27630,
+ "verifiees": 27634,
  "sansSiret": 485,
  "exclues": {
   "entreprise_fermee": 144,
@@ -10,7 +10,7 @@
  "signalees": {
   "association": 333,
   "commerce_ou_transformation": 404,
-  "activite_principale_non_agricole": 221,
+  "activite_principale_non_agricole": 222,
   "etablissement_public": 83,
   "etablissement_ferme": 161,
   "maintenue_holding_ou_finance": 4,
@@ -10861,6 +10861,15 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "01.13Z"
+  },
+  {
+   "id": 57086,
+   "nom": "TEOTSKI AUBIN FLORENTIN",
+   "cp": "81120",
+   "ville": "Terre-de-Bancalié",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
+   "naf": "68.20B"
   },
   {
    "id": 58432,
