@@ -1,0 +1,10676 @@
+{
+ "date": "2026-10-09",
+ "nbProducteurs": 2144,
+ "nbMagasins": 29,
+ "champsProducteur": {
+  "id": "string",
+  "app": "string",
+  "address": "{\"city\":\"Cadaujac\",\"country\":\"FR\",\"postcode\":\"33140\",\"street\":\"Chemin de la Matole\"}",
+  "geo": "{\"coordinates\":[-0.546694,44.755067],\"type\":\"Point\",\"lat\":44.755067,\"lng\":-0.546694}",
+  "ape": "string",
+  "name": "string",
+  "label": "{\"from\":\"2016-09-23T00:00:00.000Z\",\"id\":141275,\"orgCode\":\"FR-BIO-16\",\"orgName\":\"Qualisud\",\"type\":\"organic\",\"url\":\"https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index#!?query=01115559\"}",
+  "slug": "string",
+  "settings": "{\"minOrder\":2.5,\"confirmationThreshold\":12,\"fraisetlocalExcluded\":true,\"invoiceFrequency\":0,\"invoicePaymentDeadline\":30,\"minimumShippingTemperature\":18,\"newslettersReminder\":false,\"notifyAllOrders\":true,\"weeksOfRecurringDates\":2}",
+  "categories": "[3] \"fruits\"",
+  "deliveries": "[2] {\"id\":\"5fcb611bb7d26f62ec6f36a7\",\"distance\":0.59,\"duration\":1.2,\"frequency\":0,\"minSales\":0,\"nextDates\":[],\"notDelivering\":true,\"handInHand\":true,\"onlinePayment\":false,\"preparing\":1,\"previousDates\":[\"2023-01-04T00:00:00.000Z\",\"2022-12-02T00:00:00.000Z\",\"2022-12-01T00:00:00.000Z\",\"2022-11-30T00:00:00.000Z\",\"2022-11-29T00:00:00.000Z\",\"2022-11-25T00:00:00.000Z\",\"2022-11-24T00:00:00.000Z\",\"2022-11-23T0",
+  "prospectProducers": "[1] {\"geo\":{\"coordinates\":[-0.54935,44.756973],\"type\":\"Point\"},\"address\":{\"city\":\"CADAUJAC\",\"country\":\"FR\",\"postcode\":\"33140\",\"street\":\"124 AVENUE DE TOULOUSE\"},\"label\":{\"from\":\"2016-09-23T00:00:00.000Z\",\"id\":141275,\"orgCode\":\"FR-BIO-16\",\"orgName\":\"Qualisud\",\"type\":\"organic\",\"url\":\"https://webgate.ec.europa.eu/tracesnt/directory/publication/organic-operator/index#!?query=01115559\"},\"extra\":{\"phones\":["
+ },
+ "exemplesDeliveries": [
+  "[{\"id\":\"5fcb611bb7d26f62ec6f36a7\",\"distance\":0.59,\"duration\":1.2,\"frequency\":0,\"minSales\":0,\"nextDates\":[],\"notDelivering\":true,\"handInHand\":true,\"onlinePayment\":false,\"preparing\":1,\"previousDates\":[\"2023-01-04T00:00:00.000Z\",\"2022-12-02T00:00:00.000Z\",\"2022-12-01T00:00:00.000Z\",\"2022-11-30T00:00:00.000Z\",\"2022-11-29T00:00:00.000Z\",\"2022-11-25T00:00:00.000Z\",\"2022-11-24T00:00:00.000Z\",\"2022-11-23T00:00:00.000Z\",\"2022-11-22T00:00:00.000Z\",\"2022-11-18T00:00:00.000Z\",\"2022-11-17T00:00:00.000Z\",\"2022-11-16T00:00:00.000Z\",\"2022-11-15T00:00:00.000Z\",\"2022-11-11T00:00:00.000Z\",\"2022-11-10T00:00:00.000Z\",\"2022-11-09T00:00:00.000Z\",\"2022-11-08T00:00:00.000Z\",\"2022-11-04T00:00:00.000Z\",\"2022-11-03T00:00:00.000Z\",\"2022-11-02T00:00:00.000Z\",\"2022-11-01T00:00:00.000Z\",\"2022-10-28T00:00:00.000Z\",\"2022-10-27T00:00:00.000Z\",\"2022-10-26T00:00:00.000Z\",\"2022-10-25T00:00:00.000Z\",\"2022-10-21T00:00:00.000Z\",\"2022-10-20T00:00:00.000Z\",\"2022-10-19T00:00:00.000Z\",\"2022-10-18T00:00:00.000Z\",\"2022-10-14T00:00:00.000Z\",\"2022-10-13T00:00:00.000Z\",\"2022-10-12T00:00:00.000Z\",\"2022-10-11T00:00:00.000Z\",\"2022-10-07T00:00:00.000Z\",\"2022-10-06T00:00:00.000Z\",\"2022-10-05T00:00:00.000Z\",\"2022-10-04T00:00:00.000Z\",\"2",
+  "[{\"id\":\"[masqué]\",\"distance\":8.35,\"duration\":9.8,\"frequency\":1,\"minSales\":0,\"nextDates\":[\"2026-10-09T00:00:00.000Z\",\"2026-10-16T00:00:00.000Z\"],\"notDelivering\":false,\"onlinePayment\":true,\"preparing\":1.875,\"previousDates\":[\"2026-10-02T00:00:00.000Z\",\"2026-09-25T00:00:00.000Z\",\"2026-09-18T00:00:00.000Z\",\"2026-09-11T00:00:00.000Z\",\"2026-09-04T00:00:00.000Z\",\"2026-07-24T00:00:00.000Z\",\"2026-07-17T00:00:00.000Z\",\"2026-07-10T00:00:00.000Z\",\"2026-07-03T00:00:00.000Z\",\"2026-06-26T00:00:00.000Z\",\"2026-06-19T00:00:00.000Z\",\"2026-06-12T00:00:00.000Z\",\"2026-06-05T00:00:00.000Z\",\"2026-05-29T00:00:00.000Z\",\"2026-05-22T00:00:00.000Z\",\"2026-05-08T00:00:00.000Z\",\"2026-04-24T00:00:00.000Z\",\"2026-04-17T00:00:00.000Z\",\"2026-04-10T00:00:00.000Z\",\"2026-04-03T00:00:00.000Z\",\"2026-03-27T00:00:00.000Z\",\"2026-03-20T00:00:00.000Z\",\"2026-03-13T00:00:00.000Z\",\"2026-03-06T00:00:00.000Z\",\"2026-02-27T00:00:00.000Z\",\"2026-02-20T00:00:00.000Z\",\"2026-02-06T00:00:00.000Z\",\"2026-01-30T00:00:00.000Z\",\"2026-01-23T00:00:00.000Z\",\"2026-01-16T00:00:00.000Z\",\"2026-01-09T00:00:00.000Z\",\"2025-12-19T00:00:00.000Z\",\"2025-12-12T00:00:00.000Z\",\"2025-12-05T00:00:00.000Z\",\"2025-11-28T00:00:00.000Z\",\"2025-11-21T00:00:00.000Z\",\"2025-",
+  "[{\"id\":\"6079de753c8161fd4aecef8b\",\"distance\":14.4,\"duration\":21.47,\"frequency\":2,\"minSales\":6,\"nextDates\":[\"2026-11-03T00:00:00.000Z\",\"2026-12-01T00:00:00.000Z\",\"2026-12-22T00:00:00.000Z\"],\"notDelivering\":false,\"handInHand\":true,\"onlinePayment\":true,\"preparing\":2,\"previousDates\":[\"2026-10-06T00:00:00.000Z\",\"2026-09-01T00:00:00.000Z\",\"2026-07-07T00:00:00.000Z\",\"2026-06-02T00:00:00.000Z\",\"2026-05-05T00:00:00.000Z\",\"2026-04-07T00:00:00.000Z\",\"2026-03-03T00:00:00.000Z\",\"2026-02-03T00:00:00.000Z\",\"2025-12-16T00:00:00.000Z\",\"2025-11-04T00:00:00.000Z\",\"2025-10-07T00:00:00.000Z\",\"2025-09-02T00:00:00.000Z\",\"2025-08-05T00:00:00.000Z\",\"2025-07-01T00:00:00.000Z\",\"2025-06-03T00:00:00.000Z\",\"2025-05-06T00:00:00.000Z\",\"2025-04-01T00:00:00.000Z\",\"2025-03-04T00:00:00.000Z\",\"2025-02-04T00:00:00.000Z\",\"2024-12-17T00:00:00.000Z\",\"2024-11-05T00:00:00.000Z\",\"2024-09-03T00:00:00.000Z\",\"2024-07-02T00:00:00.000Z\",\"2024-06-04T00:00:00.000Z\",\"2024-05-07T00:00:00.000Z\",\"2024-04-02T00:00:00.000Z\",\"2024-03-05T00:00:00.000Z\",\"2024-02-06T00:00:00.000Z\",\"2023-12-19T00:00:00.000Z\",\"2023-11-07T00:00:00.000Z\",\"2023-10-03T00:00:00.000Z\",\"2023-09-05T00:00:00.000Z\",\"2023-08-01T00:00:00.000Z\",\"2023-07-04T00:00:00.000Z\",\"",
+  "[{\"id\":\"610d0f5e54cf2b0b95aa9830\",\"distance\":31.09,\"duration\":37.15,\"frequency\":1,\"minSales\":0,\"nextDates\":[\"2026-10-15T00:00:00.000Z\",\"2026-10-22T00:00:00.000Z\"],\"inactive\":true,\"notDelivering\":true,\"handInHand\":true,\"onlinePayment\":true,\"paymentChoice\":false,\"preparing\":1,\"previousDates\":[\"2026-10-08T00:00:00.000Z\",\"2026-10-01T00:00:00.000Z\",\"2026-09-24T00:00:00.000Z\",\"2026-09-17T00:00:00.000Z\",\"2026-09-10T00:00:00.000Z\",\"2026-09-03T00:00:00.000Z\",\"2026-08-27T00:00:00.000Z\",\"2026-08-20T00:00:00.000Z\",\"2026-08-13T00:00:00.000Z\",\"2026-08-06T00:00:00.000Z\",\"2026-07-30T00:00:00.000Z\",\"2026-07-23T00:00:00.000Z\",\"2026-07-16T00:00:00.000Z\",\"2026-07-09T00:00:00.000Z\",\"2026-07-02T00:00:00.000Z\",\"2026-06-25T00:00:00.000Z\",\"2026-06-18T00:00:00.000Z\",\"2026-06-11T00:00:00.000Z\",\"2026-06-04T00:00:00.000Z\",\"2026-05-28T00:00:00.000Z\",\"2026-05-21T00:00:00.000Z\",\"2026-05-14T00:00:00.000Z\",\"2026-05-07T00:00:00.000Z\",\"2026-04-30T00:00:00.000Z\",\"2026-04-23T00:00:00.000Z\",\"2026-04-16T00:00:00.000Z\",\"2026-04-09T00:00:00.000Z\",\"2026-04-02T00:00:00.000Z\",\"2026-03-26T00:00:00.000Z\",\"2026-03-19T00:00:00.000Z\",\"2026-03-12T00:00:00.000Z\",\"2026-03-05T00:00:00.000Z\",\"2026-02-26T00:00:00.000Z\",\"2026-02-19T00:00",
+  "[{\"id\":\"60d36e7feab79a4a2e4bff10\",\"distance\":0.04,\"duration\":0.22,\"frequency\":1,\"minSales\":0,\"nextDates\":[\"2026-10-09T00:00:00.000Z\",\"2026-10-16T00:00:00.000Z\",\"2026-10-23T00:00:00.000Z\"],\"inactive\":true,\"notDelivering\":true,\"handInHand\":true,\"onlinePayment\":true,\"paymentChoice\":false,\"preparing\":1,\"previousDates\":[\"2026-10-02T00:00:00.000Z\",\"2026-09-25T00:00:00.000Z\",\"2026-09-18T00:00:00.000Z\",\"2026-09-11T00:00:00.000Z\",\"2026-09-04T00:00:00.000Z\",\"2026-08-28T00:00:00.000Z\",\"2026-08-21T00:00:00.000Z\",\"2026-08-14T00:00:00.000Z\",\"2026-08-07T00:00:00.000Z\",\"2026-07-31T00:00:00.000Z\",\"2026-07-24T00:00:00.000Z\",\"2026-07-17T00:00:00.000Z\",\"2026-07-10T00:00:00.000Z\",\"2026-07-03T00:00:00.000Z\",\"2026-06-26T00:00:00.000Z\",\"2026-06-19T00:00:00.000Z\",\"2026-06-12T00:00:00.000Z\",\"2026-06-05T00:00:00.000Z\",\"2026-05-29T00:00:00.000Z\",\"2026-05-22T00:00:00.000Z\",\"2026-05-15T00:00:00.000Z\",\"2026-05-08T00:00:00.000Z\",\"2026-05-01T00:00:00.000Z\",\"2026-04-24T00:00:00.000Z\",\"2026-04-17T00:00:00.000Z\",\"2026-04-10T00:00:00.000Z\",\"2026-04-03T00:00:00.000Z\",\"2026-03-27T00:00:00.000Z\",\"2026-03-20T00:00:00.000Z\",\"2026-03-13T00:00:00.000Z\",\"2026-03-06T00:00:00.000Z\",\"2026-02-27T00:00:00.000Z\",\"2026-02-20T00:00:0"
+ ],
+ "typesDeliveries": {
+  "id|distance|duration|frequency|minSales|nextDates|notDelivering|handInHand|onlinePayment|preparing|previousDates|producerId|products|recurring|storeId|subscribers": 14,
+  "id|storeId|producerId|nextDates|notDelivering": 95,
+  "id|distance|duration|frequency|minSales|nextDates|notDelivering|onlinePayment|preparing|previousDates|producerId|products|recurring|storeId|subscribers": 6,
+  "id|distance|duration|frequency|minSales|nextDates|inactive|notDelivering|handInHand|onlinePayment|paymentChoice|preparing|previousDates|producerId|products|recurring|storeId|subscribers|paymentCostDiscounted": 22,
+  "id|deliveryId|frequency|minSales|nextDates|notDelivering|preparing|previousDates|producerId|products|recurring|subscribers": 24,
+  "id|distance|duration|frequency|minSales|nextDates|notDelivering|handInHand|onlinePayment|paymentChoice|preparing|previousDates|producerId|products|recurring|storeId|subscribers|paymentCostDiscounted": 19,
+  "id|deliveryId|frequency|minSales|nextDates|notDelivering|onlinePayment|preparing|previousDates|producerId|products|recurring|subscribers": 2,
+  "id|deliveryId|nextDates|notDelivering|preparing|previousDates|producerId|products|recurring|subscribers|disabledForCoDelivery": 1,
+  "id|distance|duration|frequency|minSales|nextDates|notDelivering|handInHand|onlinePayment|preparing|previousDates|producerId|products|recurring|storeId|subscribers|markup|paymentCostDiscounted": 3,
+  "id|distance|duration|frequency|minSales|nextDates|notDelivering|onlinePayment|paymentChoice|preparing|previousDates|producerId|products|recurring|storeId|subscribers|paymentCostDiscounted": 1,
+  "id|distance|duration|frequency|minSales|nextDates|inactive|notDelivering|handInHand|onlinePayment|preparing|previousDates|producerId|products|recurring|storeId|subscribers|paymentCostDiscounted": 4,
+  "id|distance|duration|frequency|minSales|nextDates|inactive|notDelivering|onlinePayment|paymentChoice|preparing|previousDates|producerId|products|recurring|storeId|subscribers|paymentCostDiscounted": 5,
+  "id|distance|duration|frequency|minSales|nextDates|handInHand|onlinePayment|preparing|previousDates|producerId|products|recurring|storeId|subscribers": 3,
+  "id|distance|duration|nextDates|inactive|notDelivering|handInHand|onlinePayment|paymentChoice|preparing|previousDates|producerId|products|recurring|storeId|subscribers|paymentCostDiscounted": 5,
+  "id|distance|duration|nextDates|notDelivering|handInHand|onlinePayment|paymentChoice|preparing|previousDates|producerId|products|recurring|storeId|subscribers": 1,
+  "id|distance|duration|frequency|minSales|nextDates|handInHand|onlinePayment|paymentChoice|preparing|previousDates|producerId|products|recurring|storeId|subscribers|paymentCostDiscounted": 1,
+  "id|distance|duration|nextDates|inactive|notDelivering|onlinePayment|paymentChoice|preparing|previousDates|producerId|products|recurring|storeId|subscribers|paymentCostDiscounted": 2,
+  "id|distance|duration|frequency|minSales|nextDates|notDelivering|onlinePayment|paymentChoice|preparing|previousDates|producerId|products|recurring|storeId|subscribers": 2,
+  "id|distance|duration|nextDates|inactive|notDelivering|handInHand|onlinePayment|paymentChoice|preparing|previousDates|producerId|products|recurring|storeId|subscribers|coordinatorMarkup|deferredPayment|paymentCostDiscounted": 1,
+  "id|distance|duration|nextDates|notDelivering|handInHand|onlinePayment|preparing|previousDates|producerId|products|recurring|storeId|subscribers": 2,
+  "id|discount|distance|duration|frequency|minSales|nextDates|inactive|notDelivering|handInHand|onlinePayment|paymentChoice|preparing|previousDates|producerId|products|recurring|storeId|subscribers|paymentCostDiscounted": 1,
+  "id|distance|duration|frequency|minSales|nextDates|notDelivering|handInHand|onlinePayment|preparing|previousDates|producerId|products|recurring|storeId|subscribers|paymentCostDiscounted": 46,
+  "id|distance|duration|frequency|minSales|nextDates|handInHand|onlinePayment|preparing|previousDates|producerId|products|recurring|storeId|subscribers|paymentCostDiscounted": 1,
+  "id|discount|distance|duration|frequency|minSales|nextDates|notDelivering|handInHand|onlinePayment|preparing|previousDates|producerId|products|recurring|storeId|subscribers": 1,
+  "id|distance|duration|frequency|minSales|nextDates|notDelivering|handInHand|onlinePayment|paymentChoice|preparing|previousDates|producerId|products|recurring|storeId|subscribers|markup|paymentCostDiscounted": 3,
+  "id|distance|duration|frequency|minSales|nextDates|notDelivering|handInHand|onlinePayment|preparing|previousDates|producerId|products|recurring|storeId|subscribers|deferredPayment|paymentCostDiscounted": 2,
+  "id|distance|duration|minSales|nextDates|notDelivering|onlinePayment|preparing|previousDates|producerId|products|recurring|storeId|subscribers": 1,
+  "storeId|producerId": 2025
+ },
+ "categories": {
+  "fruits": 724,
+  "drinks": 548,
+  "sweet-grocery": 209,
+  "bread-pastry": 280,
+  "dairy": 309,
+  "others": 542,
+  "meat": 457,
+  "vegetables": 838,
+  "salty-grocery": 451,
+  "eggs": 193,
+  "craftsmanship": 20,
+  "fruit-juice": 209
+ },
+ "labelTypes": {
+  "organic": 2141,
+  "natureetprogres": 1,
+  "converting": 1,
+  "vide": 1
+ },
+ "orgCodes": {
+  "FR-BIO-16": 98,
+  "FR-BIO-01": 1472,
+  "FR-BIO-10": 242,
+  "FR-BIO-12": 25,
+  "FR-BIO-09": 255,
+  "FR-BIO-13": 42,
+  "vide": 4,
+  "FR-BIO-15": 2,
+  "FR-BIO-20": 4
+ },
+ "appariesNumeroBio": 1313,
+ "modesDesAppariees": {
+  "?": 1399
+ },
+ "appariees": [
+  {
+   "id": 43191,
+   "numeroBio": 141275,
+   "cp": "33140",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 31003,
+   "numeroBio": 129055,
+   "cp": "17160",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 105325,
+   "numeroBio": 26443,
+   "cp": "86420",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 9810,
+   "numeroBio": 107881,
+   "cp": "79500",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 144312,
+   "numeroBio": 65396,
+   "cp": "56000",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50427,
+   "numeroBio": 148511,
+   "cp": "47270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 71196,
+   "numeroBio": 5961,
+   "cp": "56930",
+   "modes": [
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 146206,
+   "numeroBio": 67285,
+   "cp": "33620",
+   "modes": [
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 102043,
+   "numeroBio": 23161,
+   "cp": "17160",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 71181,
+   "numeroBio": 5946,
+   "cp": "87800",
+   "modes": [
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 10089,
+   "numeroBio": 108162,
+   "cp": "17690",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 46600,
+   "numeroBio": 144689,
+   "cp": "33760",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 74786,
+   "numeroBio": 9551,
+   "cp": "17470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50383,
+   "numeroBio": 148469,
+   "cp": "61360",
+   "modes": [
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 13569,
+   "numeroBio": 111627,
+   "cp": "61310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13146,
+   "numeroBio": 111203,
+   "cp": "17330",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 37661,
+   "numeroBio": 135743,
+   "cp": "67350",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 6972,
+   "numeroBio": 105045,
+   "cp": "56240",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 116545,
+   "numeroBio": 37629,
+   "cp": "33300",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 74401,
+   "numeroBio": 9166,
+   "cp": "33920",
+   "modes": [
+    "?",
+    "?",
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 128762,
+   "numeroBio": 49846,
+   "cp": "47410",
+   "modes": [
+    "?",
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 7818,
+   "numeroBio": 105889,
+   "cp": "35460",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41573,
+   "numeroBio": 139655,
+   "cp": "33620",
+   "modes": [
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 95016,
+   "numeroBio": 281029,
+   "cp": "56400",
+   "modes": [
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 86904,
+   "numeroBio": 180437,
+   "cp": "47320",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 12724,
+   "numeroBio": 110787,
+   "cp": "50400",
+   "modes": [
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 40087,
+   "numeroBio": 138167,
+   "cp": "87120",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 4078,
+   "numeroBio": 102167,
+   "cp": "50410",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 56561,
+   "numeroBio": 154644,
+   "cp": "61390",
+   "modes": [
+    "?",
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 97107,
+   "numeroBio": 18396,
+   "cp": "56410",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 2682,
+   "numeroBio": 100776,
+   "cp": "56410",
+   "modes": [
+    "?",
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 128235,
+   "numeroBio": 49319,
+   "cp": "56550",
+   "modes": [
+    "?",
+    "?",
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 129514,
+   "numeroBio": 50598,
+   "cp": "35560",
+   "modes": [
+    "?",
+    "?",
+    "?",
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 121998,
+   "numeroBio": 43082,
+   "cp": "17150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 133243,
+   "numeroBio": 54327,
+   "cp": "17150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 69864,
+   "numeroBio": 4629,
+   "cp": "35140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 69367,
+   "numeroBio": 4132,
+   "cp": "33860",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 14915,
+   "numeroBio": 112977,
+   "cp": "56370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 127841,
+   "numeroBio": 48925,
+   "cp": "33270",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 51235,
+   "numeroBio": 149320,
+   "cp": "56370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 33885,
+   "numeroBio": 131950,
+   "cp": "56130",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 138745,
+   "numeroBio": 59829,
+   "cp": "33112",
+   "modes": [
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 136150,
+   "numeroBio": 57234,
+   "cp": "17500",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 583,
+   "numeroBio": 583,
+   "cp": "35190",
+   "modes": [
+    "?",
+    "?",
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 115470,
+   "numeroBio": 36583,
+   "cp": "33770",
+   "modes": [
+    "?",
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 126602,
+   "numeroBio": 47686,
+   "cp": "19160",
+   "modes": [
+    "?",
+    "?",
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 118066,
+   "numeroBio": 39150,
+   "cp": "35220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 138953,
+   "numeroBio": 60037,
+   "cp": "50300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60834,
+   "numeroBio": 158924,
+   "cp": "33660",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 97497,
+   "numeroBio": 18784,
+   "cp": "33380",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 144019,
+   "numeroBio": 65103,
+   "cp": "86460",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 137771,
+   "numeroBio": 58855,
+   "cp": "33540",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 35097,
+   "numeroBio": 133161,
+   "cp": "86550",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48731,
+   "numeroBio": 146823,
+   "cp": "35610",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 112618,
+   "numeroBio": 33731,
+   "cp": "17290",
+   "modes": [
+    "?",
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 148937,
+   "numeroBio": 70001,
+   "cp": "17250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34302,
+   "numeroBio": 132364,
+   "cp": "09240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 146171,
+   "numeroBio": 67250,
+   "cp": "29630",
+   "modes": []
+  },
+  {
+   "id": 100495,
+   "numeroBio": 21616,
+   "cp": "31260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12818,
+   "numeroBio": 110882,
+   "cp": "56890",
+   "modes": []
+  },
+  {
+   "id": 123985,
+   "numeroBio": 45069,
+   "cp": "88220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 10874,
+   "numeroBio": 108945,
+   "cp": "22640",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 70836,
+   "numeroBio": 5601,
+   "cp": "61120",
+   "modes": []
+  },
+  {
+   "id": 135569,
+   "numeroBio": 56653,
+   "cp": "35510",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 146698,
+   "numeroBio": 67762,
+   "cp": "24390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 4005,
+   "numeroBio": 102094,
+   "cp": "22270",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 71646,
+   "numeroBio": 6411,
+   "cp": "56520",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 145063,
+   "numeroBio": 66142,
+   "cp": "67420",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 113849,
+   "numeroBio": 34962,
+   "cp": "87230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 45830,
+   "numeroBio": 143921,
+   "cp": "22340",
+   "modes": []
+  },
+  {
+   "id": 162508,
+   "numeroBio": 306695,
+   "cp": "35190",
+   "modes": [
+    "?",
+    "?"
+   ]
+  },
+  {
+   "id": 147066,
+   "numeroBio": 68130,
+   "cp": "27260",
+   "modes": []
+  },
+  {
+   "id": 157897,
+   "numeroBio": 302084,
+   "cp": "61150",
+   "modes": []
+  },
+  {
+   "id": 4884,
+   "numeroBio": 102967,
+   "cp": "61320",
+   "modes": []
+  },
+  {
+   "id": 18825,
+   "numeroBio": 116884,
+   "cp": "50670",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 69996,
+   "numeroBio": 4761,
+   "cp": "17330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 70323,
+   "numeroBio": 5088,
+   "cp": "17290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 70384,
+   "numeroBio": 5149,
+   "cp": "17180",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 72273,
+   "numeroBio": 7038,
+   "cp": "17600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 85827,
+   "numeroBio": 10274,
+   "cp": "17590",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 93188,
+   "numeroBio": 14526,
+   "cp": "17230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 6708,
+   "numeroBio": 104781,
+   "cp": "17530",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11529,
+   "numeroBio": 109594,
+   "cp": "17310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12780,
+   "numeroBio": 110843,
+   "cp": "17450",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13463,
+   "numeroBio": 111520,
+   "cp": "17290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 15913,
+   "numeroBio": 113979,
+   "cp": "17250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 17461,
+   "numeroBio": 115520,
+   "cp": "17600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 30787,
+   "numeroBio": 128841,
+   "cp": "17120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 36461,
+   "numeroBio": 134543,
+   "cp": "17160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 42799,
+   "numeroBio": 140883,
+   "cp": "17600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 43725,
+   "numeroBio": 141808,
+   "cp": "17240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 44666,
+   "numeroBio": 142753,
+   "cp": "17290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 45629,
+   "numeroBio": 143721,
+   "cp": "17330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47992,
+   "numeroBio": 146085,
+   "cp": "17119",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48165,
+   "numeroBio": 146257,
+   "cp": "17810",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48172,
+   "numeroBio": 146264,
+   "cp": "17690",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51314,
+   "numeroBio": 149400,
+   "cp": "17130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51623,
+   "numeroBio": 149711,
+   "cp": "17160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52531,
+   "numeroBio": 150622,
+   "cp": "17550",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52574,
+   "numeroBio": 150665,
+   "cp": "17270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 53467,
+   "numeroBio": 151555,
+   "cp": "17320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 126131,
+   "numeroBio": 47215,
+   "cp": "17100",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 55788,
+   "numeroBio": 153872,
+   "cp": "17170",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 59318,
+   "numeroBio": 157407,
+   "cp": "17500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 59634,
+   "numeroBio": 157725,
+   "cp": "17290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 86950,
+   "numeroBio": 180840,
+   "cp": "17138",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 69566,
+   "numeroBio": 4331,
+   "cp": "19210",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 89530,
+   "numeroBio": 11192,
+   "cp": "19500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7261,
+   "numeroBio": 105332,
+   "cp": "19370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 9014,
+   "numeroBio": 107084,
+   "cp": "19140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13462,
+   "numeroBio": 111519,
+   "cp": "19230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 125618,
+   "numeroBio": 46702,
+   "cp": "19240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19395,
+   "numeroBio": 117455,
+   "cp": "19310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 36012,
+   "numeroBio": 134093,
+   "cp": "19140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37335,
+   "numeroBio": 135415,
+   "cp": "19210",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 40555,
+   "numeroBio": 138636,
+   "cp": "19320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48360,
+   "numeroBio": 146450,
+   "cp": "19300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49687,
+   "numeroBio": 147777,
+   "cp": "19120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50043,
+   "numeroBio": 148134,
+   "cp": "19130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 62911,
+   "numeroBio": 160993,
+   "cp": "19370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 87775,
+   "numeroBio": 180619,
+   "cp": "19120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 97593,
+   "numeroBio": 281037,
+   "cp": "19320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 100347,
+   "numeroBio": 21468,
+   "cp": "17240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 17181,
+   "numeroBio": 115243,
+   "cp": "33910",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 43283,
+   "numeroBio": 141366,
+   "cp": "33350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 30179,
+   "numeroBio": 128233,
+   "cp": "33500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 104089,
+   "numeroBio": 25207,
+   "cp": "33420",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 102970,
+   "numeroBio": 24088,
+   "cp": "33330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 938,
+   "numeroBio": 938,
+   "cp": "33580",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 1255,
+   "numeroBio": 1255,
+   "cp": "33540",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 71802,
+   "numeroBio": 6567,
+   "cp": "33320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 75026,
+   "numeroBio": 9791,
+   "cp": "33430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 91624,
+   "numeroBio": 13117,
+   "cp": "33370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 92156,
+   "numeroBio": 13648,
+   "cp": "33750",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 3596,
+   "numeroBio": 101685,
+   "cp": "33760",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 4177,
+   "numeroBio": 102265,
+   "cp": "33850",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7723,
+   "numeroBio": 105794,
+   "cp": "33480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 8628,
+   "numeroBio": 106695,
+   "cp": "33180",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 8633,
+   "numeroBio": 106700,
+   "cp": "33127",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 67267,
+   "numeroBio": 2032,
+   "cp": "33390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 67685,
+   "numeroBio": 2450,
+   "cp": "33880",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 68369,
+   "numeroBio": 3134,
+   "cp": "33710",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 69278,
+   "numeroBio": 4043,
+   "cp": "33240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 71660,
+   "numeroBio": 6425,
+   "cp": "33570",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 72760,
+   "numeroBio": 7525,
+   "cp": "33590",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 73280,
+   "numeroBio": 8045,
+   "cp": "33570",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 88253,
+   "numeroBio": 10597,
+   "cp": "33340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 88331,
+   "numeroBio": 10674,
+   "cp": "33410",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 90759,
+   "numeroBio": 12418,
+   "cp": "33640",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 92969,
+   "numeroBio": 14308,
+   "cp": "33920",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 93011,
+   "numeroBio": 14350,
+   "cp": "33890",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 93497,
+   "numeroBio": 14834,
+   "cp": "33410",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 93825,
+   "numeroBio": 15160,
+   "cp": "33540",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 99420,
+   "numeroBio": 20545,
+   "cp": "33126",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 100977,
+   "numeroBio": 22097,
+   "cp": "33690",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 102291,
+   "numeroBio": 23409,
+   "cp": "33650",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 6757,
+   "numeroBio": 104830,
+   "cp": "33141",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11089,
+   "numeroBio": 109161,
+   "cp": "33450",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11211,
+   "numeroBio": 109281,
+   "cp": "33230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13804,
+   "numeroBio": 111861,
+   "cp": "33124",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 16397,
+   "numeroBio": 114462,
+   "cp": "33390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 16419,
+   "numeroBio": 114484,
+   "cp": "33190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 16779,
+   "numeroBio": 114843,
+   "cp": "33350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34498,
+   "numeroBio": 132558,
+   "cp": "33240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 36431,
+   "numeroBio": 134513,
+   "cp": "33550",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37824,
+   "numeroBio": 135906,
+   "cp": "33160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41459,
+   "numeroBio": 139541,
+   "cp": "33230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 43626,
+   "numeroBio": 141710,
+   "cp": "33710",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 45220,
+   "numeroBio": 143310,
+   "cp": "33330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46588,
+   "numeroBio": 144677,
+   "cp": "33570",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51761,
+   "numeroBio": 149849,
+   "cp": "33720",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 53012,
+   "numeroBio": 151104,
+   "cp": "33710",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56374,
+   "numeroBio": 154458,
+   "cp": "33920",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56615,
+   "numeroBio": 154697,
+   "cp": "33390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 58872,
+   "numeroBio": 156955,
+   "cp": "33340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 58922,
+   "numeroBio": 157007,
+   "cp": "33430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 64829,
+   "numeroBio": 162922,
+   "cp": "33650",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 80726,
+   "numeroBio": 170388,
+   "cp": "33190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 84327,
+   "numeroBio": 173983,
+   "cp": "33410",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 87245,
+   "numeroBio": 181528,
+   "cp": "33480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 102360,
+   "numeroBio": 23478,
+   "cp": "33240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 95024,
+   "numeroBio": 16316,
+   "cp": "33710",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 97883,
+   "numeroBio": 19166,
+   "cp": "33170",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 16415,
+   "numeroBio": 114480,
+   "cp": "33350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 18951,
+   "numeroBio": 117013,
+   "cp": "33350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 45526,
+   "numeroBio": 143618,
+   "cp": "33870",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 93925,
+   "numeroBio": 15248,
+   "cp": "33490",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 6283,
+   "numeroBio": 104357,
+   "cp": "33520",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 69729,
+   "numeroBio": 4494,
+   "cp": "33910",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 97370,
+   "numeroBio": 18657,
+   "cp": "33150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 103542,
+   "numeroBio": 24660,
+   "cp": "47800",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 99342,
+   "numeroBio": 20467,
+   "cp": "33650",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11864,
+   "numeroBio": 109930,
+   "cp": "33160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 14705,
+   "numeroBio": 112762,
+   "cp": "33300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 22369,
+   "numeroBio": 120444,
+   "cp": "33490",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56975,
+   "numeroBio": 155059,
+   "cp": "33720",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 28,
+   "numeroBio": 28,
+   "cp": "33220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 463,
+   "numeroBio": 463,
+   "cp": "33330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 522,
+   "numeroBio": 522,
+   "cp": "33230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 1742,
+   "numeroBio": 1742,
+   "cp": "33450",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 1836,
+   "numeroBio": 1836,
+   "cp": "33140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 1862,
+   "numeroBio": 1862,
+   "cp": "33370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 103919,
+   "numeroBio": 25037,
+   "cp": "79600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56033,
+   "numeroBio": 154116,
+   "cp": "79600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 6270,
+   "numeroBio": 104345,
+   "cp": "79220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 1736,
+   "numeroBio": 1736,
+   "cp": "79200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 74737,
+   "numeroBio": 9502,
+   "cp": "79600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 74999,
+   "numeroBio": 9764,
+   "cp": "79290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 91755,
+   "numeroBio": 13247,
+   "cp": "79430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 102420,
+   "numeroBio": 23538,
+   "cp": "79200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 103746,
+   "numeroBio": 24864,
+   "cp": "79140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12777,
+   "numeroBio": 110840,
+   "cp": "79240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12817,
+   "numeroBio": 110881,
+   "cp": "79150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13431,
+   "numeroBio": 111489,
+   "cp": "79120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 14100,
+   "numeroBio": 112160,
+   "cp": "79140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 33154,
+   "numeroBio": 131213,
+   "cp": "79250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 33450,
+   "numeroBio": 131510,
+   "cp": "79800",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 39293,
+   "numeroBio": 137375,
+   "cp": "79310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41950,
+   "numeroBio": 140032,
+   "cp": "79300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47220,
+   "numeroBio": 145311,
+   "cp": "79500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47356,
+   "numeroBio": 145446,
+   "cp": "79190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48781,
+   "numeroBio": 146874,
+   "cp": "79140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51438,
+   "numeroBio": 149527,
+   "cp": "79700",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56731,
+   "numeroBio": 154815,
+   "cp": "79200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 94713,
+   "numeroBio": 16008,
+   "cp": "79380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 141176,
+   "numeroBio": 62260,
+   "cp": "79360",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 8761,
+   "numeroBio": 106829,
+   "cp": "79300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 17944,
+   "numeroBio": 116000,
+   "cp": "79300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 18437,
+   "numeroBio": 116493,
+   "cp": "79300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 31589,
+   "numeroBio": 129637,
+   "cp": "79600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50522,
+   "numeroBio": 148607,
+   "cp": "79310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 58735,
+   "numeroBio": 156816,
+   "cp": "79400",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60751,
+   "numeroBio": 158841,
+   "cp": "79310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 4179,
+   "numeroBio": 102267,
+   "cp": "79100",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 9388,
+   "numeroBio": 107458,
+   "cp": "79140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50530,
+   "numeroBio": 148615,
+   "cp": "79380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 87691,
+   "numeroBio": 180444,
+   "cp": "79360",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46482,
+   "numeroBio": 144571,
+   "cp": "79240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 103876,
+   "numeroBio": 24994,
+   "cp": "79240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 102070,
+   "numeroBio": 23188,
+   "cp": "86340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 107727,
+   "numeroBio": 28844,
+   "cp": "86360",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 1767,
+   "numeroBio": 1767,
+   "cp": "86100",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 95612,
+   "numeroBio": 16903,
+   "cp": "86470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 71832,
+   "numeroBio": 6597,
+   "cp": "86500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 91657,
+   "numeroBio": 13150,
+   "cp": "86160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13903,
+   "numeroBio": 111959,
+   "cp": "86440",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 27587,
+   "numeroBio": 127310,
+   "cp": "86310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 35191,
+   "numeroBio": 133256,
+   "cp": "86500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 36466,
+   "numeroBio": 134548,
+   "cp": "86000",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 144335,
+   "numeroBio": 65419,
+   "cp": "86800",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41754,
+   "numeroBio": 139837,
+   "cp": "86320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 43991,
+   "numeroBio": 142078,
+   "cp": "86600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49716,
+   "numeroBio": 147806,
+   "cp": "86370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 82569,
+   "numeroBio": 172225,
+   "cp": "86190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 98005,
+   "numeroBio": 281152,
+   "cp": "86190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 83850,
+   "numeroBio": 173508,
+   "cp": "86290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 91964,
+   "numeroBio": 13456,
+   "cp": "86380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47399,
+   "numeroBio": 145489,
+   "cp": "86350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49721,
+   "numeroBio": 147811,
+   "cp": "86190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52530,
+   "numeroBio": 150621,
+   "cp": "86400",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 53090,
+   "numeroBio": 151181,
+   "cp": "86100",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 55071,
+   "numeroBio": 153154,
+   "cp": "86300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 113919,
+   "numeroBio": 35032,
+   "cp": "86340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 72365,
+   "numeroBio": 7130,
+   "cp": "86500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 5500,
+   "numeroBio": 103578,
+   "cp": "86410",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 103217,
+   "numeroBio": 24335,
+   "cp": "87230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11624,
+   "numeroBio": 109689,
+   "cp": "87340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 104821,
+   "numeroBio": 25939,
+   "cp": "87510",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 5529,
+   "numeroBio": 103607,
+   "cp": "87210",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 1931,
+   "numeroBio": 100028,
+   "cp": "87400",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 6092,
+   "numeroBio": 104166,
+   "cp": "87430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 86063,
+   "numeroBio": 180097,
+   "cp": "87500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 97610,
+   "numeroBio": 18894,
+   "cp": "87460",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 1020,
+   "numeroBio": 1020,
+   "cp": "87430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 1460,
+   "numeroBio": 1460,
+   "cp": "87600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 70392,
+   "numeroBio": 5157,
+   "cp": "87590",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 70991,
+   "numeroBio": 5756,
+   "cp": "87400",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 72686,
+   "numeroBio": 7451,
+   "cp": "87380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 89738,
+   "numeroBio": 11400,
+   "cp": "87330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 96340,
+   "numeroBio": 17629,
+   "cp": "87170",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7204,
+   "numeroBio": 105275,
+   "cp": "87300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 16534,
+   "numeroBio": 114598,
+   "cp": "87150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 16863,
+   "numeroBio": 114927,
+   "cp": "87920",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 33781,
+   "numeroBio": 131845,
+   "cp": "87500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37320,
+   "numeroBio": 135400,
+   "cp": "87310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37486,
+   "numeroBio": 135568,
+   "cp": "87230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41166,
+   "numeroBio": 139248,
+   "cp": "87230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41686,
+   "numeroBio": 139768,
+   "cp": "87130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46932,
+   "numeroBio": 145021,
+   "cp": "87330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49055,
+   "numeroBio": 147146,
+   "cp": "87270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52414,
+   "numeroBio": 150504,
+   "cp": "87340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52962,
+   "numeroBio": 151055,
+   "cp": "87600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 59184,
+   "numeroBio": 157273,
+   "cp": "87120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 54363,
+   "numeroBio": 152450,
+   "cp": "87260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 87312,
+   "numeroBio": 181677,
+   "cp": "87310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 89861,
+   "numeroBio": 11523,
+   "cp": "87400",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50606,
+   "numeroBio": 148691,
+   "cp": "87130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 3996,
+   "numeroBio": 102085,
+   "cp": "87310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 91436,
+   "numeroBio": 12931,
+   "cp": "87520",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 67315,
+   "numeroBio": 2080,
+   "cp": "47600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 71752,
+   "numeroBio": 6517,
+   "cp": "47260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 15945,
+   "numeroBio": 114011,
+   "cp": "47120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 16647,
+   "numeroBio": 114710,
+   "cp": "47370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 73710,
+   "numeroBio": 8475,
+   "cp": "47470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 73729,
+   "numeroBio": 8494,
+   "cp": "47360",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 16644,
+   "numeroBio": 114707,
+   "cp": "47150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19378,
+   "numeroBio": 117438,
+   "cp": "47300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34203,
+   "numeroBio": 132266,
+   "cp": "47130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 35563,
+   "numeroBio": 133631,
+   "cp": "47150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 35706,
+   "numeroBio": 133783,
+   "cp": "47200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37595,
+   "numeroBio": 135676,
+   "cp": "47500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 39750,
+   "numeroBio": 137831,
+   "cp": "47600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 44695,
+   "numeroBio": 142782,
+   "cp": "47380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46023,
+   "numeroBio": 144113,
+   "cp": "47130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50887,
+   "numeroBio": 148969,
+   "cp": "47130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60403,
+   "numeroBio": 158495,
+   "cp": "47290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60627,
+   "numeroBio": 158718,
+   "cp": "47120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 80853,
+   "numeroBio": 170515,
+   "cp": "47600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2902,
+   "numeroBio": 100995,
+   "cp": "47110",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 99946,
+   "numeroBio": 21068,
+   "cp": "47250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 3106,
+   "numeroBio": 101197,
+   "cp": "47140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 140592,
+   "numeroBio": 61676,
+   "cp": "79500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 125921,
+   "numeroBio": 47005,
+   "cp": "87230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 139202,
+   "numeroBio": 60286,
+   "cp": "33310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 148061,
+   "numeroBio": 69125,
+   "cp": "33320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 148953,
+   "numeroBio": 70017,
+   "cp": "33370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 148299,
+   "numeroBio": 69363,
+   "cp": "87130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 148609,
+   "numeroBio": 69673,
+   "cp": "87380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 135245,
+   "numeroBio": 56329,
+   "cp": "87510",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 136831,
+   "numeroBio": 57915,
+   "cp": "87600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 111101,
+   "numeroBio": 32217,
+   "cp": "87440",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 145665,
+   "numeroBio": 66744,
+   "cp": "47380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 137027,
+   "numeroBio": 58111,
+   "cp": "87130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 118076,
+   "numeroBio": 39160,
+   "cp": "87380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 145997,
+   "numeroBio": 67076,
+   "cp": "47130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 113312,
+   "numeroBio": 34425,
+   "cp": "47500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 129827,
+   "numeroBio": 50911,
+   "cp": "47380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 127464,
+   "numeroBio": 48548,
+   "cp": "47300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 142106,
+   "numeroBio": 63190,
+   "cp": "47290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 127567,
+   "numeroBio": 48651,
+   "cp": "33240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 145077,
+   "numeroBio": 66156,
+   "cp": "19500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 138871,
+   "numeroBio": 59955,
+   "cp": "87220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 147017,
+   "numeroBio": 68081,
+   "cp": "47300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 16116,
+   "numeroBio": 114181,
+   "cp": "87300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 124147,
+   "numeroBio": 45231,
+   "cp": "47350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 124653,
+   "numeroBio": 45737,
+   "cp": "17350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 147070,
+   "numeroBio": 68134,
+   "cp": "19130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 126846,
+   "numeroBio": 47930,
+   "cp": "79150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 114766,
+   "numeroBio": 35879,
+   "cp": "87210",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 127166,
+   "numeroBio": 48250,
+   "cp": "79600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 146035,
+   "numeroBio": 67114,
+   "cp": "17130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 132013,
+   "numeroBio": 53097,
+   "cp": "86150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 124096,
+   "numeroBio": 45180,
+   "cp": "33690",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 108551,
+   "numeroBio": 29668,
+   "cp": "79330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 139475,
+   "numeroBio": 60559,
+   "cp": "33124",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 142687,
+   "numeroBio": 63771,
+   "cp": "17330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 141838,
+   "numeroBio": 62922,
+   "cp": "79340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 142926,
+   "numeroBio": 64010,
+   "cp": "86150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 143769,
+   "numeroBio": 64853,
+   "cp": "33210",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 129387,
+   "numeroBio": 50471,
+   "cp": "86420",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 119424,
+   "numeroBio": 40508,
+   "cp": "87150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 122491,
+   "numeroBio": 43575,
+   "cp": "33230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 142022,
+   "numeroBio": 63106,
+   "cp": "79130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 145719,
+   "numeroBio": 66798,
+   "cp": "19500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 127881,
+   "numeroBio": 48965,
+   "cp": "86200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 132246,
+   "numeroBio": 53330,
+   "cp": "86370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 122310,
+   "numeroBio": 43394,
+   "cp": "17111",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 39,
+   "numeroBio": 39,
+   "cp": "17620",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 144456,
+   "numeroBio": 65540,
+   "cp": "79700",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 70905,
+   "numeroBio": 5670,
+   "cp": "17150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 129539,
+   "numeroBio": 50623,
+   "cp": "47360",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 139996,
+   "numeroBio": 61080,
+   "cp": "87100",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 121892,
+   "numeroBio": 42976,
+   "cp": "17460",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 107841,
+   "numeroBio": 28958,
+   "cp": "33650",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 139312,
+   "numeroBio": 60396,
+   "cp": "33190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 130929,
+   "numeroBio": 52013,
+   "cp": "33910",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 128825,
+   "numeroBio": 49909,
+   "cp": "33790",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 133124,
+   "numeroBio": 54208,
+   "cp": "33480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 118241,
+   "numeroBio": 39325,
+   "cp": "33350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 130410,
+   "numeroBio": 51494,
+   "cp": "87300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 136077,
+   "numeroBio": 57161,
+   "cp": "19510",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 130676,
+   "numeroBio": 51760,
+   "cp": "19320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 144074,
+   "numeroBio": 65158,
+   "cp": "87120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 130081,
+   "numeroBio": 51165,
+   "cp": "87190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 115413,
+   "numeroBio": 36526,
+   "cp": "19120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 113811,
+   "numeroBio": 34924,
+   "cp": "47220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 138640,
+   "numeroBio": 59724,
+   "cp": "47470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 138017,
+   "numeroBio": 59101,
+   "cp": "86160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 139254,
+   "numeroBio": 60338,
+   "cp": "86270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 116161,
+   "numeroBio": 37274,
+   "cp": "87700",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 126863,
+   "numeroBio": 47947,
+   "cp": "87160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 147100,
+   "numeroBio": 68164,
+   "cp": "17139",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 120753,
+   "numeroBio": 41837,
+   "cp": "47120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 110946,
+   "numeroBio": 32062,
+   "cp": "86300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 128686,
+   "numeroBio": 49770,
+   "cp": "19140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 124580,
+   "numeroBio": 45664,
+   "cp": "87190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 116473,
+   "numeroBio": 37557,
+   "cp": "33690",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 113509,
+   "numeroBio": 34622,
+   "cp": "33790",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 127354,
+   "numeroBio": 48438,
+   "cp": "87310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 129409,
+   "numeroBio": 50493,
+   "cp": "19410",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 132016,
+   "numeroBio": 53100,
+   "cp": "47500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 138196,
+   "numeroBio": 59280,
+   "cp": "33820",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 116024,
+   "numeroBio": 37137,
+   "cp": "86300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 139005,
+   "numeroBio": 60089,
+   "cp": "19460",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 108921,
+   "numeroBio": 30038,
+   "cp": "79370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 116930,
+   "numeroBio": 38014,
+   "cp": "87700",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 133280,
+   "numeroBio": 54364,
+   "cp": "33390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 146295,
+   "numeroBio": 67374,
+   "cp": "33190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 127468,
+   "numeroBio": 48552,
+   "cp": "86540",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 130883,
+   "numeroBio": 51967,
+   "cp": "87230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 114512,
+   "numeroBio": 35625,
+   "cp": "19170",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 128148,
+   "numeroBio": 49232,
+   "cp": "87240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 123749,
+   "numeroBio": 44833,
+   "cp": "33250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 131409,
+   "numeroBio": 52493,
+   "cp": "17700",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 118405,
+   "numeroBio": 39489,
+   "cp": "33840",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 128536,
+   "numeroBio": 49620,
+   "cp": "87240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 115823,
+   "numeroBio": 36936,
+   "cp": "86190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 134882,
+   "numeroBio": 55966,
+   "cp": "19150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 139811,
+   "numeroBio": 60895,
+   "cp": "17120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 134082,
+   "numeroBio": 55166,
+   "cp": "87520",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 128973,
+   "numeroBio": 50057,
+   "cp": "33430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 127438,
+   "numeroBio": 48522,
+   "cp": "33690",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 126570,
+   "numeroBio": 47654,
+   "cp": "17210",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 121857,
+   "numeroBio": 42941,
+   "cp": "47300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 144404,
+   "numeroBio": 65488,
+   "cp": "79100",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 109676,
+   "numeroBio": 30792,
+   "cp": "33570",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 147129,
+   "numeroBio": 68193,
+   "cp": "33250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 126472,
+   "numeroBio": 47556,
+   "cp": "33710",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 123529,
+   "numeroBio": 44613,
+   "cp": "33290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 142335,
+   "numeroBio": 63419,
+   "cp": "19600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 138027,
+   "numeroBio": 59111,
+   "cp": "19200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 132450,
+   "numeroBio": 53534,
+   "cp": "47450",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 137254,
+   "numeroBio": 58338,
+   "cp": "33910",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 114809,
+   "numeroBio": 35922,
+   "cp": "33320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 146168,
+   "numeroBio": 67247,
+   "cp": "17170",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 110919,
+   "numeroBio": 32035,
+   "cp": "33360",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 134510,
+   "numeroBio": 55594,
+   "cp": "87330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 110315,
+   "numeroBio": 31431,
+   "cp": "33420",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 125700,
+   "numeroBio": 46784,
+   "cp": "47160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 140655,
+   "numeroBio": 61739,
+   "cp": "33210",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 30033,
+   "numeroBio": 128087,
+   "cp": "47370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 115983,
+   "numeroBio": 37096,
+   "cp": "47290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 109540,
+   "numeroBio": 30656,
+   "cp": "47320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 128544,
+   "numeroBio": 49628,
+   "cp": "17310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 94802,
+   "numeroBio": 16097,
+   "cp": "47700",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 138061,
+   "numeroBio": 59145,
+   "cp": "19160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 135658,
+   "numeroBio": 56742,
+   "cp": "33124",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 91914,
+   "numeroBio": 13406,
+   "cp": "33670",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 127498,
+   "numeroBio": 48582,
+   "cp": "79130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 132603,
+   "numeroBio": 53687,
+   "cp": "79100",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 125203,
+   "numeroBio": 46287,
+   "cp": "87800",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 94315,
+   "numeroBio": 15637,
+   "cp": "33220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 130498,
+   "numeroBio": 51582,
+   "cp": "86160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 128668,
+   "numeroBio": 49752,
+   "cp": "86500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 146487,
+   "numeroBio": 67566,
+   "cp": "47150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 114653,
+   "numeroBio": 35766,
+   "cp": "79290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 123521,
+   "numeroBio": 44605,
+   "cp": "33410",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 115780,
+   "numeroBio": 36893,
+   "cp": "79000",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 126198,
+   "numeroBio": 47282,
+   "cp": "17810",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 131188,
+   "numeroBio": 52272,
+   "cp": "86440",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 134947,
+   "numeroBio": 56031,
+   "cp": "17430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 138619,
+   "numeroBio": 59703,
+   "cp": "47380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 145483,
+   "numeroBio": 66562,
+   "cp": "33620",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 116452,
+   "numeroBio": 37536,
+   "cp": "17240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 127789,
+   "numeroBio": 48873,
+   "cp": "17190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 21357,
+   "numeroBio": 119430,
+   "cp": "47300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 136527,
+   "numeroBio": 57611,
+   "cp": "33920",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 145651,
+   "numeroBio": 66730,
+   "cp": "87370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 145843,
+   "numeroBio": 66922,
+   "cp": "87230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 135266,
+   "numeroBio": 56350,
+   "cp": "47240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 145281,
+   "numeroBio": 66360,
+   "cp": "87800",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 117728,
+   "numeroBio": 38812,
+   "cp": "86390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 137110,
+   "numeroBio": 58194,
+   "cp": "86390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 138850,
+   "numeroBio": 59934,
+   "cp": "33330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 134576,
+   "numeroBio": 55660,
+   "cp": "86340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 117838,
+   "numeroBio": 38922,
+   "cp": "17250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 147242,
+   "numeroBio": 68306,
+   "cp": "19130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 142280,
+   "numeroBio": 63364,
+   "cp": "87430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 120101,
+   "numeroBio": 41185,
+   "cp": "47250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 136124,
+   "numeroBio": 57208,
+   "cp": "33138",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 143465,
+   "numeroBio": 64549,
+   "cp": "17190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 4746,
+   "numeroBio": 102832,
+   "cp": "86380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 127793,
+   "numeroBio": 48877,
+   "cp": "87300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 119399,
+   "numeroBio": 40483,
+   "cp": "79350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 140650,
+   "numeroBio": 61734,
+   "cp": "47160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 136345,
+   "numeroBio": 57429,
+   "cp": "33710",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 140077,
+   "numeroBio": 61161,
+   "cp": "33370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 121525,
+   "numeroBio": 42609,
+   "cp": "19490",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 135923,
+   "numeroBio": 57007,
+   "cp": "86430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 129354,
+   "numeroBio": 50438,
+   "cp": "79600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 137284,
+   "numeroBio": 58368,
+   "cp": "79500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 147862,
+   "numeroBio": 68926,
+   "cp": "86330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 142261,
+   "numeroBio": 63345,
+   "cp": "87400",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 111307,
+   "numeroBio": 32423,
+   "cp": "87330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 144835,
+   "numeroBio": 65914,
+   "cp": "19320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 156049,
+   "numeroBio": 300236,
+   "cp": "86500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 126000,
+   "numeroBio": 47084,
+   "cp": "19450",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 144346,
+   "numeroBio": 65430,
+   "cp": "17500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 121015,
+   "numeroBio": 42099,
+   "cp": "19330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 148594,
+   "numeroBio": 69658,
+   "cp": "47470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 113609,
+   "numeroBio": 34722,
+   "cp": "19560",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 137492,
+   "numeroBio": 58576,
+   "cp": "79160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 139263,
+   "numeroBio": 60347,
+   "cp": "17220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 141141,
+   "numeroBio": 62225,
+   "cp": "87120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 145307,
+   "numeroBio": 66386,
+   "cp": "17290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 137796,
+   "numeroBio": 58880,
+   "cp": "86130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 88498,
+   "numeroBio": 10838,
+   "cp": "17270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 136533,
+   "numeroBio": 57617,
+   "cp": "19320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 145922,
+   "numeroBio": 67001,
+   "cp": "19160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 148734,
+   "numeroBio": 69798,
+   "cp": "47200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 149142,
+   "numeroBio": 70206,
+   "cp": "19130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 138931,
+   "numeroBio": 60015,
+   "cp": "79300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52430,
+   "numeroBio": 150520,
+   "cp": "29260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48833,
+   "numeroBio": 146925,
+   "cp": "56190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48504,
+   "numeroBio": 146596,
+   "cp": "22120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19797,
+   "numeroBio": 117859,
+   "cp": "35490",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51159,
+   "numeroBio": 149245,
+   "cp": "56250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50753,
+   "numeroBio": 148836,
+   "cp": "29830",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51608,
+   "numeroBio": 149695,
+   "cp": "29470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47345,
+   "numeroBio": 145435,
+   "cp": "29590",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48867,
+   "numeroBio": 146959,
+   "cp": "56490",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 30499,
+   "numeroBio": 128550,
+   "cp": "29340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49281,
+   "numeroBio": 147370,
+   "cp": "29810",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51135,
+   "numeroBio": 149222,
+   "cp": "56450",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52485,
+   "numeroBio": 150576,
+   "cp": "56650",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51212,
+   "numeroBio": 149297,
+   "cp": "22870",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50407,
+   "numeroBio": 148492,
+   "cp": "56310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47088,
+   "numeroBio": 145178,
+   "cp": "22390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48212,
+   "numeroBio": 146304,
+   "cp": "35310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 59989,
+   "numeroBio": 158083,
+   "cp": "22740",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48747,
+   "numeroBio": 146840,
+   "cp": "35740",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 160617,
+   "numeroBio": 304804,
+   "cp": "22200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60523,
+   "numeroBio": 158615,
+   "cp": "22570",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47117,
+   "numeroBio": 145207,
+   "cp": "29460",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49285,
+   "numeroBio": 147374,
+   "cp": "35580",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51092,
+   "numeroBio": 149178,
+   "cp": "35480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19578,
+   "numeroBio": 117641,
+   "cp": "35500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 45180,
+   "numeroBio": 143272,
+   "cp": "35500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48693,
+   "numeroBio": 146786,
+   "cp": "35150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 142064,
+   "numeroBio": 63148,
+   "cp": "29340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48201,
+   "numeroBio": 146293,
+   "cp": "56340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52400,
+   "numeroBio": 150489,
+   "cp": "29280",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51991,
+   "numeroBio": 150079,
+   "cp": "29470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48312,
+   "numeroBio": 146404,
+   "cp": "29710",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46560,
+   "numeroBio": 144650,
+   "cp": "29710",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50403,
+   "numeroBio": 148488,
+   "cp": "35133",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 57416,
+   "numeroBio": 155500,
+   "cp": "22530",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52325,
+   "numeroBio": 150415,
+   "cp": "22110",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49201,
+   "numeroBio": 147292,
+   "cp": "35330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49425,
+   "numeroBio": 147513,
+   "cp": "29280",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47510,
+   "numeroBio": 145601,
+   "cp": "56330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50013,
+   "numeroBio": 148104,
+   "cp": "35000",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7786,
+   "numeroBio": 105857,
+   "cp": "35630",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48759,
+   "numeroBio": 146852,
+   "cp": "56120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50437,
+   "numeroBio": 148522,
+   "cp": "56860",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48863,
+   "numeroBio": 146955,
+   "cp": "29860",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2202,
+   "numeroBio": 100295,
+   "cp": "35690",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12943,
+   "numeroBio": 111003,
+   "cp": "22110",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 57252,
+   "numeroBio": 155336,
+   "cp": "35520",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46033,
+   "numeroBio": 144123,
+   "cp": "56240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47320,
+   "numeroBio": 145410,
+   "cp": "29430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 97881,
+   "numeroBio": 19164,
+   "cp": "29690",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2471,
+   "numeroBio": 100565,
+   "cp": "35390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49176,
+   "numeroBio": 147267,
+   "cp": "35230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52092,
+   "numeroBio": 150182,
+   "cp": "35850",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50977,
+   "numeroBio": 149061,
+   "cp": "29200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46716,
+   "numeroBio": 144806,
+   "cp": "29590",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 18962,
+   "numeroBio": 117024,
+   "cp": "22410",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48468,
+   "numeroBio": 146558,
+   "cp": "29460",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 53202,
+   "numeroBio": 151293,
+   "cp": "29890",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 4704,
+   "numeroBio": 102791,
+   "cp": "35390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19599,
+   "numeroBio": 117662,
+   "cp": "22400",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7016,
+   "numeroBio": 105089,
+   "cp": "56190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60174,
+   "numeroBio": 158267,
+   "cp": "56400",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 5559,
+   "numeroBio": 103636,
+   "cp": "35220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19793,
+   "numeroBio": 117855,
+   "cp": "56130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 129497,
+   "numeroBio": 50581,
+   "cp": "56800",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51888,
+   "numeroBio": 149976,
+   "cp": "56850",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51022,
+   "numeroBio": 149108,
+   "cp": "29180",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51000,
+   "numeroBio": 149086,
+   "cp": "22450",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51219,
+   "numeroBio": 149304,
+   "cp": "29290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48200,
+   "numeroBio": 146292,
+   "cp": "56190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46292,
+   "numeroBio": 144384,
+   "cp": "35830",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50809,
+   "numeroBio": 148892,
+   "cp": "56680",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51009,
+   "numeroBio": 149095,
+   "cp": "22370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46240,
+   "numeroBio": 144332,
+   "cp": "29450",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 53023,
+   "numeroBio": 151115,
+   "cp": "56800",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51320,
+   "numeroBio": 149406,
+   "cp": "56610",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51221,
+   "numeroBio": 149306,
+   "cp": "56250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 157696,
+   "numeroBio": 301883,
+   "cp": "56240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46966,
+   "numeroBio": 145055,
+   "cp": "29800",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19459,
+   "numeroBio": 117521,
+   "cp": "56350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46750,
+   "numeroBio": 144839,
+   "cp": "29900",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12115,
+   "numeroBio": 110181,
+   "cp": "35550",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52051,
+   "numeroBio": 150140,
+   "cp": "29290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49926,
+   "numeroBio": 148016,
+   "cp": "29160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 14825,
+   "numeroBio": 112884,
+   "cp": "29310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 122711,
+   "numeroBio": 43795,
+   "cp": "29233",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12637,
+   "numeroBio": 110702,
+   "cp": "29410",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 18498,
+   "numeroBio": 116555,
+   "cp": "35530",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12021,
+   "numeroBio": 110086,
+   "cp": "35580",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 117720,
+   "numeroBio": 38804,
+   "cp": "29860",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12806,
+   "numeroBio": 110870,
+   "cp": "35120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 9829,
+   "numeroBio": 107900,
+   "cp": "35460",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 122475,
+   "numeroBio": 43559,
+   "cp": "56350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 14532,
+   "numeroBio": 112592,
+   "cp": "56850",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11100,
+   "numeroBio": 109172,
+   "cp": "35270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60132,
+   "numeroBio": 158226,
+   "cp": "29720",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 44088,
+   "numeroBio": 142174,
+   "cp": "22570",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 4285,
+   "numeroBio": 102370,
+   "cp": "22310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56661,
+   "numeroBio": 154743,
+   "cp": "29560",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51222,
+   "numeroBio": 149307,
+   "cp": "56590",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 35966,
+   "numeroBio": 134047,
+   "cp": "35520",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 16607,
+   "numeroBio": 114671,
+   "cp": "56190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56548,
+   "numeroBio": 154631,
+   "cp": "22640",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56486,
+   "numeroBio": 154568,
+   "cp": "56370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19135,
+   "numeroBio": 117197,
+   "cp": "22100",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56331,
+   "numeroBio": 154415,
+   "cp": "35270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7879,
+   "numeroBio": 105949,
+   "cp": "35850",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12102,
+   "numeroBio": 110168,
+   "cp": "35610",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 18749,
+   "numeroBio": 116805,
+   "cp": "35690",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52196,
+   "numeroBio": 150286,
+   "cp": "29830",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12526,
+   "numeroBio": 110592,
+   "cp": "56420",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19157,
+   "numeroBio": 117219,
+   "cp": "22240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11064,
+   "numeroBio": 109136,
+   "cp": "29430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56490,
+   "numeroBio": 154572,
+   "cp": "35380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60790,
+   "numeroBio": 158880,
+   "cp": "35610",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41931,
+   "numeroBio": 140013,
+   "cp": "35113",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 8705,
+   "numeroBio": 106773,
+   "cp": "56250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12839,
+   "numeroBio": 110903,
+   "cp": "56190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19022,
+   "numeroBio": 117084,
+   "cp": "22810",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 4102,
+   "numeroBio": 102191,
+   "cp": "29880",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 4068,
+   "numeroBio": 102157,
+   "cp": "29250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60360,
+   "numeroBio": 158453,
+   "cp": "56140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34183,
+   "numeroBio": 132246,
+   "cp": "29170",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 45903,
+   "numeroBio": 143993,
+   "cp": "29810",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 30629,
+   "numeroBio": 128681,
+   "cp": "29470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7308,
+   "numeroBio": 105379,
+   "cp": "22110",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37580,
+   "numeroBio": 135661,
+   "cp": "22380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56501,
+   "numeroBio": 154583,
+   "cp": "35150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19073,
+   "numeroBio": 117134,
+   "cp": "35150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60392,
+   "numeroBio": 158484,
+   "cp": "35330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13655,
+   "numeroBio": 111712,
+   "cp": "56380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 32796,
+   "numeroBio": 130854,
+   "cp": "56140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19807,
+   "numeroBio": 117869,
+   "cp": "29000",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7775,
+   "numeroBio": 105846,
+   "cp": "29300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19675,
+   "numeroBio": 117739,
+   "cp": "35340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 18961,
+   "numeroBio": 117023,
+   "cp": "35330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11551,
+   "numeroBio": 109616,
+   "cp": "22110",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 16833,
+   "numeroBio": 114897,
+   "cp": "29370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11942,
+   "numeroBio": 110008,
+   "cp": "29450",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 159060,
+   "numeroBio": 303247,
+   "cp": "35450",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19357,
+   "numeroBio": 117418,
+   "cp": "35610",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11565,
+   "numeroBio": 109630,
+   "cp": "35620",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2630,
+   "numeroBio": 100725,
+   "cp": "29800",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56477,
+   "numeroBio": 154559,
+   "cp": "29770",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 36164,
+   "numeroBio": 134246,
+   "cp": "35890",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 3306,
+   "numeroBio": 101396,
+   "cp": "29170",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19444,
+   "numeroBio": 117504,
+   "cp": "29390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11175,
+   "numeroBio": 109246,
+   "cp": "35490",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 57163,
+   "numeroBio": 155247,
+   "cp": "56380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 9540,
+   "numeroBio": 107609,
+   "cp": "35150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7226,
+   "numeroBio": 105297,
+   "cp": "35140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 133836,
+   "numeroBio": 54920,
+   "cp": "35340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 35103,
+   "numeroBio": 133167,
+   "cp": "56520",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 33739,
+   "numeroBio": 131803,
+   "cp": "29190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19766,
+   "numeroBio": 117829,
+   "cp": "35137",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 58625,
+   "numeroBio": 156707,
+   "cp": "35330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 36516,
+   "numeroBio": 134598,
+   "cp": "35170",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13697,
+   "numeroBio": 111753,
+   "cp": "22380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 6852,
+   "numeroBio": 104925,
+   "cp": "29410",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50526,
+   "numeroBio": 148611,
+   "cp": "29300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 14208,
+   "numeroBio": 112268,
+   "cp": "35470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 14362,
+   "numeroBio": 112422,
+   "cp": "56500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48054,
+   "numeroBio": 146146,
+   "cp": "56190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13177,
+   "numeroBio": 111233,
+   "cp": "56120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 14774,
+   "numeroBio": 112832,
+   "cp": "35150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46360,
+   "numeroBio": 144451,
+   "cp": "22200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12782,
+   "numeroBio": 110845,
+   "cp": "22600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11421,
+   "numeroBio": 109489,
+   "cp": "22860",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11609,
+   "numeroBio": 109674,
+   "cp": "29800",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 103441,
+   "numeroBio": 24559,
+   "cp": "35140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56706,
+   "numeroBio": 154788,
+   "cp": "35540",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52537,
+   "numeroBio": 150628,
+   "cp": "56420",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 18443,
+   "numeroBio": 116499,
+   "cp": "56500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 36690,
+   "numeroBio": 134771,
+   "cp": "35480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 5400,
+   "numeroBio": 103481,
+   "cp": "56690",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37091,
+   "numeroBio": 135172,
+   "cp": "29800",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47941,
+   "numeroBio": 146034,
+   "cp": "29217",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19492,
+   "numeroBio": 117554,
+   "cp": "29450",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41614,
+   "numeroBio": 139695,
+   "cp": "35340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 33816,
+   "numeroBio": 131880,
+   "cp": "22200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 38843,
+   "numeroBio": 136920,
+   "cp": "22100",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11550,
+   "numeroBio": 109615,
+   "cp": "29520",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7504,
+   "numeroBio": 105575,
+   "cp": "35340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 36315,
+   "numeroBio": 134397,
+   "cp": "29690",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49838,
+   "numeroBio": 147928,
+   "cp": "29470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13712,
+   "numeroBio": 111768,
+   "cp": "56480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 53623,
+   "numeroBio": 151711,
+   "cp": "22200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47016,
+   "numeroBio": 145105,
+   "cp": "22270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47944,
+   "numeroBio": 146037,
+   "cp": "22120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41676,
+   "numeroBio": 139758,
+   "cp": "22430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 40929,
+   "numeroBio": 139009,
+   "cp": "29000",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 99517,
+   "numeroBio": 20642,
+   "cp": "35290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 54482,
+   "numeroBio": 152568,
+   "cp": "22200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 36976,
+   "numeroBio": 135057,
+   "cp": "56390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37983,
+   "numeroBio": 136063,
+   "cp": "29260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37157,
+   "numeroBio": 135238,
+   "cp": "29100",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 58675,
+   "numeroBio": 156757,
+   "cp": "56800",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47643,
+   "numeroBio": 145731,
+   "cp": "29217",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 162268,
+   "numeroBio": 306455,
+   "cp": "35120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48597,
+   "numeroBio": 146690,
+   "cp": "56700",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47215,
+   "numeroBio": 145306,
+   "cp": "56250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 31088,
+   "numeroBio": 129140,
+   "cp": "35640",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48420,
+   "numeroBio": 146511,
+   "cp": "29140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 123013,
+   "numeroBio": 44097,
+   "cp": "29510",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 138746,
+   "numeroBio": 59830,
+   "cp": "29510",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11409,
+   "numeroBio": 109478,
+   "cp": "29710",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 5175,
+   "numeroBio": 103255,
+   "cp": "29880",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 55907,
+   "numeroBio": 153991,
+   "cp": "56230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46061,
+   "numeroBio": 144150,
+   "cp": "29910",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51638,
+   "numeroBio": 149726,
+   "cp": "56230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13273,
+   "numeroBio": 111328,
+   "cp": "56400",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 54113,
+   "numeroBio": 152202,
+   "cp": "29160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13312,
+   "numeroBio": 111369,
+   "cp": "35131",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47143,
+   "numeroBio": 145233,
+   "cp": "56130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46184,
+   "numeroBio": 144274,
+   "cp": "22660",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 36240,
+   "numeroBio": 134322,
+   "cp": "56840",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 31159,
+   "numeroBio": 129209,
+   "cp": "22110",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 55056,
+   "numeroBio": 153139,
+   "cp": "29670",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 36999,
+   "numeroBio": 135080,
+   "cp": "29870",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 131302,
+   "numeroBio": 52386,
+   "cp": "35520",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 5144,
+   "numeroBio": 103224,
+   "cp": "56880",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48074,
+   "numeroBio": 146167,
+   "cp": "56400",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34094,
+   "numeroBio": 132159,
+   "cp": "29190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 14686,
+   "numeroBio": 112744,
+   "cp": "29140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7664,
+   "numeroBio": 105734,
+   "cp": "35720",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 44174,
+   "numeroBio": 142260,
+   "cp": "35830",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 36282,
+   "numeroBio": 134364,
+   "cp": "22330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37517,
+   "numeroBio": 135599,
+   "cp": "35620",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 5515,
+   "numeroBio": 103593,
+   "cp": "22270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37092,
+   "numeroBio": 135173,
+   "cp": "29860",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 45857,
+   "numeroBio": 143947,
+   "cp": "35360",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46167,
+   "numeroBio": 144257,
+   "cp": "22980",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 36927,
+   "numeroBio": 135009,
+   "cp": "35360",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37151,
+   "numeroBio": 135232,
+   "cp": "35310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49483,
+   "numeroBio": 147572,
+   "cp": "22480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 4116,
+   "numeroBio": 102205,
+   "cp": "35150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 59975,
+   "numeroBio": 158069,
+   "cp": "35480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60444,
+   "numeroBio": 158536,
+   "cp": "56220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37444,
+   "numeroBio": 135525,
+   "cp": "29470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 38529,
+   "numeroBio": 136607,
+   "cp": "56110",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 38013,
+   "numeroBio": 136158,
+   "cp": "29590",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 86593,
+   "numeroBio": 181352,
+   "cp": "22420",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41018,
+   "numeroBio": 139100,
+   "cp": "56250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49937,
+   "numeroBio": 148027,
+   "cp": "29690",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48493,
+   "numeroBio": 146585,
+   "cp": "56240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 38717,
+   "numeroBio": 136795,
+   "cp": "29890",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 14906,
+   "numeroBio": 112968,
+   "cp": "35410",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7873,
+   "numeroBio": 105943,
+   "cp": "35230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 118616,
+   "numeroBio": 39700,
+   "cp": "29190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46565,
+   "numeroBio": 144655,
+   "cp": "56310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 40897,
+   "numeroBio": 139010,
+   "cp": "29450",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 120804,
+   "numeroBio": 41888,
+   "cp": "29810",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 90479,
+   "numeroBio": 12138,
+   "cp": "29160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 98633,
+   "numeroBio": 19779,
+   "cp": "29300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34067,
+   "numeroBio": 132132,
+   "cp": "35610",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 33094,
+   "numeroBio": 131153,
+   "cp": "35460",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 38238,
+   "numeroBio": 136318,
+   "cp": "56860",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2618,
+   "numeroBio": 100713,
+   "cp": "22610",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47564,
+   "numeroBio": 145655,
+   "cp": "35630",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34484,
+   "numeroBio": 132544,
+   "cp": "56400",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52328,
+   "numeroBio": 150418,
+   "cp": "29470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 31392,
+   "numeroBio": 129440,
+   "cp": "29100",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52460,
+   "numeroBio": 150552,
+   "cp": "29860",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 43332,
+   "numeroBio": 141416,
+   "cp": "22610",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34043,
+   "numeroBio": 132108,
+   "cp": "29680",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 38280,
+   "numeroBio": 136359,
+   "cp": "29450",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 59962,
+   "numeroBio": 158056,
+   "cp": "29400",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 31198,
+   "numeroBio": 129248,
+   "cp": "35480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 109177,
+   "numeroBio": 30294,
+   "cp": "56460",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34234,
+   "numeroBio": 132296,
+   "cp": "22430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 58707,
+   "numeroBio": 156789,
+   "cp": "29300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 543,
+   "numeroBio": 543,
+   "cp": "35190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 38136,
+   "numeroBio": 136217,
+   "cp": "56250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 121947,
+   "numeroBio": 43031,
+   "cp": "35630",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 38058,
+   "numeroBio": 136136,
+   "cp": "35500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46593,
+   "numeroBio": 144682,
+   "cp": "35750",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 15069,
+   "numeroBio": 113131,
+   "cp": "35620",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37577,
+   "numeroBio": 135658,
+   "cp": "56310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 39767,
+   "numeroBio": 137848,
+   "cp": "35480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 39584,
+   "numeroBio": 137666,
+   "cp": "22260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 44132,
+   "numeroBio": 142218,
+   "cp": "22590",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 59126,
+   "numeroBio": 157215,
+   "cp": "35320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 55590,
+   "numeroBio": 153673,
+   "cp": "35113",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 4953,
+   "numeroBio": 103036,
+   "cp": "29340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37702,
+   "numeroBio": 135784,
+   "cp": "29830",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 55545,
+   "numeroBio": 153627,
+   "cp": "56220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 38064,
+   "numeroBio": 136142,
+   "cp": "29640",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 5977,
+   "numeroBio": 104054,
+   "cp": "56410",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41750,
+   "numeroBio": 139833,
+   "cp": "22300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 39798,
+   "numeroBio": 137880,
+   "cp": "22270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 55045,
+   "numeroBio": 153128,
+   "cp": "35150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2444,
+   "numeroBio": 100538,
+   "cp": "35190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 14059,
+   "numeroBio": 112120,
+   "cp": "56610",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 59955,
+   "numeroBio": 158049,
+   "cp": "35580",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 54833,
+   "numeroBio": 152918,
+   "cp": "29160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 69869,
+   "numeroBio": 4634,
+   "cp": "35680",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2230,
+   "numeroBio": 100323,
+   "cp": "56230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 54702,
+   "numeroBio": 152788,
+   "cp": "56120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 147738,
+   "numeroBio": 68802,
+   "cp": "22820",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 5984,
+   "numeroBio": 104061,
+   "cp": "22300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 59477,
+   "numeroBio": 157566,
+   "cp": "29170",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 4971,
+   "numeroBio": 103054,
+   "cp": "29380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41476,
+   "numeroBio": 139558,
+   "cp": "22690",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 42177,
+   "numeroBio": 140262,
+   "cp": "35120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 4950,
+   "numeroBio": 103033,
+   "cp": "35680",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 105803,
+   "numeroBio": 26920,
+   "cp": "29470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 39459,
+   "numeroBio": 137540,
+   "cp": "56250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47359,
+   "numeroBio": 145449,
+   "cp": "56240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 86568,
+   "numeroBio": 181257,
+   "cp": "35310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 55727,
+   "numeroBio": 153811,
+   "cp": "29570",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 39804,
+   "numeroBio": 137886,
+   "cp": "35133",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 5923,
+   "numeroBio": 103999,
+   "cp": "35310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 30877,
+   "numeroBio": 128931,
+   "cp": "35550",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 39729,
+   "numeroBio": 137810,
+   "cp": "56450",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41510,
+   "numeroBio": 139592,
+   "cp": "35370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 6130,
+   "numeroBio": 104204,
+   "cp": "22550",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 6068,
+   "numeroBio": 104142,
+   "cp": "22150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 59489,
+   "numeroBio": 157578,
+   "cp": "35490",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 134504,
+   "numeroBio": 55588,
+   "cp": "56200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 135238,
+   "numeroBio": 56322,
+   "cp": "35120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 138498,
+   "numeroBio": 59582,
+   "cp": "56330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 44704,
+   "numeroBio": 142791,
+   "cp": "29710",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34811,
+   "numeroBio": 132871,
+   "cp": "56480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 40690,
+   "numeroBio": 138772,
+   "cp": "35320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 40486,
+   "numeroBio": 138566,
+   "cp": "22630",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2889,
+   "numeroBio": 100982,
+   "cp": "29740",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2669,
+   "numeroBio": 100763,
+   "cp": "22340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 53672,
+   "numeroBio": 151760,
+   "cp": "35440",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60749,
+   "numeroBio": 158839,
+   "cp": "22330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 42601,
+   "numeroBio": 140686,
+   "cp": "35290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34642,
+   "numeroBio": 132702,
+   "cp": "22490",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 35067,
+   "numeroBio": 133129,
+   "cp": "29180",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 35074,
+   "numeroBio": 133138,
+   "cp": "35610",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 96907,
+   "numeroBio": 18196,
+   "cp": "56550",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 59606,
+   "numeroBio": 157698,
+   "cp": "22200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 42164,
+   "numeroBio": 140249,
+   "cp": "35340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41032,
+   "numeroBio": 139114,
+   "cp": "29470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 71801,
+   "numeroBio": 6566,
+   "cp": "35580",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 45224,
+   "numeroBio": 143314,
+   "cp": "29880",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48498,
+   "numeroBio": 146590,
+   "cp": "56650",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 86784,
+   "numeroBio": 180650,
+   "cp": "29380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 87556,
+   "numeroBio": 180281,
+   "cp": "22300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 55692,
+   "numeroBio": 153776,
+   "cp": "56320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 69769,
+   "numeroBio": 4534,
+   "cp": "35380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 119351,
+   "numeroBio": 40435,
+   "cp": "56390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 42093,
+   "numeroBio": 140177,
+   "cp": "56680",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 42804,
+   "numeroBio": 140888,
+   "cp": "29190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 3296,
+   "numeroBio": 101386,
+   "cp": "56190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13851,
+   "numeroBio": 111908,
+   "cp": "56520",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 45152,
+   "numeroBio": 143244,
+   "cp": "22200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 43438,
+   "numeroBio": 141522,
+   "cp": "35270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 30940,
+   "numeroBio": 128992,
+   "cp": "35140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 43686,
+   "numeroBio": 141769,
+   "cp": "35320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 5660,
+   "numeroBio": 103738,
+   "cp": "22560",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 3270,
+   "numeroBio": 101360,
+   "cp": "29520",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2695,
+   "numeroBio": 100790,
+   "cp": "29310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 4997,
+   "numeroBio": 103081,
+   "cp": "29620",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 83328,
+   "numeroBio": 172986,
+   "cp": "29440",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 83053,
+   "numeroBio": 172711,
+   "cp": "35150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 99950,
+   "numeroBio": 21072,
+   "cp": "35000",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 71700,
+   "numeroBio": 6465,
+   "cp": "29252",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 36171,
+   "numeroBio": 134253,
+   "cp": "29620",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 4994,
+   "numeroBio": 103078,
+   "cp": "29160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 53771,
+   "numeroBio": 151858,
+   "cp": "35550",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 92988,
+   "numeroBio": 14327,
+   "cp": "22130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 115178,
+   "numeroBio": 36291,
+   "cp": "56130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 31306,
+   "numeroBio": 129355,
+   "cp": "35150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 74738,
+   "numeroBio": 9503,
+   "cp": "56220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 83243,
+   "numeroBio": 172901,
+   "cp": "29160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 84089,
+   "numeroBio": 173746,
+   "cp": "22390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49252,
+   "numeroBio": 147342,
+   "cp": "22510",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 45731,
+   "numeroBio": 143823,
+   "cp": "35520",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 33474,
+   "numeroBio": 131538,
+   "cp": "29200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 61502,
+   "numeroBio": 159593,
+   "cp": "35520",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 72163,
+   "numeroBio": 6928,
+   "cp": "22110",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 85700,
+   "numeroBio": 10147,
+   "cp": "35150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 1493,
+   "numeroBio": 1493,
+   "cp": "29550",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 70109,
+   "numeroBio": 4874,
+   "cp": "35830",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 80956,
+   "numeroBio": 170618,
+   "cp": "56760",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 83413,
+   "numeroBio": 173071,
+   "cp": "35520",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 91454,
+   "numeroBio": 280843,
+   "cp": "29510",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 83686,
+   "numeroBio": 173344,
+   "cp": "29450",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 81915,
+   "numeroBio": 171573,
+   "cp": "35240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 87617,
+   "numeroBio": 180363,
+   "cp": "29510",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 87406,
+   "numeroBio": 181908,
+   "cp": "22140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50029,
+   "numeroBio": 148120,
+   "cp": "22130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 67358,
+   "numeroBio": 2123,
+   "cp": "56350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 99857,
+   "numeroBio": 20979,
+   "cp": "35130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 117147,
+   "numeroBio": 38231,
+   "cp": "35620",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 94568,
+   "numeroBio": 15863,
+   "cp": "35500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 99508,
+   "numeroBio": 20633,
+   "cp": "29470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 126687,
+   "numeroBio": 47771,
+   "cp": "22630",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 120819,
+   "numeroBio": 41903,
+   "cp": "35370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 97755,
+   "numeroBio": 19039,
+   "cp": "56120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 69290,
+   "numeroBio": 4055,
+   "cp": "29560",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 67323,
+   "numeroBio": 2088,
+   "cp": "35320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 72518,
+   "numeroBio": 7283,
+   "cp": "56320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 70860,
+   "numeroBio": 5625,
+   "cp": "29190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 91144,
+   "numeroBio": 12640,
+   "cp": "29120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 90066,
+   "numeroBio": 11726,
+   "cp": "22800",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 90121,
+   "numeroBio": 11781,
+   "cp": "29690",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 74008,
+   "numeroBio": 8773,
+   "cp": "35370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 73010,
+   "numeroBio": 7775,
+   "cp": "35750",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 160206,
+   "numeroBio": 304393,
+   "cp": "35470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 97726,
+   "numeroBio": 19010,
+   "cp": "35310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 91414,
+   "numeroBio": 12909,
+   "cp": "56430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 101145,
+   "numeroBio": 22265,
+   "cp": "29510",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49521,
+   "numeroBio": 147610,
+   "cp": "29470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 99996,
+   "numeroBio": 21118,
+   "cp": "35420",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19350,
+   "numeroBio": 117411,
+   "cp": "56700",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 92235,
+   "numeroBio": 13727,
+   "cp": "29410",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 20848,
+   "numeroBio": 118915,
+   "cp": "35450",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 97082,
+   "numeroBio": 18371,
+   "cp": "29930",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 97098,
+   "numeroBio": 18387,
+   "cp": "35610",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 99692,
+   "numeroBio": 20814,
+   "cp": "56380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 99827,
+   "numeroBio": 20949,
+   "cp": "35500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 105027,
+   "numeroBio": 26145,
+   "cp": "35580",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 119595,
+   "numeroBio": 40679,
+   "cp": "35610",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 115280,
+   "numeroBio": 36393,
+   "cp": "29150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 108701,
+   "numeroBio": 29818,
+   "cp": "35113",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 128904,
+   "numeroBio": 49988,
+   "cp": "35580",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 134483,
+   "numeroBio": 55567,
+   "cp": "29280",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 145875,
+   "numeroBio": 66954,
+   "cp": "29970",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 137772,
+   "numeroBio": 58856,
+   "cp": "35120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 143147,
+   "numeroBio": 64231,
+   "cp": "29350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 143570,
+   "numeroBio": 64654,
+   "cp": "29100",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 133340,
+   "numeroBio": 54424,
+   "cp": "56120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 128874,
+   "numeroBio": 49958,
+   "cp": "29370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 134374,
+   "numeroBio": 55458,
+   "cp": "35340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 125511,
+   "numeroBio": 46595,
+   "cp": "56480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 124752,
+   "numeroBio": 45836,
+   "cp": "22110",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 117082,
+   "numeroBio": 38166,
+   "cp": "35250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 129597,
+   "numeroBio": 50681,
+   "cp": "35610",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 138203,
+   "numeroBio": 59287,
+   "cp": "35480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 131074,
+   "numeroBio": 52158,
+   "cp": "29280",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 117191,
+   "numeroBio": 38275,
+   "cp": "35460",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 107086,
+   "numeroBio": 28203,
+   "cp": "76630",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 87183,
+   "numeroBio": 181358,
+   "cp": "14320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 116808,
+   "numeroBio": 37892,
+   "cp": "61210",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 94386,
+   "numeroBio": 15707,
+   "cp": "76490",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 116586,
+   "numeroBio": 37670,
+   "cp": "61430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 100226,
+   "numeroBio": 21347,
+   "cp": "14440",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 97002,
+   "numeroBio": 18291,
+   "cp": "61220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 74457,
+   "numeroBio": 9222,
+   "cp": "50870",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 72343,
+   "numeroBio": 7108,
+   "cp": "50250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 108431,
+   "numeroBio": 29548,
+   "cp": "76400",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11168,
+   "numeroBio": 109239,
+   "cp": "76890",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13615,
+   "numeroBio": 111672,
+   "cp": "27230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7256,
+   "numeroBio": 105327,
+   "cp": "76750",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12241,
+   "numeroBio": 110307,
+   "cp": "76750",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11608,
+   "numeroBio": 109673,
+   "cp": "27480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7232,
+   "numeroBio": 105303,
+   "cp": "76560",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50853,
+   "numeroBio": 148936,
+   "cp": "27210",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 18094,
+   "numeroBio": 116150,
+   "cp": "14240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 118490,
+   "numeroBio": 39574,
+   "cp": "14340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2310,
+   "numeroBio": 100403,
+   "cp": "14140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56489,
+   "numeroBio": 154571,
+   "cp": "14240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 45899,
+   "numeroBio": 143989,
+   "cp": "14270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 3431,
+   "numeroBio": 101521,
+   "cp": "14490",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12794,
+   "numeroBio": 110858,
+   "cp": "14140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 14614,
+   "numeroBio": 112673,
+   "cp": "14130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37063,
+   "numeroBio": 135144,
+   "cp": "14410",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46212,
+   "numeroBio": 144303,
+   "cp": "14350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19131,
+   "numeroBio": 117193,
+   "cp": "14350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19039,
+   "numeroBio": 117100,
+   "cp": "14600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51007,
+   "numeroBio": 149093,
+   "cp": "14110",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 14117,
+   "numeroBio": 112175,
+   "cp": "14600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 18721,
+   "numeroBio": 116775,
+   "cp": "50660",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 106964,
+   "numeroBio": 28081,
+   "cp": "50210",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7263,
+   "numeroBio": 105334,
+   "cp": "50430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 18932,
+   "numeroBio": 116992,
+   "cp": "50420",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50327,
+   "numeroBio": 148415,
+   "cp": "50500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 33606,
+   "numeroBio": 131670,
+   "cp": "50380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11441,
+   "numeroBio": 109509,
+   "cp": "50240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49824,
+   "numeroBio": 147914,
+   "cp": "50200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 4445,
+   "numeroBio": 102530,
+   "cp": "50540",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 92762,
+   "numeroBio": 14101,
+   "cp": "50340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 3447,
+   "numeroBio": 101537,
+   "cp": "50520",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 99829,
+   "numeroBio": 20951,
+   "cp": "50430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50052,
+   "numeroBio": 148143,
+   "cp": "50290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47148,
+   "numeroBio": 145238,
+   "cp": "50700",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37991,
+   "numeroBio": 136071,
+   "cp": "50300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13846,
+   "numeroBio": 111903,
+   "cp": "50260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 141843,
+   "numeroBio": 62927,
+   "cp": "50510",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 40738,
+   "numeroBio": 138820,
+   "cp": "50200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51101,
+   "numeroBio": 149187,
+   "cp": "61430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12236,
+   "numeroBio": 110302,
+   "cp": "61350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19085,
+   "numeroBio": 117146,
+   "cp": "61160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2127,
+   "numeroBio": 100221,
+   "cp": "61290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19351,
+   "numeroBio": 117412,
+   "cp": "61600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 21153,
+   "numeroBio": 119227,
+   "cp": "61100",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47311,
+   "numeroBio": 145401,
+   "cp": "61470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 14924,
+   "numeroBio": 112986,
+   "cp": "61250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19233,
+   "numeroBio": 117296,
+   "cp": "61350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19037,
+   "numeroBio": 117098,
+   "cp": "61230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 130605,
+   "numeroBio": 51689,
+   "cp": "61120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 14281,
+   "numeroBio": 112342,
+   "cp": "27270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49181,
+   "numeroBio": 147272,
+   "cp": "61230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 62099,
+   "numeroBio": 160182,
+   "cp": "61390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 137605,
+   "numeroBio": 58689,
+   "cp": "50290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37536,
+   "numeroBio": 135618,
+   "cp": "50000",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34218,
+   "numeroBio": 133068,
+   "cp": "14350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37629,
+   "numeroBio": 135711,
+   "cp": "61420",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 8217,
+   "numeroBio": 106283,
+   "cp": "14290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52039,
+   "numeroBio": 150128,
+   "cp": "50660",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 6113,
+   "numeroBio": 104187,
+   "cp": "61140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51486,
+   "numeroBio": 149573,
+   "cp": "50720",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41419,
+   "numeroBio": 139501,
+   "cp": "50160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60151,
+   "numeroBio": 158244,
+   "cp": "50660",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41396,
+   "numeroBio": 139478,
+   "cp": "14770",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 39586,
+   "numeroBio": 137668,
+   "cp": "14230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49894,
+   "numeroBio": 147984,
+   "cp": "27500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 42535,
+   "numeroBio": 140619,
+   "cp": "14710",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 42945,
+   "numeroBio": 141029,
+   "cp": "14190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13789,
+   "numeroBio": 111846,
+   "cp": "76450",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 35113,
+   "numeroBio": 133176,
+   "cp": "61430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 4590,
+   "numeroBio": 102677,
+   "cp": "14500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2119,
+   "numeroBio": 100213,
+   "cp": "14600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 42787,
+   "numeroBio": 140871,
+   "cp": "50260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 33721,
+   "numeroBio": 131785,
+   "cp": "27310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 70167,
+   "numeroBio": 4932,
+   "cp": "50800",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2549,
+   "numeroBio": 100644,
+   "cp": "76280",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 40754,
+   "numeroBio": 138836,
+   "cp": "27250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 17246,
+   "numeroBio": 115308,
+   "cp": "76880",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 61899,
+   "numeroBio": 160132,
+   "cp": "50390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2473,
+   "numeroBio": 100567,
+   "cp": "76690",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 93469,
+   "numeroBio": 14806,
+   "cp": "50660",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 5614,
+   "numeroBio": 103692,
+   "cp": "14410",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 9188,
+   "numeroBio": 107257,
+   "cp": "76440",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 38202,
+   "numeroBio": 136282,
+   "cp": "76890",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 43733,
+   "numeroBio": 141816,
+   "cp": "76930",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 21396,
+   "numeroBio": 119469,
+   "cp": "27300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 33669,
+   "numeroBio": 131733,
+   "cp": "27170",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41628,
+   "numeroBio": 139709,
+   "cp": "76480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 74922,
+   "numeroBio": 9687,
+   "cp": "76850",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47634,
+   "numeroBio": 145723,
+   "cp": "76220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 16670,
+   "numeroBio": 114734,
+   "cp": "76690",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 82634,
+   "numeroBio": 172290,
+   "cp": "76930",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 31491,
+   "numeroBio": 129539,
+   "cp": "27700",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2494,
+   "numeroBio": 100588,
+   "cp": "76750",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 87184,
+   "numeroBio": 181361,
+   "cp": "14950",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 139161,
+   "numeroBio": 60245,
+   "cp": "27260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2947,
+   "numeroBio": 101040,
+   "cp": "76370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 546,
+   "numeroBio": 546,
+   "cp": "27410",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 82988,
+   "numeroBio": 172646,
+   "cp": "76133",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 99588,
+   "numeroBio": 20710,
+   "cp": "14100",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11038,
+   "numeroBio": 109108,
+   "cp": "54330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11103,
+   "numeroBio": 109175,
+   "cp": "54330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51142,
+   "numeroBio": 149228,
+   "cp": "08260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11112,
+   "numeroBio": 109183,
+   "cp": "08150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51197,
+   "numeroBio": 149283,
+   "cp": "08150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49799,
+   "numeroBio": 147888,
+   "cp": "51300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50866,
+   "numeroBio": 148949,
+   "cp": "52200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 3474,
+   "numeroBio": 101564,
+   "cp": "52220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56657,
+   "numeroBio": 154739,
+   "cp": "51270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12514,
+   "numeroBio": 110580,
+   "cp": "10700",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 18021,
+   "numeroBio": 116077,
+   "cp": "10250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 17868,
+   "numeroBio": 115926,
+   "cp": "51150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 15546,
+   "numeroBio": 113612,
+   "cp": "51500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56864,
+   "numeroBio": 154948,
+   "cp": "51160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7006,
+   "numeroBio": 105079,
+   "cp": "08290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 15726,
+   "numeroBio": 113791,
+   "cp": "08430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11142,
+   "numeroBio": 109213,
+   "cp": "10110",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51045,
+   "numeroBio": 149131,
+   "cp": "10290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13196,
+   "numeroBio": 111252,
+   "cp": "51500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 9299,
+   "numeroBio": 107369,
+   "cp": "51700",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 100229,
+   "numeroBio": 21350,
+   "cp": "10350",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 18097,
+   "numeroBio": 116153,
+   "cp": "08240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 20276,
+   "numeroBio": 118340,
+   "cp": "10190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19149,
+   "numeroBio": 117211,
+   "cp": "52700",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51026,
+   "numeroBio": 149112,
+   "cp": "08130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13535,
+   "numeroBio": 111592,
+   "cp": "08460",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 62323,
+   "numeroBio": 160405,
+   "cp": "52150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37193,
+   "numeroBio": 135274,
+   "cp": "51240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60036,
+   "numeroBio": 158130,
+   "cp": "10360",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52105,
+   "numeroBio": 150195,
+   "cp": "51460",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37998,
+   "numeroBio": 136078,
+   "cp": "51360",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 15251,
+   "numeroBio": 113313,
+   "cp": "10240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47807,
+   "numeroBio": 145898,
+   "cp": "51230",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34325,
+   "numeroBio": 132386,
+   "cp": "10120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46972,
+   "numeroBio": 145061,
+   "cp": "52160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 39618,
+   "numeroBio": 137700,
+   "cp": "52130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 57207,
+   "numeroBio": 155290,
+   "cp": "51530",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 18997,
+   "numeroBio": 117059,
+   "cp": "54118",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 123685,
+   "numeroBio": 44769,
+   "cp": "54170",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46782,
+   "numeroBio": 144871,
+   "cp": "54200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48037,
+   "numeroBio": 146129,
+   "cp": "54220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13619,
+   "numeroBio": 111676,
+   "cp": "54460",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 95681,
+   "numeroBio": 16972,
+   "cp": "54470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 9289,
+   "numeroBio": 107359,
+   "cp": "54540",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 44108,
+   "numeroBio": 142194,
+   "cp": "54570",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 3928,
+   "numeroBio": 102017,
+   "cp": "54830",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46931,
+   "numeroBio": 145020,
+   "cp": "55150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 10653,
+   "numeroBio": 108724,
+   "cp": "55160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48182,
+   "numeroBio": 146274,
+   "cp": "55170",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52503,
+   "numeroBio": 150594,
+   "cp": "55200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 16116,
+   "numeroBio": 114181,
+   "cp": "87300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50759,
+   "numeroBio": 148842,
+   "cp": "55500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 16971,
+   "numeroBio": 115034,
+   "cp": "57160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47559,
+   "numeroBio": 145650,
+   "cp": "57220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 19575,
+   "numeroBio": 117638,
+   "cp": "57260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2228,
+   "numeroBio": 100321,
+   "cp": "57260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13705,
+   "numeroBio": 111761,
+   "cp": "57470",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50691,
+   "numeroBio": 148775,
+   "cp": "57635",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 8941,
+   "numeroBio": 107010,
+   "cp": "57660",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 55385,
+   "numeroBio": 153466,
+   "cp": "57810",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51154,
+   "numeroBio": 149240,
+   "cp": "57810",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12732,
+   "numeroBio": 110795,
+   "cp": "88120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48266,
+   "numeroBio": 146359,
+   "cp": "88150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 85962,
+   "numeroBio": 181532,
+   "cp": "88170",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 3551,
+   "numeroBio": 101639,
+   "cp": "88100",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2935,
+   "numeroBio": 101028,
+   "cp": "88220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56327,
+   "numeroBio": 154411,
+   "cp": "88260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49795,
+   "numeroBio": 147884,
+   "cp": "88270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50091,
+   "numeroBio": 148181,
+   "cp": "88260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50842,
+   "numeroBio": 148925,
+   "cp": "88320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 53167,
+   "numeroBio": 151258,
+   "cp": "88320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46272,
+   "numeroBio": 144364,
+   "cp": "88330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60636,
+   "numeroBio": 158727,
+   "cp": "88340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7908,
+   "numeroBio": 105978,
+   "cp": "88390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52495,
+   "numeroBio": 150586,
+   "cp": "88390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11615,
+   "numeroBio": 109680,
+   "cp": "88400",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 33318,
+   "numeroBio": 131376,
+   "cp": "88430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 18598,
+   "numeroBio": 116654,
+   "cp": "88430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52653,
+   "numeroBio": 150744,
+   "cp": "88490",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52389,
+   "numeroBio": 150478,
+   "cp": "88530",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50353,
+   "numeroBio": 148441,
+   "cp": "88530",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 18501,
+   "numeroBio": 116558,
+   "cp": "57100",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 7288,
+   "numeroBio": 105359,
+   "cp": "54530",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 18041,
+   "numeroBio": 116097,
+   "cp": "54170",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 9592,
+   "numeroBio": 107663,
+   "cp": "88160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 45843,
+   "numeroBio": 143934,
+   "cp": "57640",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 33696,
+   "numeroBio": 131760,
+   "cp": "88270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37001,
+   "numeroBio": 135082,
+   "cp": "88500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37099,
+   "numeroBio": 135181,
+   "cp": "54770",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 31194,
+   "numeroBio": 129244,
+   "cp": "57590",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 33886,
+   "numeroBio": 131951,
+   "cp": "54290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 55581,
+   "numeroBio": 153664,
+   "cp": "54530",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47881,
+   "numeroBio": 145974,
+   "cp": "55160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34022,
+   "numeroBio": 132087,
+   "cp": "57400",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37958,
+   "numeroBio": 136039,
+   "cp": "54930",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 38088,
+   "numeroBio": 136169,
+   "cp": "54640",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 38267,
+   "numeroBio": 136347,
+   "cp": "57260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 38506,
+   "numeroBio": 136584,
+   "cp": "88120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34267,
+   "numeroBio": 132329,
+   "cp": "54300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 2685,
+   "numeroBio": 100780,
+   "cp": "57570",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 54157,
+   "numeroBio": 152246,
+   "cp": "88140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60592,
+   "numeroBio": 158684,
+   "cp": "57590",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 39619,
+   "numeroBio": 137701,
+   "cp": "88460",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 39605,
+   "numeroBio": 137687,
+   "cp": "57970",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 39627,
+   "numeroBio": 137709,
+   "cp": "88160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 58786,
+   "numeroBio": 156869,
+   "cp": "55190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34482,
+   "numeroBio": 132542,
+   "cp": "57530",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 61720,
+   "numeroBio": 159805,
+   "cp": "88600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 43620,
+   "numeroBio": 141704,
+   "cp": "55100",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 30956,
+   "numeroBio": 129008,
+   "cp": "88220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 102212,
+   "numeroBio": 23330,
+   "cp": "88000",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 405,
+   "numeroBio": 405,
+   "cp": "55260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48210,
+   "numeroBio": 146302,
+   "cp": "68610",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 10560,
+   "numeroBio": 108631,
+   "cp": "68500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 101157,
+   "numeroBio": 22277,
+   "cp": "68370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60407,
+   "numeroBio": 158499,
+   "cp": "68320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49672,
+   "numeroBio": 147762,
+   "cp": "68970",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48477,
+   "numeroBio": 146567,
+   "cp": "68480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60567,
+   "numeroBio": 158659,
+   "cp": "68320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13454,
+   "numeroBio": 111512,
+   "cp": "68240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12151,
+   "numeroBio": 110217,
+   "cp": "68500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49172,
+   "numeroBio": 147262,
+   "cp": "68320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47878,
+   "numeroBio": 145971,
+   "cp": "68650",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49823,
+   "numeroBio": 147913,
+   "cp": "68650",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52735,
+   "numeroBio": 150827,
+   "cp": "68650",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 46450,
+   "numeroBio": 144539,
+   "cp": "68990",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49859,
+   "numeroBio": 147949,
+   "cp": "68240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50461,
+   "numeroBio": 148546,
+   "cp": "68500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60010,
+   "numeroBio": 158104,
+   "cp": "67330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11557,
+   "numeroBio": 109622,
+   "cp": "67160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 51941,
+   "numeroBio": 150029,
+   "cp": "67430",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 33242,
+   "numeroBio": 131301,
+   "cp": "67203",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11487,
+   "numeroBio": 109553,
+   "cp": "67140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48324,
+   "numeroBio": 146416,
+   "cp": "67220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11596,
+   "numeroBio": 109661,
+   "cp": "67730",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52502,
+   "numeroBio": 150593,
+   "cp": "67600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48002,
+   "numeroBio": 146094,
+   "cp": "67330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49820,
+   "numeroBio": 147910,
+   "cp": "67210",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 17730,
+   "numeroBio": 115789,
+   "cp": "67360",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 47323,
+   "numeroBio": 145413,
+   "cp": "67270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48098,
+   "numeroBio": 146191,
+   "cp": "67320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 15978,
+   "numeroBio": 114045,
+   "cp": "67140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 5121,
+   "numeroBio": 103202,
+   "cp": "68500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13456,
+   "numeroBio": 111514,
+   "cp": "68650",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 18299,
+   "numeroBio": 116357,
+   "cp": "67140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 121563,
+   "numeroBio": 42647,
+   "cp": "67120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12196,
+   "numeroBio": 110262,
+   "cp": "67140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 10569,
+   "numeroBio": 108640,
+   "cp": "67560",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 10886,
+   "numeroBio": 108957,
+   "cp": "68240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13743,
+   "numeroBio": 111799,
+   "cp": "68700",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 14076,
+   "numeroBio": 112137,
+   "cp": "68420",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 56527,
+   "numeroBio": 154610,
+   "cp": "67600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12205,
+   "numeroBio": 110270,
+   "cp": "67270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 11333,
+   "numeroBio": 109400,
+   "cp": "68830",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 12142,
+   "numeroBio": 110208,
+   "cp": "68250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 13984,
+   "numeroBio": 112043,
+   "cp": "68420",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 9897,
+   "numeroBio": 107968,
+   "cp": "68240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 50064,
+   "numeroBio": 148154,
+   "cp": "67600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 135981,
+   "numeroBio": 57065,
+   "cp": "67340",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49191,
+   "numeroBio": 147282,
+   "cp": "67000",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37194,
+   "numeroBio": 135275,
+   "cp": "67220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 37356,
+   "numeroBio": 135436,
+   "cp": "68630",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 31115,
+   "numeroBio": 129165,
+   "cp": "67260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49249,
+   "numeroBio": 147339,
+   "cp": "68420",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 97639,
+   "numeroBio": 18923,
+   "cp": "67160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 3705,
+   "numeroBio": 101793,
+   "cp": "68480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 9201,
+   "numeroBio": 107270,
+   "cp": "67220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 33097,
+   "numeroBio": 131156,
+   "cp": "67360",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34473,
+   "numeroBio": 132534,
+   "cp": "67510",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 38441,
+   "numeroBio": 136519,
+   "cp": "67550",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 39366,
+   "numeroBio": 137448,
+   "cp": "68240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41283,
+   "numeroBio": 139365,
+   "cp": "68000",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 40726,
+   "numeroBio": 138808,
+   "cp": "67270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 48216,
+   "numeroBio": 146308,
+   "cp": "68120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 40517,
+   "numeroBio": 138597,
+   "cp": "68220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 33315,
+   "numeroBio": 131373,
+   "cp": "67320",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 142656,
+   "numeroBio": 63740,
+   "cp": "67210",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41974,
+   "numeroBio": 140056,
+   "cp": "88240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 34160,
+   "numeroBio": 132223,
+   "cp": "67110",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 83641,
+   "numeroBio": 173299,
+   "cp": "67250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 82693,
+   "numeroBio": 172351,
+   "cp": "67550",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 43668,
+   "numeroBio": 141751,
+   "cp": "67210",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 31098,
+   "numeroBio": 129150,
+   "cp": "88160",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 90914,
+   "numeroBio": 12573,
+   "cp": "51400",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 121993,
+   "numeroBio": 43077,
+   "cp": "67110",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 41668,
+   "numeroBio": 139750,
+   "cp": "67110",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 91275,
+   "numeroBio": 12771,
+   "cp": "68140",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 43175,
+   "numeroBio": 141259,
+   "cp": "55190",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 43812,
+   "numeroBio": 141895,
+   "cp": "88110",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 43437,
+   "numeroBio": 141979,
+   "cp": "57580",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 49871,
+   "numeroBio": 147961,
+   "cp": "67220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 22370,
+   "numeroBio": 120445,
+   "cp": "67530",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 6691,
+   "numeroBio": 104764,
+   "cp": "68150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 58884,
+   "numeroBio": 156967,
+   "cp": "08220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 52921,
+   "numeroBio": 151014,
+   "cp": "54540",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 60813,
+   "numeroBio": 158903,
+   "cp": "55210",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 44879,
+   "numeroBio": 142964,
+   "cp": "52500",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 3242,
+   "numeroBio": 101333,
+   "cp": "67420",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 45411,
+   "numeroBio": 143503,
+   "cp": "54118",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 36116,
+   "numeroBio": 134198,
+   "cp": "67650",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 87588,
+   "numeroBio": 180336,
+   "cp": "54490",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 95622,
+   "numeroBio": 16913,
+   "cp": "10200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 83193,
+   "numeroBio": 172850,
+   "cp": "68150",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 100743,
+   "numeroBio": 21864,
+   "cp": "68290",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 83501,
+   "numeroBio": 173159,
+   "cp": "67650",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 1263,
+   "numeroBio": 1263,
+   "cp": "68250",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 83816,
+   "numeroBio": 173474,
+   "cp": "67600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 935,
+   "numeroBio": 935,
+   "cp": "67650",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 674,
+   "numeroBio": 674,
+   "cp": "67120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 87824,
+   "numeroBio": 180723,
+   "cp": "88700",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 110188,
+   "numeroBio": 31304,
+   "cp": "68420",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 88559,
+   "numeroBio": 10899,
+   "cp": "67220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 914,
+   "numeroBio": 914,
+   "cp": "68570",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 667,
+   "numeroBio": 667,
+   "cp": "68590",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 67170,
+   "numeroBio": 1935,
+   "cp": "68630",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 69788,
+   "numeroBio": 4553,
+   "cp": "67120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 99353,
+   "numeroBio": 20478,
+   "cp": "67120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 74588,
+   "numeroBio": 9353,
+   "cp": "68610",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 92761,
+   "numeroBio": 14100,
+   "cp": "51530",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 74238,
+   "numeroBio": 9003,
+   "cp": "88300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 72398,
+   "numeroBio": 7163,
+   "cp": "88270",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 91281,
+   "numeroBio": 12776,
+   "cp": "67120",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 58619,
+   "numeroBio": 156701,
+   "cp": "88600",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 94303,
+   "numeroBio": 15625,
+   "cp": "67310",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 99383,
+   "numeroBio": 20508,
+   "cp": "68240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 95790,
+   "numeroBio": 17080,
+   "cp": "52400",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 88705,
+   "numeroBio": 11045,
+   "cp": "54330",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 72212,
+   "numeroBio": 6977,
+   "cp": "54700",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 99648,
+   "numeroBio": 20770,
+   "cp": "68240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 74175,
+   "numeroBio": 8940,
+   "cp": "57170",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 74639,
+   "numeroBio": 9404,
+   "cp": "57670",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 96818,
+   "numeroBio": 18107,
+   "cp": "08300",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 89782,
+   "numeroBio": 11444,
+   "cp": "54113",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 110278,
+   "numeroBio": 31394,
+   "cp": "68240",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 9955,
+   "numeroBio": 108026,
+   "cp": "68480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 108449,
+   "numeroBio": 29566,
+   "cp": "88110",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 113365,
+   "numeroBio": 34478,
+   "cp": "88800",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 112734,
+   "numeroBio": 33847,
+   "cp": "68210",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 115554,
+   "numeroBio": 36667,
+   "cp": "67370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 146403,
+   "numeroBio": 67482,
+   "cp": "68650",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 135314,
+   "numeroBio": 56398,
+   "cp": "88260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 148947,
+   "numeroBio": 70011,
+   "cp": "88000",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 137650,
+   "numeroBio": 58734,
+   "cp": "54480",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 156315,
+   "numeroBio": 300502,
+   "cp": "67220",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 127261,
+   "numeroBio": 48345,
+   "cp": "57370",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 128963,
+   "numeroBio": 50047,
+   "cp": "08130",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 129164,
+   "numeroBio": 50248,
+   "cp": "55200",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 124764,
+   "numeroBio": 45848,
+   "cp": "88260",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 137349,
+   "numeroBio": 58433,
+   "cp": "54380",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 147624,
+   "numeroBio": 68688,
+   "cp": "68740",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 116786,
+   "numeroBio": 37870,
+   "cp": "54700",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 127375,
+   "numeroBio": 48459,
+   "cp": "54110",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 129791,
+   "numeroBio": 50875,
+   "cp": "57925",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 137324,
+   "numeroBio": 58408,
+   "cp": "67390",
+   "modes": [
+    "?"
+   ]
+  },
+  {
+   "id": 145088,
+   "numeroBio": 66167,
+   "cp": "88170",
+   "modes": [
+    "?"
+   ]
+  }
+ ]
+}
