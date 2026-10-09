@@ -1,18 +1,20 @@
 {
- "date": "2026-10-08",
- "verifiees": 27639,
- "sansSiret": 486,
+ "date": "2026-10-09",
+ "verifiees": 27630,
+ "sansSiret": 485,
  "exclues": {
-  "entreprise_fermee": 148,
-  "holding_ou_finance": 6,
-  "collectivite_ou_etat": 8
+  "entreprise_fermee": 144,
+  "collectivite_ou_etat": 4,
+  "holding_ou_finance": 2
  },
  "signalees": {
   "association": 333,
-  "commerce_ou_transformation": 403,
+  "commerce_ou_transformation": 404,
   "activite_principale_non_agricole": 221,
   "etablissement_public": 83,
-  "etablissement_ferme": 160
+  "etablissement_ferme": 161,
+  "maintenue_holding_ou_finance": 4,
+  "maintenue_collectivite_ou_etat": 4
  },
  "liste": [
   {
@@ -1262,8 +1264,8 @@
    "nom": "BRULEZ ELSA",
    "cp": "10110",
    "ville": "Bar-sur-Seine",
-   "decision": "exclue",
-   "motif": "holding_ou_finance",
+   "decision": "a_verifier",
+   "motif": "maintenue_holding_ou_finance",
    "naf": "66.22Z"
   },
   {
@@ -4039,15 +4041,6 @@
    "naf": "10.20Z"
   },
   {
-   "id": 60625,
-   "nom": "BERNARD André",
-   "cp": "29360",
-   "ville": "CLOHARS-CARNOET",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.11Z"
-  },
-  {
    "id": 80377,
    "nom": "WEST ALGUES GLEESON Michael",
    "cp": "29880",
@@ -5150,8 +5143,8 @@
    "nom": "REGIE MUNICIPALE AGRICOLE DU DOMAINE YVES COURPON",
    "cp": "33620",
    "ville": "CAVIGNAC",
-   "decision": "exclue",
-   "motif": "collectivite_ou_etat",
+   "decision": "a_verifier",
+   "motif": "maintenue_collectivite_ou_etat",
    "naf": "84.11Z"
   },
   {
@@ -6257,8 +6250,8 @@
    "nom": "ESAT DE NONERES",
    "cp": "40000",
    "ville": "MONT-DE-MARSAN",
-   "decision": "exclue",
-   "motif": "collectivite_ou_etat",
+   "decision": "a_verifier",
+   "motif": "maintenue_collectivite_ou_etat",
    "naf": "84.11Z"
   },
   {
@@ -7634,8 +7627,8 @@
    "nom": "HENIN ROMAIN",
    "cp": "51160",
    "ville": "AY-CHAMPAGNE",
-   "decision": "exclue",
-   "motif": "holding_ou_finance",
+   "decision": "a_verifier",
+   "motif": "maintenue_holding_ou_finance",
    "naf": "64.20Z"
   },
   {
@@ -8089,6 +8082,15 @@
    "naf": "10.39B"
   },
   {
+   "id": 132897,
+   "nom": "TEXIER Nathalie",
+   "cp": "56250",
+   "ville": "Trédion",
+   "decision": "a_verifier",
+   "motif": "commerce_ou_transformation",
+   "naf": "56.10C"
+  },
+  {
    "id": 147391,
    "nom": "DESCHAMPS Benoit (DOMAINE MOULIN BLANC)",
    "cp": "56320",
@@ -8147,8 +8149,8 @@
    "nom": "Espace Test Agricole ENVOLS (Eurométropole de Metz et Cap Entreprendre)",
    "cp": "57000",
    "ville": "METZ",
-   "decision": "exclue",
-   "motif": "collectivite_ou_etat",
+   "decision": "a_verifier",
+   "motif": "maintenue_collectivite_ou_etat",
    "naf": "84.11Z"
   },
   {
@@ -9826,15 +9828,6 @@
    "naf": "64.20Z"
   },
   {
-   "id": 156429,
-   "nom": "Bonon Jacqueline",
-   "cp": "69360",
-   "ville": "Simandres",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
-  },
-  {
    "id": 164359,
    "nom": "CHRISTOPHE SEMASKA",
    "cp": "69420",
@@ -10087,15 +10080,6 @@
    "naf": "01.11Z"
   },
   {
-   "id": 36034,
-   "nom": "RAPPART LAURENT JEAN",
-   "cp": "72500",
-   "ville": "MONTVAL-SUR-LOIR",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
-  },
-  {
    "id": 39789,
    "nom": "VALLON SANDRA ODETTE JEANINE",
    "cp": "72340",
@@ -10220,6 +10204,15 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
+  },
+  {
+   "id": 153046,
+   "nom": "La Baraque",
+   "cp": "73800",
+   "ville": "Porte-de-Savoie",
+   "decision": "a_verifier",
+   "motif": "etablissement_ferme",
+   "naf": "01.21Z"
   },
   {
    "id": 159785,
@@ -11072,8 +11065,8 @@
    "nom": "LES GRES",
    "cp": "83330",
    "ville": "EVENOS",
-   "decision": "exclue",
-   "motif": "holding_ou_finance",
+   "decision": "a_verifier",
+   "motif": "maintenue_holding_ou_finance",
    "naf": "66.19A"
   },
   {
@@ -11108,8 +11101,8 @@
    "nom": "LES JARDINS D'ENTRAYGUES FOY Marion et BERTRAND Antoine",
    "cp": "83340",
    "ville": "Le Cannet des Maures",
-   "decision": "exclue",
-   "motif": "collectivite_ou_etat",
+   "decision": "a_verifier",
+   "motif": "maintenue_collectivite_ou_etat",
    "naf": "84.11Z"
   },
   {
@@ -11428,15 +11421,6 @@
    "naf": "94.99Z"
   },
   {
-   "id": 127771,
-   "nom": "LAFORGUE Emmanuelle",
-   "cp": "84810",
-   "ville": "Aubignan",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.28Z"
-  },
-  {
    "id": 135607,
    "nom": "MONSIEUR JEAN-NOeL CRESPI",
    "cp": "84250",
@@ -11675,8 +11659,8 @@
    "nom": "Julien MONNEREAU",
    "cp": "85320",
    "ville": "ROSNAY",
-   "decision": "exclue",
-   "motif": "holding_ou_finance",
+   "decision": "a_verifier",
+   "motif": "maintenue_holding_ou_finance",
    "naf": "66.22Z"
   },
   {
