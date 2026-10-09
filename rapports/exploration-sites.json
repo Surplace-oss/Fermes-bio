@@ -1,0 +1,3413 @@
+{
+ "agrimap": {
+  "url": "https://agri-map.fr/bio/producteurs/",
+  "requetes": [
+   {
+    "u": "https://agri-map.fr/bio/producteurs/",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "text/html"
+   },
+   {
+    "u": "https://cdnjs.cloudflare.com/ajax/libs/tarteaucitronjs/1.25.0/tarteaucitron.min.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript; charset=utf-8"
+   },
+   {
+    "u": "https://agri-map.fr/script.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript; charset=UTF-8"
+   },
+   {
+    "u": "https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "text/javascript; charset=utf-8"
+   },
+   {
+    "u": "https://agri-map.fr/map-constants.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://agri-map.fr/map-layer-registry.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://agri-map.fr/map-layer-panel.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://agri-map.fr/map-format-functions.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://agri-map.fr/map-core.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://agri-map.fr/map-click-handlers.js?v=2026-10-09",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://agri-map.fr/map-sources.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://agri-map.fr/map-data-loading.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://agri-map.fr/map-info-panel.js?v=2026-10-09",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "blob:https://agri-map.fr/df81bcaa-1cf5-473c-ac13-595574ec6d20",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "text/javascript"
+   },
+   {
+    "u": "https://agri-map.fr/map-elevation-display.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://agri-map.fr/map-auth.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://cdnjs.cloudflare.com/ajax/libs/tarteaucitronjs/1.25.0/lang/tarteaucitron.fr.min.js?v=1.25.0",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript; charset=utf-8"
+   },
+   {
+    "u": "https://cdnjs.cloudflare.com/ajax/libs/tarteaucitronjs/1.25.0/tarteaucitron.services.min.js?v=1.25.0",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript; charset=utf-8"
+   },
+   {
+    "u": "https://agri-map.fr/api/auth/me",
+    "s": 401,
+    "m": "GET",
+    "post": "",
+    "t": "application/json; charset=utf-8",
+    "forme": {
+     "cles": [
+      "error"
+     ],
+     "n": null,
+     "champs": null,
+     "exemple": null
+    }
+   },
+   {
+    "u": "https://agri-map.fr/api/send",
+    "s": 200,
+    "m": "POST",
+    "post": "{\"type\":\"event\",\"payload\":{\"website\":\"57e15a4a-800d-444e-80a5-e19900033f93\",\"screen\":\"1400x900\",\"language\":\"en-US\",\"title\":\"Producteurs bio en France — Annuaire des opérateurs certifiés | AgriMap\",\"hostname\":\"agri-map.fr\",\"url\":\"https://agri-map.fr/bio/producteurs/\",\"referrer\":\"\"}}",
+    "t": "application/json",
+    "forme": {
+     "cles": [
+      "beep"
+     ],
+     "n": null,
+     "champs": null,
+     "exemple": null
+    }
+   },
+   {
+    "u": "https://agri-map.fr/api/layers",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/json; charset=utf-8",
+    "forme": {
+     "cles": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29"
+     ],
+     "n": 45,
+     "champs": [
+      "id",
+      "name",
+      "status",
+      "feature_count",
+      "dependencies",
+      "loaded_at",
+      "data_date"
+     ],
+     "exemple": {
+      "id": "agencebio",
+      "name": "agencebio",
+      "status": "loaded",
+      "feature_count": "132708",
+      "dependencies": "null",
+      "loaded_at": "2026-04-20T07:04:43.054Z",
+      "data_date": "null"
+     }
+    }
+   }
+  ],
+  "liens": [
+   "https://agri-map.fr/",
+   "https://agri-map.fr/",
+   "https://agri-map.fr/3d.html",
+   "https://agri-map.fr/commune/",
+   "https://agri-map.fr/appellation/",
+   "https://agri-map.fr/region/",
+   "https://agri-map.fr/eau/",
+   "https://agri-map.fr/eau/",
+   "https://agri-map.fr/eau/statistiques/",
+   "https://agri-map.fr/production/",
+   "https://agri-map.fr/production/",
+   "https://agri-map.fr/production/statistiques/",
+   "https://agri-map.fr/production/cereales/",
+   "https://agri-map.fr/production/elevage/",
+   "https://agri-map.fr/production/lait/",
+   "https://agri-map.fr/production/vin/",
+   "https://agri-map.fr/bio/",
+   "https://agri-map.fr/bio/",
+   "https://agri-map.fr/bio/carte/",
+   "https://agri-map.fr/bio/statistiques/",
+   "https://agri-map.fr/bio/producteurs/",
+   "https://agri-map.fr/bio/cultures/",
+   "https://agri-map.fr/contact.html?subject=custom-tool",
+   "https://agri-map.fr/bio/producteurs/#",
+   "https://agri-map.fr/bio/producteurs/#",
+   "https://agri-map.fr/bio/producteurs/#",
+   "https://agri-map.fr/cookies.html"
+  ],
+  "titre": "Producteurs bio en France — Annuaire des opérateurs certifiés | AgriMap"
+ },
+ "bonplanbio": {
+  "url": "https://www.bonplanbio.fr/",
+  "requetes": [
+   {
+    "u": "https://www.bonplanbio.fr/",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "text/html; charset=utf-8"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/polyfills-HTPFBDJC.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/main-RNNP7MB7.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DxqKAYlM.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Cxp1yMMw.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BYTK-1Uh.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CUMzMpC0.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BNLMWCi1.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B4zUtstx.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B9PzDl0i.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B9227DEp.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Ddhg7FyT.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DbImo2JA.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-QB9Vlbjw.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BnKe5AW-.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BIX2Btef.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-nDVqLnb8.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-9iRzCvJd.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DMjGr3RO.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CAyce-_j.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CeHN2gs8.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-l2ZzUsLJ.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-p0EmBYdZ.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Du8kZr0u.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-TfYvzdLS.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Bqmsovc7.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DpNadjcn.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CTPvYSYG.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-ByEwk_5I.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DSDDYRrF.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BlMP5bt9.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B8vfk020.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Dr_QWAbg.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Cozc5PXT.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-RdKotVP7.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B6jetDF1.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DJRCKQJv.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BVYaf1LW.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CrNCMJQq.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-oJ1j51G2.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-jx80NNNs.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DhixtMOv.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-et-39egT.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DAGrndn2.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BxvWZZHj.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-7BACaiR0.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BqHxzghD.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-s5tOzlgd.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-OrDfMgxr.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DGolM_5d.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B4ucUWWW.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BSCBwVD_.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DdsbLE_C.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BLyuXuaE.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BR8nj9vj.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CYwlTqnH.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-28xIcrRA.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D6xuppzB.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/manifest.webmanifest",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/octet-stream"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CLE-u6ac.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/api-v2/proxy/s",
+    "s": 200,
+    "m": "POST",
+    "post": "{\"sent_at\":\"2026-10-09T07:35:50.703Z\",\"sdk\":{\"name\":\"sentry.javascript.angular\",\"version\":\"10.75.0\"},\"dsn\":\"https://6a68bbbcb7b44d3faa7fda90d7b79f82@s.local.cool/2\"}\n{\"type\":\"session\"}\n{\"sid\":\"e12e22d6f3754699a7a840428989bf82\",\"init\":true,\"started\":\"2026-10-09T07:35:50.586Z\",\"timestamp\":\"2026-10-09T",
+    "t": ""
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BsKzF4zK.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CbSZWUfA.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CduO4P__.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DWzYUk0K.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-7KuSl9mn.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CCvqaHoQ.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DAtHlqH7.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BIWxQn2U.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-kpnBG2K5.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CfApSc5T.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-hIzTe8jZ.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/api-v2/proxy/s",
+    "s": 200,
+    "m": "POST",
+    "post": "{\"sent_at\":\"2026-10-09T07:35:50.920Z\",\"sdk\":{\"name\":\"sentry.javascript.angular\",\"version\":\"10.75.0\"},\"dsn\":\"https://6a68bbbcb7b44d3faa7fda90d7b79f82@s.local.cool/2\"}\n{\"type\":\"session\"}\n{\"sid\":\"e12e22d6f3754699a7a840428989bf82\",\"init\":false,\"started\":\"2026-10-09T07:35:50.586Z\",\"timestamp\":\"2026-10-09",
+    "t": ""
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BFvYZ5JF.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B6Q6Rl40.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CBbhGV24.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D_iIUAl4.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-maqnzFk2.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-48W8dVog.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Dvm8gAgQ.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BAXOkyr-.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Cf-BBvkx.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DuJsGhIm.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Btp7Ow1O.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DIRlHVN6.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-qficwAS_.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Cqlc_lCH.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-qmxn8Rlo.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-aV5R4bsd.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BkT2M4Ut.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BA6Xk5do.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B39HK5i8.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BMEpiSCF.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/api-v2/proxy/s",
+    "s": 200,
+    "m": "POST",
+    "post": "{\"sent_at\":\"2026-10-09T07:35:50.921Z\",\"sdk\":{\"name\":\"sentry.javascript.angular\",\"version\":\"10.75.0\"},\"dsn\":\"https://6a68bbbcb7b44d3faa7fda90d7b79f82@s.local.cool/2\"}\n{\"type\":\"session\"}\n{\"sid\":\"084d26df592b4c20a3f67c3ddd2fdcb0\",\"init\":true,\"started\":\"2026-10-09T07:35:50.920Z\",\"timestamp\":\"2026-10-09T",
+    "t": ""
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-uq2Ho5My.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D9cHqjNl.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BFL0a6ag.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CZGotzwm.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DkJOqrb3.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CEt2zdl4.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-COEzCTwT.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DE4X4NmA.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/assets/json/bpb/stats.json",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/json",
+    "forme": {
+     "cles": [
+      "customers",
+      "users",
+      "producers",
+      "resellers",
+      "restaurants",
+      "collectives",
+      "territories",
+      "towns",
+      "amaps",
+      "companies",
+      "stores",
+      "products",
+      "organicPercent"
+     ],
+     "n": null,
+     "champs": null,
+     "exemple": null
+    }
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Dqgij3UZ.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-C9UlbJDl.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Bhbch4V2.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DmYSAIoS.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-C2ndLZXW.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-qeSnLuqO.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Dy6ZrI9b.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CD00js_-.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B8648JlQ.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-qDtxrDmt.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BtmFZAc1.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BtjXgd4F.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CJIDqPQc.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Bkyt8YnC.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BA0KlRi3.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Bl5MY2sU.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D2r3S9pM.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B1Z3_GtC.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D2yatUNd.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BWQXbmvF.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-td4f4xbn.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-C2K5oLTP.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CX7vXett.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-MCWwpzf-.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CY_zNAb4.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-PSdLdEGl.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CmurOMo9.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DA-0N8XY.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-C8Cud2Fh.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk--_kdM9E9.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DFriTKjr.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Dsz1UIvr.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-C_DAP2Yl.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CJnB10PY.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BMzQxK5l.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CylBeyBf.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CYpzkJTc.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BDxm9og8.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DIjp1zz5.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B7NV6F6d.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D5fOWDUH.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-L64uOSD1.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B4YtwFq_.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BeVJACOV.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B8dhPvOE.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CoSxADCc.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Dlfh5LJ3.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D3C2QdGb.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BKF6DgaB.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DBaor3UB.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CrA6gr2A.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-50ff-tTE.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-yEYt4_rj.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B4-hjTNM.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D1GWtXAz.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CmHMXEtG.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-4bmyldJ0.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DJ5gFXXv.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-ChNwco7R.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D2P3oQay.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-C4I140ry.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-J6HZxKun.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BJLNMtlM.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DYBg7R7-.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-YWoML37G.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://r.local.cool/api/script.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript; charset=utf-8"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CqbFMoAT.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BPJqHs4p.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D0oQNrc0.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-JSUu_qY2.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DJogJ240.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-HsRLJkNY.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CIVMom5Y.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Dnv0vkdS.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Do11Vf12.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CWnLNW-M.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://p.local.direct/decide/?v=2&ip=1&_=1791531351361&ver=1.20.5",
+    "s": 200,
+    "m": "POST",
+    "post": "data=eyJ0b2tlbiI6InBoY191OU5sRURBVDFTUzVuZkN3WmxZTmVjOHJveWJqV3I0R2NBZE1sWXRqOHlBIiwiZGlzdGluY3RfaWQiOiIxYTExZjk2ZmQzZWVlNC0wMTc1ZGEwYjEzZjhhYi0zNjdlMDQ3My0xMzM5ZTAtMWExMWY5NmZkM2YxNWRiIiwiZ3JvdXBzIjp7fX0%3D",
+    "t": "application/json",
+    "forme": {
+     "cles": [
+      "config",
+      "toolbarParams",
+      "isAuthenticated",
+      "supportedCompression",
+      "featureFlags",
+      "sessionRecording",
+      "capturePerformance",
+      "siteApps"
+     ],
+     "n": 3,
+     "champs": null,
+     "exemple": null
+    }
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BTHJb7Bo.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CrXDuiYP.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-7Kf9_6c2.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-E_GrL5pb.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-zPlLF10D.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D0ZEViu1.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://r.local.cool/api/site/tracking-config/d2327a28c8f9",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/json; charset=utf-8",
+    "forme": {
+     "cles": [
+      "type",
+      "featureFlagsEnabled",
+      "sessionReplay",
+      "webVitals",
+      "trackErrors",
+      "trackOutbound",
+      "trackUrlParams",
+      "trackInitialPageView",
+      "trackSpaNavigation",
+      "trackButtonClicks",
+      "trackCopy",
+      "trackFormInteractions"
+     ],
+     "n": null,
+     "champs": null,
+     "exemple": null
+    }
+   },
+   {
+    "u": "https://p.local.direct/e/?compression=gzip-js&ip=1&_=1791531354364&ver=1.20.5",
+    "s": 200,
+    "m": "POST",
+    "post": "",
+    "t": "application/json",
+    "forme": {
+     "cles": [
+      "status"
+     ],
+     "n": null,
+     "champs": null,
+     "exemple": null
+    }
+   },
+   {
+    "u": "https://r.local.cool/api/replay.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript; charset=utf-8"
+   },
+   {
+    "u": "https://r.local.cool/api/track",
+    "s": 200,
+    "m": "POST",
+    "post": "{\"site_id\":\"d2327a28c8f9\",\"hostname\":\"www.bonplanbio.fr\",\"pathname\":\"/\",\"querystring\":\"\",\"screenWidth\":1400,\"screenHeight\":900,\"language\":\"en-US\",\"page_title\":\"Directement du producteur au consommateur - Bon Plan Bio\",\"referrer\":\"\",\"_bs\":6,\"_bsm\":541,\"tag\":\"Bon Plan Bio\",\"type\":\"pageview\",\"event_nam",
+    "t": "application/json; charset=utf-8",
+    "forme": {
+     "cles": [
+      "success"
+     ],
+     "n": null,
+     "champs": null,
+     "exemple": null
+    }
+   },
+   {
+    "u": "https://r.local.cool/api/session-replay/record/d2327a28c8f9",
+    "s": 200,
+    "m": "POST",
+    "post": "{\"userId\":\"\",\"events\":[{\"type\":4,\"data\":{\"href\":\"https://www.bonplanbio.fr/\",\"width\":1400,\"height\":900},\"timestamp\":1791531354851},{\"type\":2,\"data\":{\"node\":{\"type\":0,\"childNodes\":[{\"type\":1,\"name\":\"html\",\"publicId\":\"\",\"systemId\":\"\",\"id\":2},{\"type\":2,\"tagName\":\"html\",\"attributes\":{\"lang\":\"fr\",\"dir\":\"",
+    "t": "application/json; charset=utf-8",
+    "forme": {
+     "cles": [
+      "success"
+     ],
+     "n": null,
+     "champs": null,
+     "exemple": null
+    }
+   }
+  ],
+  "liens": [
+   "https://www.bonplanbio.fr/vente-directe-a",
+   "https://www.bonplanbio.fr/relais-de-producteurs",
+   "https://www.bonplanbio.fr/vente-directe-a",
+   "https://www.bonplanbio.fr/producteurs-locaux-a",
+   "https://www.bonplanbio.fr/vente-directe-a",
+   "https://www.bonplanbio.fr/relais-de-producteurs"
+  ],
+  "titre": "Directement du producteur au consommateur - Bon Plan Bio"
+ },
+ "bonplanbio-carte": {
+  "url": "https://www.bonplanbio.fr/carte",
+  "requetes": [
+   {
+    "u": "https://www.bonplanbio.fr/carte",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "text/html; charset=utf-8"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/main-RNNP7MB7.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/polyfills-HTPFBDJC.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Cxp1yMMw.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DxqKAYlM.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BYTK-1Uh.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CUMzMpC0.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BNLMWCi1.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B4zUtstx.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B9PzDl0i.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B9227DEp.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Ddhg7FyT.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DbImo2JA.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-QB9Vlbjw.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BnKe5AW-.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BIX2Btef.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-nDVqLnb8.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-9iRzCvJd.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DMjGr3RO.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CAyce-_j.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CeHN2gs8.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-l2ZzUsLJ.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-p0EmBYdZ.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Du8kZr0u.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-TfYvzdLS.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Bqmsovc7.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DpNadjcn.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CTPvYSYG.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-ByEwk_5I.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DSDDYRrF.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BlMP5bt9.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B8vfk020.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Dr_QWAbg.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Cozc5PXT.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-RdKotVP7.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B6jetDF1.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DJRCKQJv.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BVYaf1LW.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CrNCMJQq.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-oJ1j51G2.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-jx80NNNs.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DhixtMOv.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-et-39egT.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DAGrndn2.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BxvWZZHj.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-7BACaiR0.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BqHxzghD.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-s5tOzlgd.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-OrDfMgxr.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DGolM_5d.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B4ucUWWW.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BSCBwVD_.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DdsbLE_C.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BLyuXuaE.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BR8nj9vj.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CYwlTqnH.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-28xIcrRA.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D6xuppzB.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/manifest.webmanifest",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/octet-stream"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-qmxn8Rlo.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/api-v2/proxy/s",
+    "s": 200,
+    "m": "POST",
+    "post": "{\"sent_at\":\"2026-10-09T07:36:21.548Z\",\"sdk\":{\"name\":\"sentry.javascript.angular\",\"version\":\"10.75.0\"},\"dsn\":\"https://6a68bbbcb7b44d3faa7fda90d7b79f82@s.local.cool/2\"}\n{\"type\":\"session\"}\n{\"sid\":\"71685cfb33f6464999fccbd542612778\",\"init\":true,\"started\":\"2026-10-09T07:36:21.440Z\",\"timestamp\":\"2026-10-09T",
+    "t": ""
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BWQXbmvF.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DWzYUk0K.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DA-0N8XY.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-C8Cud2Fh.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk--_kdM9E9.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CylBeyBf.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CYpzkJTc.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CX7vXett.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BsKzF4zK.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-C2K5oLTP.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Dsz1UIvr.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-C_DAP2Yl.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CJnB10PY.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BDxm9og8.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DIjp1zz5.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-dbFJ3HG0.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DAtHlqH7.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BIWxQn2U.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CCvqaHoQ.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CLE-u6ac.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-kpnBG2K5.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CfApSc5T.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B6Q6Rl40.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-hIzTe8jZ.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/api-v2/proxy/s",
+    "s": 200,
+    "m": "POST",
+    "post": "{\"sent_at\":\"2026-10-09T07:36:21.879Z\",\"sdk\":{\"name\":\"sentry.javascript.angular\",\"version\":\"10.75.0\"},\"dsn\":\"https://6a68bbbcb7b44d3faa7fda90d7b79f82@s.local.cool/2\"}\n{\"type\":\"session\"}\n{\"sid\":\"e94a3409ed43432c9f5efd041a3dad70\",\"init\":true,\"started\":\"2026-10-09T07:36:21.878Z\",\"timestamp\":\"2026-10-09T",
+    "t": ""
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BFvYZ5JF.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-48W8dVog.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CBbhGV24.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Dvm8gAgQ.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D_iIUAl4.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/api-v2/proxy/s",
+    "s": 200,
+    "m": "POST",
+    "post": "{\"sent_at\":\"2026-10-09T07:36:21.878Z\",\"sdk\":{\"name\":\"sentry.javascript.angular\",\"version\":\"10.75.0\"},\"dsn\":\"https://6a68bbbcb7b44d3faa7fda90d7b79f82@s.local.cool/2\"}\n{\"type\":\"session\"}\n{\"sid\":\"71685cfb33f6464999fccbd542612778\",\"init\":false,\"started\":\"2026-10-09T07:36:21.440Z\",\"timestamp\":\"2026-10-09",
+    "t": ""
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BAXOkyr-.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-maqnzFk2.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Cf-BBvkx.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DuJsGhIm.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DIRlHVN6.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Cqlc_lCH.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Btp7Ow1O.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-aV5R4bsd.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BkT2M4Ut.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-qficwAS_.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BMEpiSCF.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BA6Xk5do.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B39HK5i8.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-uq2Ho5My.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BFL0a6ag.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D9cHqjNl.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CZGotzwm.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DkJOqrb3.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CEt2zdl4.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DE4X4NmA.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-COEzCTwT.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/assets/js/maplibre-gl-worker.mjs",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Dqgij3UZ.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-C9UlbJDl.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Bhbch4V2.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-7KuSl9mn.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B8648JlQ.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-qeSnLuqO.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Dy6ZrI9b.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CD00js_-.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CbSZWUfA.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DmYSAIoS.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-C2ndLZXW.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CduO4P__.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-qDtxrDmt.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Bkyt8YnC.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BtmFZAc1.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BA0KlRi3.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B1Z3_GtC.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BtjXgd4F.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CY_zNAb4.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-L64uOSD1.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BeVJACOV.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DFriTKjr.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CJIDqPQc.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-PSdLdEGl.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B7NV6F6d.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-td4f4xbn.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D5fOWDUH.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B4YtwFq_.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B8dhPvOE.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CoSxADCc.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Dlfh5LJ3.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D3C2QdGb.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Bl5MY2sU.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D2yatUNd.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D2r3S9pM.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CmurOMo9.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-MCWwpzf-.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BMzQxK5l.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BKF6DgaB.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DBaor3UB.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CrA6gr2A.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-50ff-tTE.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-yEYt4_rj.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/assets/js/maplibre-gl-shared.mjs",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D1GWtXAz.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CmHMXEtG.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DJ5gFXXv.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-4bmyldJ0.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-ChNwco7R.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DYBg7R7-.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-C4I140ry.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-J6HZxKun.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D2P3oQay.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BJLNMtlM.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-YWoML37G.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://tiles.bonplanbio.fr/styles/localcool/style.json",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/json; charset=utf-8",
+    "forme": {
+     "cles": [
+      "version",
+      "name",
+      "metadata",
+      "sources",
+      "glyphs",
+      "layers",
+      "id"
+     ],
+     "n": 46,
+     "champs": [
+      "id",
+      "paint",
+      "type"
+     ],
+     "exemple": {
+      "id": "background",
+      "paint": "{\"background-color\":\"hsl(47, 26%, 88%)\"}",
+      "type": "background"
+     }
+    }
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CqbFMoAT.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BPJqHs4p.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D0oQNrc0.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CWnLNW-M.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-DJogJ240.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-HsRLJkNY.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CIVMom5Y.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Dnv0vkdS.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-JSUu_qY2.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-Do11Vf12.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://tiles.bonplanbio.fr/styles/localcool/static/2,47,6/1400x844.webp",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "image/webp"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-E_GrL5pb.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-BTHJb7Bo.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-CrXDuiYP.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-7Kf9_6c2.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-zPlLF10D.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-D0ZEViu1.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/api-v2/bpb/pois",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/json; charset=utf-8",
+    "forme": {
+     "cles": [
+      "producers",
+      "stores"
+     ],
+     "n": 2144,
+     "champs": [
+      "id",
+      "app",
+      "address",
+      "geo",
+      "ape",
+      "name",
+      "label",
+      "slug",
+      "settings",
+      "categories",
+      "deliveries",
+      "prospectProducers"
+     ],
+     "exemple": {
+      "id": "5fcb5d52b7d26fa2d26f36a5",
+      "app": "Bon Plan Bio",
+      "address": "{\"city\":\"Cadaujac\",\"country\":\"FR\",\"postcode\":\"33140\",\"street\":\"Chemin de la Matole\"}",
+      "geo": "{\"coordinates\":[-0.546694,44.755067],\"type\":\"Point\",\"lat\":44.755067,\"lng\":-0.546694}",
+      "ape": "0121Z",
+      "name": "Château Bardins",
+      "label": "{\"from\":\"2016-09-23T00:00:00.000Z\",\"id\":141275,\"orgCode\":\"FR-BIO-16\",\"orgName\":\"Qualisud\",\"type\":\"organic\",\"url\":\"https://webgate.ec.europa.eu/tracesnt/director",
+      "slug": "chateau-bardins",
+      "settings": "{\"minOrder\":2.5,\"confirmationThreshold\":12,\"fraisetlocalExcluded\":true,\"invoiceFrequency\":0,\"invoicePaymentDeadline\":30,\"minimumShippingTemperature\":18,\"newslet",
+      "categories": "[\"fruits\",\"drinks\",\"sweet-grocery\"]",
+      "deliveries": "[{\"id\":\"5fcb611bb7d26f62ec6f36a7\",\"distance\":0.59,\"duration\":1.2,\"frequency\":0,\"minSales\":0,\"nextDates\":[],\"notDelivering\":true,\"handInHand\":true,\"onlinePayment",
+      "prospectProducers": "[{\"geo\":{\"coordinates\":[-0.54935,44.756973],\"type\":\"Point\"},\"address\":{\"city\":\"CADAUJAC\",\"country\":\"FR\",\"postcode\":\"33140\",\"street\":\"124 AVENUE DE TOULOUSE\"},\"l"
+     }
+    }
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-B4-hjTNM.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://r.local.cool/api/script.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript; charset=utf-8"
+   },
+   {
+    "u": "https://tiles.local.direct/data/v3.json",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/json; charset=utf-8",
+    "forme": {
+     "cles": [
+      "tiles",
+      "name",
+      "format",
+      "basename",
+      "id",
+      "description",
+      "attribution",
+      "version",
+      "type",
+      "bounds",
+      "center",
+      "minzoom",
+      "maxzoom",
+      "vector_layers",
+      "planetiler:buildtime",
+      "planetiler:githash",
+      "planetiler:osm:osmosisreplicationseq",
+      "planetiler:osm:osmosisreplicationtime",
+      "planetiler:osm:osmosisreplicationurl",
+      "planetiler:version",
+      "compression",
+      "tilejson"
+     ],
+     "n": 1,
+     "champs": null,
+     "exemple": null
+    }
+   },
+   {
+    "u": "https://p.local.direct/decide/?v=2&ip=1&_=1791531383512&ver=1.20.5",
+    "s": 200,
+    "m": "POST",
+    "post": "data=eyJ0b2tlbiI6InBoY191OU5sRURBVDFTUzVuZkN3WmxZTmVjOHJveWJqV3I0R2NBZE1sWXRqOHlBIiwiZGlzdGluY3RfaWQiOiIxYTExZjk3N2FkNDk5MS0wNWQyZDk5MDdjYjIzZC0zNjdlMDQ3My0xMzM5ZTAtMWExMWY5NzdhZDViYTAiLCJncm91cHMiOnt9fQ%3D%3D",
+    "t": "application/json",
+    "forme": {
+     "cles": [
+      "config",
+      "toolbarParams",
+      "isAuthenticated",
+      "supportedCompression",
+      "featureFlags",
+      "sessionRecording",
+      "capturePerformance",
+      "siteApps"
+     ],
+     "n": 3,
+     "champs": null,
+     "exemple": null
+    }
+   },
+   {
+    "u": "https://tiles.local.direct/data/v3/5/16/10.pbf",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/x-protobuf"
+   },
+   {
+    "u": "https://tiles.local.direct/data/v3/5/15/10.pbf",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/x-protobuf"
+   },
+   {
+    "u": "https://tiles.local.direct/data/v3/5/15/11.pbf",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/x-protobuf"
+   },
+   {
+    "u": "https://tiles.local.direct/data/v3/5/16/11.pbf",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/x-protobuf"
+   },
+   {
+    "u": "https://tiles.local.direct/fonts/Noto%20Sans%20Regular/1536-1791.pbf",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/x-protobuf"
+   },
+   {
+    "u": "https://tiles.local.direct/fonts/Noto%20Sans%20Regular/65024-65279.pbf",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/x-protobuf"
+   },
+   {
+    "u": "https://tiles.local.direct/fonts/Noto%20Sans%20Regular/11520-11775.pbf",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/x-protobuf"
+   },
+   {
+    "u": "https://tiles.local.direct/fonts/Noto%20Sans%20Regular/0-255.pbf",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/x-protobuf"
+   },
+   {
+    "u": "https://tiles.local.direct/fonts/Noto%20Sans%20Regular/256-511.pbf",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/x-protobuf"
+   },
+   {
+    "u": "https://tiles.local.direct/fonts/Noto%20Sans%20Regular/1024-1279.pbf",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/x-protobuf"
+   },
+   {
+    "u": "https://tiles.local.direct/fonts/Noto%20Sans%20Regular/768-1023.pbf",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/x-protobuf"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/assets/json/bpb/regions.geojson",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/octet-stream",
+    "forme": {
+     "cles": [
+      "type",
+      "features"
+     ],
+     "n": 1,
+     "champs": [
+      "collectedProperties"
+     ],
+     "exemple": {
+      "collectedProperties": "[{\"code\":\"28\",\"nom\":\"Normandie\"},{\"code\":\"44\",\"nom\":\"Grand Est\"},{\"code\":\"53\",\"nom\":\"Bretagne\"},{\"code\":\"75\",\"nom\":\"Nouvelle-Aquitaine\"},{\"code\":\"76\",\"nom\":\"Occ"
+     }
+    }
+   },
+   {
+    "u": "https://www.bonplanbio.fr/chunk-2cyiDfGY.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript"
+   },
+   {
+    "u": "https://tiles.local.direct/fonts/Klokantech%20Noto%20Sans%20Regular/0-255.pbf",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/x-protobuf"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/assets/images/icons/maps/producers/vegetables.webp",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "image/webp"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/assets/images/icons/maps/producers/dairy.webp",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "image/webp"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/assets/images/icons/maps/producers/drinks.webp",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "image/webp"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/assets/images/icons/maps/producers/fruits.webp",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "image/webp"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/assets/images/icons/maps/producers/meat.webp",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "image/webp"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/assets/images/icons/maps/producers/meat~beef.webp",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "image/webp"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/assets/images/icons/maps/producers/meat~pork.webp",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "image/webp"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/assets/images/icons/maps/producers/meat~poultry.webp",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "image/webp"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/assets/images/icons/maps/producers/bread-pastry.webp",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "image/webp"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/assets/images/icons/maps/producers/sweet-grocery.webp",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "image/webp"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/assets/images/icons/maps/producers/salty-grocery.webp",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "image/webp"
+   },
+   {
+    "u": "https://www.bonplanbio.fr/assets/images/icons/maps/producers/others.webp",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "image/webp"
+   },
+   {
+    "u": "https://r.local.cool/api/site/tracking-config/d2327a28c8f9",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/json; charset=utf-8",
+    "forme": {
+     "cles": [
+      "type",
+      "featureFlagsEnabled",
+      "sessionReplay",
+      "webVitals",
+      "trackErrors",
+      "trackOutbound",
+      "trackUrlParams",
+      "trackInitialPageView",
+      "trackSpaNavigation",
+      "trackButtonClicks",
+      "trackCopy",
+      "trackFormInteractions"
+     ],
+     "n": null,
+     "champs": null,
+     "exemple": null
+    }
+   },
+   {
+    "u": "https://p.local.direct/e/?compression=gzip-js&ip=1&_=1791531386689&ver=1.20.5",
+    "s": 200,
+    "m": "POST",
+    "post": "",
+    "t": "application/json",
+    "forme": {
+     "cles": [
+      "status"
+     ],
+     "n": null,
+     "champs": null,
+     "exemple": null
+    }
+   },
+   {
+    "u": "https://r.local.cool/api/replay.js",
+    "s": 200,
+    "m": "GET",
+    "post": "",
+    "t": "application/javascript; charset=utf-8"
+   },
+   {
+    "u": "https://r.local.cool/api/track",
+    "s": 200,
+    "m": "POST",
+    "post": "{\"site_id\":\"d2327a28c8f9\",\"hostname\":\"www.bonplanbio.fr\",\"pathname\":\"/carte\",\"querystring\":\"\",\"screenWidth\":1400,\"screenHeight\":900,\"language\":\"en-US\",\"page_title\":\"Carte de la vente directe - Bon Plan Bio\",\"referrer\":\"\",\"_bs\":6,\"_bsm\":541,\"tag\":\"Bon Plan Bio\",\"type\":\"pageview\",\"event_name\":\"\"}",
+    "t": "application/json; charset=utf-8",
+    "forme": {
+     "cles": [
+      "success"
+     ],
+     "n": null,
+     "champs": null,
+     "exemple": null
+    }
+   },
+   {
+    "u": "https://r.local.cool/api/session-replay/record/d2327a28c8f9",
+    "s": 200,
+    "m": "POST",
+    "post": "{\"userId\":\"\",\"events\":[{\"type\":4,\"data\":{\"href\":\"https://www.bonplanbio.fr/carte\",\"width\":1400,\"height\":900},\"timestamp\":1791531387491},{\"type\":2,\"data\":{\"node\":{\"type\":0,\"childNodes\":[{\"type\":1,\"name\":\"html\",\"publicId\":\"\",\"systemId\":\"\",\"id\":2},{\"type\":2,\"tagName\":\"html\",\"attributes\":{\"lang\":\"fr\",\"d",
+    "t": "application/json; charset=utf-8",
+    "forme": {
+     "cles": [
+      "success"
+     ],
+     "n": null,
+     "champs": null,
+     "exemple": null
+    }
+   }
+  ],
+  "liens": [
+   "https://www.bonplanbio.fr/vente-directe-a",
+   "https://maplibre.org/",
+   "https://www.openmaptiles.org/",
+   "https://www.openstreetmap.org/copyright",
+   "https://www.bonplanbio.fr/relais-de-producteurs"
+  ],
+  "titre": "Carte de la vente directe - Bon Plan Bio"
+ }
+}
