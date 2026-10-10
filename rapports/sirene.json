@@ -1,14 +1,14 @@
 {
- "date": "2026-10-09",
- "verifiees": 27634,
- "sansSiret": 485,
+ "date": "2026-10-10",
+ "verifiees": 27630,
+ "sansSiret": 486,
  "exclues": {
   "entreprise_fermee": 144,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
-  "association": 333,
+  "association": 332,
   "commerce_ou_transformation": 404,
   "activite_principale_non_agricole": 222,
   "etablissement_public": 83,
@@ -2095,6 +2095,15 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "85.60Z"
+  },
+  {
+   "id": 56736,
+   "nom": "RESTAURANT DU COEUR DE LA CHARENTE",
+   "cp": "16400",
+   "ville": "LA COURONNE",
+   "decision": "a_verifier",
+   "motif": "etablissement_ferme",
+   "naf": "88.99B"
   },
   {
    "id": 59160,
@@ -6219,15 +6228,6 @@
    "naf": "01.50Z"
   },
   {
-   "id": 163602,
-   "nom": "HARRISON James",
-   "cp": "39800",
-   "ville": "Brainans",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.21Z"
-  },
-  {
    "id": 15347,
    "nom": "SARTHOU NICOLAS",
    "cp": "40410",
@@ -6829,15 +6829,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "01.13Z"
-  },
-  {
-   "id": 131298,
-   "nom": "ASSOCIATION L'ETABLE NANTAISE",
-   "cp": "44340",
-   "ville": "BOUGUENAIS",
-   "decision": "a_verifier",
-   "motif": "association",
-   "naf": "85.59B"
   },
   {
    "id": 133327,
