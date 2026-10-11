@@ -122,7 +122,7 @@
   },
   "41": {
    "totalAgenceBio": 703,
-   "retenues": 139
+   "retenues": 140
   },
   "42": {
    "totalAgenceBio": 1408,
@@ -385,6 +385,6 @@
    "retenues": 203
   }
  },
- "fermesRetenues": 27966,
- "misAJour": "2026-10-10"
+ "fermesRetenues": 27967,
+ "misAJour": "2026-10-11"
 }
