@@ -1,18 +1,18 @@
 {
- "date": "2026-10-12",
- "verifiees": 27635,
- "sansSiret": 484,
+ "date": "2026-10-13",
+ "verifiees": 27638,
+ "sansSiret": 490,
  "exclues": {
-  "entreprise_fermee": 144,
+  "entreprise_fermee": 140,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
   "association": 332,
   "commerce_ou_transformation": 404,
-  "activite_principale_non_agricole": 222,
+  "activite_principale_non_agricole": 223,
   "etablissement_public": 83,
-  "etablissement_ferme": 161,
+  "etablissement_ferme": 160,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -646,15 +646,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "94.99Z"
-  },
-  {
-   "id": 3210,
-   "nom": "MARVIER Corinne",
-   "cp": "07440",
-   "ville": "BOFFRES",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.42Z"
   },
   {
    "id": 6152,
@@ -7767,6 +7758,15 @@
    "naf": "01.50Z"
   },
   {
+   "id": 50725,
+   "nom": "GFA DES LANDES",
+   "cp": "53250",
+   "ville": "Le Ham",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
+   "naf": "68.20B"
+  },
+  {
    "id": 53158,
    "nom": "AIDE ACCUEIL AMITIE LE PONCEAU ESAT - R LE PONCEAU - BLANCHET André",
    "cp": "53800",
@@ -9099,15 +9099,6 @@
    "naf": "01.25Z"
   },
   {
-   "id": 161033,
-   "nom": "CHARLOTTE GILLES",
-   "cp": "64390",
-   "ville": "Orion",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.28Z"
-  },
-  {
    "id": 16446,
    "nom": "Brigades Nature des Hautes-Pyrénées-La Ferme BiO-",
    "cp": "65000",
@@ -9801,15 +9792,6 @@
    "naf": "94.99Z"
   },
   {
-   "id": 144628,
-   "nom": "LA FERME DU SUCHEL TRON Agnès, CHARRE Manon, EDIEUX Guillaume",
-   "cp": "69170",
-   "ville": "VALSONNE",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "46.31Z"
-  },
-  {
    "id": 145530,
    "nom": "FINANCIERE WOJNO",
    "cp": "69670",
@@ -10159,15 +10141,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "11.05Z"
-  },
-  {
-   "id": 104371,
-   "nom": "COTTERELLE LUC",
-   "cp": "73670",
-   "ville": "Entremont le Vieux",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.49Z"
   },
   {
    "id": 124409,
@@ -10942,15 +10915,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "02.30Z"
-  },
-  {
-   "id": 148326,
-   "nom": "GILLET Yaelle",
-   "cp": "81640",
-   "ville": "SALLES",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.43Z"
   },
   {
    "id": 149270,
