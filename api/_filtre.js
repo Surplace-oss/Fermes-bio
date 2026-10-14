@@ -23,7 +23,11 @@ const ANNUAIRE_AGRICOLE = new Set(Array.from({ length: 35 }, (_, i) => i + 1));
 // 45 magasin bio, 46 grande surface, 48 proxi, 49 épicerie, 50 thés/cafés,
 // 51 primeur, 52 cosmétiques, 59 jardinerie, 60+ commerce de gros & services
 const ANNUAIRE_COMMERCE = new Set([45, 46, 48, 49, 50, 51, 52, 59]);
-const estCommerceGros = id => id >= 60;
+// 60-83 = commerce de gros. Au-delà (84+) ce sont des ateliers de transformation (cave,
+// fromagerie, huilerie…) ou des métiers agricoles (133 culture oléagineuse, 135 lapins) :
+// ils ne doivent pas faire exclure une ferme.
+const estCommerceGros = id => id >= 60 && id <= 83;
+const AGRICOLE_HORS_PLAGE = new Set([133, 135]);
 
 // Codes NAF clairement non agricoles
 const NAF_EXCLUS = ['46', '47', '56', '10', '11', '20', '72'];
@@ -77,12 +81,15 @@ export function motifRejet(o) {
   const adr = adresseActivite(o);
   if (!adr) return 'pas_gps';
   if (String(adr.codePostal || '').startsWith('75') && PARIS_IMPOSSIBLE.test((o.productions || []).map(p => p.nom).join(' | '))) return 'siege_paris';
-  if ([...ann].some(id => ANNUAIRE_COMMERCE.has(id) || estCommerceGros(id))) return 'commerce';
+  // Une exploitation (NAF 01-03 + métier agricole) qui vend aussi en gros (vins, fruits…) ou tient
+  // une boutique reste une ferme : la règle « commerce » ne vise que les non-producteurs.
+  const exploitation = /^0[123]/.test(naf) && [...ann].some(id => ANNUAIRE_AGRICOLE.has(id) || AGRICOLE_HORS_PLAGE.has(id));
+  if (!exploitation && [...ann].some(id => ANNUAIRE_COMMERCE.has(id) || estCommerceGros(id))) return 'commerce';
   if (o.reseau && !/^autre$/i.test(o.reseau.trim())) return 'reseau_commercial';
   if (ENSEIGNES.test(nom)) return 'enseigne';
   if (COLLECTIVITES.test(nom) && !/domaine/i.test(nom)) return 'collectivite';
   if (MARQUES.test(nom)) return 'marque_industrielle';
-  const agricoleAnnuaire = [...ann].some(id => ANNUAIRE_AGRICOLE.has(id));
+  const agricoleAnnuaire = [...ann].some(id => ANNUAIRE_AGRICOLE.has(id) || AGRICOLE_HORS_PLAGE.has(id));
   if (NAF_EXCLUS.includes(naf.slice(0, 2)) && !agricoleAnnuaire) return 'naf_non_agricole';
   if (['20', '72'].includes(naf.slice(0, 2))) return 'naf_non_agricole';
   if (!agricoleAnnuaire && !/^0[123]/.test(naf)) return 'pas_agricole';
