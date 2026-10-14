@@ -1,9 +1,9 @@
 {
- "date": "2026-10-13",
- "verifiees": 27638,
- "sansSiret": 490,
+ "date": "2026-10-14",
+ "verifiees": 27647,
+ "sansSiret": 491,
  "exclues": {
-  "entreprise_fermee": 140,
+  "entreprise_fermee": 138,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
@@ -12,7 +12,7 @@
   "commerce_ou_transformation": 404,
   "activite_principale_non_agricole": 223,
   "etablissement_public": 83,
-  "etablissement_ferme": 160,
+  "etablissement_ferme": 159,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -3762,15 +3762,6 @@
    "naf": "11.01Z"
   },
   {
-   "id": 23999,
-   "nom": "LES LEGUMES DU CHATEAU REVY Mickael et flora",
-   "cp": "27600",
-   "ville": "GAILLON",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
-  },
-  {
    "id": 35135,
    "nom": "DOMAINE DES HULOTTES DENIZE Guillaume et Hélène",
    "cp": "27150",
@@ -3814,15 +3805,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "01.13Z"
-  },
-  {
-   "id": 23858,
-   "nom": "DESAIRE Thomas",
-   "cp": "28190",
-   "ville": "Pontgouin",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "94.99Z"
   },
   {
    "id": 44755,
@@ -5632,15 +5614,6 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
-  },
-  {
-   "id": 26969,
-   "nom": "LE MARAIS SAGE",
-   "cp": "35770",
-   "ville": "Vern sur Seiche",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
   },
   {
    "id": 38158,
