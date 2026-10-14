@@ -1,0 +1,19 @@
+name: Diagnostic 66 (chiffré)
+on: workflow_dispatch
+permissions: { contents: write }
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/extraire-66.mjs
+      - run: |
+          gzip -9 /tmp/dump.json
+          openssl rand -hex 32 > /tmp/k
+          openssl enc -aes-256-cbc -pbkdf2 -salt -in /tmp/dump.json.gz -out rapports/diag-66.bin -pass file:/tmp/k
+          openssl pkeyutl -encrypt -pubin -inkey scripts/cles/rapport-public.pem -in /tmp/k -out rapports/diag-66.key
+          git config user.name "surplace-bot"; git config user.email "bot@surplace.bio"
+          git add rapports/diag-66.* && git commit -m "Diagnostic 66 (chiffré)" && git push
