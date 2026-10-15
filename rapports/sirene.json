@@ -1,18 +1,18 @@
 {
- "date": "2026-10-14",
- "verifiees": 29909,
- "sansSiret": 496,
+ "date": "2026-10-15",
+ "verifiees": 29913,
+ "sansSiret": 494,
  "exclues": {
-  "entreprise_fermee": 139,
+  "entreprise_fermee": 138,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
   "association": 348,
-  "commerce_ou_transformation": 430,
+  "commerce_ou_transformation": 431,
   "activite_principale_non_agricole": 241,
   "etablissement_public": 95,
-  "etablissement_ferme": 166,
+  "etablissement_ferme": 165,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -1366,15 +1366,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "47.25Z"
-  },
-  {
-   "id": 59393,
-   "nom": "LA SICARDE Mme GUILHEMAT",
-   "cp": "11420",
-   "ville": "Saint Sernin",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.50Z"
   },
   {
    "id": 71321,
@@ -4228,15 +4219,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "11.01Z"
-  },
-  {
-   "id": 121832,
-   "nom": "DARY SEBASTIEN FRANCK",
-   "cp": "29710",
-   "ville": "GOURLIZON",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
   },
   {
    "id": 140564,
@@ -7882,6 +7864,15 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "10.61A"
+  },
+  {
+   "id": 33621,
+   "nom": "POINCHEVAL LUCIE FABIENNE DELPHINE",
+   "cp": "50510",
+   "ville": "HUDIMESNIL",
+   "decision": "a_verifier",
+   "motif": "commerce_ou_transformation",
+   "naf": "10.39B"
   },
   {
    "id": 38794,
