@@ -1,18 +1,18 @@
 {
- "date": "2026-10-15",
- "verifiees": 29913,
+ "date": "2026-10-16",
+ "verifiees": 29917,
  "sansSiret": 494,
  "exclues": {
-  "entreprise_fermee": 138,
+  "entreprise_fermee": 137,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
   "association": 348,
-  "commerce_ou_transformation": 431,
+  "commerce_ou_transformation": 430,
   "activite_principale_non_agricole": 241,
   "etablissement_public": 95,
-  "etablissement_ferme": 165,
+  "etablissement_ferme": 163,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -5058,15 +5058,6 @@
    "naf": "87.20A"
   },
   {
-   "id": 130858,
-   "nom": "La Poule Perchée",
-   "cp": "31350",
-   "ville": "Cardeilhac",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.47Z"
-  },
-  {
    "id": 133885,
    "nom": "EI ASTIER Laura",
    "cp": "31600",
@@ -7705,7 +7696,7 @@
   },
   {
    "id": 58749,
-   "nom": "DENIS ADRIEN",
+   "nom": "FERME DE MALTRAY",
    "cp": "49490",
    "ville": "Noyant-Villages",
    "decision": "a_verifier",
@@ -8125,15 +8116,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "94.99Z"
-  },
-  {
-   "id": 5643,
-   "nom": "EARL DU FAN",
-   "cp": "53290",
-   "ville": "Grez-en-Bouère",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.42Z"
   },
   {
    "id": 13208,
@@ -9693,15 +9675,6 @@
    "naf": "01.45Z"
   },
   {
-   "id": 161213,
-   "nom": "POIX STEPHANE",
-   "cp": "65370",
-   "ville": "Thèbe",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "93.19Z"
-  },
-  {
    "id": 163421,
    "nom": "LEGENTILHOMME Clélia - LA GENTILHOMMIERE",
    "cp": "65230",
@@ -10375,15 +10348,6 @@
    "decision": "exclue",
    "motif": "holding_ou_finance",
    "naf": "64.20Z"
-  },
-  {
-   "id": 164359,
-   "nom": "CHRISTOPHE SEMASKA",
-   "cp": "69420",
-   "ville": "AMPUIS",
-   "decision": "a_verifier",
-   "motif": "commerce_ou_transformation",
-   "naf": "47.25Z"
   },
   {
    "id": 11051,
