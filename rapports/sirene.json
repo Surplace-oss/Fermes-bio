@@ -1,18 +1,18 @@
 {
- "date": "2026-10-16",
- "verifiees": 29917,
- "sansSiret": 494,
+ "date": "2026-10-17",
+ "verifiees": 29926,
+ "sansSiret": 491,
  "exclues": {
-  "entreprise_fermee": 137,
+  "entreprise_fermee": 134,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
   "association": 348,
-  "commerce_ou_transformation": 430,
+  "commerce_ou_transformation": 431,
   "activite_principale_non_agricole": 241,
   "etablissement_public": 95,
-  "etablissement_ferme": 163,
+  "etablissement_ferme": 152,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -142,24 +142,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "10.71C"
-  },
-  {
-   "id": 38313,
-   "nom": "SANUDO DENIS PIERRE",
-   "cp": "03350",
-   "ville": "Cerilly",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.45Z"
-  },
-  {
-   "id": 38331,
-   "nom": "PANACES SAUVAGES",
-   "cp": "03250",
-   "ville": "Châtel Montagne",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.28Z"
   },
   {
    "id": 130965,
@@ -340,15 +322,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "47.81Z"
-  },
-  {
-   "id": 38253,
-   "nom": "DE PRA LONG",
-   "cp": "05100",
-   "ville": "PUY SAINT PIERRE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.41Z"
   },
   {
    "id": 48243,
@@ -1071,15 +1044,6 @@
    "naf": "01.11Z"
   },
   {
-   "id": 39468,
-   "nom": "COSSON Benoît",
-   "cp": "09350",
-   "ville": "DAUMAZAN-SUR-ARIZE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.49Z"
-  },
-  {
    "id": 40076,
    "nom": "MAURY Jean-François",
    "cp": "09200",
@@ -1530,15 +1494,6 @@
    "naf": "01.11Z"
   },
   {
-   "id": 39794,
-   "nom": "LE LEU Marie-Laure",
-   "cp": "12200",
-   "ville": "Monteils",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.28Z"
-  },
-  {
    "id": 40473,
    "nom": "ALBOUY RL ALBOUY Rodolphe",
    "cp": "12120",
@@ -1762,15 +1717,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "47.19B"
-  },
-  {
-   "id": 39453,
-   "nom": "CHANEAC DAVID DENIS",
-   "cp": "13210",
-   "ville": "SAINT RÉMY DE PROVENCE",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.28Z"
   },
   {
    "id": 47672,
@@ -3690,15 +3636,6 @@
    "naf": "01.11Z"
   },
   {
-   "id": 39887,
-   "nom": "PANO ALEXIS LEO",
-   "cp": "26190",
-   "ville": "Rochechinard",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.25Z"
-  },
-  {
    "id": 47993,
    "nom": "EPLEFPA TERRE D'HORIZON ROUDIL Olivier",
    "cp": "26100",
@@ -4030,15 +3967,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "11.03Z"
-  },
-  {
-   "id": 38013,
-   "nom": "OUVRARD Aude",
-   "cp": "29590",
-   "ville": "ROSNOEN",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.47Z"
   },
   {
    "id": 40929,
@@ -5227,15 +5155,6 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "74.10Z"
-  },
-  {
-   "id": 39752,
-   "nom": "CAHUZAC Jérémy",
-   "cp": "32360",
-   "ville": "JEGUN",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.11Z"
   },
   {
    "id": 45792,
@@ -6822,15 +6741,6 @@
    "naf": "46.61Z"
   },
   {
-   "id": 39884,
-   "nom": "EI SIGAUD Delphine",
-   "cp": "43370",
-   "ville": "Le Brignon",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.42Z"
-  },
-  {
    "id": 43307,
    "nom": "BRINGER GHISLAIN",
    "cp": "43370",
@@ -6982,24 +6892,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "10.89Z"
-  },
-  {
-   "id": 42239,
-   "nom": "CARROGET RACHEL",
-   "cp": "44370",
-   "ville": "LOIREAUXENCE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.45Z"
-  },
-  {
-   "id": 42660,
-   "nom": "CHOBLET ADRIEN ROGER JEAN",
-   "cp": "44830",
-   "ville": "BOUAYE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.42Z"
   },
   {
    "id": 47553,
@@ -7621,15 +7513,6 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
-  },
-  {
-   "id": 38625,
-   "nom": "CHIRON Nicolas",
-   "cp": "49670",
-   "ville": "Valanjou",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.50Z"
   },
   {
    "id": 43379,
@@ -9228,9 +9111,9 @@
    "id": 38274,
    "nom": "VALET Benoit",
    "cp": "63890",
-   "ville": "SAINT ELOY LA GLACIERE",
+   "ville": "SAINT-ELOY-LA-GLACIERE",
    "decision": "a_verifier",
-   "motif": "etablissement_ferme",
+   "motif": "commerce_ou_transformation",
    "naf": "10.83Z"
   },
   {
