@@ -1,9 +1,9 @@
 {
- "date": "2026-10-17",
+ "date": "2026-10-18",
  "verifiees": 29926,
- "sansSiret": 491,
+ "sansSiret": 490,
  "exclues": {
-  "entreprise_fermee": 134,
+  "entreprise_fermee": 133,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
@@ -6244,15 +6244,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "01.28Z"
-  },
-  {
-   "id": 144895,
-   "nom": "Eugénie Gauquelin",
-   "cp": "38350",
-   "ville": "Nantes-en-Ratier",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
   },
   {
    "id": 145149,
