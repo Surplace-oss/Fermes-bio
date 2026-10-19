@@ -1,7 +1,7 @@
 {
- "date": "2026-10-18",
- "verifiees": 29926,
- "sansSiret": 490,
+ "date": "2026-10-19",
+ "verifiees": 29930,
+ "sansSiret": 489,
  "exclues": {
   "entreprise_fermee": 133,
   "collectivite_ou_etat": 4,
@@ -280,7 +280,7 @@
   },
   {
    "id": 121444,
-   "nom": "MADAME ANNE BLANJOT",
+   "nom": "MONSIEUR ROBIN GIANNINI",
    "cp": "04150",
    "ville": "SIMIANE LA ROTONDE",
    "decision": "exclue",
