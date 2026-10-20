@@ -1,9 +1,9 @@
 {
- "date": "2026-10-19",
- "verifiees": 29930,
- "sansSiret": 489,
+ "date": "2026-10-20",
+ "verifiees": 29921,
+ "sansSiret": 492,
  "exclues": {
-  "entreprise_fermee": 133,
+  "entreprise_fermee": 116,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
@@ -12,7 +12,7 @@
   "commerce_ou_transformation": 431,
   "activite_principale_non_agricole": 241,
   "etablissement_public": 95,
-  "etablissement_ferme": 152,
+  "etablissement_ferme": 146,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -217,12 +217,12 @@
   },
   {
    "id": 46647,
-   "nom": "SALICIS ROBERT ANDRE",
+   "nom": "DOMAINE DES COUPIERS",
    "cp": "04300",
    "ville": "SAINT-MARTIN-LES-EAUX",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.11Z"
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
+   "naf": "68.20A"
   },
   {
    "id": 48067,
@@ -711,30 +711,12 @@
    "naf": "68.20B"
   },
   {
-   "id": 44179,
-   "nom": "CHAPUS SANDRA RAPHAELLE ALBERTE",
-   "cp": "07190",
-   "ville": "MARCOLS LES EAUX",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.25Z"
-  },
-  {
    "id": 46669,
    "nom": "LA FERME AU CHATEAU SABOT Maxime / VIELFAURE Jean-Luc",
    "cp": "07110",
    "ville": "VALGORGE",
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
-   "naf": "68.20B"
-  },
-  {
-   "id": 48829,
-   "nom": "LA FERME DE PISSE RENARD",
-   "cp": "07190",
-   "ville": "SAINT ETIENNE DE SERRES",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
    "naf": "68.20B"
   },
   {
@@ -961,15 +943,6 @@
    "decision": "exclue",
    "motif": "entreprise_fermee",
    "naf": "01.13Z"
-  },
-  {
-   "id": 45540,
-   "nom": "GRUGET Léopold",
-   "cp": "08110",
-   "ville": "Sailly",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.50Z"
   },
   {
    "id": 48599,
@@ -1262,8 +1235,8 @@
   {
    "id": 38879,
    "nom": "BRULEZ ELSA",
-   "cp": "10110",
-   "ville": "Bar-sur-Seine",
+   "cp": "10340",
+   "ville": "BRAGELOGNE BEAUVOIR",
    "decision": "a_verifier",
    "motif": "maintenue_holding_ou_finance",
    "naf": "66.22Z"
@@ -1720,12 +1693,12 @@
   },
   {
    "id": 47672,
-   "nom": "FONTCHENE",
+   "nom": "GROUPEMENT FONCIER AGRICOLE LES ANTIQUES",
    "cp": "13210",
-   "ville": "Saint-Rémy-de-Provence",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.21Z"
+   "ville": "Saint Remy de Provence",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
+   "naf": "68.20B"
   },
   {
    "id": 48556,
@@ -2419,6 +2392,15 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "68.32A"
+  },
+  {
+   "id": 101171,
+   "nom": "THINAT Aurélien",
+   "cp": "18240",
+   "ville": "BOULLERET",
+   "decision": "a_verifier",
+   "motif": "commerce_ou_transformation",
+   "naf": "47.81Z"
   },
   {
    "id": 130488,
@@ -3474,15 +3456,6 @@
    "naf": "01.13Z"
   },
   {
-   "id": 49320,
-   "nom": "GUILLAUME BRUNO JEAN DENIS",
-   "cp": "25210",
-   "ville": "BONNETAGE",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.41Z"
-  },
-  {
    "id": 51268,
    "nom": "SASU LES TILLEULS DUPREZ Olivier",
    "cp": "25870",
@@ -3643,15 +3616,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_public",
    "naf": "85.32Z"
-  },
-  {
-   "id": 48192,
-   "nom": "LES RUCHERS DE VERONNE ARNAUD Patrick",
-   "cp": "26340",
-   "ville": "VERONNE",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.46Z"
   },
   {
    "id": 49334,
@@ -4039,24 +4003,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "11.07B"
-  },
-  {
-   "id": 48489,
-   "nom": "LE GUENNEC Laëtitia",
-   "cp": "29470",
-   "ville": "Plougastel-Daoulas",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
-  },
-  {
-   "id": 49163,
-   "nom": "HUITRIC Michèle - ANSKER Bruno",
-   "cp": "29500",
-   "ville": "ERGUE GABERIC",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
   },
   {
    "id": 49281,
@@ -4453,15 +4399,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "46.34Z"
-  },
-  {
-   "id": 43706,
-   "nom": "GARCIA José Antonio",
-   "cp": "30460",
-   "ville": "Lasalle",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
   },
   {
    "id": 43891,
@@ -4986,15 +4923,6 @@
    "naf": "87.20A"
   },
   {
-   "id": 133885,
-   "nom": "EI ASTIER Laura",
-   "cp": "31600",
-   "ville": "Seysses",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
-  },
-  {
    "id": 137783,
    "nom": "ASINERIE MARQUISE & CO",
    "cp": "31230",
@@ -5155,15 +5083,6 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "74.10Z"
-  },
-  {
-   "id": 45792,
-   "nom": "ZWINKELS JOHANNES",
-   "cp": "32190",
-   "ville": "CAILLAVET",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
   },
   {
    "id": 46252,
@@ -5587,15 +5506,6 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "74.90B"
-  },
-  {
-   "id": 35802,
-   "nom": "DOMAINE DE CANTAGRIL HENNEBERT Florence",
-   "cp": "34560",
-   "ville": "Montbazin",
-   "decision": "a_verifier",
-   "motif": "activite_principale_non_agricole",
-   "naf": "68.20B"
   },
   {
    "id": 41719,
@@ -6111,24 +6021,6 @@
    "naf": "85.32Z"
   },
   {
-   "id": 46169,
-   "nom": "TURC Christian",
-   "cp": "38350",
-   "ville": "SAINT PIERRE DE MEAROZ",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.50Z"
-  },
-  {
-   "id": 47670,
-   "nom": "FERME DES CHARRIERES",
-   "cp": "38320",
-   "ville": "HERBEYS",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "56.10A"
-  },
-  {
    "id": 48230,
    "nom": "LES NOUVEAUX JARDINS DE LA SOLIDARITE",
    "cp": "38430",
@@ -6370,15 +6262,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "10.71C"
-  },
-  {
-   "id": 161032,
-   "nom": "ROZ EARL",
-   "cp": "39120",
-   "ville": "Saint-Loup",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.50Z"
   },
   {
    "id": 15347,
@@ -7569,15 +7452,6 @@
    "naf": "11.05Z"
   },
   {
-   "id": 58749,
-   "nom": "FERME DE MALTRAY",
-   "cp": "49490",
-   "ville": "Noyant-Villages",
-   "decision": "a_verifier",
-   "motif": "activite_principale_non_agricole",
-   "naf": "68.20B"
-  },
-  {
    "id": 59012,
    "nom": "ACCARY PASCAL MANUEL LOUIS",
    "cp": "49520",
@@ -7783,15 +7657,6 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
-  },
-  {
-   "id": 56491,
-   "nom": "LA FERME DES CLAIDS",
-   "cp": "50660",
-   "ville": "ORVAL",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
   },
   {
    "id": 60529,
@@ -9117,15 +8982,6 @@
    "naf": "85.32Z"
   },
   {
-   "id": 43915,
-   "nom": "CONTRETEMPS",
-   "cp": "63210",
-   "ville": "SAINT PIERRE ROCHE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.28Z"
-  },
-  {
    "id": 45788,
    "nom": "EPLEFPA de MARMILHAT",
    "cp": "63370",
@@ -9810,15 +9666,6 @@
    "naf": "68.20B"
   },
   {
-   "id": 49821,
-   "nom": "EARL FERME STEGLE",
-   "cp": "67390",
-   "ville": "ELSENHEIM",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.50Z"
-  },
-  {
    "id": 69304,
    "nom": "SEVE'UP",
    "cp": "67270",
@@ -9889,15 +9736,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "47.81Z"
-  },
-  {
-   "id": 45785,
-   "nom": "ZIMMERLIN ZIMMERLIN Pierre",
-   "cp": "68320",
-   "ville": "JEBSHEIM",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "68.20B"
   },
   {
    "id": 50676,
@@ -10096,15 +9934,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "11.02B"
-  },
-  {
-   "id": 46011,
-   "nom": "VERPILLAT MATTHIEU",
-   "cp": "69670",
-   "ville": "VAUGNERAY",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.19Z"
   },
   {
    "id": 48237,
@@ -10890,15 +10719,6 @@
    "naf": "94.99Z"
   },
   {
-   "id": 138234,
-   "nom": "KOVALEVSKI Florence",
-   "cp": "76890",
-   "ville": "Saint Victor l'Abbaye",
-   "decision": "a_verifier",
-   "motif": "commerce_ou_transformation",
-   "naf": "47.76Z"
-  },
-  {
    "id": 3301,
    "nom": "KERFRIDEN JEAN ALAIN",
    "cp": "77820",
@@ -11268,15 +11088,6 @@
    "naf": "01.45Z"
   },
   {
-   "id": 46685,
-   "nom": "REMUAUX Anne / RUCHER DES QUATRE CHEMINS",
-   "cp": "81160",
-   "ville": "Saint-Juéry",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "70.10Z"
-  },
-  {
    "id": 48282,
    "nom": "LES FEES NATURELLES MEDALLE Jean-Louis",
    "cp": "81150",
@@ -11347,15 +11158,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "11.01Z"
-  },
-  {
-   "id": 128811,
-   "nom": "COMBARIEU NICOLAS",
-   "cp": "81190",
-   "ville": "Tanus",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
   },
   {
    "id": 132152,
@@ -12143,8 +11945,8 @@
   {
    "id": 136719,
    "nom": "GUILLAUME ADRIEN - LA VERTE DE TERRE",
-   "cp": "85320",
-   "ville": "La Bretonnière-la-Claye",
+   "cp": "85520",
+   "ville": "Jard sur Mer",
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "47.78C"
@@ -12724,15 +12526,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "01.13Z"
-  },
-  {
-   "id": 48621,
-   "nom": "CHALLENGE INTERCONTINENTAL EXPRESS",
-   "cp": "95470",
-   "ville": "SAINT-WITZ",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "49.41A"
   },
   {
    "id": 52265,
