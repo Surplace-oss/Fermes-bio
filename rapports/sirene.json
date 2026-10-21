@@ -1,18 +1,18 @@
 {
- "date": "2026-10-20",
- "verifiees": 29921,
- "sansSiret": 492,
+ "date": "2026-10-21",
+ "verifiees": 29927,
+ "sansSiret": 491,
  "exclues": {
-  "entreprise_fermee": 116,
+  "entreprise_fermee": 112,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
-  "association": 348,
+  "association": 349,
   "commerce_ou_transformation": 431,
   "activite_principale_non_agricole": 241,
   "etablissement_public": 95,
-  "etablissement_ferme": 146,
+  "etablissement_ferme": 144,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -729,15 +729,6 @@
    "naf": "01.24Z"
   },
   {
-   "id": 50571,
-   "nom": "MIGNOT Edith",
-   "cp": "07410",
-   "ville": "SAINT-VICTOR",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "55.20Z"
-  },
-  {
    "id": 55380,
    "nom": "LES VERGERS D'ALISSE - CESAR MARZE",
    "cp": "07000",
@@ -1422,15 +1413,6 @@
    "naf": "68.20B"
   },
   {
-   "id": 4015,
-   "nom": "HARDIVILLER YANNICK",
-   "cp": "12320",
-   "ville": "GRAND VABRE",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.49Z"
-  },
-  {
    "id": 9329,
    "nom": "DES INFRUTS BODOT Pierre et RAMBAUD Sophie",
    "cp": "12230",
@@ -1501,15 +1483,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "56.30Z"
-  },
-  {
-   "id": 50392,
-   "nom": "EARL DU DOLMEN",
-   "cp": "12410",
-   "ville": "SALLES-CURAN",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.49Z"
   },
   {
    "id": 52395,
@@ -2340,15 +2313,6 @@
    "naf": "88.99B"
   },
   {
-   "id": 50975,
-   "nom": "EI FERRAND Anne-Laure",
-   "cp": "18800",
-   "ville": "BAUGY",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.11Z"
-  },
-  {
    "id": 56798,
    "nom": "SESAME AUTISME CHER",
    "cp": "18390",
@@ -2455,15 +2419,6 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
-  },
-  {
-   "id": 51124,
-   "nom": "LAFON DE LAGENESTE Clément",
-   "cp": "19700",
-   "ville": "Saint Clément",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.19Z"
   },
   {
    "id": 52377,
@@ -4030,15 +3985,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "10.89Z"
-  },
-  {
-   "id": 50874,
-   "nom": "DELGOVE Josette",
-   "cp": "29300",
-   "ville": "GUILLIGOMARC'H",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.45Z"
   },
   {
    "id": 51181,
@@ -9628,6 +9574,15 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "47.25Z"
+  },
+  {
+   "id": 165835,
+   "nom": "PERMATERRA",
+   "cp": "66400",
+   "ville": "CERET",
+   "decision": "a_verifier",
+   "motif": "association",
+   "naf": "94.99Z"
   },
   {
    "id": 12552,
