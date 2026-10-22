@@ -56,6 +56,17 @@ for (const [d, m] of Object.entries(paquets)) {
 
 const total = Object.values(index.departements).reduce((s, x) => s + x.retenues, 0);
 index.fermesRetenues = total;
+// Chiffres affichés sur la page d'accueil (même définition du vigneron que la carte :
+// producteur dont la seule activité déclarée est la vigne).
+const estVigneron = f => !!(f.metiers && f.metiers.length && f.metiers.every(m => /^(Viticulture|Vins)$/.test(m)));
+let vignerons = 0;
+for (const d of Object.keys(index.departements)) {
+  const m = paquets[d];
+  const liste = m ? [...m.values()] : JSON.parse(await readFile(new URL(`${d}.json`, DOSSIER), 'utf8')).fermes; // département en échec : fichier de la veille
+  vignerons += liste.filter(estVigneron).length;
+}
+index.vignerons = vignerons;
+index.totalAgenceBio = Object.values(index.departements).reduce((s, x) => s + x.totalAgenceBio, 0);
 index.misAJour = new Date().toISOString().slice(0, 10);
 await writeFile(new URL('index.json', DOSSIER), JSON.stringify(index, null, 1));
 console.log(`Total : ${total} fermes. Échecs : ${erreurs.join(', ') || 'aucun'}`);
