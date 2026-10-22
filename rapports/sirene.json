@@ -1,18 +1,18 @@
 {
- "date": "2026-10-21",
- "verifiees": 29927,
- "sansSiret": 491,
+ "date": "2026-10-22",
+ "verifiees": 29946,
+ "sansSiret": 481,
  "exclues": {
-  "entreprise_fermee": 112,
+  "entreprise_fermee": 106,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
-  "association": 349,
+  "association": 350,
   "commerce_ou_transformation": 431,
   "activite_principale_non_agricole": 241,
   "etablissement_public": 95,
-  "etablissement_ferme": 144,
+  "etablissement_ferme": 134,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -459,24 +459,6 @@
    "naf": "85.32Z"
   },
   {
-   "id": 56372,
-   "nom": "FERRY Gérard",
-   "cp": "06130",
-   "ville": "GRASSE",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.26Z"
-  },
-  {
-   "id": 56550,
-   "nom": "LE JARDIN DES ANTIPODES BOYLE Alexandra",
-   "cp": "06500",
-   "ville": "MENTON",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "94.99Z"
-  },
-  {
    "id": 58621,
    "nom": "ESAT LA BASTIDE",
    "cp": "06740",
@@ -781,15 +763,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "46.34Z"
-  },
-  {
-   "id": 101082,
-   "nom": "THERON JULIEN - LE POTA'JU",
-   "cp": "07260",
-   "ville": "ROSIERES",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
   },
   {
    "id": 120725,
@@ -2039,7 +2012,7 @@
    "cp": "16400",
    "ville": "LA COURONNE",
    "decision": "a_verifier",
-   "motif": "etablissement_ferme",
+   "motif": "association",
    "naf": "88.99B"
   },
   {
@@ -3591,15 +3564,6 @@
    "naf": "11.02B"
   },
   {
-   "id": 52645,
-   "nom": "BELLIER Aimé",
-   "cp": "26190",
-   "ville": "STE EULALIE-EN-ROYANS",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "68.20B"
-  },
-  {
    "id": 53001,
    "nom": "ASSOCIATION DE GESTION DE LA FERME EXPERIMENTALE D'ETOILE AGFEEERIMENTALE D'ETOILE AGFEE",
    "cp": "26800",
@@ -4005,15 +3969,6 @@
    "naf": "68.20B"
   },
   {
-   "id": 59113,
-   "nom": "ALGOLESKO",
-   "cp": "29750",
-   "ville": "Loctudy",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "03.21Z"
-  },
-  {
    "id": 60615,
    "nom": "BIOCEAN SAS",
    "cp": "29680",
@@ -4399,15 +4354,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "47.81Z"
-  },
-  {
-   "id": 59100,
-   "nom": "SZYMANSKI DAVID",
-   "cp": "30127",
-   "ville": "BELLEGARDE",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
   },
   {
    "id": 59510,
@@ -5706,15 +5652,6 @@
    "naf": "68.20B"
   },
   {
-   "id": 56709,
-   "nom": "PAYOU Martine",
-   "cp": "35290",
-   "ville": "GAEL",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.47Z"
-  },
-  {
    "id": 60392,
    "nom": "MORVAN MARC",
    "cp": "35330",
@@ -5974,15 +5911,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "94.99Z"
-  },
-  {
-   "id": 59767,
-   "nom": "POTAGER PACO",
-   "cp": "38270",
-   "ville": "PACT",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
   },
   {
    "id": 60629,
@@ -7398,15 +7326,6 @@
    "naf": "11.05Z"
   },
   {
-   "id": 59012,
-   "nom": "ACCARY PASCAL MANUEL LOUIS",
-   "cp": "49520",
-   "ville": "BOUILLE MENARD",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "35.11Z"
-  },
-  {
    "id": 60451,
    "nom": "ESAT DE LA REBELLERIE",
    "cp": "49560",
@@ -7704,15 +7623,6 @@
    "naf": "64.20Z"
   },
   {
-   "id": 52105,
-   "nom": "DES LAUCHES",
-   "cp": "51460",
-   "ville": "SAINT-ETIENNE-AU-TEMPLE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.11Z"
-  },
-  {
    "id": 89995,
    "nom": "LAGILLE LAGILLE Vincent",
    "cp": "51140",
@@ -7945,15 +7855,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_public",
    "naf": "85.32Z"
-  },
-  {
-   "id": 59144,
-   "nom": "DE LA VAUX MARIE ZEHR David",
-   "cp": "55300",
-   "ville": "Savonnières en Woevre",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.11Z"
   },
   {
    "id": 2298,
@@ -9927,15 +9828,6 @@
    "naf": "01.41Z"
   },
   {
-   "id": 60060,
-   "nom": "BET-GARITAN Clémence",
-   "cp": "69700",
-   "ville": "SAINT-ROMAIN-EN-GIER",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "68.20B"
-  },
-  {
    "id": 60189,
    "nom": "LES POT'IRONT",
    "cp": "69150",
@@ -10926,15 +10818,6 @@
    "naf": "88.91A"
   },
   {
-   "id": 60007,
-   "nom": "PETIT Mathilde et Anne",
-   "cp": "79360",
-   "ville": "BEAUVOIR SUR NIORT",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.11Z"
-  },
-  {
    "id": 83801,
    "nom": "DES DEUX VILLAGES SCEA BENOIST Stéphan",
    "cp": "79800",
@@ -11322,15 +11205,6 @@
    "naf": "88.99B"
   },
   {
-   "id": 56310,
-   "nom": "DOMAINE MIRA LUNA",
-   "cp": "83670",
-   "ville": "Châteauvert",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.21Z"
-  },
-  {
    "id": 56350,
    "nom": "EPLEFPA AGRICAMPUS",
    "cp": "83400",
@@ -11338,15 +11212,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_public",
    "naf": "85.32Z"
-  },
-  {
-   "id": 58734,
-   "nom": "RAYNAUD CHRISTINE",
-   "cp": "83670",
-   "ville": "BARJOLS",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
   },
   {
    "id": 70428,
