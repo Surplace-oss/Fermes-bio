@@ -181,13 +181,13 @@
     <div class="conteneur">
       <div class="bloc-chiffre">
         <div class="chiffre"><span class="entoure large">1 sur 5</span></div>
-        <p class="sous-chiffre">des <span data-n="operateurs">135&nbsp;812</span> professionnels inscrits à l'annuaire bio<br>est une ferme qui vous vend en direct.</p>
+        <p class="sous-chiffre">des quelque <span data-n="operateurs" data-arrondi="proche">136&nbsp;000</span> professionnels inscrits à l'annuaire bio<br>est une ferme qui vous vend en direct.</p>
       </div>
       <div class="texte-court">
         <h2>On a fait le tri <span class="souligne">pour vous</span>&nbsp;!</h2>
         <p>Boutiques, supermarchés, grossistes, transformateurs… <b>L'annuaire officiel du bio mélange tout.</b></p>
         <p><span class="surligne"><b><span class="sp">Sur <span class="entoure">Place</span></span> ne garde que les fermes.</b></span></p>
-        <p><b><span data-n="fermes">27&nbsp;082</span> fermes bio</b> et <span data-n="vignerons">3&nbsp;233</span> vignerons, partout en France, où acheter directement à celles et ceux qui produisent.</p>
+        <p><b>Plus de <span data-n="fermes" data-arrondi="bas">27&nbsp;000</span> fermes bio</b> et plus de <span data-n="vignerons" data-arrondi="bas">3&nbsp;000</span> vignerons, partout en France, où acheter directement à celles et ceux qui produisent.</p>
         <p>Derrière chaque ferme, un visage, une histoire, un savoir-faire.<br><b>À vous de les découvrir.</b></p>
         <a class="bouton clair" href="/carte.html" style="margin-top:22px">Trouver une ferme près de chez moi</a>
         <p class="source">Sources : Agence Bio, annuaire officiel des opérateurs bio, France métropolitaine (données ouvertes, mises à jour chaque nuit, dernière le <span data-n="maj">22 octobre 2026</span>), tri Sur Place : producteur, certification en cours, vente aux particuliers, hors commerces et grossistes. Rapporté aux 61&nbsp;159 fermes bio recensées par l'Observatoire 2025, cela fait près d'une ferme bio sur deux.</p>
@@ -284,7 +284,9 @@ fetch('/data/fermes/index.json').then(r => r.ok ? r.json() : null).then(ix => {
     fermes: ix.vignerons != null ? ix.fermesRetenues - ix.vignerons : null,
     vignerons: ix.vignerons ?? null,
   };
-  for (const [k, v] of Object.entries(val)) if (v) document.querySelectorAll(`[data-n="${k}"]`).forEach(e => e.textContent = nb(v));
+  // Arrondi au millier : « bas » pour « plus de … » (toujours vrai), « proche » pour « quelque … »
+  const arrondi = (v, mode) => mode === 'bas' ? Math.floor((v - 1) / 1000) * 1000 : mode === 'proche' ? Math.round(v / 1000) * 1000 : v;
+  for (const [k, v] of Object.entries(val)) if (v) document.querySelectorAll(`[data-n="${k}"]`).forEach(e => e.textContent = nb(arrondi(v, e.dataset.arrondi)));
   if (ix.misAJour) {
     const d = new Date(ix.misAJour + 'T12:00:00');
     if (!isNaN(d)) document.querySelectorAll('[data-n="maj"]').forEach(e => e.textContent = d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }));
