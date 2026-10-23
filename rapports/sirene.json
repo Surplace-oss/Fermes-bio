@@ -1,18 +1,18 @@
 {
- "date": "2026-10-22",
- "verifiees": 29946,
- "sansSiret": 481,
+ "date": "2026-10-23",
+ "verifiees": 29954,
+ "sansSiret": 473,
  "exclues": {
-  "entreprise_fermee": 106,
+  "entreprise_fermee": 104,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
   "association": 350,
   "commerce_ou_transformation": 431,
-  "activite_principale_non_agricole": 241,
+  "activite_principale_non_agricole": 240,
   "etablissement_public": 95,
-  "etablissement_ferme": 134,
+  "etablissement_ferme": 132,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -2547,15 +2547,6 @@
    "naf": "56.10A"
   },
   {
-   "id": 71741,
-   "nom": "KUBAN TINO",
-   "cp": "21190",
-   "ville": "MEURSAULT",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.21Z"
-  },
-  {
    "id": 74973,
    "nom": "CHARLES-HENRI BOURGUIGNON",
    "cp": "21420",
@@ -3661,15 +3652,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "10.39B"
-  },
-  {
-   "id": 120253,
-   "nom": "NATALI LUDOVIC JEAN JACQUES BERNARD",
-   "cp": "26250",
-   "ville": "LIVRON-SUR-DROME",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.45Z"
   },
   {
    "id": 122685,
@@ -8946,15 +8928,6 @@
    "naf": "46.19B"
   },
   {
-   "id": 146677,
-   "nom": "KOK Mara Natascha",
-   "cp": "63480",
-   "ville": "VERTOLAYE",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.29Z"
-  },
-  {
    "id": 6238,
    "nom": "DUFOURCQ-BRANA Thibaud",
    "cp": "64530",
@@ -10024,15 +9997,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "94.99Z"
-  },
-  {
-   "id": 96178,
-   "nom": "LA ROCHE DES BANCS",
-   "cp": "71340",
-   "ville": "MAILLY",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.21Z"
   },
   {
    "id": 97829,
@@ -11968,15 +11932,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "11.05Z"
-  },
-  {
-   "id": 164563,
-   "nom": "PEPINIERES COLLECTIVE DU LIMOUSIN",
-   "cp": "87380",
-   "ville": "CHATEAU-CHERVIX",
-   "decision": "a_verifier",
-   "motif": "activite_principale_non_agricole",
-   "naf": "82.99Z"
   },
   {
    "id": 11309,
