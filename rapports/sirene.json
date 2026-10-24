@@ -1,16 +1,16 @@
 {
- "date": "2026-10-23",
- "verifiees": 29954,
- "sansSiret": 473,
+ "date": "2026-10-24",
+ "verifiees": 29963,
+ "sansSiret": 469,
  "exclues": {
   "entreprise_fermee": 104,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
-  "association": 350,
+  "association": 349,
   "commerce_ou_transformation": 431,
-  "activite_principale_non_agricole": 240,
+  "activite_principale_non_agricole": 239,
   "etablissement_public": 95,
   "etablissement_ferme": 132,
   "maintenue_holding_ou_finance": 4,
@@ -1231,15 +1231,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "46.17B"
-  },
-  {
-   "id": 5855,
-   "nom": "EMMAUS LESPINASSIERE",
-   "cp": "11160",
-   "ville": "LESPINASSIERE",
-   "decision": "a_verifier",
-   "motif": "association",
-   "naf": "88.99B"
   },
   {
    "id": 6766,
@@ -7720,15 +7711,6 @@
    "decision": "exclue",
    "motif": "entreprise_fermee",
    "naf": "01.50Z"
-  },
-  {
-   "id": 50725,
-   "nom": "GFA DES LANDES",
-   "cp": "53250",
-   "ville": "Le Ham",
-   "decision": "a_verifier",
-   "motif": "activite_principale_non_agricole",
-   "naf": "68.20B"
   },
   {
    "id": 53158,
