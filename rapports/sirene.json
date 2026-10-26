@@ -1,6 +1,6 @@
 {
- "date": "2026-10-25",
- "verifiees": 29962,
+ "date": "2026-10-26",
+ "verifiees": 29963,
  "sansSiret": 469,
  "exclues": {
   "entreprise_fermee": 104,
@@ -12,7 +12,7 @@
   "commerce_ou_transformation": 431,
   "activite_principale_non_agricole": 239,
   "etablissement_public": 95,
-  "etablissement_ferme": 132,
+  "etablissement_ferme": 131,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -9187,15 +9187,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "47.11B"
-  },
-  {
-   "id": 158719,
-   "nom": "FISSON Guillaume",
-   "cp": "65200",
-   "ville": "Gerde",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
   },
   {
    "id": 160421,
