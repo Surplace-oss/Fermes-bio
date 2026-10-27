@@ -1,7 +1,7 @@
 {
- "date": "2026-10-26",
+ "date": "2026-10-27",
  "verifiees": 29963,
- "sansSiret": 469,
+ "sansSiret": 466,
  "exclues": {
   "entreprise_fermee": 104,
   "collectivite_ou_etat": 4,
@@ -349,15 +349,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "01.49Z"
-  },
-  {
-   "id": 121055,
-   "nom": "AUTISSIER Céline",
-   "cp": "05340",
-   "ville": "VALLOUISE",
-   "decision": "a_verifier",
-   "motif": "commerce_ou_transformation",
-   "naf": "10.89Z"
   },
   {
    "id": 129307,
@@ -772,6 +763,15 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "01.30Z"
+  },
+  {
+   "id": 121055,
+   "nom": "AUTISSIER Céline",
+   "cp": "07270",
+   "ville": "LE CRESTET",
+   "decision": "a_verifier",
+   "motif": "commerce_ou_transformation",
+   "naf": "10.89Z"
   },
   {
    "id": 130668,
