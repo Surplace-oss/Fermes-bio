@@ -1,16 +1,16 @@
 {
- "date": "2026-10-27",
- "verifiees": 29963,
- "sansSiret": 466,
+ "date": "2026-10-28",
+ "verifiees": 29971,
+ "sansSiret": 470,
  "exclues": {
-  "entreprise_fermee": 104,
+  "entreprise_fermee": 103,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
   "association": 349,
   "commerce_ou_transformation": 431,
-  "activite_principale_non_agricole": 239,
+  "activite_principale_non_agricole": 238,
   "etablissement_public": 95,
   "etablissement_ferme": 131,
   "maintenue_holding_ou_finance": 4,
@@ -277,15 +277,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "47.89Z"
-  },
-  {
-   "id": 121444,
-   "nom": "MONSIEUR ROBIN GIANNINI",
-   "cp": "04150",
-   "ville": "SIMIANE LA ROTONDE",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
   },
   {
    "id": 145780,
@@ -1816,15 +1807,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "11.03Z"
-  },
-  {
-   "id": 48550,
-   "nom": "DAUTRESOUL Anne-sophie",
-   "cp": "14230",
-   "ville": "Saint-Germain-du-Pert",
-   "decision": "a_verifier",
-   "motif": "activite_principale_non_agricole",
-   "naf": "68.20A"
   },
   {
    "id": 51097,
@@ -9838,7 +9820,7 @@
   },
   {
    "id": 145530,
-   "nom": "FINANCIERE WOJNO",
+   "nom": "FINANCIERE ROSSA",
    "cp": "69670",
    "ville": "VAUGNERAY",
    "decision": "exclue",
