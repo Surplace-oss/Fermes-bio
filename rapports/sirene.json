@@ -1,9 +1,9 @@
 {
- "date": "2026-10-28",
- "verifiees": 29971,
- "sansSiret": 470,
+ "date": "2026-10-29",
+ "verifiees": 29976,
+ "sansSiret": 468,
  "exclues": {
-  "entreprise_fermee": 103,
+  "entreprise_fermee": 102,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
@@ -10078,15 +10078,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "01.11Z"
-  },
-  {
-   "id": 39789,
-   "nom": "VALLON SANDRA ODETTE JEANINE",
-   "cp": "72340",
-   "ville": "LOIR EN VALLEE",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
   },
   {
    "id": 125121,
