@@ -1,9 +1,9 @@
 {
- "date": "2026-10-29",
- "verifiees": 29976,
- "sansSiret": 468,
+ "date": "2026-10-30",
+ "verifiees": 29983,
+ "sansSiret": 469,
  "exclues": {
-  "entreprise_fermee": 102,
+  "entreprise_fermee": 101,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
@@ -9538,15 +9538,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "56.21Z"
-  },
-  {
-   "id": 60420,
-   "nom": "FERME RAEDERSMATT Luc HURTER",
-   "cp": "68140",
-   "ville": "SOULTZEREN",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.28Z"
   },
   {
    "id": 83193,
