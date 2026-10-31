@@ -1,18 +1,18 @@
 {
- "date": "2026-10-30",
- "verifiees": 29983,
- "sansSiret": 469,
+ "date": "2026-10-31",
+ "verifiees": 29982,
+ "sansSiret": 468,
  "exclues": {
-  "entreprise_fermee": 101,
+  "entreprise_fermee": 99,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
   "association": 349,
-  "commerce_ou_transformation": 431,
+  "commerce_ou_transformation": 432,
   "activite_principale_non_agricole": 238,
   "etablissement_public": 95,
-  "etablissement_ferme": 131,
+  "etablissement_ferme": 107,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -286,15 +286,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "01.11Z"
-  },
-  {
-   "id": 160679,
-   "nom": "MEYNET Guerin - CAMPAGNE TATERRE",
-   "cp": "04300",
-   "ville": "SIGONCE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.26Z"
   },
   {
    "id": 17126,
@@ -1134,15 +1125,6 @@
    "naf": "01.21Z"
   },
   {
-   "id": 158607,
-   "nom": "TRILLEAUD Xaxier",
-   "cp": "09240",
-   "ville": "Alzen",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.25Z"
-  },
-  {
    "id": 161811,
    "nom": "GROUPEMENT PASTORAL DE LIERS-GOUTETS",
    "cp": "09320",
@@ -1159,15 +1141,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "01.43Z"
-  },
-  {
-   "id": 162499,
-   "nom": "MEGRET FRANCK CYRIL JACQUES",
-   "cp": "09200",
-   "ville": "RIVERENERT",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.45Z"
   },
   {
    "id": 12514,
@@ -2034,15 +2007,6 @@
    "naf": "47.89Z"
   },
   {
-   "id": 161657,
-   "nom": "BENETEAU Salomé - MIMO FERME FLORALE",
-   "cp": "16000",
-   "ville": "Angoulême",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.19Z"
-  },
-  {
    "id": 2751,
    "nom": "LE FOUR A MI FONTAN Mireille",
    "cp": "17270",
@@ -2284,15 +2248,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "94.99Z"
-  },
-  {
-   "id": 89114,
-   "nom": "HENNE Benjamin",
-   "cp": "18300",
-   "ville": "Vinon",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.50Z"
   },
   {
    "id": 99168,
@@ -2689,15 +2644,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "46.34Z"
-  },
-  {
-   "id": 162227,
-   "nom": "FERME DE MAYA",
-   "cp": "21190",
-   "ville": "Nantoux",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.45Z"
   },
   {
    "id": 163851,
@@ -3321,15 +3267,6 @@
    "naf": "74.30Z"
   },
   {
-   "id": 156600,
-   "nom": "TRUFFES ET NOIX DU PERIGORD FAUCOULANCHE Mathieu",
-   "cp": "24310",
-   "ville": "BRANTOME EN PERIGORD",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
-  },
-  {
    "id": 164912,
    "nom": "LES JARDINS DE AUMONT",
    "cp": "24300",
@@ -3589,15 +3526,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "10.39B"
-  },
-  {
-   "id": 82521,
-   "nom": "PRENDRE RACINE COMPAGNON Stéphanie",
-   "cp": "26460",
-   "ville": "Bouvières",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.28Z"
   },
   {
    "id": 82748,
@@ -3994,15 +3922,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "10.71C"
-  },
-  {
-   "id": 158207,
-   "nom": "SAVIN Faustine",
-   "cp": "29460",
-   "ville": "Hanvec",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.25Z"
   },
   {
    "id": 158884,
@@ -4491,15 +4410,6 @@
    "naf": "01.21Z"
   },
   {
-   "id": 160132,
-   "nom": "VACQUIER MARION AGNES DOMINIQUE",
-   "cp": "30120",
-   "ville": "ARRE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "90.03A"
-  },
-  {
    "id": 162927,
    "nom": "CROIX ROUGE BERKANI Malik",
    "cp": "30000",
@@ -4813,15 +4723,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "01.45Z"
-  },
-  {
-   "id": 156349,
-   "nom": "TOUNSI Nolwenn",
-   "cp": "31160",
-   "ville": "Aspet",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.28Z"
   },
   {
    "id": 157133,
@@ -5508,15 +5409,6 @@
    "naf": "01.45Z"
   },
   {
-   "id": 162031,
-   "nom": "GUEDAS Sylvie",
-   "cp": "34390",
-   "ville": "Mons",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.19Z"
-  },
-  {
    "id": 7226,
    "nom": "LEP AGRICOLE ST AUBIN DU CORMIER",
    "cp": "35140",
@@ -5686,15 +5578,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "01.28Z"
-  },
-  {
-   "id": 160358,
-   "nom": "LUGUE Youena",
-   "cp": "35600",
-   "ville": "Redon",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.21Z"
   },
   {
    "id": 160597,
@@ -5974,15 +5857,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "10.72Z"
-  },
-  {
-   "id": 157860,
-   "nom": "NICQ LAETITIA",
-   "cp": "38510",
-   "ville": "Sermérieu",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.24Z"
   },
   {
    "id": 162214,
@@ -6343,15 +6217,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "11.01Z"
-  },
-  {
-   "id": 87924,
-   "nom": "LEFLOCH Samantha",
-   "cp": "42820",
-   "ville": "Ambierle",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.25Z"
   },
   {
    "id": 107800,
@@ -8064,15 +7929,6 @@
    "naf": "01.24Z"
   },
   {
-   "id": 157434,
-   "nom": "MUGUET DOKO Manon",
-   "cp": "56400",
-   "ville": "le bono",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.25Z"
-  },
-  {
    "id": 159213,
    "nom": "la ferme des 2 sylves",
    "cp": "56400",
@@ -8431,15 +8287,6 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "78.30Z"
-  },
-  {
-   "id": 159844,
-   "nom": "DUSART Mathilde - LA FERME HAPPY",
-   "cp": "59310",
-   "ville": "Landas",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.24Z"
   },
   {
    "id": 160380,
@@ -8991,15 +8838,6 @@
    "naf": "68.20B"
   },
   {
-   "id": 86384,
-   "nom": "DOMAINE BRANA",
-   "cp": "64220",
-   "ville": "Ispoure",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.50Z"
-  },
-  {
    "id": 92189,
    "nom": "PITARCH FRANCIS",
    "cp": "64120",
@@ -9025,15 +8863,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "01.21Z"
-  },
-  {
-   "id": 131434,
-   "nom": "LES JARDINS D AMA LURRA - BAZIN DAMIEN",
-   "cp": "64130",
-   "ville": "BARCUS",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.28Z"
   },
   {
    "id": 134809,
@@ -9099,15 +8928,6 @@
    "naf": "71.20B"
   },
   {
-   "id": 158913,
-   "nom": "GARATE INAXI",
-   "cp": "64310",
-   "ville": "Sare",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.49Z"
-  },
-  {
    "id": 159827,
    "nom": "ANDREA HEIM",
    "cp": "64100",
@@ -9171,6 +8991,15 @@
    "naf": "47.11B"
   },
   {
+   "id": 129239,
+   "nom": "BARNIERS ADELINE",
+   "cp": "65330",
+   "ville": "HOUEYDETS",
+   "decision": "a_verifier",
+   "motif": "commerce_ou_transformation",
+   "naf": "10.71C"
+  },
+  {
    "id": 160421,
    "nom": "SOLLE Jérémie",
    "cp": "65230",
@@ -9178,15 +9007,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "01.45Z"
-  },
-  {
-   "id": 163421,
-   "nom": "LEGENTILHOMME Clélia - LA GENTILHOMMIERE",
-   "cp": "65230",
-   "ville": "Cizos",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
   },
   {
    "id": 5809,
@@ -9313,15 +9133,6 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "70.22Z"
-  },
-  {
-   "id": 83653,
-   "nom": "CHEVALLIER GUILLAUME JEAN-JACQUES",
-   "cp": "66800",
-   "ville": "ESTAVAR",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.11Z"
   },
   {
    "id": 88303,
@@ -10026,15 +9837,6 @@
    "naf": "94.99Z"
   },
   {
-   "id": 162020,
-   "nom": "BALLIVET DE REGLOIX MATHILDE MARIE ODILE",
-   "cp": "71190",
-   "ville": "SAINT-DIDIER-SUR-ARROUX",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.42Z"
-  },
-  {
    "id": 162925,
    "nom": "MADAME MARTHA SERRANO GUILLAUME",
    "cp": "71500",
@@ -10717,15 +10519,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "88.91A"
-  },
-  {
-   "id": 83801,
-   "nom": "DES DEUX VILLAGES SCEA BENOIST Stéphan",
-   "cp": "79800",
-   "ville": "EXOUDUN",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.45Z"
   },
   {
    "id": 94713,
@@ -11745,15 +11538,6 @@
    "naf": "85.32Z"
   },
   {
-   "id": 87085,
-   "nom": "COCOTTES HEUREUSES MERCIER Guillaume",
-   "cp": "86160",
-   "ville": "Magne",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.47Z"
-  },
-  {
    "id": 115644,
    "nom": "LE RESSORT - ENTREPRISE A BUT D'EMPLOI",
    "cp": "86540",
@@ -11779,15 +11563,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "56.21Z"
-  },
-  {
-   "id": 162203,
-   "nom": "SAVATTIER MATTHIEU",
-   "cp": "86480",
-   "ville": "Rouillé",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
   },
   {
    "id": 8850,
