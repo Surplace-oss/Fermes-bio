@@ -1,7 +1,7 @@
 {
- "date": "2026-10-31",
- "verifiees": 29982,
- "sansSiret": 468,
+ "date": "2026-11-01",
+ "verifiees": 29987,
+ "sansSiret": 465,
  "exclues": {
   "entreprise_fermee": 99,
   "collectivite_ou_etat": 4,
