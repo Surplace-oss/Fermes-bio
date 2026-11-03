@@ -1,18 +1,18 @@
 {
- "date": "2026-11-02",
- "verifiees": 29993,
- "sansSiret": 462,
+ "date": "2026-11-03",
+ "verifiees": 29956,
+ "sansSiret": 455,
  "exclues": {
-  "entreprise_fermee": 99,
+  "entreprise_fermee": 98,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
-  "association": 349,
-  "commerce_ou_transformation": 432,
+  "association": 347,
+  "commerce_ou_transformation": 433,
   "activite_principale_non_agricole": 238,
   "etablissement_public": 95,
-  "etablissement_ferme": 107,
+  "etablissement_ferme": 104,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -151,15 +151,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_public",
    "naf": "85.32Z"
-  },
-  {
-   "id": 134187,
-   "nom": "ASSOCIATION MARIE-ANGE CARLOTTI",
-   "cp": "03190",
-   "ville": "HAUT-BOCAGE",
-   "decision": "a_verifier",
-   "motif": "association",
-   "naf": "88.10C"
   },
   {
    "id": 9071,
@@ -754,6 +745,15 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "10.89Z"
+  },
+  {
+   "id": 129160,
+   "nom": "ANGENIEUX Nicolas",
+   "cp": "07240",
+   "ville": "Saint Jean Chambre",
+   "decision": "a_verifier",
+   "motif": "commerce_ou_transformation",
+   "naf": "11.01Z"
   },
   {
    "id": 130668,
@@ -3267,6 +3267,15 @@
    "naf": "74.30Z"
   },
   {
+   "id": 164230,
+   "nom": "ASSOCIATION DECLAREE ELLE SEME",
+   "cp": "24130",
+   "ville": "Prigonrieux",
+   "decision": "a_verifier",
+   "motif": "association",
+   "naf": "88.99B"
+  },
+  {
    "id": 164912,
    "nom": "LES JARDINS DE AUMONT",
    "cp": "24300",
@@ -5200,15 +5209,6 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "70.22Z"
-  },
-  {
-   "id": 164230,
-   "nom": "ASSOCIATION DECLAREE ELLE SEME",
-   "cp": "33220",
-   "ville": "PORT-SAINTE-FOY-ET-PONCHAPT",
-   "decision": "a_verifier",
-   "motif": "association",
-   "naf": "88.99B"
   },
   {
    "id": 164418,
@@ -8883,15 +8883,6 @@
    "naf": "10.89Z"
   },
   {
-   "id": 140908,
-   "nom": "ZUBELDIA JON",
-   "cp": "64240",
-   "ville": "HASPARREN",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.47Z"
-  },
-  {
    "id": 143600,
    "nom": "EKOFERME COUMEIGT OEUREKA",
    "cp": "64190",
@@ -9286,15 +9277,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "88.10C"
-  },
-  {
-   "id": 117787,
-   "nom": "FERME ST ANDRE - FEDERATION DE CHARITE - CARISTAS ALSACE",
-   "cp": "67490",
-   "ville": "FRIEDOLSHEIM",
-   "decision": "a_verifier",
-   "motif": "association",
-   "naf": "88.99B"
   },
   {
    "id": 10882,
@@ -9792,15 +9774,6 @@
    "naf": "11.04Z"
   },
   {
-   "id": 111962,
-   "nom": "AUX FLEURS ENCHANTEES CALAND Aurore",
-   "cp": "71400",
-   "ville": "Dracy Saint Loup",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.30Z"
-  },
-  {
    "id": 135392,
    "nom": "GATTIS Christina",
    "cp": "71120",
@@ -9979,15 +9952,6 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
-  },
-  {
-   "id": 153046,
-   "nom": "La Baraque",
-   "cp": "73800",
-   "ville": "Porte-de-Savoie",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.21Z"
   },
   {
    "id": 159785,
@@ -10329,15 +10293,6 @@
    "ville": "VAUX-LE-PENIL",
    "decision": "a_verifier",
    "motif": "association",
-   "naf": "01.13Z"
-  },
-  {
-   "id": 135611,
-   "nom": "BIOLAB MARAICHAGE",
-   "cp": "77760",
-   "ville": "Chevrainvilliers",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
    "naf": "01.13Z"
   },
   {
