@@ -1,6 +1,6 @@
 {
- "date": "2026-11-04",
- "verifiees": 29967,
+ "date": "2026-11-05",
+ "verifiees": 29976,
  "sansSiret": 455,
  "exclues": {
   "entreprise_fermee": 98,
@@ -7371,15 +7371,6 @@
    "naf": "01.50Z"
   },
   {
-   "id": 92344,
-   "nom": "LES CHEVRES DU CLOS AUX MOINES LETOUSEY Franck",
-   "cp": "50510",
-   "ville": "CERENCES",
-   "decision": "a_verifier",
-   "motif": "activite_principale_non_agricole",
-   "naf": "68.20B"
-  },
-  {
    "id": 131636,
    "nom": "MASSET Aurélien",
    "cp": "50200",
@@ -9574,6 +9565,15 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "87.90B"
+  },
+  {
+   "id": 118396,
+   "nom": "LE JARDIN DE CROIX-CARRIERE",
+   "cp": "69850",
+   "ville": "Saint Martin en Haut",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
+   "naf": "68.20B"
   },
   {
    "id": 123449,
