@@ -1,16 +1,16 @@
 {
- "date": "2026-11-05",
- "verifiees": 29976,
- "sansSiret": 455,
+ "date": "2026-11-06",
+ "verifiees": 30007,
+ "sansSiret": 437,
  "exclues": {
-  "entreprise_fermee": 98,
+  "entreprise_fermee": 97,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
   "association": 347,
-  "commerce_ou_transformation": 433,
-  "activite_principale_non_agricole": 238,
+  "commerce_ou_transformation": 434,
+  "activite_principale_non_agricole": 237,
   "etablissement_public": 95,
   "etablissement_ferme": 104,
   "maintenue_holding_ou_finance": 4,
@@ -1240,15 +1240,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "01.50Z"
-  },
-  {
-   "id": 93616,
-   "nom": "EI NYDEGGER Yohanna",
-   "cp": "11170",
-   "ville": "MONTOLIEU",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.21Z"
   },
   {
    "id": 95132,
@@ -3265,6 +3256,15 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "74.30Z"
+  },
+  {
+   "id": 143798,
+   "nom": "HORRENT Sandrine",
+   "cp": "24190",
+   "ville": "Neuvic",
+   "decision": "a_verifier",
+   "motif": "commerce_ou_transformation",
+   "naf": "10.89Z"
   },
   {
    "id": 164230,
@@ -8057,8 +8057,8 @@
   {
    "id": 5443,
    "nom": "ESAT LA FERME DU PONT DE SAINS",
-   "cp": "59132",
-   "ville": "Trelon",
+   "cp": "59610",
+   "ville": "FERON",
    "decision": "a_verifier",
    "motif": "association",
    "naf": "87.90A"
@@ -9565,15 +9565,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "87.90B"
-  },
-  {
-   "id": 118396,
-   "nom": "LE JARDIN DE CROIX-CARRIERE",
-   "cp": "69850",
-   "ville": "Saint Martin en Haut",
-   "decision": "a_verifier",
-   "motif": "activite_principale_non_agricole",
-   "naf": "68.20B"
   },
   {
    "id": 123449,
@@ -11414,8 +11405,8 @@
   {
    "id": 136719,
    "nom": "GUILLAUME ADRIEN - LA VERTE DE TERRE",
-   "cp": "85520",
-   "ville": "Jard sur Mer",
+   "cp": "85320",
+   "ville": "La Bretonnière-la-Claye",
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "47.78C"
@@ -11828,8 +11819,8 @@
   {
    "id": 74608,
    "nom": "ETUDES ET CHANTIERS ILE DE FRANCE",
-   "cp": "91350",
-   "ville": "Grigny",
+   "cp": "91000",
+   "ville": "Evry",
    "decision": "a_verifier",
    "motif": "association",
    "naf": "88.99B"
