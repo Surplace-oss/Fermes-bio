@@ -1,6 +1,6 @@
 {
- "date": "2026-11-08",
- "verifiees": 30020,
+ "date": "2026-11-09",
+ "verifiees": 30030,
  "sansSiret": 436,
  "exclues": {
   "entreprise_fermee": 121,
@@ -8,7 +8,7 @@
   "holding_ou_finance": 2
  },
  "signalees": {
-  "association": 347,
+  "association": 348,
   "commerce_ou_transformation": 431,
   "activite_principale_non_agricole": 236,
   "etablissement_public": 95,
@@ -151,6 +151,15 @@
    "decision": "a_verifier",
    "motif": "etablissement_public",
    "naf": "85.32Z"
+  },
+  {
+   "id": 134187,
+   "nom": "ASSOCIATION MARIE-ANGE CARLOTTI",
+   "cp": "03190",
+   "ville": "HAUT-BOCAGE",
+   "decision": "a_verifier",
+   "motif": "association",
+   "naf": "88.10C"
   },
   {
    "id": 9071,
