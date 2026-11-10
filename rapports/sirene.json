@@ -1,18 +1,18 @@
 {
- "date": "2026-11-09",
- "verifiees": 30030,
- "sansSiret": 436,
+ "date": "2026-11-10",
+ "verifiees": 30022,
+ "sansSiret": 435,
  "exclues": {
-  "entreprise_fermee": 121,
+  "entreprise_fermee": 119,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
   "association": 348,
-  "commerce_ou_transformation": 431,
+  "commerce_ou_transformation": 429,
   "activite_principale_non_agricole": 236,
   "etablissement_public": 95,
-  "etablissement_ferme": 153,
+  "etablissement_ferme": 150,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -3771,15 +3771,6 @@
    "naf": "10.39B"
   },
   {
-   "id": 122685,
-   "nom": "JV MC",
-   "cp": "26600",
-   "ville": "TAIN L'HERMITAGE",
-   "decision": "a_verifier",
-   "motif": "commerce_ou_transformation",
-   "naf": "46.34Z"
-  },
-  {
    "id": 144226,
    "nom": "Simon Pierre",
    "cp": "26170",
@@ -5265,15 +5256,6 @@
    "naf": "88.99B"
   },
   {
-   "id": 58616,
-   "nom": "DOMAINE DES FUMEES BLANCHES LURTON François",
-   "cp": "33870",
-   "ville": "VAYRES",
-   "decision": "a_verifier",
-   "motif": "commerce_ou_transformation",
-   "naf": "46.34Z"
-  },
-  {
    "id": 64829,
    "nom": "MAISON ADVINAM",
    "cp": "33650",
@@ -5362,15 +5344,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "88.99B"
-  },
-  {
-   "id": 116555,
-   "nom": "FREDERIC LABAT - CUEILLETTE DE BEAUTIRAN",
-   "cp": "33640",
-   "ville": "BEAUTIRAN",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "81.30Z"
   },
   {
    "id": 120453,
@@ -5884,15 +5857,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "88.99B"
-  },
-  {
-   "id": 155092,
-   "nom": "THOMAS LAHAIE - LE PALAIS FIN CARAMELS ET SELS",
-   "cp": "35330",
-   "ville": "bovel",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.28Z"
   },
   {
    "id": 160597,
@@ -8289,15 +8253,6 @@
    "naf": "10.71C"
   },
   {
-   "id": 60360,
-   "nom": "SCEA ARMOFIL",
-   "cp": "56140",
-   "ville": "CARO",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.46Z"
-  },
-  {
    "id": 69719,
    "nom": "ATELIER ARNAUD HEURTEBISE",
    "cp": "56360",
@@ -9142,15 +9097,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "01.50Z"
-  },
-  {
-   "id": 115086,
-   "nom": "BLANCHARD SANDRA",
-   "cp": "63330",
-   "ville": "Saint Maigner",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
   },
   {
    "id": 122543,
@@ -10267,15 +10213,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "88.99B"
-  },
-  {
-   "id": 102713,
-   "nom": "FERME DE CERNUNNOS BERLEMONT Geoffrey",
-   "cp": "71310",
-   "ville": "SERLEY",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
   },
   {
    "id": 111364,
@@ -12026,8 +11963,8 @@
   {
    "id": 136719,
    "nom": "GUILLAUME ADRIEN - LA VERTE DE TERRE",
-   "cp": "85320",
-   "ville": "La Bretonnière-la-Claye",
+   "cp": "85520",
+   "ville": "Jard sur Mer",
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "47.78C"
