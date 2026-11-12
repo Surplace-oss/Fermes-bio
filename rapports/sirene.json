@@ -1,6 +1,6 @@
 {
- "date": "2026-11-11",
- "verifiees": 30029,
+ "date": "2026-11-12",
+ "verifiees": 30033,
  "sansSiret": 433,
  "exclues": {
   "entreprise_fermee": 119,
@@ -9,10 +9,10 @@
  },
  "signalees": {
   "association": 348,
-  "commerce_ou_transformation": 429,
+  "commerce_ou_transformation": 430,
   "activite_principale_non_agricole": 236,
   "etablissement_public": 95,
-  "etablissement_ferme": 150,
+  "etablissement_ferme": 149,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -1537,6 +1537,15 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "01.45Z"
+  },
+  {
+   "id": 86940,
+   "nom": "L'ATELIER DES PAYSANS DU RANCE",
+   "cp": "12380",
+   "ville": "LAVAL ROQUECEZIERE",
+   "decision": "a_verifier",
+   "motif": "commerce_ou_transformation",
+   "naf": "10.39B"
   },
   {
    "id": 95256,
@@ -7054,15 +7063,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "93.19Z"
-  },
-  {
-   "id": 19500,
-   "nom": "EARL D'ARAQUY",
-   "cp": "46130",
-   "ville": "Cornac",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.42Z"
   },
   {
    "id": 50991,
