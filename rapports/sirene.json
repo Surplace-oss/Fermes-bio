@@ -1,18 +1,18 @@
 {
- "date": "2026-11-12",
- "verifiees": 30033,
- "sansSiret": 433,
+ "date": "2026-11-13",
+ "verifiees": 30057,
+ "sansSiret": 422,
  "exclues": {
-  "entreprise_fermee": 119,
+  "entreprise_fermee": 113,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
-  "association": 348,
-  "commerce_ou_transformation": 430,
-  "activite_principale_non_agricole": 236,
+  "association": 350,
+  "commerce_ou_transformation": 431,
+  "activite_principale_non_agricole": 237,
   "etablissement_public": 95,
-  "etablissement_ferme": 149,
+  "etablissement_ferme": 110,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -160,15 +160,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "88.10C"
-  },
-  {
-   "id": 9071,
-   "nom": "BOUFFLET THIERRY",
-   "cp": "04190",
-   "ville": "LES MEES",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.25Z"
   },
   {
    "id": 12597,
@@ -349,15 +340,6 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
-  },
-  {
-   "id": 85992,
-   "nom": "DURON CLEMENT (cloture)",
-   "cp": "05700",
-   "ville": "CHANOUSSE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.49Z"
   },
   {
    "id": 129307,
@@ -963,15 +945,6 @@
    "naf": "11.07B"
   },
   {
-   "id": 4707,
-   "nom": "GEFFROY DAVID",
-   "cp": "09240",
-   "ville": "ALZEN",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.49Z"
-  },
-  {
    "id": 6235,
    "nom": "DUFOUR Stéphane",
    "cp": "09000",
@@ -1197,6 +1170,15 @@
    "naf": "01.21Z"
   },
   {
+   "id": 146639,
+   "nom": "BARDOUX Manuel / TIERS LIEU HELIOS",
+   "cp": "09140",
+   "ville": "SEIX",
+   "decision": "a_verifier",
+   "motif": "association",
+   "naf": "94.99Z"
+  },
+  {
    "id": 161811,
    "nom": "GROUPEMENT PASTORAL DE LIERS-GOUTETS",
    "cp": "09320",
@@ -1204,15 +1186,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "01.42Z"
-  },
-  {
-   "id": 162315,
-   "nom": "JAUZE MARIELLE",
-   "cp": "09500",
-   "ville": "MANSES",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.43Z"
   },
   {
    "id": 12514,
@@ -1305,15 +1278,6 @@
    "naf": "10.39B"
   },
   {
-   "id": 71549,
-   "nom": "BOURRINET JEROME",
-   "cp": "11210",
-   "ville": "PORT-LA-NOUVELLE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.50Z"
-  },
-  {
    "id": 95132,
    "nom": "COLLECTIF DE LA FONTAINE RONDE SANTUCCI Lucas",
    "cp": "11140",
@@ -1357,15 +1321,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "47.29Z"
-  },
-  {
-   "id": 138863,
-   "nom": "BOYER Jean / CLOS COUNTA",
-   "cp": "11200",
-   "ville": "Fabrezan",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.21Z"
   },
   {
    "id": 143724,
@@ -1779,15 +1734,6 @@
    "ville": "MARSEILLE",
    "decision": "a_verifier",
    "motif": "association",
-   "naf": "01.13Z"
-  },
-  {
-   "id": 72681,
-   "nom": "BRAS HILL",
-   "cp": "13001",
-   "ville": "MARSEILLE 1",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
    "naf": "01.13Z"
   },
   {
@@ -2970,15 +2916,6 @@
    "naf": "01.41Z"
   },
   {
-   "id": 54482,
-   "nom": "MANUEL RUIZ",
-   "cp": "22200",
-   "ville": "Pommerit-le-Vicomte",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
-  },
-  {
    "id": 56094,
    "nom": "ETABLISSEMENTS GUILLOU LE MAREC",
    "cp": "22500",
@@ -3042,15 +2979,6 @@
    "naf": "70.22Z"
   },
   {
-   "id": 136816,
-   "nom": "GAEC MIEL DE BRETONS GAST",
-   "cp": "22320",
-   "ville": "CORLAY",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.49Z"
-  },
-  {
    "id": 144735,
    "nom": "AU COEUR DE L'EMPLOI",
    "cp": "22000",
@@ -3067,24 +2995,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "90.03A"
-  },
-  {
-   "id": 146725,
-   "nom": "PASTEL PAYSAGE",
-   "cp": "22490",
-   "ville": "PLESLIN-TRIGAVOU",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.24Z"
-  },
-  {
-   "id": 156731,
-   "nom": "la fabrique du loup",
-   "cp": "22580",
-   "ville": "Lanloup",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.28Z"
   },
   {
    "id": 4663,
@@ -3319,15 +3229,6 @@
    "decision": "exclue",
    "motif": "entreprise_fermee",
    "naf": "01.21Z"
-  },
-  {
-   "id": 49032,
-   "nom": "NALLET ELODIE",
-   "cp": "24580",
-   "ville": "FLEURAC",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.42Z"
   },
   {
    "id": 56609,
@@ -4032,6 +3933,15 @@
    "naf": "11.07B"
   },
   {
+   "id": 48889,
+   "nom": "L.E.G.T.A. De SUSCINIO",
+   "cp": "29600",
+   "ville": "MORLAIX",
+   "decision": "a_verifier",
+   "motif": "association",
+   "naf": "94.99Z"
+  },
+  {
    "id": 49281,
    "nom": "HALL CLEMENT CLEMENT Françoise",
    "cp": "29810",
@@ -4284,15 +4194,6 @@
    "naf": "56.30Z"
   },
   {
-   "id": 51132,
-   "nom": "GFA DE l'ARCURI",
-   "cp": "20244",
-   "ville": "SAN LURENZU",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.50Z"
-  },
-  {
    "id": 71268,
    "nom": "CAZALI GERARD - PRIMA VOLTA",
    "cp": "20620",
@@ -4437,15 +4338,6 @@
    "naf": "85.59A"
   },
   {
-   "id": 46031,
-   "nom": "VERDUGO DENIS",
-   "cp": "30580",
-   "ville": "VALLERARGUES",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.11Z"
-  },
-  {
    "id": 46496,
    "nom": "SESAME AUTISME LANGUEDOC",
    "cp": "30600",
@@ -4536,15 +4428,6 @@
    "naf": "01.21Z"
   },
   {
-   "id": 83103,
-   "nom": "GAEC LA PETITE ROUQUETTE",
-   "cp": "30420",
-   "ville": "Calvisson",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
-  },
-  {
    "id": 86157,
    "nom": "THOMASSOT CLAIRE LAURENCE",
    "cp": "30630",
@@ -4613,7 +4496,7 @@
    "cp": "30700",
    "ville": "SAINT QUENTIN LA POTERIE",
    "decision": "a_verifier",
-   "motif": "etablissement_ferme",
+   "motif": "commerce_ou_transformation",
    "naf": "11.02B"
   },
   {
@@ -4671,15 +4554,6 @@
    "naf": "47.81Z"
   },
   {
-   "id": 156945,
-   "nom": "Donatienne Fouilland",
-   "cp": "30330",
-   "ville": "Tresques",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.21Z"
-  },
-  {
    "id": 160335,
    "nom": "VADON BORIS",
    "cp": "30740",
@@ -4723,15 +4597,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "88.99B"
-  },
-  {
-   "id": 9260,
-   "nom": "SCEA DU TUQUET",
-   "cp": "31310",
-   "ville": "MONTESQUIEU VOLVESTRE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.50Z"
   },
   {
    "id": 11390,
@@ -4878,15 +4743,6 @@
    "naf": "01.13Z"
   },
   {
-   "id": 61412,
-   "nom": "FAIVRE SEBASTIEN ADRIEN",
-   "cp": "31360",
-   "ville": "ROQUEFORT-SUR-GARONNE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
-  },
-  {
    "id": 73912,
    "nom": "BRASSERIE MOEHAU (SAS)",
    "cp": "31800",
@@ -4939,15 +4795,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "01.30Z"
-  },
-  {
-   "id": 127819,
-   "nom": "MARTELET CHRISTOPHE",
-   "cp": "31420",
-   "ville": "Montoulieu St Bernard",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.42Z"
   },
   {
    "id": 127989,
@@ -5020,15 +4867,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "94.99Z"
-  },
-  {
-   "id": 7163,
-   "nom": "DELAERE DIDIER",
-   "cp": "32310",
-   "ville": "BEZOLLES",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.11Z"
   },
   {
    "id": 10118,
@@ -5182,15 +5020,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "01.13Z"
-  },
-  {
-   "id": 103218,
-   "nom": "NOEL MORGANE - LA FERME AUX CLOCHETTES",
-   "cp": "32420",
-   "ville": "MONTIES",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.45Z"
   },
   {
    "id": 148256,
@@ -5850,15 +5679,6 @@
    "naf": "01.24Z"
   },
   {
-   "id": 144802,
-   "nom": "LA FILIPENDULE",
-   "cp": "35630",
-   "ville": "LA CHAPELLE CHAUSSEE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.28Z"
-  },
-  {
    "id": 145745,
    "nom": "SOLEMER DUROUCHOUX Nicolas",
    "cp": "35800",
@@ -5947,15 +5767,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "87.10B"
-  },
-  {
-   "id": 138492,
-   "nom": "DOMAINE DE LA PIERRE GRAVEE",
-   "cp": "37210",
-   "ville": "VOUVRAY",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.21Z"
   },
   {
    "id": 161634,
@@ -6048,15 +5859,6 @@
    "naf": "47.89Z"
   },
   {
-   "id": 68590,
-   "nom": "RAMBERT PATRICK MAURICE SYLVAIN",
-   "cp": "38590",
-   "ville": "ST ETIENNE DE ST GEOIRS",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.25Z"
-  },
-  {
    "id": 70532,
    "nom": "AU POTAGER SOLIDAIRE JOLIVET Jacqueline",
    "cp": "38270",
@@ -6120,15 +5922,6 @@
    "naf": "47.81Z"
   },
   {
-   "id": 127271,
-   "nom": "MONSIEUR NICOLAS PALLUS",
-   "cp": "38340",
-   "ville": "VOREPPE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.28Z"
-  },
-  {
    "id": 132417,
    "nom": "JUICY SQUAD",
    "cp": "38550",
@@ -6136,15 +5929,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "46.34Z"
-  },
-  {
-   "id": 135842,
-   "nom": "VECINA Marina (EI)",
-   "cp": "38840",
-   "ville": "SAINT LATTIER",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.28Z"
   },
   {
    "id": 145149,
@@ -6489,15 +6273,6 @@
    "naf": "85.32Z"
   },
   {
-   "id": 10260,
-   "nom": "ANGENIEUX PATRICK",
-   "cp": "42660",
-   "ville": "SAINT-GENEST-MALIFAUX",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.49Z"
-  },
-  {
    "id": 30618,
    "nom": "FERME DE LA VALLERINE",
    "cp": "42410",
@@ -6559,15 +6334,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "11.01Z"
-  },
-  {
-   "id": 107800,
-   "nom": "MONSIEUR DAVID MICHELIS",
-   "cp": "42820",
-   "ville": "AMBIERLE",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.21Z"
   },
   {
    "id": 140795,
@@ -7218,15 +6984,6 @@
    "naf": "85.32Z"
   },
   {
-   "id": 19940,
-   "nom": "JEAN YVES FABRE",
-   "cp": "47110",
-   "ville": "DOLMAYRAC",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.11Z"
-  },
-  {
    "id": 36723,
    "nom": "MALATESTA PATRICK JACQUES",
    "cp": "47300",
@@ -7279,15 +7036,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "71.12B"
-  },
-  {
-   "id": 159214,
-   "nom": "Buigues Lionel",
-   "cp": "47390",
-   "ville": "Layrac",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.30Z"
   },
   {
    "id": 11976,
@@ -7378,15 +7126,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_public",
    "naf": "85.32Z"
-  },
-  {
-   "id": 149567,
-   "nom": "BOUSSOUAR BADIS - BOIS TERRE PIERRE",
-   "cp": "48110",
-   "ville": "Saint-Martin de lansuscle",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.25Z"
   },
   {
    "id": 2229,
@@ -7828,15 +7567,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "46.34Z"
-  },
-  {
-   "id": 3197,
-   "nom": "FERME JUST'BIO (LA)",
-   "cp": "51260",
-   "ville": "SAINT JUST SAUVAGE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.47Z"
   },
   {
    "id": 42869,
@@ -8395,15 +8125,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "88.10C"
-  },
-  {
-   "id": 73884,
-   "nom": "JEAN MARC SOMME",
-   "cp": "57810",
-   "ville": "LAGARDE",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.11Z"
   },
   {
    "id": 129742,
@@ -9009,15 +8730,6 @@
    "naf": "46.22Z"
   },
   {
-   "id": 18296,
-   "nom": "ANDANSON NICOLAS JEAN RENE",
-   "cp": "63112",
-   "ville": "BLANZAT",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.24Z"
-  },
-  {
    "id": 38274,
    "nom": "VALET Benoit",
    "cp": "63890",
@@ -9252,15 +8964,6 @@
    "naf": "01.42Z"
   },
   {
-   "id": 68020,
-   "nom": "LIBILBEHETY Maialen",
-   "cp": "64470",
-   "ville": "LICHANS-SUNHAR",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.11Z"
-  },
-  {
    "id": 68341,
    "nom": "ASSOCIATION TREBATU",
    "cp": "64210",
@@ -9295,15 +8998,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "47.75Z"
-  },
-  {
-   "id": 131056,
-   "nom": "DOMAINE NOMBOLY-TRAYDOU EARL",
-   "cp": "64360",
-   "ville": "Monein",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.21Z"
   },
   {
    "id": 134809,
@@ -9367,15 +9061,6 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "71.20B"
-  },
-  {
-   "id": 159827,
-   "nom": "ANDREA HEIM",
-   "cp": "64100",
-   "ville": "BAYONNE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.25Z"
   },
   {
    "id": 160081,
@@ -9466,15 +9151,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "87.30B"
-  },
-  {
-   "id": 20541,
-   "nom": "NEGRE REMI",
-   "cp": "66600",
-   "ville": "RIVESALTES",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.49Z"
   },
   {
    "id": 33299,
@@ -10296,15 +9972,6 @@
    "naf": "87.90B"
   },
   {
-   "id": 20851,
-   "nom": "EARL BERNAUD",
-   "cp": "72510",
-   "ville": "MANSIGNE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.11Z"
-  },
-  {
    "id": 125121,
    "nom": "AMIS DE NOTRE-DAME DU CHENE (ASSO)",
    "cp": "72300",
@@ -10494,15 +10161,6 @@
    "naf": "10.89Z"
   },
   {
-   "id": 114523,
-   "nom": "LES RUCHERS DE LA FAMILLE LACHERAY A.APICULTEURS LACHERAY Arnaud",
-   "cp": "74500",
-   "ville": "MAXILLY-SUR-LEMAN",
-   "decision": "a_verifier",
-   "motif": "commerce_ou_transformation",
-   "naf": "10.71A"
-  },
-  {
    "id": 122546,
    "nom": "BRASSERIE DES ALPAGES",
    "cp": "74170",
@@ -10528,6 +10186,15 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "94.99Z"
+  },
+  {
+   "id": 166395,
+   "nom": "VERMOREL CHLOE",
+   "cp": "74500",
+   "ville": "NEUVECELLE",
+   "decision": "a_verifier",
+   "motif": "commerce_ou_transformation",
+   "naf": "47.89Z"
   },
   {
    "id": 71949,
@@ -11169,15 +10836,6 @@
    "naf": "11.01Z"
   },
   {
-   "id": 132152,
-   "nom": "VAILLE QUE VAILLE ET PATATRAS",
-   "cp": "81600",
-   "ville": "CADALEN",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
-  },
-  {
    "id": 136698,
    "nom": "MEDORI DROUART CHLOE",
    "cp": "81170",
@@ -11419,15 +11077,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "01.21Z"
-  },
-  {
-   "id": 118042,
-   "nom": "ROUSSELOT PAILLEY IVAN",
-   "cp": "83300",
-   "ville": "DRAGUIGNAN",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
   },
   {
    "id": 118897,
@@ -11835,15 +11484,6 @@
    "naf": "91.04Z"
   },
   {
-   "id": 29977,
-   "nom": "VRIGNAUD Sylvie",
-   "cp": "85690",
-   "ville": "NOTRE DAME DE MONTS",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "86.90F"
-  },
-  {
    "id": 36356,
    "nom": "LES JARDINS DU BOIS JOLY DEFONTAINE Matthieu",
    "cp": "85500",
@@ -11988,15 +11628,6 @@
    "naf": "94.99Z"
   },
   {
-   "id": 161109,
-   "nom": "RANCH EQUI'CULTURE",
-   "cp": "85600",
-   "ville": "Montmorillon",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.43Z"
-  },
-  {
    "id": 8470,
    "nom": "SARL CARDINAL",
    "cp": "86420",
@@ -12069,15 +11700,6 @@
    "naf": "56.21Z"
   },
   {
-   "id": 8850,
-   "nom": "BRANSOL Aimé",
-   "cp": "87300",
-   "ville": "PEYRAT DE BELLAC",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.46Z"
-  },
-  {
    "id": 14304,
    "nom": "MONJOFFRE PATRICE",
    "cp": "87600",
@@ -12148,6 +11770,15 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "11.05Z"
+  },
+  {
+   "id": 164563,
+   "nom": "PEPINIERES COLLECTIVE DU LIMOUSIN",
+   "cp": "87380",
+   "ville": "CHATEAU-CHERVIX",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
+   "naf": "82.99Z"
   },
   {
    "id": 11309,
