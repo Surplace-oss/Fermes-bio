@@ -1,18 +1,18 @@
 {
- "date": "2026-11-13",
- "verifiees": 30057,
+ "date": "2026-11-14",
+ "verifiees": 30042,
  "sansSiret": 422,
  "exclues": {
-  "entreprise_fermee": 113,
-  "collectivite_ou_etat": 4,
-  "holding_ou_finance": 2
+  "entreprise_fermee": 98,
+  "holding_ou_finance": 2,
+  "collectivite_ou_etat": 3
  },
  "signalees": {
   "association": 350,
   "commerce_ou_transformation": 431,
-  "activite_principale_non_agricole": 237,
+  "activite_principale_non_agricole": 238,
   "etablissement_public": 95,
-  "etablissement_ferme": 110,
+  "etablissement_ferme": 112,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -2097,6 +2097,15 @@
    "naf": "47.41Z"
   },
   {
+   "id": 96321,
+   "nom": "BETOULLE GEOFFREY GUY",
+   "cp": "16000",
+   "ville": "ANGOULEME",
+   "decision": "exclue",
+   "motif": "entreprise_fermee",
+   "naf": "01.11Z"
+  },
+  {
    "id": 96630,
    "nom": "INDIVISION MAULEVRIER",
    "cp": "16490",
@@ -3141,15 +3150,6 @@
    "naf": "47.52A"
   },
   {
-   "id": 38659,
-   "nom": "LE BOIS DE LA CERVE LAPARRE Jean-Philippe",
-   "cp": "24440",
-   "ville": "Beaumotois en périgord",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.47Z"
-  },
-  {
    "id": 40256,
    "nom": "DES CHEVRES SUR LE PLATEAU CHAPELLE Jean-Paul",
    "cp": "24590",
@@ -3508,15 +3508,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "47.76Z"
-  },
-  {
-   "id": 14274,
-   "nom": "MERINO DIAZ GILBERT",
-   "cp": "26400",
-   "ville": "DIVAJEU",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.24Z"
   },
   {
    "id": 31688,
@@ -4257,15 +4248,6 @@
    "naf": "47.81Z"
   },
   {
-   "id": 17535,
-   "nom": "PRIOR Jérôme",
-   "cp": "30140",
-   "ville": "MIALET",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
-  },
-  {
    "id": 21577,
    "nom": "BERRY-ALTHOFF",
    "cp": "30250",
@@ -4392,15 +4374,6 @@
    "naf": "68.20B"
   },
   {
-   "id": 67786,
-   "nom": "FREALDO ERINO PIERRE",
-   "cp": "30630",
-   "ville": "MONCLUS",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.19Z"
-  },
-  {
    "id": 68968,
    "nom": "ASVMT CHARTREUSE DE VALBONNE",
    "cp": "30130",
@@ -4509,15 +4482,6 @@
    "naf": "71.12B"
   },
   {
-   "id": 142093,
-   "nom": "Ferme de Gorge Galon",
-   "cp": "30100",
-   "ville": "ALES",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "93.19Z"
-  },
-  {
    "id": 142310,
    "nom": "ISIDORE EVELYNE SIEGE",
    "cp": "30160",
@@ -4572,15 +4536,6 @@
    "naf": "88.99B"
   },
   {
-   "id": 163261,
-   "nom": "Miguel RODRIGO",
-   "cp": "30200",
-   "ville": "BAGNOLS SUR CEZE",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
-  },
-  {
    "id": 1338,
    "nom": "ALTITUDE CAMEO PONZ Frédéric",
    "cp": "31100",
@@ -4597,6 +4552,15 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "88.99B"
+  },
+  {
+   "id": 5124,
+   "nom": "FREDES THIERRY",
+   "cp": "31290",
+   "ville": "Avignonet-Lauragais",
+   "decision": "a_verifier",
+   "motif": "activite_principale_non_agricole",
+   "naf": "68.20B"
   },
   {
    "id": 11390,
@@ -4878,15 +4842,6 @@
    "naf": "88.99B"
   },
   {
-   "id": 14357,
-   "nom": "MONTEAU MARIE CALINE ELEONORE",
-   "cp": "32320",
-   "ville": "MONTESQUIOU",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
-  },
-  {
    "id": 15898,
    "nom": "SOLON CATHERINE MURIEL MARIE",
    "cp": "32300",
@@ -4896,15 +4851,6 @@
    "naf": "01.11Z"
   },
   {
-   "id": 29962,
-   "nom": "WAMBEKE JEAN-FRANCOIS",
-   "cp": "32600",
-   "ville": "L' ISLE JOURDAIN",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.43Z"
-  },
-  {
    "id": 30636,
    "nom": "QUEMIN Stéphanie",
    "cp": "32300",
@@ -4912,15 +4858,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "01.13Z"
-  },
-  {
-   "id": 34075,
-   "nom": "HUBER Jean-Pierre",
-   "cp": "32330",
-   "ville": "Gondrin",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.11Z"
   },
   {
    "id": 38320,
@@ -4993,15 +4930,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "46.21Z"
-  },
-  {
-   "id": 61551,
-   "nom": "DUMAS ISABELLE",
-   "cp": "32300",
-   "ville": "MONTAUT",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.19Z"
   },
   {
    "id": 85708,
@@ -5553,24 +5481,6 @@
    "naf": "68.20B"
   },
   {
-   "id": 33705,
-   "nom": "CHATRIOT CAROLINE",
-   "cp": "35660",
-   "ville": "Rénac",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.28Z"
-  },
-  {
-   "id": 38158,
-   "nom": "CALDY Jean-Adrien",
-   "cp": "35150",
-   "ville": "Chanteloup",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.19Z"
-  },
-  {
    "id": 41614,
    "nom": "ALLAIN Judikaël",
    "cp": "35340",
@@ -5670,15 +5580,6 @@
    "naf": "46.17A"
   },
   {
-   "id": 137689,
-   "nom": "BROGLY Martin",
-   "cp": "35890",
-   "ville": "Laillé",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.24Z"
-  },
-  {
    "id": 145745,
    "nom": "SOLEMER DUROUCHOUX Nicolas",
    "cp": "35800",
@@ -5686,15 +5587,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "88.99B"
-  },
-  {
-   "id": 160597,
-   "nom": "VITRE COMMUNAUTE D'AGLOMERATION REGNIER Teddy",
-   "cp": "35500",
-   "ville": "Vitré",
-   "decision": "exclue",
-   "motif": "collectivite_ou_etat",
-   "naf": "84.11Z"
   },
   {
    "id": 164179,
@@ -5751,15 +5643,6 @@
    "naf": "01.13Z"
   },
   {
-   "id": 128812,
-   "nom": "LESEIGNEUR VINCENT CHARLES",
-   "cp": "37530",
-   "ville": "Limeray",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
-  },
-  {
    "id": 136340,
    "nom": "Les 4 saisons d'Atouts",
    "cp": "37390",
@@ -5803,15 +5686,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "88.99B"
-  },
-  {
-   "id": 32281,
-   "nom": "LE JARDIN DES GONNETTES",
-   "cp": "38870",
-   "ville": "SAINT PIERRE DE BRESSIEUX",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
   },
   {
    "id": 33309,
@@ -6066,6 +5940,15 @@
    "naf": "01.29Z"
   },
   {
+   "id": 3041,
+   "nom": "LAFOURCADE FRANCIS",
+   "cp": "40110",
+   "ville": "YGOS SAINT SATURNIN",
+   "decision": "exclue",
+   "motif": "entreprise_fermee",
+   "naf": "01.11Z"
+  },
+  {
    "id": 15347,
    "nom": "SARTHOU NICOLAS",
    "cp": "40410",
@@ -6273,6 +6156,15 @@
    "naf": "85.32Z"
   },
   {
+   "id": 10260,
+   "nom": "ANGENIEUX PATRICK",
+   "cp": "42660",
+   "ville": "SAINT-GENEST-MALIFAUX",
+   "decision": "exclue",
+   "motif": "entreprise_fermee",
+   "naf": "01.49Z"
+  },
+  {
    "id": 30618,
    "nom": "FERME DE LA VALLERINE",
    "cp": "42410",
@@ -6334,6 +6226,24 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "11.01Z"
+  },
+  {
+   "id": 107800,
+   "nom": "MONSIEUR DAVID MICHELIS",
+   "cp": "42820",
+   "ville": "AMBIERLE",
+   "decision": "exclue",
+   "motif": "entreprise_fermee",
+   "naf": "01.21Z"
+  },
+  {
+   "id": 123234,
+   "nom": "LOUIS GOUBY - JARDINS DOCTEUR PERSIL ET MISTER AIL",
+   "cp": "42600",
+   "ville": "champdieu",
+   "decision": "exclue",
+   "motif": "entreprise_fermee",
+   "naf": "01.13Z"
   },
   {
    "id": 140795,
@@ -6514,6 +6424,15 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "88.10C"
+  },
+  {
+   "id": 9156,
+   "nom": "BON GRAIN DIT VRAI (EARL LE)",
+   "cp": "44110",
+   "ville": "SAINT-AUBIN-DES-CHATEAUX",
+   "decision": "a_verifier",
+   "motif": "etablissement_ferme",
+   "naf": "01.11Z"
   },
   {
    "id": 9936,
@@ -6741,15 +6660,6 @@
    "naf": "94.99Z"
   },
   {
-   "id": 138707,
-   "nom": "Ferme du Contrevent",
-   "cp": "44300",
-   "ville": "NANTES",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "85.59B"
-  },
-  {
    "id": 142681,
    "nom": "TERRE DE BRIORD (SAS)",
    "cp": "44710",
@@ -6885,15 +6795,6 @@
    "naf": "47.59B"
   },
   {
-   "id": 128772,
-   "nom": "ferreira muriel",
-   "cp": "46200",
-   "ville": "SOUILLAC",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.28Z"
-  },
-  {
    "id": 131419,
    "nom": "LA FERME DES PETIOTS SCHUSTER Yvette et BALDY Julien",
    "cp": "46150",
@@ -6910,15 +6811,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "47.99A"
-  },
-  {
-   "id": 137579,
-   "nom": "DUFOUR PIERRE MAURICE",
-   "cp": "46330",
-   "ville": "Saint Cirq Lapopie",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.47Z"
   },
   {
    "id": 146108,
@@ -6957,15 +6849,6 @@
    "naf": "01.41Z"
   },
   {
-   "id": 10841,
-   "nom": "DOMENGIE Pierre et Christian",
-   "cp": "47150",
-   "ville": "MONFLANQUIN",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.42Z"
-  },
-  {
    "id": 11367,
    "nom": "EPLEFPA de Ste Livrade",
    "cp": "47110",
@@ -6982,15 +6865,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_public",
    "naf": "85.32Z"
-  },
-  {
-   "id": 36723,
-   "nom": "MALATESTA PATRICK JACQUES",
-   "cp": "47300",
-   "ville": "VILLENEUVE-SUR-LOT",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.47Z"
   },
   {
    "id": 80853,
@@ -7252,15 +7126,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "10.51A"
-  },
-  {
-   "id": 49907,
-   "nom": "EARL DE LA FERME DE LA FOUARDIERE",
-   "cp": "49500",
-   "ville": "SAINTE GEMMES D'ANDIGNE",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "68.20B"
   },
   {
    "id": 53197,
@@ -8883,6 +8748,15 @@
    "naf": "46.38B"
   },
   {
+   "id": 15334,
+   "nom": "SARL SARRABERE ET FILS",
+   "cp": "64530",
+   "ville": "LIVRON",
+   "decision": "a_verifier",
+   "motif": "etablissement_ferme",
+   "naf": "01.11Z"
+  },
+  {
    "id": 44279,
    "nom": "RACAUD Jérémy",
    "cp": "64800",
@@ -9096,6 +8970,15 @@
    "ville": "BUZON",
    "decision": "exclue",
    "motif": "entreprise_fermee",
+   "naf": "01.11Z"
+  },
+  {
+   "id": 50511,
+   "nom": "MIQUEU Stéphane",
+   "cp": "65140",
+   "ville": "Bazillac",
+   "decision": "a_verifier",
+   "motif": "etablissement_ferme",
    "naf": "01.11Z"
   },
   {
