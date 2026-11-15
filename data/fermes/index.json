@@ -98,7 +98,7 @@
   },
   "35": {
    "totalAgenceBio": 2512,
-   "retenues": 562
+   "retenues": 563
   },
   "36": {
    "totalAgenceBio": 563,
@@ -109,8 +109,8 @@
    "retenues": 281
   },
   "38": {
-   "totalAgenceBio": 2253,
-   "retenues": 647
+   "totalAgenceBio": 2254,
+   "retenues": 648
   },
   "39": {
    "totalAgenceBio": 1027,
@@ -153,7 +153,7 @@
    "retenues": 267
   },
   "49": {
-   "totalAgenceBio": 2543,
+   "totalAgenceBio": 2544,
    "retenues": 571
   },
   "50": {
@@ -250,7 +250,7 @@
   },
   "73": {
    "totalAgenceBio": 840,
-   "retenues": 210
+   "retenues": 211
   },
   "74": {
    "totalAgenceBio": 1143,
@@ -302,7 +302,7 @@
   },
   "86": {
    "totalAgenceBio": 1124,
-   "retenues": 210
+   "retenues": 208
   },
   "87": {
    "totalAgenceBio": 1084,
@@ -346,7 +346,7 @@
   },
   "03": {
    "totalAgenceBio": 852,
-   "retenues": 208
+   "retenues": 209
   },
   "01": {
    "totalAgenceBio": 992,
@@ -358,7 +358,7 @@
   },
   "05": {
    "totalAgenceBio": 992,
-   "retenues": 310
+   "retenues": 311
   },
   "06": {
    "totalAgenceBio": 1477,
@@ -385,6 +385,6 @@
    "retenues": 204
   }
  },
- "fermesRetenues": 30361,
- "misAJour": "2026-11-14"
+ "fermesRetenues": 30364,
+ "misAJour": "2026-11-15"
 }
