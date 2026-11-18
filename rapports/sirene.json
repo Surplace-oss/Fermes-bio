@@ -1,10 +1,10 @@
 {
- "date": "2026-11-17",
- "verifiees": 30059,
- "sansSiret": 426,
+ "date": "2026-11-18",
+ "verifiees": 30064,
+ "sansSiret": 427,
  "exclues": {
-  "entreprise_fermee": 116,
-  "collectivite_ou_etat": 4,
+  "entreprise_fermee": 115,
+  "collectivite_ou_etat": 5,
   "holding_ou_finance": 2
  },
  "signalees": {
@@ -1528,6 +1528,15 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "01.45Z"
+  },
+  {
+   "id": 113438,
+   "nom": "BIHANNIC JEAN-PAUL YVON",
+   "cp": "12720",
+   "ville": "mostuejouls",
+   "decision": "a_verifier",
+   "motif": "etablissement_ferme",
+   "naf": "01.13Z"
   },
   {
    "id": 114562,
@@ -4473,15 +4482,6 @@
    "naf": "47.81Z"
   },
   {
-   "id": 113438,
-   "nom": "BIHANNIC JEAN-PAUL YVON",
-   "cp": "30120",
-   "ville": "Le Vigan",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
-  },
-  {
    "id": 119994,
    "nom": "ASSOCIATION LES AMIS DE LA MANADE DU ROC",
    "cp": "30220",
@@ -6163,15 +6163,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "94.99Z"
-  },
-  {
-   "id": 158603,
-   "nom": "COUDERC Cédric",
-   "cp": "40500",
-   "ville": "Saint-Sever",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
   },
   {
    "id": 43705,
@@ -9790,6 +9781,15 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "94.99Z"
+  },
+  {
+   "id": 131594,
+   "nom": "MONSIEUR NICOLAS BROUSSE",
+   "cp": "69620",
+   "ville": "VAL D OINGT",
+   "decision": "exclue",
+   "motif": "collectivite_ou_etat",
+   "naf": "84.11Z"
   },
   {
    "id": 145530,
