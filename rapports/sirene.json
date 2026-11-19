@@ -1,7 +1,7 @@
 {
- "date": "2026-11-18",
- "verifiees": 30064,
- "sansSiret": 427,
+ "date": "2026-11-19",
+ "verifiees": 30076,
+ "sansSiret": 424,
  "exclues": {
   "entreprise_fermee": 115,
   "collectivite_ou_etat": 5,
@@ -9,10 +9,10 @@
  },
  "signalees": {
   "association": 350,
-  "commerce_ou_transformation": 431,
+  "commerce_ou_transformation": 432,
   "activite_principale_non_agricole": 238,
   "etablissement_public": 95,
-  "etablissement_ferme": 112,
+  "etablissement_ferme": 111,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -5535,6 +5535,15 @@
    "naf": "01.49Z"
   },
   {
+   "id": 166025,
+   "nom": "CELINE BARBIER",
+   "cp": "34800",
+   "ville": "Octon",
+   "decision": "a_verifier",
+   "motif": "commerce_ou_transformation",
+   "naf": "10.39B"
+  },
+  {
    "id": 7226,
    "nom": "LEP AGRICOLE ST AUBIN DU CORMIER",
    "cp": "35140",
@@ -7030,7 +7039,7 @@
   },
   {
    "id": 80853,
-   "nom": "RL CONSEILS REMI LAURANT",
+   "nom": "SARL RL CONSEILS",
    "cp": "47600",
    "ville": "MONCRABEAU",
    "decision": "a_verifier",
@@ -9754,15 +9763,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "87.90B"
-  },
-  {
-   "id": 123449,
-   "nom": "MADAME HOANG LAM",
-   "cp": "69460",
-   "ville": "BLACE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.21Z"
   },
   {
    "id": 124476,
