@@ -1,7 +1,7 @@
 {
- "date": "2026-11-19",
- "verifiees": 30076,
- "sansSiret": 424,
+ "date": "2026-11-20",
+ "verifiees": 30083,
+ "sansSiret": 426,
  "exclues": {
   "entreprise_fermee": 115,
   "collectivite_ou_etat": 5,
@@ -12,7 +12,7 @@
   "commerce_ou_transformation": 432,
   "activite_principale_non_agricole": 238,
   "etablissement_public": 95,
-  "etablissement_ferme": 111,
+  "etablissement_ferme": 109,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -2041,15 +2041,6 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
-  },
-  {
-   "id": 145539,
-   "nom": "MONSIEUR ANTOINE CASTELAIN",
-   "cp": "15240",
-   "ville": "SAIGNES",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.49Z"
   },
   {
    "id": 7229,
@@ -7209,15 +7200,6 @@
    "naf": "46.90Z"
   },
   {
-   "id": 12700,
-   "nom": "GROUPEMENT AGRICOLE DEXPLOITATION EN COMMUN LA BUTINEUSE DES 7 VOIES",
-   "cp": "49350",
-   "ville": "SAINT GEORGES DES SEPT VOIES",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.49Z"
-  },
-  {
    "id": 14531,
    "nom": "ORAN NICOLAS GILLES",
    "cp": "49630",
@@ -11143,7 +11125,7 @@
   },
   {
    "id": 124046,
-   "nom": "TERRY TERRY",
+   "nom": "CHARLES Terry",
    "cp": "83400",
    "ville": "Hyeres",
    "decision": "a_verifier",
