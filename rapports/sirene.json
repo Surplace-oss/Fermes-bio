@@ -1,7 +1,7 @@
 {
- "date": "2026-11-20",
- "verifiees": 30083,
- "sansSiret": 426,
+ "date": "2026-11-21",
+ "verifiees": 30090,
+ "sansSiret": 427,
  "exclues": {
   "entreprise_fermee": 115,
   "collectivite_ou_etat": 5,
@@ -12,7 +12,7 @@
   "commerce_ou_transformation": 432,
   "activite_principale_non_agricole": 238,
   "etablissement_public": 95,
-  "etablissement_ferme": 109,
+  "etablissement_ferme": 107,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -304,15 +304,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "88.99B"
-  },
-  {
-   "id": 22708,
-   "nom": "MADAME LEILA MATHIEU",
-   "cp": "05140",
-   "ville": "LA FAURIE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.28Z"
   },
   {
    "id": 31298,
@@ -1645,15 +1636,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "88.99B"
-  },
-  {
-   "id": 23657,
-   "nom": "DU BRAMEJEAN JOUFFRET Olivier",
-   "cp": "13370",
-   "ville": "MALLEMORT",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.25Z"
   },
   {
    "id": 23997,
@@ -12115,7 +12097,7 @@
   },
   {
    "id": 96777,
-   "nom": "NOVAEDIA",
+   "nom": "NOVAEDIA (LA FERME DES POSSIBLES)",
    "cp": "93000",
    "ville": "STAINS",
    "decision": "a_verifier",
