@@ -1,15 +1,15 @@
 {
- "date": "2026-11-22",
- "verifiees": 30090,
+ "date": "2026-11-23",
+ "verifiees": 30096,
  "sansSiret": 427,
  "exclues": {
   "entreprise_fermee": 115,
-  "collectivite_ou_etat": 5,
+  "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
   "association": 350,
-  "commerce_ou_transformation": 432,
+  "commerce_ou_transformation": 433,
   "activite_principale_non_agricole": 238,
   "etablissement_public": 95,
   "etablissement_ferme": 107,
@@ -574,6 +574,15 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
+  },
+  {
+   "id": 157168,
+   "nom": "TORRACA STEPHANIE",
+   "cp": "06150",
+   "ville": "CANNES",
+   "decision": "a_verifier",
+   "motif": "etablissement_ferme",
+   "naf": "82.11Z"
   },
   {
    "id": 159016,
@@ -6147,15 +6156,6 @@
    "naf": "94.99Z"
   },
   {
-   "id": 43705,
-   "nom": "L'ABEILLE DE SOLOGNE LUCAS Denis",
-   "cp": "41200",
-   "ville": "Pruniers en Sologne",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.49Z"
-  },
-  {
    "id": 46557,
    "nom": "SCI DE LA MAHAUDIERE",
    "cp": "41400",
@@ -7567,6 +7567,15 @@
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
    "naf": "85.52Z"
+  },
+  {
+   "id": 166610,
+   "nom": "MICHALAK JASON AYMERIC DUNCAN",
+   "cp": "50490",
+   "ville": "MONTCUIT",
+   "decision": "a_verifier",
+   "motif": "commerce_ou_transformation",
+   "naf": "10.89Z"
   },
   {
    "id": 1006,
@@ -9745,15 +9754,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "94.99Z"
-  },
-  {
-   "id": 131594,
-   "nom": "MONSIEUR NICOLAS BROUSSE",
-   "cp": "69620",
-   "ville": "VAL D OINGT",
-   "decision": "exclue",
-   "motif": "collectivite_ou_etat",
-   "naf": "84.11Z"
   },
   {
    "id": 145530,
