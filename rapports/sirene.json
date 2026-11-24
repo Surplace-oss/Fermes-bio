@@ -1,18 +1,18 @@
 {
- "date": "2026-11-23",
- "verifiees": 30096,
- "sansSiret": 427,
+ "date": "2026-11-24",
+ "verifiees": 30086,
+ "sansSiret": 428,
  "exclues": {
-  "entreprise_fermee": 115,
+  "entreprise_fermee": 113,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
-  "association": 350,
-  "commerce_ou_transformation": 433,
+  "association": 349,
+  "commerce_ou_transformation": 434,
   "activite_principale_non_agricole": 238,
   "etablissement_public": 95,
-  "etablissement_ferme": 107,
+  "etablissement_ferme": 104,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -4197,7 +4197,7 @@
    "id": 95652,
    "nom": "MARIE LOUISE SAVELLI",
    "cp": "20220",
-   "ville": "L'Ile Rousse",
+   "ville": "CORBARA",
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "68.20A"
@@ -4525,6 +4525,15 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "11.02B"
+  },
+  {
+   "id": 148328,
+   "nom": "PORTES Romain",
+   "cp": "30120",
+   "ville": "Aulas",
+   "decision": "a_verifier",
+   "motif": "etablissement_ferme",
+   "naf": "01.49Z"
   },
   {
    "id": 156904,
@@ -5184,15 +5193,6 @@
    "naf": "47.91A"
   },
   {
-   "id": 128771,
-   "nom": "Papon Benoît",
-   "cp": "33190",
-   "ville": "Mongauzy",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.13Z"
-  },
-  {
    "id": 129589,
    "nom": "SAINT JAMES HOTEL",
    "cp": "33270",
@@ -5497,24 +5497,6 @@
    "decision": "exclue",
    "motif": "entreprise_fermee",
    "naf": "01.45Z"
-  },
-  {
-   "id": 146049,
-   "nom": "CHAMPELLIER DE ROUX Bruno / HENCKEL Bastien",
-   "cp": "34080",
-   "ville": "Montpellier",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
-  },
-  {
-   "id": 148328,
-   "nom": "PORTES Romain",
-   "cp": "34980",
-   "ville": "Montferrier-sur-Lez",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.49Z"
   },
   {
    "id": 166025,
@@ -6256,7 +6238,7 @@
   },
   {
    "id": 166414,
-   "nom": "MILLE VARIETES ANCIENNES (M.V.A.)",
+   "nom": "MILLE VARIETES ANCIENNES POIRETTE Isabelle",
    "cp": "41200",
    "ville": "MILLANCAY",
    "decision": "a_verifier",
@@ -6642,15 +6624,6 @@
    "naf": "68.20B"
   },
   {
-   "id": 50049,
-   "nom": "ESAT BIOCAT",
-   "cp": "44190",
-   "ville": "GETIGNE",
-   "decision": "a_verifier",
-   "motif": "association",
-   "naf": "87.20A"
-  },
-  {
    "id": 50176,
    "nom": "CHEVRERIE DE LA METAIRIE D'ARDENNES DUBREIL Laurianne",
    "cp": "44680",
@@ -6928,15 +6901,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "47.99A"
-  },
-  {
-   "id": 137579,
-   "nom": "DUFOUR PIERRE MAURICE",
-   "cp": "46330",
-   "ville": "Saint Cirq Lapopie",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.47Z"
   },
   {
    "id": 146108,
@@ -7558,15 +7522,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "88.99B"
-  },
-  {
-   "id": 145884,
-   "nom": "NAULIN Cyril",
-   "cp": "50400",
-   "ville": "Yquelon",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "85.52Z"
   },
   {
    "id": 166610,
@@ -9216,15 +9171,6 @@
    "naf": "10.89Z"
   },
   {
-   "id": 41438,
-   "nom": "DE FRANCE MARIE",
-   "cp": "66230",
-   "ville": "SERRALONGUE",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
-  },
-  {
    "id": 41465,
    "nom": "LA GALINETTE COMES Christophe",
    "cp": "66270",
@@ -10177,6 +10123,15 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "10.89Z"
+  },
+  {
+   "id": 114523,
+   "nom": "LES RUCHERS DE LA FAMILLE LACHERAY A.APICULTEURS LACHERAY Arnaud",
+   "cp": "74500",
+   "ville": "MAXILLY-SUR-LEMAN",
+   "decision": "a_verifier",
+   "motif": "commerce_ou_transformation",
+   "naf": "10.71A"
   },
   {
    "id": 122546,
