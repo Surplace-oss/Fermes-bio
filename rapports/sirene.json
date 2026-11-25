@@ -1,9 +1,9 @@
 {
- "date": "2026-11-24",
- "verifiees": 30086,
+ "date": "2026-11-25",
+ "verifiees": 30095,
  "sansSiret": 428,
  "exclues": {
-  "entreprise_fermee": 113,
+  "entreprise_fermee": 112,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
@@ -10240,15 +10240,6 @@
    "decision": "a_verifier",
    "motif": "etablissement_public",
    "naf": "85.31Z"
-  },
-  {
-   "id": 60218,
-   "nom": "LHERNAULT MARTINE ANNE MARIE",
-   "cp": "76190",
-   "ville": "Mont de l'If",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.24Z"
   },
   {
    "id": 73412,
