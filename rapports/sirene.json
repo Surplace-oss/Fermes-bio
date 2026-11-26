@@ -1,18 +1,18 @@
 {
- "date": "2026-11-25",
- "verifiees": 30095,
- "sansSiret": 428,
+ "date": "2026-11-26",
+ "verifiees": 30070,
+ "sansSiret": 429,
  "exclues": {
-  "entreprise_fermee": 112,
+  "entreprise_fermee": 106,
   "collectivite_ou_etat": 4,
   "holding_ou_finance": 2
  },
  "signalees": {
   "association": 349,
-  "commerce_ou_transformation": 434,
-  "activite_principale_non_agricole": 238,
+  "commerce_ou_transformation": 433,
+  "activite_principale_non_agricole": 237,
   "etablissement_public": 95,
-  "etablissement_ferme": 104,
+  "etablissement_ferme": 103,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -3015,15 +3015,6 @@
    "naf": "68.20A"
   },
   {
-   "id": 50200,
-   "nom": "DUMENIAUD Pierre",
-   "cp": "23250",
-   "ville": "SARDENT",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.11Z"
-  },
-  {
    "id": 52939,
    "nom": "DES PERRIERES AUCLAIR Lionel et Nathalie",
    "cp": "23140",
@@ -4914,15 +4905,6 @@
    "naf": "01.13Z"
   },
   {
-   "id": 34075,
-   "nom": "HUBER Jean-Pierre",
-   "cp": "32330",
-   "ville": "Gondrin",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.11Z"
-  },
-  {
    "id": 38320,
    "nom": "DIEUDONNE PASCAL JEAN BERNARD",
    "cp": "32300",
@@ -5490,15 +5472,6 @@
    "naf": "47.91A"
   },
   {
-   "id": 141238,
-   "nom": "DE GUCHT VALENTIN SEBASTIEN HENRI",
-   "cp": "34220",
-   "ville": "COURNIOU",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.45Z"
-  },
-  {
    "id": 166025,
    "nom": "CELINE BARBIER",
    "cp": "34800",
@@ -5730,15 +5703,6 @@
    "ville": "CHEZELLES",
    "decision": "a_verifier",
    "motif": "association",
-   "naf": "01.13Z"
-  },
-  {
-   "id": 128812,
-   "nom": "LESEIGNEUR VINCENT CHARLES",
-   "cp": "37530",
-   "ville": "Limeray",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
    "naf": "01.13Z"
   },
   {
@@ -6055,15 +6019,6 @@
    "decision": "exclue",
    "motif": "entreprise_fermee",
    "naf": "01.11Z"
-  },
-  {
-   "id": 15347,
-   "nom": "SARTHOU NICOLAS",
-   "cp": "40410",
-   "ville": "Pissos",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
-   "naf": "01.49Z"
   },
   {
    "id": 33122,
@@ -6660,15 +6615,6 @@
    "naf": "46.23Z"
   },
   {
-   "id": 91591,
-   "nom": "GUILLAUME SAMUEL HUGUES LAURENT",
-   "cp": "44510",
-   "ville": "Le pouliguen",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "08.93Z"
-  },
-  {
    "id": 107360,
    "nom": "SCIC COMMUN'ILE",
    "cp": "44650",
@@ -7245,15 +7191,6 @@
    "naf": "94.91Z"
   },
   {
-   "id": 56135,
-   "nom": "FABRIQUE DES BIERES D'ANJOU (LA)",
-   "cp": "49250",
-   "ville": "LA MENITRE",
-   "decision": "a_verifier",
-   "motif": "commerce_ou_transformation",
-   "naf": "11.05Z"
-  },
-  {
    "id": 60451,
    "nom": "ESAT DE LA REBELLERIE",
    "cp": "49560",
@@ -7422,15 +7359,6 @@
    "ville": "HUDIMESNIL",
    "decision": "a_verifier",
    "motif": "etablissement_ferme",
-   "naf": "01.41Z"
-  },
-  {
-   "id": 41003,
-   "nom": "VIVIER TANGUY CHRISTIAN DANIEL",
-   "cp": "50310",
-   "ville": "LE HAM",
-   "decision": "exclue",
-   "motif": "entreprise_fermee",
    "naf": "01.41Z"
   },
   {
@@ -7666,15 +7594,6 @@
    "decision": "a_verifier",
    "motif": "association",
    "naf": "88.10C"
-  },
-  {
-   "id": 53604,
-   "nom": "GAEC MEZOUE",
-   "cp": "53240",
-   "ville": "MONTFLOURS",
-   "decision": "a_verifier",
-   "motif": "activite_principale_non_agricole",
-   "naf": "68.20B"
   },
   {
    "id": 101527,
