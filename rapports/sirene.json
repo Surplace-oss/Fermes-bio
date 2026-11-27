@@ -1,7 +1,7 @@
 {
- "date": "2026-11-26",
- "verifiees": 30070,
- "sansSiret": 429,
+ "date": "2026-11-27",
+ "verifiees": 30076,
+ "sansSiret": 426,
  "exclues": {
   "entreprise_fermee": 106,
   "collectivite_ou_etat": 4,
@@ -10,9 +10,9 @@
  "signalees": {
   "association": 349,
   "commerce_ou_transformation": 433,
-  "activite_principale_non_agricole": 237,
+  "activite_principale_non_agricole": 236,
   "etablissement_public": 95,
-  "etablissement_ferme": 103,
+  "etablissement_ferme": 99,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -4401,15 +4401,6 @@
    "naf": "46.19B"
   },
   {
-   "id": 74576,
-   "nom": "LES COSTES DE SAINT GENIES PEYRE Vincent",
-   "cp": "30150",
-   "ville": "Saint Geniès de Comolas",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.21Z"
-  },
-  {
    "id": 86157,
    "nom": "THOMASSOT CLAIRE LAURENCE",
    "cp": "30630",
@@ -5814,15 +5805,6 @@
    "naf": "47.21Z"
   },
   {
-   "id": 72532,
-   "nom": "GRANAT Jérémy",
-   "cp": "38210",
-   "ville": "Tullins",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
-  },
-  {
    "id": 95853,
    "nom": "PARADE Nicolas",
    "cp": "38680",
@@ -6415,15 +6397,6 @@
    "decision": "a_verifier",
    "motif": "activite_principale_non_agricole",
    "naf": "68.20B"
-  },
-  {
-   "id": 71877,
-   "nom": "SARL DE BELMONT",
-   "cp": "43380",
-   "ville": "CHILHAC",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.21Z"
   },
   {
    "id": 101133,
@@ -10557,15 +10530,6 @@
    "naf": "11.07B"
   },
   {
-   "id": 41670,
-   "nom": "VIE VEG D'HAUTEFEUILLE Augustin",
-   "cp": "80400",
-   "ville": "HOMBLEUX",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
-  },
-  {
    "id": 47615,
    "nom": "TERRES ZEN",
    "cp": "80000",
@@ -11419,15 +11383,6 @@
    "decision": "a_verifier",
    "motif": "commerce_ou_transformation",
    "naf": "47.81Z"
-  },
-  {
-   "id": 59057,
-   "nom": "JMC LEGUMES LIMOUSIN Gisèle et David",
-   "cp": "85390",
-   "ville": "MOUILLERON-SAINT-GERMAIN",
-   "decision": "a_verifier",
-   "motif": "activite_principale_non_agricole",
-   "naf": "68.20B"
   },
   {
    "id": 60560,
