@@ -1,7 +1,7 @@
 {
- "date": "2026-11-27",
- "verifiees": 30076,
- "sansSiret": 426,
+ "date": "2026-11-28",
+ "verifiees": 30082,
+ "sansSiret": 427,
  "exclues": {
   "entreprise_fermee": 106,
   "collectivite_ou_etat": 4,
@@ -12,7 +12,7 @@
   "commerce_ou_transformation": 433,
   "activite_principale_non_agricole": 236,
   "etablissement_public": 95,
-  "etablissement_ferme": 99,
+  "etablissement_ferme": 97,
   "maintenue_holding_ou_finance": 4,
   "maintenue_collectivite_ou_etat": 4
  },
@@ -5346,15 +5346,6 @@
    "naf": "68.20B"
   },
   {
-   "id": 55670,
-   "nom": "TERRACOOPA",
-   "cp": "34830",
-   "ville": "clapiers",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
-   "naf": "01.13Z"
-  },
-  {
    "id": 60387,
    "nom": "LYCEE AGRICOLE DE LA CONDAMINE",
    "cp": "34120",
@@ -9708,15 +9699,6 @@
    "ville": "MACON",
    "decision": "a_verifier",
    "motif": "association",
-   "naf": "01.13Z"
-  },
-  {
-   "id": 74946,
-   "nom": "LES JARDINS DU REBOUT VINCENT VANDAELE",
-   "cp": "71990",
-   "ville": "Saint-Léger-sous-Beuvray",
-   "decision": "a_verifier",
-   "motif": "etablissement_ferme",
    "naf": "01.13Z"
   },
   {
